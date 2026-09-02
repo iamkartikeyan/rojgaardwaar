@@ -1293,7 +1293,7 @@ window.ROZGAR_DATA = (function() {
           ],
           faq: [
             { q: `What is the last date to apply for ${template.shortOrg} ${role.name}?`, a: `The online application window closes on ${formatDate(lastDateObj)}. Candidates are advised to apply well before the deadline.` },
-            { q: `Is there any offline application mode?`, a: `No, only online applications submitted through the official portal are accepted.` }
+            { q: `Is there any offline application mode?`, a: `No, only online applications submitted through the recruiting department's official website are accepted.` }
           ],
           shouldYouApply: `Ideal opening for eligible candidates holding ${qualNames}. Ensure you fulfill age criteria and keep all category certificates ready before the closing date.`,
           officialLinks: {

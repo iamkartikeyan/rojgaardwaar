@@ -45,7 +45,7 @@ const WEBSITE_SCHEMA = `
     "@type": "WebSite",
     "name": "RozgarDwaar",
     "url": "https://rozgardwaar.com/",
-    "description": "India's Leading Government Job Discovery and Information Portal for Central and State Recruitment Notifications.",
+    "description": "Online Information Portal for Central and State Government Recruitment Notifications in India.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://rozgardwaar.com/central-govt-jobs.html?q={search_term_string}",
@@ -93,20 +93,18 @@ const COMMON_HEADER = (activeNav = 'HOME') => `
     <div class="container">
       <div class="brand-header-flex">
         <a href="/" class="brand-wrapper">
-          <img src="/images/logo.svg" alt="RozgarDwaar Official Logo" class="brand-logo-img" width="38" height="38">
+          <img src="/images/logo.svg" alt="RozgarDwaar Logo" class="brand-logo-img" width="38" height="38">
           <div>
             <div class="brand-title-text">
               Rozgar<span>Dwaar</span>
-              <span class="verified-portal-tag">Official Portal</span>
             </div>
-            <div class="brand-tagline-text">India's Premier Government Job Discovery Gateway</div>
+            <div class="brand-tagline-text">Government Jobs &amp; Recruitment Information Portal</div>
           </div>
         </a>
 
-        <!-- Desktop Trust Badges -->
+        <!-- Desktop Quick Channels -->
         <div class="header-trust-badges">
-          <div class="trust-badge-pill">100% Free Alerts</div>
-          <a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" class="trust-badge-pill whatsapp">${SVG_WHATSAPP} Join WhatsApp</a>
+          <a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" class="trust-badge-pill whatsapp">${SVG_WHATSAPP} WhatsApp Updates</a>
         </div>
 
         <!-- Mobile Menu Toggle Button (Visible only on Mobile) -->
@@ -312,7 +310,7 @@ const COMMON_FOOTER = `
         </div>
 
         <div class="bottom-dir-box">
-          <div class="bottom-dir-header">Official Job Alert Channels</div>
+          <div class="bottom-dir-header">Job Alert Channels</div>
           <div class="bottom-dir-body">
             <ul class="sidebar-links-list">
               <li class="sidebar-list-item"><a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer">Join WhatsApp Channel</a></li>
@@ -333,14 +331,14 @@ const COMMON_FOOTER = `
         <a href="/about.html">About Us</a>
         <a href="/contact.html">Contact Us</a>
         <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
+        <a href="/terms.html">Terms &amp; Conditions</a>
         <a href="/disclaimer.html">Disclaimer</a>
         <a href="/editorial-policy.html">Editorial Policy</a>
         <a href="/corrections-policy.html">Corrections Policy</a>
         <a href="/source-verification.html">Sources Directory</a>
       </div>
       <div class="footer-copyright-note">
-        Copyright &copy; 2026 <strong>ROZGARDWAAR</strong> | India's Leading Government Job Discovery Portal. All rights reserved.
+        Copyright &copy; 2026 <strong>ROZGARDWAAR</strong> | Government Job Notifications &amp; Employment Information. All rights reserved.
       </div>
       <div class="footer-disclaimer-text">
         <strong>Disclaimer:</strong> RozgarDwaar (rozgardwaar.com) is an independent private informational web portal and is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with the Government of India or any State Government agency.
@@ -488,15 +486,15 @@ data.RECRUITMENTS.forEach(job => {
             <!-- Single Optimized H1 Tag -->
             <h1 class="portal-main-h1">${escapeHtml(job.title)}</h1>
             <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
-              Published by: <strong>RozgarDwaar Editorial Desk</strong> | Official Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY NOTIFICATION</span>
+              Published by: <strong>RozgarDwaar Editorial Desk</strong> | Source: <strong>Official Recruitment Notice (${escapeHtml(job.shortOrg)})</strong>
             </div>
 
             <div class="action-cta-bar">
               <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
-                ${SVG_APPLY} Apply Online (Official Portal)
+                ${SVG_APPLY} Apply Online (Official Website)
               </a>
               <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
-                ${SVG_PDF} Download Official Notification PDF
+                ${SVG_PDF} Download Notification PDF
               </a>
               <a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-web">
                 ${SVG_WEB} Official Website
@@ -1149,7 +1147,7 @@ const indexStaticHtml = `<!DOCTYPE html>
           <div class="content-block" style="padding: 16px 20px 8px;">
             <h1 class="portal-main-h1">RozgarDwaar - Latest Central &amp; State Government Jobs Recruitment 2026</h1>
             <p style="font-size:13px; color:#444; margin-bottom:4px;">
-              Welcome to <strong>RozgarDwaar</strong>, India's trustworthy government employment notification portal. Explore verified Central Government, Railway, Banking, PSU, SSC, UPSC, Defence, and State PSC recruitment notices with official application links and eligibility details.
+              Welcome to <strong>RozgarDwaar</strong>, an informational portal for Central and State Government recruitment notifications, eligibility criteria, and application procedures.
             </p>
           </div>
 
@@ -1247,13 +1245,22 @@ policyFiles.forEach(file => {
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf8');
     
+    // Clean misleading claims in schema and body
+    content = content.replace(/India's Leading Government Job Discovery and Information Portal for Central and State Recruitment Notifications\./g, 'Online Information Portal for Central and State Government Recruitment Notifications in India.');
+    content = content.replace(/India's Leading Government Job Discovery Portal/g, 'Government Job Notifications & Employment Information');
+    content = content.replace(/India's Premier Government Job Discovery Gateway/g, 'Government Jobs & Recruitment Information Portal');
+    content = content.replace(/<span class="verified-portal-tag">Official Portal<\/span>/g, '');
+    content = content.replace(/<div class="trust-badge-pill">100% Free Alerts<\/div>/g, '');
+    content = content.replace(/Official Verification Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY SOURCE<\/span>/g, 'Information Source: Official Notification');
+    content = content.replace(/🏛️|🚪|🚆|🏦|🏢|🎓|📜|🗺️|🎒|📐|🔧|⚙️|🎟️|📊|💬|📢|🔍|🚀|📄|🌐|⏰|🎯|💡|✅|✔|🍪/g, '');
+
     // Inject GA4 if missing
     if (!content.includes('G-ROZGARDWAAR')) {
       content = content.replace('</head>', `${GA4_TAG}\n${WEBSITE_SCHEMA}\n</head>`);
     }
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`Updated policy page: ${file}`);
+    console.log(`Cleaned and updated policy page: ${file}`);
   }
 });
 

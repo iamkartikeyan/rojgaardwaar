@@ -803,7 +803,7 @@
         <!-- Master Title -->
         <h1 class="job-detail-h1">${escapeHtml(job.title)}</h1>
         <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
-          Published by: <strong>ROZGARDWAAR Editorial Desk</strong> | Official Verification Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY SOURCE</span>
+          Published by: <strong>ROZGARDWAAR Editorial Desk</strong> | Source: <strong>Official Recruitment Notice (${escapeHtml(job.shortOrg)})</strong>
         </div>
 
         <!-- Action CTA Buttons -->
