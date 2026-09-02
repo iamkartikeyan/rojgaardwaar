@@ -12604,7 +12604,7 @@ window.ROZGAR_DATA = (function() {
     }
   },
   {
-    "id": "chhattisgarh-public-service-commission",
+    "id": "chhattisgarh-public-service-commission-v400",
     "title": "Chhattisgarh Public Service Commission Recruitment 2012 various posts",
     "org": "Chhattisgarh Public Service Commission",
     "shortOrg": "Chhattisgarh Public Service Co",
@@ -12914,7 +12914,7 @@ window.ROZGAR_DATA = (function() {
     }
   },
   {
-    "id": "uksssc-recruitment",
+    "id": "uksssc-recruitment-v410",
     "title": "UKSSSC Recruitment 2025 Apply Online for 128 Assistant Teacher Posts | Last Date 7th October",
     "org": "UKSSSC",
     "shortOrg": "UKSSSC",
@@ -15766,7 +15766,7 @@ window.ROZGAR_DATA = (function() {
     }
   },
   {
-    "id": "sikkim-public-service-commission",
+    "id": "sikkim-public-service-commission-v502",
     "title": "Sikkim Public Service Commission Recruitment 2012 Sub Inspector (15 Posts)",
     "org": "Sikkim Public Service Commission",
     "shortOrg": "Sikkim Public Service Commissi",
