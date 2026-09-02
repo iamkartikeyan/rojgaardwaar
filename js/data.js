@@ -3333,6 +3333,468 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Final%20Advt.%20App.%202026-27-RHQ-NR.pdf",
       "websiteUrl": "https://nats.education.gov.in/student_type.php"
     }
+  },
+  {
+    "id": "bank-jobs-openings-august-2013",
+    "title": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
+    "org": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
+    "shortOrg": "Latest Bank Jobs 2026 (12442 V",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://1.bp.blogspot.com/-u2HyTfTD6zs/XvGq5s4iYZI/AAAAAAABBhg/ZEz3UVWnWYsfUnKsAoATC8KXPGFU4JK2QCK4BGAsYHg/s595/Bank-Jobs-2020-indgovtjobs.png",
+      "notificationUrl": "https://rozgardwaar.com/2013/08/bank-jobs-openings-august-2013.html",
+      "websiteUrl": "https://1.bp.blogspot.com/-u2HyTfTD6zs/XvGq5s4iYZI/AAAAAAABBhg/ZEz3UVWnWYsfUnKsAoATC8KXPGFU4JK2QCK4BGAsYHg/s595/Bank-Jobs-2020-indgovtjobs.png"
+    }
+  },
+  {
+    "id": "western-railway-sports-quota",
+    "title": "Western Railway Sports Quota Recruitment 2026 - Apply Online for 64 Posts | Last Date 30-09-2026",
+    "org": "Western Railway Sports Quota",
+    "shortOrg": "Western Railway Sports Quota",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1xMM9oezrXcN5F8M9KGbRaMqFdoHj9kGL/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1xMM9oezrXcN5F8M9KGbRaMqFdoHj9kGL/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1xMM9oezrXcN5F8M9KGbRaMqFdoHj9kGL/view?usp=sharing"
+    }
+  },
+  {
+    "id": "east-coast-railway-apprentice",
+    "title": "East Coast Railway Apprentice Recruitment 2026 – Apply Online for 1599 Posts | Last Date 15-09-2026",
+    "org": "East Coast Railway Apprentice",
+    "shortOrg": "East Coast Railway Apprentice",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "15-09-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.rrcbbs.org.in/Act-apprenticeship.pdf",
+      "notificationUrl": "https://www.rrcbbs.org.in/Act-apprenticeship.pdf",
+      "websiteUrl": "https://www.rrcbbs.org.in/Act-apprenticeship.pdf"
+    }
+  },
+  {
+    "id": "ncr-prayagraj-apprentice-recruitment",
+    "title": "NCR Prayagraj Apprentice Recruitment 2026 – Apply Online 3205 Posts | Last Date 31-08-2026",
+    "org": "NCR Prayagraj Apprentice",
+    "shortOrg": "NCR Prayagraj Apprentice",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rrcpryj.org/wp-content/uploads/2026/07/Notification-act-apprentice-2026.pdf",
+      "notificationUrl": "https://rrcpryj.org/wp-content/uploads/2026/07/Notification-act-apprentice-2026.pdf",
+      "websiteUrl": "https://rrcpryj.org/wp-content/uploads/2026/07/Notification-act-apprentice-2026.pdf"
+    }
+  },
+  {
+    "id": "north-central-railway-cultural-quota",
+    "title": "North Central Railway Cultural Quota Recruitment 2026 – Apply Online for 02 Posts | Last Date 19-09-2026",
+    "org": "North Central Railway Cultural Quota",
+    "shortOrg": "North Central Railway Cultural",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "19-09-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rrcpryj.org/wp-content/uploads/2026/08/Notification-for-Cultural-Quota-Ope-Market-Recruitment-2026-27-for-NCR-1.pdf",
+      "notificationUrl": "https://rrcpryj.org/wp-content/uploads/2026/08/Notification-for-Cultural-Quota-Ope-Market-Recruitment-2026-27-for-NCR-1.pdf",
+      "websiteUrl": "https://rrcpryj.org/wp-content/uploads/2026/08/Notification-for-Cultural-Quota-Ope-Market-Recruitment-2026-27-for-NCR-1.pdf"
+    }
+  },
+  {
+    "id": "eastern-railway-scouts-and-guides-quota",
+    "title": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts, Notification, Online Form | Last Date 06-09-2026",
+    "org": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts,",
+    "shortOrg": "Eastern Railway Scouts and Gui",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "06-09-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rrcer.org/Final%20notification%20S&amp;G%202026-27%20along%20with%20relevant%20annexures%20pdf.pdf",
+      "notificationUrl": "https://rrcer.org/Final%20notification%20S&amp;G%202026-27%20along%20with%20relevant%20annexures%20pdf.pdf",
+      "websiteUrl": "https://rrcer.org/Final%20notification%20S&amp;G%202026-27%20along%20with%20relevant%20annexures%20pdf.pdf"
+    }
+  },
+  {
+    "id": "central-railway-sports-quota",
+    "title": "Central Railway Sports Quota Recruitment 2026 – Apply Online for 59 Group C & D Posts | Last Date 14-08-2026",
+    "org": "Central Railway Sports Quota",
+    "shortOrg": "Central Railway Sports Quota",
+    "posts": "Group C & D",
+    "vacancies": 59,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "14-08-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://ibtexamination.com/RRCCR_02OF2026_SPORTSQUOTA/notification/Open%20Advertisment%20Sports%20Quota%20Notification%20English.pdf",
+      "notificationUrl": "https://ibtexamination.com/RRCCR_02OF2026_SPORTSQUOTA/notification/Open%20Advertisment%20Sports%20Quota%20Notification%20English.pdf",
+      "websiteUrl": "https://ibtexamination.com/RRCCR_02OF2026_SPORTSQUOTA/notification/Open%20Advertisment%20Sports%20Quota%20Notification%20English.pdf"
+    }
+  },
+  {
+    "id": "central-railway-scouts-guides-quota",
+    "title": "Central Railway Scouts & Guides Quota Recruitment 2026 – Apply Online for 12 Posts | Last Date 12-08-2026",
+    "org": "Central Railway Scouts & Guides Quota",
+    "shortOrg": "Central Railway Scouts & Guide",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "12-08-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1y_1boGkGOEkCEjavtB9k_fdwYNinedyi/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1y_1boGkGOEkCEjavtB9k_fdwYNinedyi/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1y_1boGkGOEkCEjavtB9k_fdwYNinedyi/view?usp=sharing"
+    }
+  },
+  {
+    "id": "central-railway-apprentice-recruitment",
+    "title": "Central Railway Apprentice Recruitment 2026 Apply Online 51 Posts | Last Date 09 April 2026",
+    "org": "Central Railway Apprentice",
+    "shortOrg": "Central Railway Apprentice",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rrccr.etrpindia.com/rrccrapprentice/pdfs/FINAL_TA_NOTICE_2526_For_Application_Part_2_published.pdf",
+      "notificationUrl": "https://rrccr.etrpindia.com/rrccrapprentice/pdfs/FINAL_TA_NOTICE_2526_For_Application_Part_2_published.pdf",
+      "websiteUrl": "https://rrccr.etrpindia.com/rrccrapprentice/pdfs/FINAL_TA_NOTICE_2526_For_Application_Part_2_published.pdf"
+    }
+  },
+  {
+    "id": "western-railway-apprentice-online-form",
+    "title": "Western Railway Apprentice Recruitment 2026 - Apply Online for 5349 Posts | Last Date 23.03.2026",
+    "org": "Western Railway Apprentice",
+    "shortOrg": "Western Railway Apprentice",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1fJYA7q20sdaVu3mQtVa3VqXpbHTpxxKN/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1fJYA7q20sdaVu3mQtVa3VqXpbHTpxxKN/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1fJYA7q20sdaVu3mQtVa3VqXpbHTpxxKN/view?usp=sharing"
+    }
+  },
+  {
+    "id": "south-east-central-railway-sports-quota",
+    "title": "South East Central Railway Sports Quota Recruitment 2026 - Apply Online for 22 Vacancies | Last Date 16.02.2026",
+    "org": "South East Central Railway Sports Quota",
+    "shortOrg": "South East Central Railway Spo",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://secr.indianrailways.gov.in/uploads/files/1768624038757-SportsQuota2025-26%20%20ENGLISH%20Notification%20(1).pdf",
+      "notificationUrl": "https://secr.indianrailways.gov.in/uploads/files/1768624038757-SportsQuota2025-26%20%20ENGLISH%20Notification%20(1).pdf",
+      "websiteUrl": "https://secr.indianrailways.gov.in/uploads/files/1768624038757-SportsQuota2025-26%20%20ENGLISH%20Notification%20(1).pdf"
+    }
+  },
+  {
+    "id": "stenographer-jobs-typist",
+    "title": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
+    "org": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
+    "shortOrg": "Latest Stenographer & Typist G",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2017/03/Stenographer-Jobs-Typist.html",
+      "notificationUrl": "https://rozgardwaar.com/2017/03/Stenographer-Jobs-Typist.html",
+      "websiteUrl": "https://rozgardwaar.com/2017/03/Stenographer-Jobs-Typist.html"
+    }
+  },
+  {
+    "id": "rail-wheel-factory-sports-quota",
+    "title": "Rail Wheel Factory Sports Quota Recruitment 2026 – Notification for 15 Posts, Application Form | Last Date 31-08-2026",
+    "org": "Rail Wheel Factory Sports Quota",
+    "shortOrg": "Rail Wheel Factory Sports Quot",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/11WgJJcLz51BGvpPQZz-kVeO5JByl8ddf/view",
+      "notificationUrl": "https://drive.google.com/file/d/11WgJJcLz51BGvpPQZz-kVeO5JByl8ddf/view",
+      "websiteUrl": "https://drive.google.com/file/d/11WgJJcLz51BGvpPQZz-kVeO5JByl8ddf/view"
+    }
+  },
+  {
+    "id": "forest-jobs",
+    "title": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
+    "org": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
+    "shortOrg": "Latest Forest Govt Jobs 2026 (",
+    "posts": "Railway Technical & Non-Technical Posts",
+    "vacancies": 50,
+    "salary": "Level-1 to Level-7 (₹18,000 – ₹1,12,400/-) as per 7th CPC Railway Matrix",
+    "qualificationText": "10th Pass / 12th / ITI / Diploma / Degree from recognized Board / University",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Indian Railways Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Merit List"
+    },
+    "fee": "UR / OBC: ₹500 (₹400 Refundable) | SC/ST/Female: ₹250 (Full Refundable)",
+    "ageLimit": "18 to 33 / 36 Years (Railway Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2019/12/Forest-Jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2019/12/Forest-Jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2019/12/Forest-Jobs.html"
+    }
   }
 ];
 
