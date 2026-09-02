@@ -840,89 +840,334 @@ a:hover {
   margin: 0 4px;
 }
 
-.site-dark-footer a:hover {
-  color: #ffffff !important;
-  text-decoration: underline;
-}
-
 /* ==========================================================================
-   SEO & AdSense Optimizations: H1 Header & Cookie Consent
+   Mobile-First Ultra-Clean UI/UX & Responsive Overhaul (App-Like Experience)
    ========================================================================== */
 
-.portal-main-h1 {
-  font-size: 20px;
-  font-weight: 800;
-  color: #0f2b48;
-  line-height: 1.35;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #0056b3;
+@media (max-width: 768px) {
+  /* Layout & Spacing */
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .main-two-col-layout,
+  .portal-main-grid {
+    display: block !important;
+  }
+
+  .primary-content-column {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-column {
+    width: 100% !important;
+    margin-top: 20px;
+  }
+
+  /* Top Strip */
+  .site-top-strip {
+    padding: 6px 0;
+  }
+
+  .top-strip-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .top-strip-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  /* Brand Header */
+  .site-brand-area {
+    padding: 12px 0 10px;
+  }
+
+  .brand-wrapper {
+    gap: 10px;
+  }
+
+  .brand-logo-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .brand-title-text {
+    font-size: 22px;
+  }
+
+  .brand-tagline-text {
+    font-size: 10px;
+  }
+
+  /* Swipeable App-Like Navbar */
+  .site-primary-navbar,
+  .primary-nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 4px 0;
+    overflow: hidden;
+  }
+
+  .nav-menu-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 6px;
+    gap: 6px;
+  }
+
+  .nav-menu-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-menu-link {
+    padding: 8px 12px !important;
+    font-size: 11.5px !important;
+    border-right: none !important;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+
+  .nav-menu-link.active,
+  .nav-menu-link:hover {
+    background: #008000 !important;
+  }
+
+  /* Search Strip */
+  .site-search-strip {
+    padding: 10px 0;
+  }
+
+  .search-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .search-input {
+    width: 100% !important;
+    height: 44px;
+    border: 2px solid #008000 !important;
+    border-radius: 6px !important;
+    padding: 0 14px !important;
+    font-size: 13.5px !important;
+  }
+
+  .search-btn {
+    width: 100% !important;
+    height: 42px;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+  }
+
+  /* Headings & Blocks */
+  .portal-main-h1 {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+  }
+
+  .job-detail-h1 {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+  }
+
+  .content-block {
+    margin-bottom: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* Transforming Table into Touch Cards on Mobile */
+  .ind-govt-table {
+    display: block;
+    border: none;
+  }
+
+  .ind-govt-table thead {
+    display: none;
+  }
+
+  .ind-govt-table tbody {
+    display: block;
+  }
+
+  .ind-govt-table tr {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .ind-govt-table td {
+    display: block;
+    border: none !important;
+    padding: 4px 0 !important;
+    text-align: left !important;
+  }
+
+  .ind-govt-table td.post-col {
+    width: 100% !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .ind-govt-table td.post-col a {
+    color: #0b3c5d !important;
+  }
+
+  .ind-govt-table td.date-col {
+    font-size: 12px;
+    color: #c5221f;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ind-govt-table td.date-col::before {
+    content: "⏰ Last Date: ";
+    color: #555;
+    font-weight: 600;
+  }
+
+  .ind-govt-table td.action-col {
+    width: 100% !important;
+    padding-top: 6px !important;
+    border-top: 1px dashed #edf2f7 !important;
+  }
+
+  .ind-govt-table td.action-col a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #008000;
+    color: #ffffff !important;
+    padding: 9px 0;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+  }
+
+  /* Detail Table Custom */
+  .detail-table-custom {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .detail-table-custom th,
+  .detail-table-custom td {
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+
+  /* Action CTA Buttons on Mobile */
+  .action-cta-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .btn-cta-apply,
+  .btn-cta-pdf,
+  .btn-cta-web,
+  .tool-btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 14px !important;
+    font-size: 13.5px !important;
+    border-radius: 6px !important;
+    min-height: 44px;
+  }
+
+  /* State Grid on Mobile */
+  .state-check-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px 8px !important;
+    padding: 10px !important;
+  }
+
+  .state-check-link {
+    font-size: 12px !important;
+  }
+
+  /* Qualification Hub Box */
+  .qual-hub-links-box {
+    padding: 10px;
+  }
+
+  .qual-hub-links-box a {
+    font-size: 12.5px;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+  }
+
+  /* Footer Bottom Directory */
+  .bottom-directory-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .site-dark-footer {
+    padding: 18px 10px 40px;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    line-height: 1.6;
+  }
+
+  /* Cookie Consent Banner on Mobile */
+  .cookie-consent-banner {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cookie-consent-actions {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .cookie-btn-accept,
+  .cookie-btn-decline {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+  }
 }
 
-/* Floating Cookie Consent Banner */
-.cookie-consent-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #111822;
-  color: #f8f9fa;
-  padding: 14px 20px;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12.5px;
-  border-top: 2px solid #008000;
-}
-
-.cookie-consent-text {
-  flex: 1;
-  min-width: 280px;
-  line-height: 1.5;
-}
-
-.cookie-consent-text a {
-  color: #58a6ff;
-  text-decoration: underline;
-}
-
-.cookie-consent-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.cookie-btn-accept {
-  background: #008000;
-  color: #ffffff;
-  border: none;
-  padding: 7px 16px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 12.5px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.cookie-btn-accept:hover {
-  background: #006600;
-}
-
-.cookie-btn-decline {
-  background: #343a40;
-  color: #adb5bd;
-  border: 1px solid #495057;
-  padding: 7px 14px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.cookie-btn-decline:hover {
-  background: #495057;
-  color: #ffffff;
-}
 
