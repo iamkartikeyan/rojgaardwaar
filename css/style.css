@@ -150,22 +150,27 @@ a:hover {
 .brand-wrapper {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none !important;
 }
 
-.brand-logo-badge {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, #0b2545 0%, #133a68 50%, #008000 100%);
-  color: #ffffff;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 4px 10px rgba(11, 37, 69, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+}
+
+.icon-svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.icon-svg.check {
+  margin-right: 4px;
 }
 
 .brand-title-text {
