@@ -122,17 +122,20 @@
   <!-- Modern Hero Search Strip -->
   <div class="site-search-strip">
     <div class="container">
-      <form id="main-search-form" class="search-form-wrapper" action="/central-govt-jobs.html" method="GET">
-        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
+      <form id="main-search-form" class="search-form-wrapper" action="/search.html" method="GET">
+        <div class="search-input-inner">
+          <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
+        </div>
         <button type="submit" class="search-btn"><svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search Jobs</button>
       </form>
       <div class="search-trending-tags">
-        <strong style="color:#0b2545;">Trending Searches:</strong>
+        <strong style="color:#0b2545;">Trending:</strong>
         <a href="/jobs/rrb-alp-technician-2026.html" class="trending-tag-pill">Railway ALP &amp; Tech (18k)</a>
         <a href="/jobs/ssc-cgl-2026-combined-graduate-level.html" class="trending-tag-pill">SSC CGL 2026</a>
         <a href="/bank-jobs.html" class="trending-tag-pill">SBI &amp; IBPS PO</a>
-        <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th Pass Govt Jobs</a>
-        <a href="/state-govt-jobs.html" class="trending-tag-pill">UP Police Constable (42k)</a>
+        <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th Pass Jobs</a>
+        <a href="/state-govt-jobs.html" class="trending-tag-pill">UP Police (42k)</a>
       </div>
     </div>
   </div>
@@ -324,7 +327,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1099 Posts (1099 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 161 Posts (161 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-16</td>
@@ -333,7 +336,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-sub-inspector---police-co-5.html">SAIL / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 3672 Posts (3672 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-sub-inspector---police-co-5.html">SAIL / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 1791 Posts (1791 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-19</td>
@@ -342,7 +345,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-management-trainee---fina-6.html">SAIL / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 184 Posts (184 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-management-trainee---fina-6.html">SAIL / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 193 Posts (193 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-20</td>
@@ -351,7 +354,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 362 Posts (362 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1020 Posts (1020 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-04</td>
@@ -360,7 +363,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-sub-inspector---police-co-10.html">BEL / Navratna PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 5921 Posts (5921 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-sub-inspector---police-co-10.html">BEL / Navratna PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 4135 Posts (4135 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-24</td>
@@ -552,6 +555,7 @@
     }
     document.addEventListener('DOMContentLoaded', checkCookieConsent);
   </script>
+  <script src="/js/search.js" defer></script>
 
 
 </body>

@@ -139,17 +139,20 @@ const COMMON_HEADER = (activeNav = 'HOME') => `
   <!-- Modern Hero Search Strip -->
   <div class="site-search-strip">
     <div class="container">
-      <form id="main-search-form" class="search-form-wrapper" action="/central-govt-jobs.html" method="GET">
-        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
+      <form id="main-search-form" class="search-form-wrapper" action="/search.html" method="GET">
+        <div class="search-input-inner">
+          ${SVG_SEARCH}
+          <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
+        </div>
         <button type="submit" class="search-btn">${SVG_SEARCH} Search Jobs</button>
       </form>
       <div class="search-trending-tags">
-        <strong style="color:#0b2545;">Trending Searches:</strong>
+        <strong style="color:#0b2545;">Trending:</strong>
         <a href="/jobs/rrb-alp-technician-2026.html" class="trending-tag-pill">Railway ALP &amp; Tech (18k)</a>
         <a href="/jobs/ssc-cgl-2026-combined-graduate-level.html" class="trending-tag-pill">SSC CGL 2026</a>
         <a href="/bank-jobs.html" class="trending-tag-pill">SBI &amp; IBPS PO</a>
-        <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th Pass Govt Jobs</a>
-        <a href="/state-govt-jobs.html" class="trending-tag-pill">UP Police Constable (42k)</a>
+        <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th Pass Jobs</a>
+        <a href="/state-govt-jobs.html" class="trending-tag-pill">UP Police (42k)</a>
       </div>
     </div>
   </div>
@@ -375,6 +378,7 @@ const COMMON_FOOTER = `
     }
     document.addEventListener('DOMContentLoaded', checkCookieConsent);
   </script>
+  <script src="/js/search.js" defer></script>
 `;
 
 function generateJobPostingSchema(job, stateObj) {
@@ -1090,6 +1094,84 @@ hubs.forEach(h => {
   fs.writeFileSync(filePath, generateHubPageHtml(h), 'utf8');
   console.log(`Generated Hub HTML: ${h.fileName}`);
 });
+
+// Generate dedicated search.html page
+const searchPageHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Government Jobs 2026 - Central &amp; State Recruitment Openings | RozgarDwaar</title>
+  
+  <meta name="title" content="Search Government Jobs 2026 - Central &amp; State Recruitment Openings">
+  <meta name="description" content="Search active Indian government recruitment notifications across Central, State, Railway, Banking, SSC, and PSU sectors.">
+  <meta name="robots" content="index, follow">
+  <meta name="google-adsense-account" content="ca-pub-6828732559916178">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://rozgardwaar.com/search.html">
+
+  ${GA4_TAG}
+  ${WEBSITE_SCHEMA}
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  ${COMMON_HEADER('HOME')}
+
+  <main class="site-main-section">
+    <div class="container">
+      <div class="main-two-col-layout">
+        
+        <!-- Left Content Area -->
+        <div class="primary-content-column">
+          <div class="content-block" style="padding: 18px 20px;">
+            <h1 class="portal-main-h1">Government Jobs Search Results</h1>
+            <div style="font-size:12.5px; color:#555; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2f7;">
+              Query: <strong id="search-query-display" style="color:#0b2545;">All Current Openings</strong> | <span id="search-results-count" style="color:#008000; font-weight:700;">${data.RECRUITMENTS.length} Openings Found</span>
+            </div>
+
+            <div id="search-results-output">
+              <table class="ind-govt-table">
+                <thead>
+                  <tr>
+                    <th style="width:48%;">Post Names – Total Vacancies</th>
+                    <th style="width:22%;">Last Date</th>
+                    <th style="width:30%;">Job Details / Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${data.RECRUITMENTS.slice(0, 25).map(j => `
+                    <tr>
+                      <td class="post-col">
+                        <a href="/jobs/${j.id}.html">${escapeHtml(j.title)} (${j.vacancies} Posts)</a>
+                        <div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(j.org)} &bull; Qualification: ${escapeHtml(j.qualificationText || 'Check details')}</div>
+                      </td>
+                      <td class="date-col">${j.importantDates ? j.importantDates.lastDate : 'Active'}</td>
+                      <td class="action-col"><a href="/jobs/${j.id}.html">VIEW DETAILS</a></td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        ${COMMON_SIDEBAR}
+
+      </div>
+    </div>
+  </main>
+
+  ${COMMON_FOOTER}
+
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, 'search.html'), searchPageHtml, 'utf8');
+console.log("Generated search.html dedicated page.");
 
 // 3. Pre-render index.html with vector SVG logo and zero emojis
 const topHighlights = data.RECRUITMENTS.slice(0, 6);

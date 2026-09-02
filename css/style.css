@@ -267,48 +267,81 @@ a:hover {
 
 /* 4. Modern Hero Search Strip */
 .site-search-strip {
-  background: linear-gradient(180deg, #f1f4f8 0%, #e8edf3 100%);
-  padding: 16px 0 14px;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+  padding: 14px 0 12px;
   border-bottom: 1px solid #dcdde1;
 }
 
 .search-form-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   background: #ffffff;
-  border: 2px solid #008000;
+  border: 2px solid #0b2545;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(11, 37, 69, 0.08);
   position: relative;
+  transition: all 0.2s ease;
+}
+
+.search-form-wrapper:focus-within {
+  border-color: #008000;
+  box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-inner {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-left: 14px;
+}
+
+.search-input-inner svg {
+  color: #718096;
+  flex-shrink: 0;
 }
 
 .search-input {
   flex: 1;
-  border: none;
-  padding: 11px 16px;
+  border: none !important;
+  background: transparent !important;
+  padding: 11px 12px;
   font-size: 14px;
-  outline: none;
-  color: #2f3640;
+  outline: none !important;
+  color: #1a202c;
+  font-family: inherit;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #718096;
+  font-size: 13.5px;
 }
 
 .search-btn {
-  background: linear-gradient(135deg, #008000, #006600);
-  color: #ffffff;
+  background: #0b2545;
+  color: #ffffff !important;
   border: none;
-  padding: 11px 24px;
+  padding: 0 22px;
   font-weight: 800;
   font-size: 13.5px;
   cursor: pointer;
   letter-spacing: 0.3px;
-  transition: opacity 0.2s ease;
+  transition: background 0.15s ease, transform 0.1s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  border-radius: 0 6px 6px 0;
+  font-family: inherit;
 }
 
 .search-btn:hover {
-  opacity: 0.92;
+  background: #008000;
+}
+
+.search-btn:active {
+  transform: scale(0.98);
 }
 
 .search-trending-tags {
@@ -338,24 +371,34 @@ a:hover {
   text-decoration: none;
 }
 
+/* High-Performance Instant Autocomplete Dropdown */
 .search-suggestions-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 1px solid #ccc;
-  border-top: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  max-height: 320px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-height: 380px;
   overflow-y: auto;
-  z-index: 1001;
+  z-index: 10002;
   display: none;
 }
 
+.suggestions-header {
+  padding: 7px 12px;
+  background: #f7fafc;
+  font-size: 11px;
+  font-weight: 800;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #edf2f7;
+}
+
 .suggestion-item {
-  padding: 8px 12px;
-  border-bottom: 1px solid #eee;
   cursor: pointer;
   font-size: 13px;
 }
@@ -1208,27 +1251,45 @@ a:hover {
   }
 
   .search-form-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border: none !important;
-    background: transparent !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    height: 44px !important;
+    border: 2px solid #0b2545 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(11, 37, 69, 0.08) !important;
+  }
+
+  .search-input-inner {
+    padding-left: 10px !important;
+  }
+
+  .search-input-inner svg {
+    width: 15px !important;
+    height: 15px !important;
   }
 
   .search-input {
     width: 100% !important;
-    height: 44px;
-    border: 2px solid #008000 !important;
-    border-radius: 6px !important;
-    padding: 0 14px !important;
-    font-size: 13.5px !important;
+    height: 100% !important;
+    padding: 0 8px !important;
+    font-size: 13px !important;
   }
 
   .search-btn {
-    width: 100% !important;
-    height: 42px;
-    border-radius: 6px !important;
-    font-size: 14px !important;
+    height: 100% !important;
+    padding: 0 14px !important;
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    border-radius: 0 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .search-btn svg {
+    display: none !important; /* Hide extra icon on mobile to save horizontal space for clean text */
   }
 
   /* Headings & Blocks */
