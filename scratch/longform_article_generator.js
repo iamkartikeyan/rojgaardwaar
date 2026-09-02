@@ -141,69 +141,101 @@ function buildDynamicSalarySection(job, seed) {
   return pick(v, seed, 11);
 }
 
-function buildDynamicSelectionSection(job, seed) {
+function buildDynamicSelectionTable(job) {
   const c = job.category;
-  const posts = escapeHtml(job.posts);
-  const org = escapeHtml(job.org);
-
   if (c === 'police') {
     return `
-      <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:10px;">
-        Selection for <strong>${posts}</strong> in <strong>${org}</strong> follows a rigorous multi-tier procedure:
-      </p>
-      <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
-        <li><strong>Written Screening Test:</strong> Objective test evaluating Reasoning, General Awareness, Quantitative Aptitude, and Language Comprehension.</li>
-        <li><strong>Physical Measurement Test (PMT):</strong> Scrutiny of candidate height, chest expansion (for males), and physical standards.</li>
-        <li><strong>Physical Efficiency Test (PET):</strong> Standard physical trials including timed 800m/1600m run, long jump, and shot put events.</li>
-        <li><strong>Document Verification &amp; Medical:</strong> Scrutiny of original credentials followed by a comprehensive medical fitness examination.</li>
-      </ul>`;
+      <table class="detail-table-custom">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="width:18%;">Stage</th>
+            <th style="width:32%;">Evaluation Stage</th>
+            <th style="width:25%;">Assessment Mode</th>
+            <th style="width:25%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stage 1</td><td><strong>Written / Online CBT Examination</strong></td><td>Computer Based / OMR</td><td>Marks Counted for Merit</td></tr>
+          <tr><td>Stage 2</td><td><strong>Physical Measurement Test (PMT)</strong></td><td>Height &amp; Chest Measurement</td><td>Qualifying Benchmark</td></tr>
+          <tr><td>Stage 3</td><td><strong>Physical Efficiency Test (PET)</strong></td><td>Running, Long Jump &amp; Shot Put</td><td>Mandatory Qualifying</td></tr>
+          <tr><td>Stage 4</td><td><strong>Document Verification &amp; Medical</strong></td><td>Original Certificate Scrutiny</td><td>Final Appointment Clearance</td></tr>
+        </tbody>
+      </table>`;
   }
   if (c === 'no-exam') {
     return `
-      <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:10px;">
-        The recruitment process for <strong>${posts}</strong> in <strong>${org}</strong> is direct and merit-oriented:
-      </p>
-      <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
-        <li><strong>Merit Ranking:</strong> Merit computation based entirely on aggregate percentage secured in qualifying educational certificates (10th / ITI / Diploma).</li>
-        <li><strong>Apprenticeship Portal Verification:</strong> Candidate profile validation on the official NAPS / NATS government portal.</li>
-        <li><strong>Certificate Verification:</strong> Scrutiny of original marksheets, caste credentials, and photo identity documents.</li>
-        <li><strong>Medical Clearance:</strong> Submission of an authorized medical fitness certificate prior to engagement.</li>
-      </ul>`;
+      <table class="detail-table-custom">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="width:18%;">Stage</th>
+            <th style="width:32%;">Evaluation Stage</th>
+            <th style="width:25%;">Assessment Mode</th>
+            <th style="width:25%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stage 1</td><td><strong>Merit List Compilation</strong></td><td>Marks in 10th / ITI / Diploma</td><td>Primary Selection Basis</td></tr>
+          <tr><td>Stage 2</td><td><strong>NATS / NAPS Portal Enrollment</strong></td><td>Official Portal Verification</td><td>Mandatory Apprenticeship Norm</td></tr>
+          <tr><td>Stage 3</td><td><strong>Certificate &amp; Identity Verification</strong></td><td>In-Person Document Scrutiny</td><td>Mandatory Verification</td></tr>
+          <tr><td>Stage 4</td><td><strong>Medical Fitness Assessment</strong></td><td>Government Medical Certificate</td><td>Final Contract Signing</td></tr>
+        </tbody>
+      </table>`;
   }
   if (c === 'teaching') {
     return `
-      <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:10px;">
-        Academic induction for <strong>${posts}</strong> in <strong>${org}</strong> comprises:
-      </p>
-      <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
-        <li><strong>Academic Performance Evaluation:</strong> Screening based on academic records, research publications, and professional teaching experience.</li>
-        <li><strong>Seminar &amp; Teaching Demo:</strong> Presentation on research domain and interactive classroom lecture delivery before the expert panel.</li>
-        <li><strong>Personal Interview:</strong> In-depth interaction assessing pedagogical expertise, research vision, and academic contribution.</li>
-        <li><strong>Final Board Approval:</strong> Formal verification of credentials and approval by institutional authorities.</li>
-      </ul>`;
+      <table class="detail-table-custom">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="width:18%;">Stage</th>
+            <th style="width:32%;">Evaluation Stage</th>
+            <th style="width:25%;">Assessment Mode</th>
+            <th style="width:25%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stage 1</td><td><strong>Academic API Score Screening</strong></td><td>Scrutiny of Publications &amp; Exp</td><td>Shortlisting for Interview</td></tr>
+          <tr><td>Stage 2</td><td><strong>Research Seminar &amp; Teaching Demo</strong></td><td>Classroom Presentation</td><td>Evaluated by Subject Experts</td></tr>
+          <tr><td>Stage 3</td><td><strong>Personal Selection Interview</strong></td><td>Interaction with Selection Board</td><td>Final Recommendation</td></tr>
+          <tr><td>Stage 4</td><td><strong>Board Approval &amp; Verification</strong></td><td>Syndicate / Board Clearance</td><td>Formal Appointment Order</td></tr>
+        </tbody>
+      </table>`;
   }
   if (c === 'banking') {
     return `
-      <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:10px;">
-        The evaluation protocol for <strong>${posts}</strong> in <strong>${org}</strong> involves:
-      </p>
-      <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
-        <li><strong>Online Examination:</strong> Testing Quantitative Aptitude, Logical Reasoning, English Comprehension, and Banking Awareness.</li>
-        <li><strong>Interview &amp; Group Discussion:</strong> Structured evaluation assessing professional domain knowledge and communication skills.</li>
-        <li><strong>Language Proficiency Verification:</strong> Local language reading and writing assessment where applicable.</li>
-        <li><strong>Document Verification &amp; Medical:</strong> Comprehensive background check and pre-appointment medical examination.</li>
-      </ul>`;
+      <table class="detail-table-custom">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="width:18%;">Stage</th>
+            <th style="width:32%;">Evaluation Stage</th>
+            <th style="width:25%;">Assessment Mode</th>
+            <th style="width:25%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stage 1</td><td><strong>Online Written Examination</strong></td><td>Aptitude, Reasoning, Banking &amp; GK</td><td>Screening / Merit Basis</td></tr>
+          <tr><td>Stage 2</td><td><strong>Group Discussion &amp; Interview</strong></td><td>Professional Interaction</td><td>Scored for Final Ranking</td></tr>
+          <tr><td>Stage 3</td><td><strong>Language Proficiency Test (LPT)</strong></td><td>Local Language Reading/Writing</td><td>Qualifying Requirement</td></tr>
+          <tr><td>Stage 4</td><td><strong>Document Verification &amp; Medical</strong></td><td>Original Records Scrutiny</td><td>Pre-Employment Clearance</td></tr>
+        </tbody>
+      </table>`;
   }
   return `
-    <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:10px;">
-      Selection for <strong>${posts}</strong> in <strong>${org}</strong> is conducted across structured stages:
-    </p>
-    <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
-      <li><strong>Written / Computer Based Test:</strong> Objective evaluation covering domain technical subjects, reasoning, and numerical ability.</li>
-      <li><strong>Trade / Skill Test (If Applicable):</strong> Practical assessment verifying hands-on technical proficiency and trade skills.</li>
-      <li><strong>Document Verification:</strong> Detailed examination of original academic marksheets, category documents, and age proof.</li>
-      <li><strong>Medical Fitness Check:</strong> Official medical examination assessing fitness for public service duties.</li>
-    </ul>`;
+    <table class="detail-table-custom">
+      <thead>
+        <tr style="background:#f1f5f9;">
+          <th style="width:18%;">Stage</th>
+          <th style="width:32%;">Evaluation Stage</th>
+          <th style="width:25%;">Assessment Mode</th>
+          <th style="width:25%;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Stage 1</td><td><strong>Written / CBT Examination</strong></td><td>Objective Domain &amp; Aptitude Test</td><td>Merit Determination</td></tr>
+        <tr><td>Stage 2</td><td><strong>Skill / Trade / Typing Test</strong></td><td>Practical Demonstration</td><td>Qualifying as applicable</td></tr>
+        <tr><td>Stage 3</td><td><strong>Comprehensive Document Verification</strong></td><td>Original Certificates Scrutiny</td><td>Mandatory Requirement</td></tr>
+        <tr><td>Stage 4</td><td><strong>Pre-Appointment Medical Examination</strong></td><td>Prescribed Health Standards</td><td>Final Appointment Order</td></tr>
+      </tbody>
+    </table>`;
 }
 
 function buildDynamicPreparationStrategy(job, seed) {
@@ -311,7 +343,7 @@ function generateLongFormArticle(job, stateObj) {
   const eligibilityText = buildDynamicEligibility(job, seed);
   const ageText = buildDynamicAgeSection(job, seed);
   const salaryText = buildDynamicSalarySection(job, seed);
-  const selectionHtml = buildDynamicSelectionSection(job, seed);
+  const selectionTableHtml = buildDynamicSelectionTable(job);
   const prepStrategyText = buildDynamicPreparationStrategy(job, seed);
   const appStepsHtml = buildDynamicApplicationSteps(job, seed);
   const faqHtml = buildDynamicFaq(job, seed);
@@ -343,85 +375,162 @@ function generateLongFormArticle(job, stateObj) {
               </a>
             </div>
 
-            <!-- Quick Overview Facts Table -->
+            <!-- Table 1: Quick Overview Facts Table -->
             <div class="green-check-title">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Recruitment Overview &amp; Summary Data:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>1. Official Recruitment Overview &amp; Key Highlights:</span>
             </div>
             
             <table class="detail-table-custom">
               <tbody>
-                <tr><th style="width:32%;">Recruiting Organization</th><td><strong>${escapeHtml(job.org)} (${escapeHtml(job.shortOrg)})</strong></td></tr>
-                <tr><th>Advertised Post / Designation</th><td><strong>${escapeHtml(job.posts)}</strong></td></tr>
+                <tr><th style="width:34%;">Recruiting Organization</th><td><strong>${escapeHtml(job.org)} (${escapeHtml(job.shortOrg)})</strong></td></tr>
+                <tr><th>Advertised Post Designation</th><td><strong>${escapeHtml(job.posts)}</strong></td></tr>
                 <tr><th>Total Sanctioned Vacancies</th><td><strong style="color:#008000; font-size:14.5px;">${job.vacancies.toLocaleString('en-IN')} Posts</strong></td></tr>
+                <tr><th>Employment Category</th><td>${escapeHtml(job.category.toUpperCase())} / Central &amp; State Recruitment</td></tr>
                 <tr><th>Pay Scale / Remuneration</th><td><strong>${escapeHtml(job.salary)}</strong></td></tr>
-                <tr><th>Prescribed Educational Qualification</th><td>${escapeHtml(qualNames)} (${escapeHtml(job.qualificationText)})</td></tr>
-                <tr><th>Prescribed Age Limit</th><td>${escapeHtml(job.ageLimit)}</td></tr>
-                <tr><th>Applicable Age Relaxation</th><td>${escapeHtml(job.ageRelaxation)}</td></tr>
-                <tr><th>Application Registration Fee</th><td>${escapeHtml(job.fee)}</td></tr>
-                <tr><th>Online Registration Start Date</th><td>${job.importantDates.startDate}</td></tr>
-                <tr><th>Online Registration Closing Date</th><td><strong style="color:#cc0000; font-size:14.5px;">${job.importantDates.lastDate}</strong></td></tr>
-                <tr><th>Tentative Exam / Selection Timeline</th><td>${job.importantDates.examDate}</td></tr>
+                <tr><th>Application Mode</th><td>Online Registration via Official Portal</td></tr>
                 <tr><th>Primary Posting Location</th><td>${escapeHtml(stateObj.name)} / All India Postings</td></tr>
               </tbody>
             </table>
 
             <!-- Section 1: Executive Overview -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>1. In-Depth Notification Overview &amp; Recruitment Summary:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>2. Notification Overview &amp; Recruitment Summary:</span>
             </div>
             <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
               ${overviewText}
             </p>
 
-            <!-- Section 2: Department Profile -->
+            <!-- Table 2: Important Dates -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>2. Institutional Profile &amp; Operational Domain:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>3. Important Dates &amp; Event Schedule:</span>
+            </div>
+            <table class="detail-table-custom">
+              <thead>
+                <tr style="background:#f1f5f9;">
+                  <th style="width:50%;">Recruitment Event / Milestone</th>
+                  <th style="width:50%;">Official Schedule / Timeline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Online Application Opening Date</td><td><strong>${job.importantDates.startDate}</strong></td></tr>
+                <tr><td>Online Application Closing Date</td><td><strong style="color:#cc0000; font-size:14px;">${job.importantDates.lastDate}</strong></td></tr>
+                <tr><td>Last Date for Application Fee Payment</td><td><strong>${job.importantDates.lastDate}</strong></td></tr>
+                <tr><td>Tentative Examination / Selection Date</td><td><strong>${job.importantDates.examDate}</strong></td></tr>
+                <tr><td>Admit Card / Hall Ticket Release</td><td>To be announced 7-10 days before exam</td></tr>
+              </tbody>
+            </table>
+
+            <!-- Section 3: Department Profile -->
+            <div class="green-check-title" style="margin-top:22px;">
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>4. Department Profile &amp; Operational Domain:</span>
             </div>
             <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
               ${orgProfileText}
             </p>
 
-            <!-- Section 3: Roles & Responsibilities -->
+            <!-- Table 3: Vacancy & Salary Table -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>3. Role Profile, Key Responsibilities &amp; Work Environment:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>5. Post-Wise Vacancy &amp; Pay Matrix Table:</span>
+            </div>
+            <table class="detail-table-custom">
+              <thead>
+                <tr style="background:#f1f5f9;">
+                  <th style="width:35%;">Post Designation</th>
+                  <th style="width:25%;">Sanctioned Vacancies</th>
+                  <th style="width:40%;">Pay Scale / Monthly Remuneration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>${escapeHtml(job.posts)}</strong></td>
+                  <td><strong style="color:#008000; font-size:14px;">${job.vacancies.toLocaleString('en-IN')} Posts</strong></td>
+                  <td><strong>${escapeHtml(job.salary)}</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Section 4: Role Profile -->
+            <div class="green-check-title" style="margin-top:22px;">
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>6. Role Profile &amp; Workplace Duties:</span>
             </div>
             <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
               ${roleText}
             </p>
 
-            <!-- Section 4: Educational Qualification -->
+            <!-- Table 4: Educational Qualification -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>4. Comprehensive Educational &amp; Professional Eligibility Standards:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>7. Educational Qualification &amp; Minimum Eligibility Criteria:</span>
             </div>
-            <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
+            <table class="detail-table-custom">
+              <thead>
+                <tr style="background:#f1f5f9;">
+                  <th style="width:30%;">Post Designation</th>
+                  <th style="width:40%;">Prescribed Academic Qualification</th>
+                  <th style="width:30%;">Recognized Board / Council</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>${escapeHtml(job.posts)}</strong></td>
+                  <td><strong>${escapeHtml(job.qualificationText)}</strong></td>
+                  <td>UGC / AICTE / NCVT / State Board Recognized</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size:13.5px; line-height:1.8; color:#333; margin-top:10px; margin-bottom:14px;">
               ${eligibilityText}
             </p>
 
-            <!-- Section 5: Age Limitations -->
+            <!-- Table 5: Age Limit & Category Concession -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>5. Age Limitations, Cut-Off Calculations &amp; Category Concessions:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>8. Age Limit &amp; Category-Wise Relaxation Table:</span>
             </div>
-            <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
+            <table class="detail-table-custom">
+              <thead>
+                <tr style="background:#f1f5f9;">
+                  <th style="width:40%;">Candidate Category</th>
+                  <th style="width:30%;">Prescribed Age Limit</th>
+                  <th style="width:30%;">Permissible Age Relaxation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>General / Unreserved / EWS</td><td>${escapeHtml(job.ageLimit)}</td><td>Standard Ceiling (No Extra Relaxation)</td></tr>
+                <tr><td>OBC (Non-Creamy Layer)</td><td>${escapeHtml(job.ageLimit)}</td><td>03 Years Upper Age Relaxation</td></tr>
+                <tr><td>SC / ST Candidates</td><td>${escapeHtml(job.ageLimit)}</td><td>05 Years Upper Age Relaxation</td></tr>
+                <tr><td>PwBD / Ex-Servicemen Candidates</td><td>${escapeHtml(job.ageLimit)}</td><td>10 to 15 Years as per Government Norms</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:13.5px; line-height:1.8; color:#333; margin-top:10px; margin-bottom:14px;">
               ${ageText}
             </p>
 
-            <!-- Section 6: Salary & Remuneration -->
+            <!-- Table 6: Application Fee Table -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>6. Pay Scale, Salary Matrix &amp; Service Benefits:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>9. Application Registration Fee Structure:</span>
             </div>
-            <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
-              ${salaryText}
-            </p>
+            <table class="detail-table-custom">
+              <thead>
+                <tr style="background:#f1f5f9;">
+                  <th style="width:50%;">Applicant Category</th>
+                  <th style="width:50%;">Prescribed Application Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>General / OBC / EWS Male Candidates</td><td><strong>${escapeHtml(job.fee)}</strong></td></tr>
+                <tr><td>SC / ST / PwBD / Female Candidates</td><td>Nil / Concession as per Official Rules</td></tr>
+                <tr><td>Accepted Fee Payment Modes</td><td>Online Payment via Net Banking, Debit/Credit Card, UPI</td></tr>
+              </tbody>
+            </table>
 
-            <!-- Section 7: Selection Methodology -->
+            <!-- Table 7: Selection Process -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>7. Detailed Selection Process &amp; Evaluation Methodology:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>10. Detailed Selection Process &amp; Evaluation Stages:</span>
             </div>
-            ${selectionHtml}
+            ${selectionTableHtml}
 
             <!-- Section 8: Preparation Strategy -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>8. Candidate Preparation Guidelines &amp; Strategy:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>11. Candidate Preparation Guidelines &amp; Strategy:</span>
             </div>
             <p style="font-size:13.5px; line-height:1.8; color:#333; margin-bottom:14px;">
               ${prepStrategyText}
@@ -429,13 +538,13 @@ function generateLongFormArticle(job, stateObj) {
 
             <!-- Section 9: Step-by-Step Application Protocol -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>9. Step-by-Step Online Registration &amp; Application Protocol:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>12. Step-by-Step Online Registration &amp; Application Protocol:</span>
             </div>
             ${appStepsHtml}
 
             <!-- Section 10: Mandatory Documents -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>10. Mandatory Documents &amp; Verification Checklist:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>13. Mandatory Documents &amp; Verification Checklist:</span>
             </div>
             <ul style="padding-left:22px; line-height:1.8; font-size:13px; color:#333; margin-bottom:14px;">
               <li>Valid Matriculation (10th) Passing Certificate or official Birth Certificate for Date of Birth proof.</li>
@@ -445,9 +554,9 @@ function generateLongFormArticle(job, stateObj) {
               <li>Government-issued Photo ID Card (Aadhaar Card, Passport, Driving License, or Voter ID).</li>
             </ul>
 
-            <!-- Section 11: Official Links -->
+            <!-- Table 8: Official Links -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>11. Official Notification &amp; Direct Application Links:</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>14. Official Notification &amp; Direct Application Links:</span>
             </div>
             <table class="detail-table-custom">
               <tbody>
@@ -468,7 +577,7 @@ function generateLongFormArticle(job, stateObj) {
 
             <!-- Section 12: FAQs -->
             <div class="green-check-title" style="margin-top:22px;">
-              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>12. Frequently Asked Questions (FAQs):</span>
+              <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>15. Frequently Asked Questions (FAQs):</span>
             </div>
             ${faqHtml}
 

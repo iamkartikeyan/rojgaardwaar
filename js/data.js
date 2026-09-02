@@ -251,10 +251,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MPESB SI & Subedar Recruitment 2026 - Apply Online for 504 Posts | Last Date 23-09-2026",
     "org": "MPESB SI & Subedar",
     "shortOrg": "MPESB SI & Subedar",
-    "posts": "504 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 504,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Level-6 / Level-7 (₹35,400 – ₹1,12,400/-) as per 7th CPC Matrix",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -280,10 +280,10 @@ window.ROZGAR_DATA = (function() {
     "title": "JKSSB Notification No. 09 of 2026 - Apply Online for 2863 MTS & Sanitation Worker Posts | Last Date 03-11-2026",
     "org": "JKSSB Notification No. 09 of 2026",
     "shortOrg": "JKSSB Notification No. 09 of 2",
-    "posts": "2863 MTS & Sanitation Worker Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -309,10 +309,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BPSC School Teacher TRE 4.0 Recruitment 2026 - Apply Online for 32388 Posts",
     "org": "BPSC School Teacher TRE 4.0",
     "shortOrg": "BPSC School Teacher TRE 4.0",
-    "posts": "32388 Posts",
+    "posts": "School Teacher / TGT / PGT",
     "vacancies": 32388,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -339,10 +339,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIM Kozhikode Faculty Recruitment 2026 - Apply Online for 28 Posts | Last Date 30-09-2026",
     "org": "IIM Kozhikode Faculty",
     "shortOrg": "IIM Kozhikode Faculty",
-    "posts": "28 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 28,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "s",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -369,10 +369,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ISTC Executive Recruitment 2026 - Apply Online for 09 Engineer, IT, Finance, HR Posts | Last Date 18-09-2026",
     "org": "ISTC Executive",
     "shortOrg": "ISTC Executive",
-    "posts": "09 Engineer, IT, Finance, HR Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "₹30,000 to ₹2,00,000",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -399,10 +399,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ICAR IGFRI Young Professional Recruitment 2026 - Walk in Interview for 05 Posts",
     "org": "ICAR IGFRI Young Professional",
     "shortOrg": "ICAR IGFRI Young Professional",
-    "posts": "05 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 5,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -429,10 +429,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NIT Goa Faculty Recruitment 2026 - Apply Online for 28 Posts | Last Date 30-09-2026",
     "org": "NIT Goa Faculty",
     "shortOrg": "NIT Goa Faculty",
-    "posts": "28 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 28,
     "salary": "pay scale in NIT Goa Faculty Recruitment 2026?",
-    "qualificationText": "s",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -459,10 +459,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
     "org": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
     "shortOrg": "Latest IT Govt Jobs 2026 (1000",
-    "posts": "Prescribed Posts",
+    "posts": "Latest IT Govt",
     "vacancies": 126,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -488,10 +488,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
     "org": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
     "shortOrg": "Latest PSU Jobs 2026 | Public ",
-    "posts": "Prescribed Posts",
+    "posts": "Latest PSU",
     "vacancies": 118,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -517,10 +517,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IOCL Executive Recruitment through CBT 2026 - Apply Online for 470 Engineer, Officer & Law Posts | Last Date 03-09-2026",
     "org": "IOCL Executive",
     "shortOrg": "IOCL Executive",
-    "posts": "470 Engineer, Officer & Law Posts",
+    "posts": "Recruitment through CBT 2026 –",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": "?",
+    "salary": "E-1 / E-2 Grade (₹40,000 – ₹1,40,000/- + IDA & Perks)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering",
@@ -548,10 +548,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
     "org": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
     "shortOrg": "Railway Jobs 2026 Apply Online",
-    "posts": "Prescribed Posts",
+    "posts": "Railway",
     "vacancies": 134,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -577,7 +577,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Southern Railway Apprentice Recruitment 2026 - Apply Online for 4471 Fresher Posts | Last Date 27-09-2026",
     "org": "Southern Railway Apprentice",
     "shortOrg": "Southern Railway Apprentice",
-    "posts": "4471 Fresher Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -610,7 +610,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NIC STA Recruitment 2026 - Apply Online for 376 Fresher Posts | Last Date 30-09-2026",
     "org": "NIC STA",
     "shortOrg": "NIC STA",
-    "posts": "376 Fresher Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in NIC STA Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -642,10 +642,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies",
     "org": "Bank Jobs 2026: Latest Banking",
     "shortOrg": "Bank Jobs 2026: Latest Banking",
-    "posts": "Prescribed Posts",
+    "posts": "Bank",
     "vacancies": 18820,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -671,10 +671,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Bank of India Officer Recruitment 2026 - Apply Online for 205 Posts | Last Date 25-09-2026",
     "org": "Bank of India Officer",
     "shortOrg": "Bank of India Officer",
-    "posts": "205 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 205,
     "salary": "pay scale, eligibility, application fee, selection process, official n",
-    "qualificationText": "s",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -700,10 +700,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UKSSSC Inter Level Recruitment 2026 - Apply Online for 553 Various Posts | Last Date 07-10-2026",
     "org": "UKSSSC Inter Level",
     "shortOrg": "UKSSSC Inter Level",
-    "posts": "553 Various Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "₹19,900 – ₹92,300",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -730,7 +730,7 @@ window.ROZGAR_DATA = (function() {
     "title": "GAIL ET Recruitment GATE 2027 Notification Out",
     "org": "GAIL ET",
     "shortOrg": "GAIL ET",
-    "posts": "Prescribed Posts",
+    "posts": "Recruitment GATE 2027 Notification Out",
     "vacancies": 700,
     "salary": "pay scale, GATE paper mapping, important dates and official links.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -762,7 +762,7 @@ window.ROZGAR_DATA = (function() {
     "title": "DMRC Supervisor Recruitment 2026 - Apply for 04 Posts | Last Date 15-09-2026",
     "org": "DMRC Supervisor",
     "shortOrg": "DMRC Supervisor",
-    "posts": "04 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 4,
     "salary": "Level-9 (GP 5400) / Level-8 (GP 4800)",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -794,10 +794,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IDRBT Oracle Database Architect Vacancy 2026 - Notification, Online Form",
     "org": "IDRBT Oracle Database Architect Vacancy 2026",
     "shortOrg": "IDRBT Oracle Database Architec",
-    "posts": "Prescribed Posts",
+    "posts": "IDRBT Oracle Database Architect",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -823,10 +823,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IDRBT Faculty Recruitment 2026 - Apply Online for 15 Posts | Rolling Advertisement",
     "org": "IDRBT Faculty",
     "shortOrg": "IDRBT Faculty",
-    "posts": "15 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 15,
     "salary": "pay scale in IDRBT Faculty Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -853,10 +853,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Ports Association Consultant Recruitment 2026 - Apply for 05 Posts | Last Date 18-09-2026",
     "org": "Indian Ports Association Consultant",
     "shortOrg": "Indian Ports Association Consu",
-    "posts": "05 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 5,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -882,10 +882,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NISCPR Project Staff Recruitment 2026 - Walk in Interview for 14 Posts",
     "org": "NISCPR Project Staff",
     "shortOrg": "NISCPR Project Staff",
-    "posts": "14 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 14,
     "salary": "₹25,000 to ₹42,000",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -912,10 +912,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MOIL Limited Manager Medical Services Recruitment 2026 - Walk in Interview on 22-09-2026",
     "org": "MOIL Limited Manager Medical Services",
     "shortOrg": "MOIL Limited Manager Medical S",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -943,10 +943,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BEL Kochi Deputy Engineer Recruitment 2026 - Apply for 14 Posts | Last Date 23-09-2026",
     "org": "BEL Kochi Deputy Engineer",
     "shortOrg": "BEL Kochi Deputy Engineer",
-    "posts": "14 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 14,
     "salary": "pay scale, reservation, official notification and application form lin",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -973,7 +973,7 @@ window.ROZGAR_DATA = (function() {
     "title": "StockHolding CISO Recruitment 2026 - Apply Online for 02 Posts | Last Date 02-09-2026",
     "org": "StockHolding CISO",
     "shortOrg": "StockHolding CISO",
-    "posts": "02 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 2,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1005,10 +1005,10 @@ window.ROZGAR_DATA = (function() {
     "title": "GMDC IT Professional Recruitment 2026: Notification, Online Form | Last Date 02-09-2026",
     "org": "GMDC IT Professional",
     "shortOrg": "GMDC IT Professional",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1034,10 +1034,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Free Job Alert - Latest FreeJobAlert Govt Job Notifications 2026",
     "org": "Free Job Alert",
     "shortOrg": "Free Job Alert",
-    "posts": "Prescribed Posts",
+    "posts": "Latest FreeJobAlert Govt Job Notifications 2026",
     "vacancies": 172,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1063,10 +1063,10 @@ window.ROZGAR_DATA = (function() {
     "title": "All India Government Jobs 2026 - Latest Sarkari Naukri 134403+ Vacancies",
     "org": "All India Government Jobs 2026",
     "shortOrg": "All India Government Jobs 2026",
-    "posts": "Prescribed Posts",
+    "posts": "All India Government",
     "vacancies": 172,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1092,10 +1092,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IBPS RRB XV Recruitment 2026 - Apply Online for 13742+ Office Assistant and Officer Posts | Last Date 21-09-2026",
     "org": "IBPS RRB XV",
     "shortOrg": "IBPS RRB XV",
-    "posts": "13742+ Office Assistant and Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1121,7 +1121,7 @@ window.ROZGAR_DATA = (function() {
     "title": "BGSSL Recruitment 2026 Apply Online for 1949 Various Posts | Last Date 30-09-2026",
     "org": "BGSSL",
     "shortOrg": "BGSSL",
-    "posts": "1949 Various Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1153,7 +1153,7 @@ window.ROZGAR_DATA = (function() {
     "title": "BEML Non Executive Recruitment 2026 - Apply Online for 10 Posts for Fresher Diploma | Last Date 08-09-2026",
     "org": "BEML Non Executive",
     "shortOrg": "BEML Non Executive",
-    "posts": "10 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 10,
     "salary": "pay scale, application fee, last date and selection process.",
     "qualificationText": "3 Year Full time Polytechnic Engineering Diploma in Electronics &amp; Communication, Electrical &amp; Electronics, Instr",
@@ -1184,10 +1184,10 @@ window.ROZGAR_DATA = (function() {
     "title": "India Post GDS July Recruitment 2026 Apply Online for 23757 Posts | Last Date 21-09-2026",
     "org": "India Post GDS July",
     "shortOrg": "India Post GDS July",
-    "posts": "23757 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 23757,
     "salary": "₹12,000 – ₹29,380",
-    "qualificationText": "Secondary School Examination (10th) pass with passing marks in Mathematics and English from a recognized Board. Candidat",
+    "qualificationText": "Secondary School Examination 10th pass with passing marks in Mathematics and English from a recognized Board. Candidat",
     "qualifications": [
       "graduate",
       "10th-pass"
@@ -1214,10 +1214,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SBI Trade Finance Officer Recruitment 2026: Apply Online for 35 Posts | Last Date 19-09-2026",
     "org": "SBI Trade Finance Officer",
     "shortOrg": "SBI Trade Finance Officer",
-    "posts": "35 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 35,
     "salary": "pay scale, application fee, selection process, official notification a",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -1244,7 +1244,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Western Railway Sports Quota Recruitment 2026 - Apply Online for 64 Posts | Last Date 30-09-2026",
     "org": "Western Railway Sports Quota",
     "shortOrg": "Western Railway Sports Quota",
-    "posts": "64 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 64,
     "salary": "pay scale in Western Railway Sports Quota Recruitment 2026?",
     "qualificationText": "Level-5/4 – 70, Level-3/2 – 65, Level-1 – 60. Merit will decide appointment. In case of a tie, the younger candidate wil",
@@ -1273,10 +1273,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UCO Bank IT Specialist Officer Recruitment 2026 - Apply Online for 20 Posts | Last Date 18-09-2026",
     "org": "UCO Bank IT Specialist Officer",
     "shortOrg": "UCO Bank IT Specialist Officer",
-    "posts": "20 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 20,
-    "salary": "pay scale, application fee, selection process, official notification, ",
-    "qualificationText": "e",
+    "salary": "pay scale, application fee, selection process, official notification,",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1302,10 +1302,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CONCOR MT and Assistant Officer Recruitment 2026 - Apply Online for 77 Posts | Last Date 30-09-2026",
     "org": "CONCOR MT and Assistant Officer",
     "shortOrg": "CONCOR MT and Assistant Office",
-    "posts": "77 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 77,
     "salary": "pay scale, and how to apply.",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1331,10 +1331,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IOB Generalist SO Recruitment 2026 - Apply Online for 291 Posts | Last Date 15-09-2026",
     "org": "IOB Generalist SO",
     "shortOrg": "IOB Generalist SO",
-    "posts": "291 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 291,
     "salary": "pay scale, exam pattern, official notification PDF and apply online li",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1360,10 +1360,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Overseas Bank Security Guard Recruitment 2026 - Apply Online for 25 Posts | Last Date 14-09-2026",
     "org": "Indian Overseas Bank Security Guard",
     "shortOrg": "Indian Overseas Bank Security ",
-    "posts": "25 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 25,
-    "salary": "Pay Scale (Subordinate Staff Cadre as per 12th Bipartite Settlement):",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1389,10 +1389,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Rail Wheel Factory Sports Quota Recruitment 2026 - Notification for 15 Posts, Application Form | Last Date 31-08-2026",
     "org": "Rail Wheel Factory Sports Quota",
     "shortOrg": "Rail Wheel Factory Sports Quot",
-    "posts": "15 Posts, Application Form",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 15,
     "salary": "Level-2 (GP 1900) and Level-1 (GP 1800). Interested and eligible candi",
-    "qualificationText": ")",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1418,10 +1418,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SBI Clerk Recruitment 2026 - Apply Online for 9766 Regular & Backlog Posts | Last Date 31-08-2026",
     "org": "SBI Clerk",
     "shortOrg": "SBI Clerk",
-    "posts": "9766 Regular & Backlog Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1447,7 +1447,7 @@ window.ROZGAR_DATA = (function() {
     "title": "31 August 2026 Closing Govt Jobs - Notifications List, Apply Online",
     "org": "31 August 2026 Closing Govt Jobs",
     "shortOrg": "31 August 2026 Closing Govt Jo",
-    "posts": "Prescribed Posts",
+    "posts": "Notifications List,",
     "vacancies": 193,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1479,10 +1479,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indbank Relationship Manager & Dealer Recruitment 2026 - Apply for 14 Posts | Last Date 31-08-2026",
     "org": "Indbank Relationship Manager & Dealer",
     "shortOrg": "Indbank Relationship Manager &",
-    "posts": "14 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 14,
     "salary": "pay scale in Indbank Relationship Manager &amp; Dealer Recruitment 202",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1508,10 +1508,10 @@ window.ROZGAR_DATA = (function() {
     "title": "GPCB Bank Clerk Recruitment 2026 - Apply Online for 13 Posts | Last Date 31-08-2026",
     "org": "GPCB Bank Clerk",
     "shortOrg": "GPCB Bank Clerk",
-    "posts": "13 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 13,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1537,10 +1537,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Nalanda University Non Teaching Recruitment 2026 - Apply Online for Assistant, Librarian & Engineer Posts | Last Date 31-08-2026",
     "org": "Nalanda University Non Teaching",
     "shortOrg": "Nalanda University Non Teachin",
-    "posts": "Assistant, Librarian & Engineer Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -1567,10 +1567,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SGPGIMS Faculty Recruitment 2026: Apply Offline for 70 Posts | Last Date 31-08-2026",
     "org": "SGPGIMS Faculty",
     "shortOrg": "SGPGIMS Faculty",
-    "posts": "70 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 70,
     "salary": "pay scale, official short notification, and how to apply.",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -1597,10 +1597,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Officer Govt Jobs 2026 (2000+ Vacancies Opening)",
     "org": "Latest Officer Govt Jobs 2026 (2000+ Vacancies Opening)",
     "shortOrg": "Latest Officer Govt Jobs 2026 ",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Officer Govt",
     "vacancies": 131,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1626,10 +1626,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Teacher Government Jobs 2026 (50000+ Vacancies Opening)",
     "org": "Teacher Government Jobs 2026 (50000+ Vacancies Opening)",
     "shortOrg": "Teacher Government Jobs 2026 (",
-    "posts": "Prescribed Posts",
+    "posts": "Teacher Government",
     "vacancies": 50,
     "salary": "pay scales and additional benefits compared to state-level positions.",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -1656,7 +1656,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
     "org": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
     "shortOrg": "Latest Stenographer & Typist G",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Stenographer & Typist Govt",
     "vacancies": 132,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1688,10 +1688,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CPCB Recruitment 2026 - Apply Online for 51 Scientist, Assistant, DEO & Other Posts | Last Date 07-09-2026",
     "org": "CPCB",
     "shortOrg": "CPCB",
-    "posts": "51 Scientist, Assistant, DEO & Other Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 700,
     "salary": "₹38,741 – ₹1,71,597",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1717,10 +1717,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Income Tax Pune Sports Quota Recruitment 2026 - Apply Online for 85 Posts | Last Date 15-09-2026",
     "org": "Income Tax Pune Sports Quota",
     "shortOrg": "Income Tax Pune Sports Quota",
-    "posts": "85 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 85,
     "salary": "Level-4 (₹25,500 – 81,100)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1746,10 +1746,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AAI Northern Region Apprentice Recruitment 2026 - Apply Online for 205 Posts | Last Date 16-09-2026",
     "org": "AAI Northern Region Apprentice",
     "shortOrg": "AAI Northern Region Apprentice",
-    "posts": "205 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 205,
     "salary": "₹9,600 to ₹15,000",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -1776,7 +1776,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Employment News 29 August to 04 September 2026 - Pdf Download, Weekly Govt Job Notifications",
     "org": "Employment News 29 August to 04 September 2026",
     "shortOrg": "Employment News 29 August to 0",
-    "posts": "Prescribed Posts",
+    "posts": "Pdf Download, Weekly Govt Job Notifications",
     "vacancies": 147,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "\"Question\",",
@@ -1805,10 +1805,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Post Graduate Govt Jobs 2026 - MA, M.Sc, MBA, MCA, M.Tech Vacancies List",
     "org": "Post Graduate Govt Jobs 2026",
     "shortOrg": "Post Graduate Govt Jobs 2026",
-    "posts": "Prescribed Posts",
+    "posts": "Post Graduate Govt",
     "vacancies": 131,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "mba-pgdm",
@@ -1836,7 +1836,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Recruitment 2026 - Latest Vacancy Notifications",
     "org": "Sainik School",
     "shortOrg": "Sainik School",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 118,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1868,10 +1868,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Ambikapur Recruitment 2026 - Apply for Ward Boy, Band Master, PEM PTI & Lab Assistant Posts",
     "org": "Sainik School Ambikapur",
     "shortOrg": "Sainik School Ambikapur",
-    "posts": "Ward Boy, Band Master, PEM PTI & Lab Assistant Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in Sainik School Ambikapur Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "post-graduate"
@@ -1898,10 +1898,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest MTS Govt Jobs 2026 (20000+ Vacancies Open Now)",
     "org": "Latest MTS Govt Jobs 2026 (20000+ Vacancies Open Now)",
     "shortOrg": "Latest MTS Govt Jobs 2026 (200",
-    "posts": "Prescribed Posts",
+    "posts": "Latest MTS Govt",
     "vacancies": 132,
     "salary": "Pay Scale for MTS Jobs in Govt Sector?",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1927,10 +1927,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Assistant Govt Jobs 2026 (60222+ Vacancies Open Now)",
     "org": "Latest Assistant Govt Jobs 2026 (60222+ Vacancies Open Now)",
     "shortOrg": "Latest Assistant Govt Jobs 202",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Assistant Govt",
     "vacancies": 164,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -1956,7 +1956,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Court Jobs 2026 (1192+ Govt Vacancies Opening)",
     "org": "Latest Court Jobs 2026 (1192+ Govt Vacancies Opening)",
     "shortOrg": "Latest Court Jobs 2026 (1192+ ",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Court",
     "vacancies": 126,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -1989,10 +1989,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Clerk Govt Jobs 2026 (25000+ Vacancies Opening)",
     "org": "Latest Clerk Govt Jobs 2026 (25000+ Vacancies Opening)",
     "shortOrg": "Latest Clerk Govt Jobs 2026 (2",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Clerk Govt",
     "vacancies": 130,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2018,10 +2018,10 @@ window.ROZGAR_DATA = (function() {
     "title": "StockHolding Executive Recruitment 2026 - Apply Online for 65 Posts | Last Date 30-08-2026",
     "org": "StockHolding Executive",
     "shortOrg": "StockHolding Executive",
-    "posts": "65 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 65,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2047,10 +2047,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sindhudurg Bank Peon Recruitment 2026 - Apply Online for 32 Posts | Last Date 30-08-2026",
     "org": "Sindhudurg Bank Peon",
     "shortOrg": "Sindhudurg Bank Peon",
-    "posts": "32 Posts",
+    "posts": "Peon / Office Attendant",
     "vacancies": 32,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2076,9 +2076,9 @@ window.ROZGAR_DATA = (function() {
     "title": "Jharkhand Para Teacher Recruitment 2026: Apply Online for 7299 Posts | Last Date 30-08-2026",
     "org": "Jharkhand Para Teacher",
     "shortOrg": "Jharkhand Para Teacher",
-    "posts": "7299 Posts",
+    "posts": "School Teacher / TGT / PGT",
     "vacancies": 7299,
-    "salary": "Pay Scale:",
+    "salary": "Academic Pay Level-10 / 12 (₹57,700 – ₹1,44,200/- as per UGC)",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
     "qualifications": [
       "graduate",
@@ -2109,7 +2109,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Fireman, Fire and Safety Govt Job Vacancies 2026",
     "org": "Latest Fireman, Fire and Safety Govt Job Vacancies 2026",
     "shortOrg": "Latest Fireman, Fire and Safet",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Fireman, Fire and Safety Govt Job",
     "vacancies": 134,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2141,7 +2141,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
     "org": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
     "shortOrg": "Latest Forest Govt Jobs 2026 (",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Forest Govt",
     "vacancies": 140,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2173,7 +2173,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
     "org": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
     "shortOrg": "Latest Defence Jobs 2026 (2500",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Defence",
     "vacancies": 131,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2205,10 +2205,10 @@ window.ROZGAR_DATA = (function() {
     "title": "South Indian Bank Junior Officer Recruitment 2026 - Notification, Online Form | Last Date 31-08-2026",
     "org": "South Indian Bank Junior Officer",
     "shortOrg": "South Indian Bank Junior Offic",
-    "posts": "Prescribed Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 50,
     "salary": "₹5,000–₹10,000",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2234,10 +2234,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NGEL Manager Recruitment 2026 - Apply Online for 34 Posts | Last Date 31-08-2026",
     "org": "NGEL Manager",
     "shortOrg": "NGEL Manager",
-    "posts": "34 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 34,
-    "salary": "Pay Scale:",
-    "qualificationText": "?",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2263,7 +2263,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NEEPCO Junior Engineer Recruitment 2026 - Apply Online for 07 Posts | Last Date 31-08-2026",
     "org": "NEEPCO Junior Engineer",
     "shortOrg": "NEEPCO Junior Engineer",
-    "posts": "07 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 7,
     "salary": "pay scale in NEEPCO Junior Engineer Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2296,10 +2296,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Karnataka Forest Watcher Recruitment 2026 Notification Out for 774 Posts | Apply Online up to 31-08-2026",
     "org": "Karnataka Forest Watcher",
     "shortOrg": "Karnataka Forest Watcher",
-    "posts": "774 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 774,
-    "salary": "Pay Scale:",
-    "qualificationText": "?",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2325,10 +2325,10 @@ window.ROZGAR_DATA = (function() {
     "title": "National Board of Accreditation Recruitment 2026: Apply for 07 Manager, Director Posts | Last Date 31-08-2026",
     "org": "National Board of Accreditation",
     "shortOrg": "National Board of Accreditatio",
-    "posts": "07 Manager, Director Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-10 / Level-11 / Level-13A (7th CPC)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2354,7 +2354,7 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT Dhanbad Assistant Professor Recruitment 2026: Apply Online for 30 Posts | Last Date 31-08-2026",
     "org": "IIT Dhanbad Assistant Professor",
     "shortOrg": "IIT Dhanbad Assistant Professo",
-    "posts": "30 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 30,
     "salary": "pay scale in IIT Dhanbad Assistant Professor Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2387,10 +2387,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
     "org": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
     "shortOrg": "Data Entry & Computer Jobs in ",
-    "posts": "Prescribed Posts",
+    "posts": "(5000+ Vacancies Open Now)",
     "vacancies": 132,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2416,10 +2416,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NSPCL Advertisement 01/2026 - Apply Online for 17 Engineer & Officer Posts | Last Date 22-09-2026",
     "org": "NSPCL Advertisement 01/2026",
     "shortOrg": "NSPCL Advertisement 01/2026",
-    "posts": "17 Engineer & Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale, selection process and application link on this page.",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -2446,10 +2446,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
     "org": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
     "shortOrg": "Latest Bank Jobs 2026 (12442 V",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Bank",
     "vacancies": 12442,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2475,7 +2475,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest MBA Govt Jobs 2026 (100+ Vacancies Opening)",
     "org": "Latest MBA Govt Jobs 2026 (100+ Vacancies Opening)",
     "shortOrg": "Latest MBA Govt Jobs 2026 (100",
-    "posts": "Prescribed Posts",
+    "posts": "Latest MBA Govt",
     "vacancies": 139,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2508,10 +2508,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
     "org": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
     "shortOrg": "Latest Law Govt Jobs 2026 | BL",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Law Govt",
     "vacancies": 134,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "law-llb"
@@ -2538,10 +2538,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Government Jobs for Engineers 2026 (17126+ Vacancies Opening)",
     "org": "Government Jobs for Engineers 2026 (17126+ Vacancies Opening)",
     "shortOrg": "Government Jobs for Engineers ",
-    "posts": "Engineers 2026 (17126+ Vacancies Opening)",
+    "posts": "(17126+ Vacancies Opening)",
     "vacancies": 145,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -2568,10 +2568,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15-09-2026",
     "org": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15",
     "shortOrg": "CCI Advertisement No CO/03/202",
-    "posts": "Engineer, Officer & Analyst Posts",
+    "posts": "09-2026",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -2598,10 +2598,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Govt Jobs for Diploma Holders 2026 (6191+ Vacancies Opening)",
     "org": "Govt Jobs for Diploma Holders 2026 (6191+ Vacancies Opening)",
     "shortOrg": "Govt Jobs for Diploma Holders ",
-    "posts": "Diploma Holders 2026 (6191+ Vacancies Opening)",
+    "posts": "(6191+ Vacancies Opening)",
     "vacancies": 145,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "diploma"
@@ -2628,10 +2628,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NSI Kanpur Young Professional Recruitment 2026 - Notification, Application Form | Last Date 31-08-2026",
     "org": "NSI Kanpur Young Professional",
     "shortOrg": "NSI Kanpur Young Professional",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2657,10 +2657,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest ITI Govt Jobs 2026 (9238+ Vacancies Opening)",
     "org": "Latest ITI Govt Jobs 2026 (9238+ Vacancies Opening)",
     "shortOrg": "Latest ITI Govt Jobs 2026 (923",
-    "posts": "Prescribed Posts",
+    "posts": "Latest ITI Govt",
     "vacancies": 153,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -2687,10 +2687,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CSIR Technician Recruitment 2026 - Apply Online for 43 Posts | Last Date 17-09-2026",
     "org": "CSIR Technician",
     "shortOrg": "CSIR Technician",
-    "posts": "43 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 43,
     "salary": "Level-2",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2716,10 +2716,10 @@ window.ROZGAR_DATA = (function() {
     "title": "10th 12th Pass Govt Jobs 2026 (50000+ Vacancies Opening)",
     "org": "10th 12th Pass Govt Jobs 2026 (50000+ Vacancies Opening)",
     "shortOrg": "10th 12th Pass Govt Jobs 2026 ",
-    "posts": "Prescribed Posts",
+    "posts": "10th 12th Pass Govt",
     "vacancies": 112,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "10th-pass",
@@ -2747,10 +2747,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Mangalagiri Faculty Recruitment 2026 - Apply for 79 Posts",
     "org": "AIIMS Mangalagiri Faculty",
     "shortOrg": "AIIMS Mangalagiri Faculty",
-    "posts": "79 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 79,
-    "salary": "Pay Scale:",
-    "qualificationText": "e",
+    "salary": "Academic Pay Level-10 / 12 (₹57,700 – ₹1,44,200/- as per UGC)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -2777,7 +2777,7 @@ window.ROZGAR_DATA = (function() {
     "title": "CSIR NAL MTS Recruitment 2026 - Apply Online for 06 Posts | Last Date 21-09-2026",
     "org": "CSIR NAL MTS",
     "shortOrg": "CSIR NAL MTS",
-    "posts": "06 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 6,
     "salary": "pay scale, application fee, selection process and official notificatio",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2809,10 +2809,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DRRMLIMS Non Teaching Recruitment 2026 - Apply Online for 74 Posts",
     "org": "DRRMLIMS Non Teaching",
     "shortOrg": "DRRMLIMS Non Teaching",
-    "posts": "74 Posts",
+    "posts": "Non-Teaching Group A, B & C Staff",
     "vacancies": 74,
     "salary": "pay scale, application fee, selection process and official notificatio",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2838,7 +2838,7 @@ window.ROZGAR_DATA = (function() {
     "title": "ISRO ICRB Scientist Engineer SC Recruitment 2026 - Apply Online for 175 Posts | Last Date 16-09-2026",
     "org": "ISRO ICRB Scientist Engineer SC",
     "shortOrg": "ISRO ICRB Scientist Engineer S",
-    "posts": "175 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 175,
     "salary": "pay scale, application fee, selection process and official apply link.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2871,10 +2871,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ICAR NRC Mithun YP Recruitment 2026 - Walk-in Interview for Young Professional-II Posts",
     "org": "ICAR NRC Mithun YP",
     "shortOrg": "ICAR NRC Mithun YP",
-    "posts": "Young Professional-II Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -2901,7 +2901,7 @@ window.ROZGAR_DATA = (function() {
     "title": "ISRO LPSC Advertisement No. LPSC/02/2026 - Apply Online for 19 Posts | Last Date 04-09-2026",
     "org": "ISRO LPSC Advertisement No. LPSC/02/2026",
     "shortOrg": "ISRO LPSC Advertisement No. LP",
-    "posts": "19 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 19,
     "salary": "pay scale in ISRO LPSC Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -2933,10 +2933,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AWEIL Executive Finance Recruitment 2026 - Apply for 09 Posts | Last Date 31-08-2026",
     "org": "AWEIL Executive Finance",
     "shortOrg": "AWEIL Executive Finance",
-    "posts": "09 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 9,
     "salary": "pay scale in AWEIL Executive Finance Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -2962,10 +2962,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT Bombay Non Faculty Recruitment 2026 - Apply Online for 27 Posts | Last Date 04-09-2026",
     "org": "IIT Bombay Non Faculty",
     "shortOrg": "IIT Bombay Non Faculty",
-    "posts": "27 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 27,
     "salary": "₹21,700 – ₹1,77,500",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching",
@@ -2993,10 +2993,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RCI Hyderabad JRF & RA Recruitment 2026 - Apply for 21 Posts | Last Date 13-09-2026",
     "org": "RCI Hyderabad JRF & RA",
     "shortOrg": "RCI Hyderabad JRF & RA",
-    "posts": "21 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 21,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3022,7 +3022,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Driver Govt Jobs 2026 | All India Vacancies",
     "org": "Latest Driver Govt Jobs 2026 | All India Vacancies",
     "shortOrg": "Latest Driver Govt Jobs 2026 |",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Driver Govt",
     "vacancies": 125,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3054,10 +3054,10 @@ window.ROZGAR_DATA = (function() {
     "title": "No Exam Government Jobs 2026 (25000+ Vacancies Opening)",
     "org": "No Exam Government Jobs 2026 (25000+ Vacancies Opening)",
     "shortOrg": "No Exam Government Jobs 2026 (",
-    "posts": "Prescribed Posts",
+    "posts": "No Exam Government",
     "vacancies": 180,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3083,10 +3083,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Federal Bank Sales Officer Recruitment 2026 - Notification, Online Form | Last Date 31-08-2026",
     "org": "Federal Bank Sales Officer",
     "shortOrg": "Federal Bank Sales Officer",
-    "posts": "Prescribed Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3112,10 +3112,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Nursing Govt Jobs 2026 - Staff Nurse, ANM, Nursing Officer Vacancies",
     "org": "Latest Nursing Govt Jobs 2026",
     "shortOrg": "Latest Nursing Govt Jobs 2026",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Nursing Govt",
     "vacancies": 140,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "medical-nursing"
@@ -3142,10 +3142,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CPCL Junior Engineering Assistant Recruitment 2026 - Apply Online for 60 Posts | Last Date 11-09-2026",
     "org": "CPCL Junior Engineering Assistant",
     "shortOrg": "CPCL Junior Engineering Assist",
-    "posts": "60 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 60,
     "salary": "pay scale for CPCL Junior Engineering Assistant-IV?",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -3172,10 +3172,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSC EPFO APFC Recruitment 2026 - Apply Online for 80 Posts | Last Date 11-09-2026",
     "org": "UPSC EPFO APFC",
     "shortOrg": "UPSC EPFO APFC",
-    "posts": "80 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 80,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3201,10 +3201,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Graduate Level Govt Jobs 2026 (50000+ Vacancies Opening)",
     "org": "Latest Graduate Level Govt Jobs 2026 (50000+ Vacancies Opening)",
     "shortOrg": "Latest Graduate Level Govt Job",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Graduate Level Govt",
     "vacancies": 172,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3230,10 +3230,10 @@ window.ROZGAR_DATA = (function() {
     "title": "114359 Fresher Govt Jobs 2026 - Latest No Experience Sarkari Vacancies",
     "org": "114359 Fresher Govt Jobs 2026",
     "shortOrg": "114359 Fresher Govt Jobs 2026",
-    "posts": "Prescribed Posts",
+    "posts": "114359 Fresher Govt",
     "vacancies": 131,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3259,10 +3259,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Ministry of Home Affairs Recruitment 2026 - Apply for 38 Various Contract Posts | Last Date 28-08-2026",
     "org": "Ministry of Home Affairs",
     "shortOrg": "Ministry of Home Affairs",
-    "posts": "38 Various Contract Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "₹30,000 – ₹1,18,000",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3288,7 +3288,7 @@ window.ROZGAR_DATA = (function() {
     "title": "ISRO URSC Apprentice Recruitment 2026: Apply Online for 410 Posts | Last Date 28-08-2026",
     "org": "ISRO URSC Apprentice",
     "shortOrg": "ISRO URSC Apprentice",
-    "posts": "410 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 410,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3321,10 +3321,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IBPS Clerk Notification 2026 - Apply Online for 11403+ Posts | Last Date 28-08-2026",
     "org": "IBPS Clerk Notification 2026",
     "shortOrg": "IBPS Clerk Notification 2026",
-    "posts": "11403+ Posts",
+    "posts": "IBPS Clerk",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3350,10 +3350,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest MCA Govt Jobs 2026 (100+ Vacancies Opening)",
     "org": "Latest MCA Govt Jobs 2026 (100+ Vacancies Opening)",
     "shortOrg": "Latest MCA Govt Jobs 2026 (100",
-    "posts": "Prescribed Posts",
+    "posts": "Latest MCA Govt",
     "vacancies": 135,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3379,7 +3379,7 @@ window.ROZGAR_DATA = (function() {
     "title": "ZHDCE Assistant Professor Recruitment 2026 - Apply Online for 06 Posts | Last Date 28-08-2026",
     "org": "ZHDCE Assistant Professor",
     "shortOrg": "ZHDCE Assistant Professor",
-    "posts": "06 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 6,
     "salary": "pay scale in ZHDCE Assistant Professor Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3412,10 +3412,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NCSCM Project Staff Recruitment 2026 - Apply Online for 06 Posts | Last Date 28-08-2026",
     "org": "NCSCM Project Staff",
     "shortOrg": "NCSCM Project Staff",
-    "posts": "06 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 6,
     "salary": "₹29,000 – ₹67,000",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3441,10 +3441,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DGQA Technician Recruitment 2026 - Application Form, Notification, 15 Posts | Last Date 28-08-2026",
     "org": "DGQA Technician",
     "shortOrg": "DGQA Technician",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 15,
     "salary": "pay scale for DGQA Technician posts?",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3470,7 +3470,7 @@ window.ROZGAR_DATA = (function() {
     "title": "HEMRL Pune Apprentice Recruitment 2026 - Apply for 50 Posts | Last Date 28-08-2026",
     "org": "HEMRL Pune Apprentice",
     "shortOrg": "HEMRL Pune Apprentice",
-    "posts": "50 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 50,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3503,10 +3503,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT Mandi Registrar Recruitment 2026: Apply Online for 04 Posts | Last Date 28-08-2026",
     "org": "IIT Mandi Registrar",
     "shortOrg": "IIT Mandi Registrar",
-    "posts": "04 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 4,
     "salary": "pay scale in IIT Mandi Registrar Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3532,10 +3532,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Railway Jobs 2026 | New Vacancy Updates",
     "org": "Indian Railway Jobs 2026 | New Vacancy Updates",
     "shortOrg": "Indian Railway Jobs 2026 | New",
-    "posts": "Prescribed Posts",
+    "posts": "Indian Railway",
     "vacancies": 134,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3561,10 +3561,10 @@ window.ROZGAR_DATA = (function() {
     "title": "South Indian Bank Business Promotion Officer Recruitment 2026 - Online Form, Notification",
     "org": "South Indian Bank Business Promotion Officer",
     "shortOrg": "South Indian Bank Business Pro",
-    "posts": "Prescribed Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3590,7 +3590,7 @@ window.ROZGAR_DATA = (function() {
     "title": "RRB JE Recruitment 2026 - Apply Online for 4029 Posts | Last Date 13-09-2026",
     "org": "RRB JE",
     "shortOrg": "RRB JE",
-    "posts": "4029 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 4029,
     "salary": "pay scale for RRB JE posts?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3622,10 +3622,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Central University of Rajasthan Non Teaching Recruitment 2026 - Apply Online for 04 Posts | Last Date 23-09-2026",
     "org": "Central University of Rajasthan Non Teaching",
     "shortOrg": "Central University of Rajastha",
-    "posts": "04 Posts",
+    "posts": "Non-Teaching Group A, B & C Staff",
     "vacancies": 4,
     "salary": "pay scale in CURAJ Non Teaching Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3651,10 +3651,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIIT Vadodara Assistant Professor Recruitment 2026 - Apply Online for 25 Posts | Last Date 15-09-2026",
     "org": "IIIT Vadodara Assistant Professor",
     "shortOrg": "IIIT Vadodara Assistant Profes",
-    "posts": "25 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 25,
     "salary": "pay scale, application fee, selection process and official links.",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -3681,10 +3681,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Jhunjhunu Recruitment 2026 - Apply for 18 Various Regular & Contractual Posts | Last Date 12-09-2026",
     "org": "Sainik School Jhunjhunu",
     "shortOrg": "Sainik School Jhunjhunu",
-    "posts": "18 Various Regular & Contractual Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale, selection process, application fee and official notificatio",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3710,10 +3710,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT BHU Non Teaching Recruitment 2026 - Apply Online for 55 Posts | Last Date 24-09-2026",
     "org": "IIT BHU Non Teaching",
     "shortOrg": "IIT BHU Non Teaching",
-    "posts": "55 Posts",
+    "posts": "Non-Teaching Group A, B & C Staff",
     "vacancies": 55,
     "salary": "pay scale in IIT BHU Non Teaching Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3739,10 +3739,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Maharashtra Metro Rail Recruitment 2026 - Apply for 56 Engineer, Technician, Assistant & Attendant Posts | Last Date 25-09-2026",
     "org": "Maharashtra Metro Rail",
     "shortOrg": "Maharashtra Metro Rail",
-    "posts": "56 Engineer, Technician, Assistant & Attendant Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "Pay Scale)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -3769,10 +3769,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MAHA Metro Manager Level Posts Recruitment 2026 - Apply Online for 05 Vacancies | Last Date 18-09-2026",
     "org": "MAHA Metro Manager Level Posts",
     "shortOrg": "MAHA Metro Manager Level Posts",
-    "posts": "05 Vacancies",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 5,
     "salary": "Pay Scale)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3798,7 +3798,7 @@ window.ROZGAR_DATA = (function() {
     "title": "MOIL Limited Manager Recruitment 2026 - Walk in Interview for 04 Posts",
     "org": "MOIL Limited Manager",
     "shortOrg": "MOIL Limited Manager",
-    "posts": "04 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 4,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -3830,10 +3830,10 @@ window.ROZGAR_DATA = (function() {
     "title": "GIPCL Diploma Mechanical Engineer Vacancy 2026 - Apply Online for 07 Posts | Last Date 04-09-2026",
     "org": "GIPCL Diploma Mechanical Engineer Vacancy 2026",
     "shortOrg": "GIPCL Diploma Mechanical Engin",
-    "posts": "07 Posts",
+    "posts": "GIPCL Diploma Mechanical Engineer",
     "vacancies": 7,
     "salary": "₹27,000 – ₹29,760",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "diploma",
@@ -3861,10 +3861,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RFCL Experienced Professionals Recruitment 2026 - Apply Online for 40 Engineer, Officer & Manager Posts | Last Date 24-09-2026",
     "org": "RFCL Experienced Professionals",
     "shortOrg": "RFCL Experienced Professionals",
-    "posts": "40 Engineer, Officer & Manager Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale, application fee, selection process, official notification P",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -3891,10 +3891,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Govt of Manipur Recruitment 2026 - Apply for 11 Various Contract Posts | Last Date 31-08-2026",
     "org": "Govt of Manipur",
     "shortOrg": "Govt of Manipur",
-    "posts": "11 Various Contract Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "₹50,000 – ₹1,00,000",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3920,10 +3920,10 @@ window.ROZGAR_DATA = (function() {
     "title": "East Coast Railway Apprentice Recruitment 2026 - Apply Online for 1599 Posts | Last Date 15-09-2026",
     "org": "East Coast Railway Apprentice",
     "shortOrg": "East Coast Railway Apprentice",
-    "posts": "1599 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 1599,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -3950,10 +3950,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HPCL Biofuels Limited Recruitment 2026: Apply Offline for 58 Management & Non-Management Posts | Last Date 27-08-2026",
     "org": "HPCL Biofuels Limited",
     "shortOrg": "HPCL Biofuels Limited",
-    "posts": "58 Management & Non-Management Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "n",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -3979,10 +3979,10 @@ window.ROZGAR_DATA = (function() {
     "title": "KMRL Recruitment 2026: Apply Online for 05 Engineer, Manager Posts | Last Date 27-08-2026",
     "org": "KMRL",
     "shortOrg": "KMRL",
-    "posts": "05 Engineer, Manager Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "pay scale in KMRL Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -4009,10 +4009,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SBI Specialist Cadre Officer Recruitment 2026 - Apply Online for 38 Various Posts | Last Date 27-08-2026",
     "org": "SBI Specialist Cadre Officer",
     "shortOrg": "SBI Specialist Cadre Officer",
-    "posts": "38 Various Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4038,7 +4038,7 @@ window.ROZGAR_DATA = (function() {
     "title": "High Court of Patna Assistant Recruitment 2026 - Apply Online for 68 Posts | Last Date 27-08-2026",
     "org": "High Court of Patna Assistant",
     "shortOrg": "High Court of Patna Assistant",
-    "posts": "68 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 68,
     "salary": "Level-4 of the 7th Pay Matrix.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4071,10 +4071,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SBI Junior Associates Backlog Vacancy 2026 - Apply Online for 1538 Clerk Posts | Last Date 27-08-2026",
     "org": "SBI Junior Associates Backlog Vacancy 2026",
     "shortOrg": "SBI Junior Associates Backlog ",
-    "posts": "1538 Clerk Posts",
+    "posts": "SBI Junior Associates Backlog",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4100,10 +4100,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NTPC Deputy Manager Recruitment 2026 - Apply Online for 135 Posts | Last Date 26-08-2026",
     "org": "NTPC Deputy Manager",
     "shortOrg": "NTPC Deputy Manager",
-    "posts": "135 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 135,
     "salary": "pay scale of ₹60,000–₹1,80,000 or equivalent out of the required 10 ye",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4129,10 +4129,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SJVN Limited Recruitment 2026: Apply Online for 21 Experienced Engineer Posts | Last Date 26-08-2026",
     "org": "SJVN Limited",
     "shortOrg": "SJVN Limited",
-    "posts": "21 Experienced Engineer Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "pay scale), and certificates of Educational Qualification, Age, Catego",
-    "qualificationText": "Advt. No. 127/2026, O/o DGM (HR/Recruitment), SJVN Limited, Shakti Sadan, Corporate Head Quarters, Shanan, Shimla, HP-17",
+    "qualificationText": "Advt. No. 127/2026, O/o DGM HR/Recruitment , SJVN Limited, Shakti Sadan, Corporate Head Quarters, Shanan, Shimla, HP-17",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -4159,7 +4159,7 @@ window.ROZGAR_DATA = (function() {
     "title": "SAIL RSP Apprentice Recruitment 2026: Notification for 1110 Posts | Apply Online up to 26-08-2026",
     "org": "SAIL RSP Apprentice",
     "shortOrg": "SAIL RSP Apprentice",
-    "posts": "1110 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 1110,
     "salary": "₹9,600 – ₹12,300",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4192,10 +4192,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RCFL Management Trainee Recruitment 2026 - Apply Online for 94 Posts | Last Date 10-09-2026",
     "org": "RCFL Management Trainee",
     "shortOrg": "RCFL Management Trainee",
-    "posts": "94 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 94,
     "salary": "Pay Scale (After Training)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4221,10 +4221,10 @@ window.ROZGAR_DATA = (function() {
     "title": "EIL Associate Engineer Recruitment 2026 - Walk in Interview for 12 Posts | last Date 08-09-2026",
     "org": "EIL Associate Engineer",
     "shortOrg": "EIL Associate Engineer",
-    "posts": "12 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 12,
     "salary": "₹57,600 – ₹64,000",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -4252,10 +4252,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sahitya Akademi Recruitment 2026 Apply for 30 Deputy Secretary, Assistant, Clerk & Other Posts | Last Date 21-09-2026",
     "org": "Sahitya Akademi",
     "shortOrg": "Sahitya Akademi",
-    "posts": "30 Deputy Secretary, Assistant, Clerk & Other Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale, selection process, important dates and how to apply.",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4281,7 +4281,7 @@ window.ROZGAR_DATA = (function() {
     "title": "IOCL Production Manager Recruitment 2026 - Notification Out",
     "org": "IOCL Production Manager",
     "shortOrg": "IOCL Production Manager",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale, important dates, and how to apply.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4313,10 +4313,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BEL Havildar Security Recruitment 2026 Apply Online for 05 Posts | Last Date 14-09-2026",
     "org": "BEL Havildar Security",
     "shortOrg": "BEL Havildar Security",
-    "posts": "05 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 5,
     "salary": "pay scale, and direct apply link.",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4342,10 +4342,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SECI Experienced Professionals Recruitment 2026 - Apply Online for 28 Posts | Last Date 23-09-2026",
     "org": "SECI Experienced Professionals",
     "shortOrg": "SECI Experienced Professionals",
-    "posts": "28 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 28,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4371,10 +4371,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BEML Apprentice Recruitment 2026 - Apply Online for 1346 Posts | Last Date 08-09-2026",
     "org": "BEML Apprentice",
     "shortOrg": "BEML Apprentice",
-    "posts": "1346 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 1346,
     "salary": "₹9,600 – ₹12,300",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -4401,10 +4401,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AVFCCL Executive Recruitment 2026 - Apply Online, Notification | Last Date 31-08-2026",
     "org": "AVFCCL Executive",
     "shortOrg": "AVFCCL Executive",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in AVFCCL Executive Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4430,10 +4430,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSC Advertisement No.10/2026 - Apply Online for 34 Posts | Last Date 04-09-2026",
     "org": "UPSC Advertisement No.10/2026",
     "shortOrg": "UPSC Advertisement No.10/2026",
-    "posts": "34 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 34,
     "salary": "Level-07 to Level-10",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4459,10 +4459,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Amaravathinagar Recruitment 2026 - Apply for Teaching & Non-Teaching Posts | Last Date 25-08-2026",
     "org": "Sainik School Amaravathinagar",
     "shortOrg": "Sainik School Amaravathinagar",
-    "posts": "Teaching & Non-Teaching Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-8)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4488,10 +4488,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Overseas Bank LBO Recruitment 2026 - Apply Online for 250 Posts | Last Date 24-08-2026",
     "org": "Indian Overseas Bank LBO",
     "shortOrg": "Indian Overseas Bank LBO",
-    "posts": "250 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 250,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4517,7 +4517,7 @@ window.ROZGAR_DATA = (function() {
     "title": "RVUNL Junior Engineer, Assistant & Accountant Recruitment 2026: Apply Online for 2005 Posts | Last Date 25-08-2026",
     "org": "RVUNL Junior Engineer, Assistant & Accountant",
     "shortOrg": "RVUNL Junior Engineer, Assista",
-    "posts": "2005 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 2005,
     "salary": "pay scale in RVUNL Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4550,10 +4550,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IARI Young Professional Recruitment 2026: Apply for 04 Posts | Last Date 25-08-2026",
     "org": "IARI Young Professional",
     "shortOrg": "IARI Young Professional",
-    "posts": "04 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 4,
     "salary": "pay scale in IARI Young Professional Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4579,10 +4579,10 @@ window.ROZGAR_DATA = (function() {
     "title": "JKSSB Warder Recruitment 2026: Apply Online for 288 Posts | Last Date 25-08-2026",
     "org": "JKSSB Warder",
     "shortOrg": "JKSSB Warder",
-    "posts": "288 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 288,
     "salary": "pay scale in JKSSB Warder Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4608,7 +4608,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Apprentice Govt Jobs 2026 (8936 ITI, Diploma, Graduate Vacancies)",
     "org": "Apprentice Govt Jobs 2026 (8936 ITI, Diploma, Graduate Vacancies)",
     "shortOrg": "Apprentice Govt Jobs 2026 (893",
-    "posts": "Prescribed Posts",
+    "posts": "Apprentice Govt",
     "vacancies": 256,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4641,7 +4641,7 @@ window.ROZGAR_DATA = (function() {
     "title": "POWERGRID Apprentice Recruitment 2026 - Apply Online for 270 Posts | Last Date 10-09-2026",
     "org": "POWERGRID Apprentice",
     "shortOrg": "POWERGRID Apprentice",
-    "posts": "270 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 270,
     "salary": "₹13,500 – ₹17,500",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4674,7 +4674,7 @@ window.ROZGAR_DATA = (function() {
     "title": "MTPF Ambarnath Apprentice Recruitment 2026 - Apply Offline for 48 Posts | Last date 04-09-2026",
     "org": "MTPF Ambarnath Apprentice",
     "shortOrg": "MTPF Ambarnath Apprentice",
-    "posts": "48 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 48,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4708,7 +4708,7 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Awantipora Senior Resident Recruitment 2026 - Apply Online for 40 Posts | Last Date 27-08-2026",
     "org": "AIIMS Awantipora Senior Resident",
     "shortOrg": "AIIMS Awantipora Senior Reside",
-    "posts": "40 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 40,
     "salary": "pay scale in AIIMS Awantipora Senior Resident Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4740,10 +4740,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DPCC Environmental Engineer Recruitment 2026 - Apply Offline for 17 Posts",
     "org": "DPCC Environmental Engineer",
     "shortOrg": "DPCC Environmental Engineer",
-    "posts": "17 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 17,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -4770,10 +4770,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NGEL Advt No.04/26 - Apply Online for 147 Engineer & Executive Posts | Last Date 07-09-2026",
     "org": "NGEL Advt No.04/26",
     "shortOrg": "NGEL Advt No.04/26",
-    "posts": "147 Engineer & Executive Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -4800,10 +4800,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Nainital Bank Specialist Officer Recruitment 2026 - Apply Online for 41 Posts | Last Date 07-09-2026",
     "org": "Nainital Bank Specialist Officer",
     "shortOrg": "Nainital Bank Specialist Offic",
-    "posts": "41 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 41,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4829,10 +4829,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Bank of Baroda Local Bank Officer Recruitment 2026 - Apply Online for 2482 Posts | Last Date 07-09-2026",
     "org": "Bank of Baroda Local Bank Officer",
     "shortOrg": "Bank of Baroda Local Bank Offi",
-    "posts": "2482 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 2482,
     "salary": "₹48,480 – ₹85,920",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4858,10 +4858,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BEL Ghaziabad Deputy Engineer Recruitment 2026 - Apply Online for 02 Posts | Last Date 04-09-2026",
     "org": "BEL Ghaziabad Deputy Engineer",
     "shortOrg": "BEL Ghaziabad Deputy Engineer",
-    "posts": "02 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 2,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -4888,7 +4888,7 @@ window.ROZGAR_DATA = (function() {
     "title": "FCRI Research Engineer Recruitment 2026: Apply Online for 19 Posts | Last Date 24-08-2026",
     "org": "FCRI Research Engineer",
     "shortOrg": "FCRI Research Engineer",
-    "posts": "19 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 19,
     "salary": "Level-10 (₹56,100 – ₹1,77,500) |",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -4921,10 +4921,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SPMCIL Advertisement No.02/2026: Apply Online for 24 Assistant Manager Posts | Last Date 24-08-2026",
     "org": "SPMCIL Advertisement No.02/2026: Apply Online for 24 Assistant Manager Posts | Last Date 24",
     "shortOrg": "SPMCIL Advertisement No.02/202",
-    "posts": "24 Assistant Manager Posts",
+    "posts": "SPMCIL Advertisement No.02/2026:",
     "vacancies": 700,
     "salary": "pay scale in SPMCIL Assistant Manager Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4950,10 +4950,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Physical Research Laboratory Recruitment 2026 - Apply Online for 05 Officer Posts | Last Date: 24-08-2026",
     "org": "Physical Research Laboratory",
     "shortOrg": "Physical Research Laboratory",
-    "posts": "05 Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale for PRL Officer posts?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -4979,10 +4979,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NID Andhra Pradesh Non Teaching Recruitment 2026 - Apply Online for 22 Posts | Last Date 24-08-2026",
     "org": "NID Andhra Pradesh Non Teaching",
     "shortOrg": "NID Andhra Pradesh Non Teachin",
-    "posts": "22 Posts",
+    "posts": "Non-Teaching Group A, B & C Staff",
     "vacancies": 22,
     "salary": "pay scale in NID Andhra Pradesh Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5008,10 +5008,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NISR Recruitment 2026: Apply for 11 Various Faculty, Medical & Administrative Posts | Last Date 23-08-2026",
     "org": "NISR",
     "shortOrg": "NISR",
-    "posts": "11 Various Faculty, Medical & Administrative Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 700,
     "salary": "Level-5 to Level-10 (7th CPC)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "medical-nursing",
@@ -5039,10 +5039,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Northeast Frontier Railway Sports Quota Recruitment 2026 - Apply Online for 56 Posts | Last Date 24-08-2026",
     "org": "Northeast Frontier Railway Sports Quota",
     "shortOrg": "Northeast Frontier Railway Spo",
-    "posts": "56 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 56,
     "salary": "Level-1 / Level-2 / Level-3 (7th CPC)",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5068,10 +5068,10 @@ window.ROZGAR_DATA = (function() {
     "title": "KRCL Executive Engineer Recruitment 2026 - Apply for 05 Posts | Last Date 08-09-2026",
     "org": "KRCL Executive Engineer",
     "shortOrg": "KRCL Executive Engineer",
-    "posts": "05 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 5,
     "salary": "pay scale in KRCL Executive Engineer Recruitment 2026?",
-    "qualificationText": "t",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -5098,10 +5098,10 @@ window.ROZGAR_DATA = (function() {
     "title": "KRCL Apprentice Recruitment 2026 - Apply Online for 134 Graduate & Diploma Posts",
     "org": "KRCL Apprentice",
     "shortOrg": "KRCL Apprentice",
-    "posts": "134 Graduate & Diploma Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "diploma",
@@ -5129,10 +5129,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Income Tax Canteen Attendant Recruitment 2026 - Apply Online for 07 Posts | Last Date 31-08-2026",
     "org": "Income Tax Canteen Attendant",
     "shortOrg": "Income Tax Canteen Attendant",
-    "posts": "07 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 7,
     "salary": "pay scale in Income Tax Canteen Attendant Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5158,10 +5158,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HURL Recruitment 2026 - Apply Online for 75 Executive and Non Executive Posts | Last Date 26-08-2026",
     "org": "HURL",
     "shortOrg": "HURL",
-    "posts": "75 Executive and Non Executive Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5187,7 +5187,7 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT Bombay Advertisement No.02/2026 - Apply Online for 27 Technical, Officer, Nursing & Other Posts | Last Date 04-09-2026",
     "org": "IIT Bombay Advertisement No.02/2026",
     "shortOrg": "IIT Bombay Advertisement No.02",
-    "posts": "27 Technical, Officer, Nursing & Other Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale, official notification, and online application link.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5221,10 +5221,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MECON Limited Draftsman Recruitment 2026 - Apply Online for 17 Posts | Last Date 22-08-2026",
     "org": "MECON Limited Draftsman",
     "shortOrg": "MECON Limited Draftsman",
-    "posts": "17 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 17,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5250,10 +5250,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Institute of Packaging Recruitment 2026: Apply for 20 Technical & Non Technical Posts | Last Date 22-08-2026",
     "org": "Indian Institute of Packaging",
     "shortOrg": "Indian Institute of Packaging",
-    "posts": "20 Technical & Non Technical Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in Indian Institute of Packaging Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5279,7 +5279,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NDSA Young Professional Recruitment 2026: Apply for 02 Posts | Last Date 22-08-2026",
     "org": "NDSA Young Professional",
     "shortOrg": "NDSA Young Professional",
-    "posts": "02 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 2,
     "salary": "pay scale in NDSA Young Professional Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5311,10 +5311,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NPCC Recruitment 2026: Apply Online for 26 Finance, Law, HR & Engineer Posts | Last Date 22-08-2026",
     "org": "NPCC",
     "shortOrg": "NPCC",
-    "posts": "26 Finance, Law, HR & Engineer Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "Pay Scale (IDA)",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering",
@@ -5342,10 +5342,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SKAU Kurukshetra Recruitment 2026 - Apply Online for 60 Nurse, Pharmacist & Clerk Posts | Last Date 21-08-2026",
     "org": "SKAU Kurukshetra",
     "shortOrg": "SKAU Kurukshetra",
-    "posts": "60 Nurse, Pharmacist & Clerk Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in SKAU Kurukshetra Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5371,7 +5371,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NITTTR Bhopal Faculty Recruitment 2026 - Apply for 22 Posts, Walk in Interview",
     "org": "NITTTR Bhopal Faculty",
     "shortOrg": "NITTTR Bhopal Faculty",
-    "posts": "22 Posts, Walk in Interview",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 22,
     "salary": "₹65,000 – ₹80,000",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5404,10 +5404,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Karnataka School Education Recruitment 2026 - Apply Online for 15000+ Teacher Posts | Last Date 07-09-2026",
     "org": "Karnataka School Education",
     "shortOrg": "Karnataka School Education",
-    "posts": "15000+ Teacher Posts",
+    "posts": "School Teacher / TGT / PGT",
     "vacancies": 700,
     "salary": "pay scale from the official notification/gazette.",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -5434,10 +5434,10 @@ window.ROZGAR_DATA = (function() {
     "title": "APSC Veterinary Officer Recruitment 2026 - Apply Online for 137 Posts | 06-09-2026",
     "org": "APSC Veterinary Officer",
     "shortOrg": "APSC Veterinary Officer",
-    "posts": "137 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 137,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5463,10 +5463,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Bihar TRE 4.0 Vacancy 2026 Notification Out - Apply Online for 32388 Posts | Last Date 30-09-2026",
     "org": "Bihar TRE 4.0 Vacancy 2026 Notification Out",
     "shortOrg": "Bihar TRE 4.0 Vacancy 2026 Not",
-    "posts": "32388 Posts",
+    "posts": "Bihar TRE 4.0",
     "vacancies": 32388,
     "salary": "₹25,000 – ₹32,000",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5492,10 +5492,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NABFINS Telecaller Recruitment 2026 - Work From Home Jobs in Bihar",
     "org": "NABFINS Telecaller",
     "shortOrg": "NABFINS Telecaller",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5521,10 +5521,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NCR Prayagraj Apprentice Recruitment 2026 - Apply Online 3205 Posts | Last Date 31-08-2026",
     "org": "NCR Prayagraj Apprentice",
     "shortOrg": "NCR Prayagraj Apprentice",
-    "posts": "Prescribed Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 3205,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -5551,10 +5551,10 @@ window.ROZGAR_DATA = (function() {
     "title": "North Central Railway Cultural Quota Recruitment 2026 - Apply Online for 02 Posts | Last Date 19-09-2026",
     "org": "North Central Railway Cultural Quota",
     "shortOrg": "North Central Railway Cultural",
-    "posts": "02 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 2,
     "salary": "Level-2 (Grade Pay ₹1900/-) for Sitar and Tabla streams.",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5580,10 +5580,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Army NCC Special Entry Women 125 Course April 2027 - Apply Online for 06 Women Officer Posts | Last Date 21-08-2026",
     "org": "Indian Army NCC Special Entry Women 125 Course April 2027",
     "shortOrg": "Indian Army NCC Special Entry ",
-    "posts": "06 Women Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 6,
     "salary": "Level-10 (₹56,100 – ₹1,77,500)",
-    "qualificationText": "{\"@type\":\"Answer\",\"text\":\"Bachelor's Degree with NCC 'C' Certificate (minimum 'B' Grade).\"}",
+    "qualificationText": "{\"@type\" \"Answer\",\"text\" \"Bachelor's Degree with NCC 'C' Certificate minimum 'B' Grade .\"}",
     "qualifications": [
       "graduate"
     ],
@@ -5609,10 +5609,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HPPSC Police Constable Recruitment 2026 - Apply Online for 734 Posts | Last Date 21-08-2026",
     "org": "HPPSC Police Constable",
     "shortOrg": "HPPSC Police Constable",
-    "posts": "734 Posts",
+    "posts": "Police Constable / Sub Inspector",
     "vacancies": 734,
     "salary": "Level-3 (₹20,200 – ₹64,000)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5638,10 +5638,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Bathinda Faculty Recruitment 2026 - Apply Online for 77 Posts | Last Date 21-08-2026",
     "org": "AIIMS Bathinda Faculty",
     "shortOrg": "AIIMS Bathinda Faculty",
-    "posts": "77 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 77,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -5668,7 +5668,7 @@ window.ROZGAR_DATA = (function() {
     "title": "SSPL DRDO Apprentice Recruitment 2026 - Apply for 41 ITI, Diploma & Graduate Posts | Last Date 21-08-2026",
     "org": "SSPL DRDO Apprentice",
     "shortOrg": "SSPL DRDO Apprentice",
-    "posts": "41 ITI, Diploma & Graduate Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5701,10 +5701,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Kodagu Recruitment 2026 - Apply Offline for 05 Teaching & Non-Teaching Posts | Last Date 21-08-2026",
     "org": "Sainik School Kodagu",
     "shortOrg": "Sainik School Kodagu",
-    "posts": "05 Teaching & Non-Teaching Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale, reservation criteria, age limit, and other eligibility cond",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5730,10 +5730,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Assam PSC Junior Manager Recruitment 2026 - Apply Online for 31 Posts | Last Date 21-08-2026",
     "org": "Assam PSC Junior Manager",
     "shortOrg": "Assam PSC Junior Manager",
-    "posts": "31 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 31,
     "salary": "₹25,000 – ₹92,000",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5759,10 +5759,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IGDTUW Faculty Recruitment 2026 - Apply Online for 36 Posts | Last Date 21-08-2026",
     "org": "IGDTUW Faculty",
     "shortOrg": "IGDTUW Faculty",
-    "posts": "36 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 36,
     "salary": "Level-10 / Level-13A1 / Level-14 (as per 7th CPC)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -5789,10 +5789,10 @@ window.ROZGAR_DATA = (function() {
     "title": "State wise Govt Jobs 2026 (73473 Sarkari Naukri Vacancies)",
     "org": "State wise Govt Jobs 2026  (73473 Sarkari Naukri Vacancies)",
     "shortOrg": "State wise Govt Jobs 2026  (73",
-    "posts": "Prescribed Posts",
+    "posts": "State wise Govt",
     "vacancies": 174,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "-",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5818,7 +5818,7 @@ window.ROZGAR_DATA = (function() {
     "title": "PSSSB Craft Instructor Recruitment 2026 - Apply Online for 681 Posts | Last Date 25-08-2026",
     "org": "PSSSB Craft Instructor",
     "shortOrg": "PSSSB Craft Instructor",
-    "posts": "681 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 681,
     "salary": "pay scale in PSSSB Craft Instructor Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5850,7 +5850,7 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Gorakhpur Junior Resident Recruitment 2026 - Walk in Interview for 24 Posts",
     "org": "AIIMS Gorakhpur Junior Resident",
     "shortOrg": "AIIMS Gorakhpur Junior Residen",
-    "posts": "24 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 24,
     "salary": "pay scale, documents required and interview schedule.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5882,7 +5882,7 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Gorakhpur Research Scientist Recruitment 2026 - Apply for 02 Posts | Last Date 30-08-2026",
     "org": "AIIMS Gorakhpur Research Scientist",
     "shortOrg": "AIIMS Gorakhpur Research Scien",
-    "posts": "02 Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 2,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -5914,10 +5914,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BCGCL Recruitment 2026 - Apply Online for Executive Posts | Last Date 08-09-2026",
     "org": "BCGCL",
     "shortOrg": "BCGCL",
-    "posts": "Executive Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5943,10 +5943,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts, Notification, Online Form | Last Date 06-09-2026",
     "org": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts, Notification, Online Form | Last Date 06",
     "shortOrg": "Eastern Railway Scouts and Gui",
-    "posts": "Prescribed Posts",
+    "posts": "09-2026",
     "vacancies": 15,
     "salary": "Level-2 (Group ‘C’) and 10 in Level-1 (Erstwhile Group ‘D’). Only cand",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -5972,10 +5972,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ITBP Medical Officer Recruitment 2026 - Apply Online for 282 Posts | Last Date 08-09-2026",
     "org": "ITBP Medical Officer",
     "shortOrg": "ITBP Medical Officer",
-    "posts": "282 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 282,
     "salary": "pay scale in ITBP Medical Officer Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "medical-nursing"
@@ -6002,10 +6002,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Nagpur Non Faculty Recruitment 2026 - Apply Online for 09 Posts | Last Date 07-09-2026",
     "org": "AIIMS Nagpur Non Faculty",
     "shortOrg": "AIIMS Nagpur Non Faculty",
-    "posts": "09 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 9,
     "salary": "pay scale in AIIMS Nagpur Non Faculty Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -6032,7 +6032,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NTPC EET Recruitment through GATE 2027 - Short Notification Out",
     "org": "NTPC EET",
     "shortOrg": "NTPC EET",
-    "posts": "Prescribed Posts",
+    "posts": "Recruitment through GATE 2027 – Short Notification Out",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6064,10 +6064,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AIIMS Bilaspur Senior Resident Recruitment 2026 - Walk in Interview for 69 Posts",
     "org": "AIIMS Bilaspur Senior Resident",
     "shortOrg": "AIIMS Bilaspur Senior Resident",
-    "posts": "69 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 69,
     "salary": "pay scale, application fee, documents and interview venue.",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -6094,7 +6094,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Army NCC Special Entry Men 125th Course 2027 - Apply Online for 70 Posts | Last Date 20-08-2026",
     "org": "Indian Army NCC Special Entry Men 125th Course 2027",
     "shortOrg": "Indian Army NCC Special Entry ",
-    "posts": "70 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 70,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6126,10 +6126,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Aadhaar Supervisor Recruitment 2026 - Apply Online for 316 Posts | Last Date 20-08-2026",
     "org": "Aadhaar Supervisor",
     "shortOrg": "Aadhaar Supervisor",
-    "posts": "316 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 316,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "n",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6155,10 +6155,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Ordnance Factory Dehu Road DBW Recruitment 2026 - Apply Offline for 14 Posts | Last Date 20-08-2026",
     "org": "Ordnance Factory Dehu Road DBW",
     "shortOrg": "Ordnance Factory Dehu Road DBW",
-    "posts": "14 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 14,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6184,7 +6184,7 @@ window.ROZGAR_DATA = (function() {
     "title": "ISRO Assistant JPA UDC Steno Recruitment 2026 - Apply Online for 242 Posts | Last Date 20-08-2026",
     "org": "ISRO Assistant JPA UDC Steno",
     "shortOrg": "ISRO Assistant JPA UDC Steno",
-    "posts": "242 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 242,
     "salary": "pay scale, and important dates.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6216,10 +6216,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPESSC Principal Recruitment 2026 - Apply Online for 111 Posts | Last Date 20-08-2026",
     "org": "UPESSC Principal",
     "shortOrg": "UPESSC Principal",
-    "posts": "111 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 111,
     "salary": "pay scale, selection process, important dates and application procedur",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6245,7 +6245,7 @@ window.ROZGAR_DATA = (function() {
     "title": "SRCC Assistant Professor Recruitment 2026 - Apply Online for 16 Faculty Posts | Last Date 29-08-2026",
     "org": "SRCC Assistant Professor",
     "shortOrg": "SRCC Assistant Professor",
-    "posts": "16 Faculty Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 700,
     "salary": "pay scale in SRCC Assistant Professor Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6278,10 +6278,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BHEL FTA Supervisor Vacancy 2026 Apply Online for 10 Posts | Last Date 07-09-2026",
     "org": "BHEL FTA Supervisor Vacancy 2026 Apply Online for 10 Posts | Last Date 07",
     "shortOrg": "BHEL FTA Supervisor Vacancy 20",
-    "posts": "10 Posts",
+    "posts": "BHEL FTA Supervisor",
     "vacancies": 10,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6307,10 +6307,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BPCL Diploma Recruitment 2026 - Apply Online for 154 Technician & Operator Posts | Last Date 19-08-2026",
     "org": "BPCL Diploma",
     "shortOrg": "BPCL Diploma",
-    "posts": "154 Technician & Operator Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Pay Scale: ₹26,500 – ₹34,000. Online applications from 29 July 2026 to",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "diploma"
@@ -6337,10 +6337,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NIT Warangal Non Teaching Recruitment 2026: Apply Online for 05 Officer Posts | Last Date 19-08-2026",
     "org": "NIT Warangal Non Teaching",
     "shortOrg": "NIT Warangal Non Teaching",
-    "posts": "05 Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale in NIT Warangal Non Teaching Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6366,10 +6366,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IGCAR Trade Apprentice Recruitment 2026 - Apply Online for 200 Posts | Last Date 19-08-2026",
     "org": "IGCAR Trade Apprentice",
     "shortOrg": "IGCAR Trade Apprentice",
-    "posts": "200 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 200,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -6396,10 +6396,10 @@ window.ROZGAR_DATA = (function() {
     "title": "TNPFC IT Personnel Recruitment 2026: Notification, Application Form | Last Date 19-08-2026",
     "org": "TNPFC IT Personnel",
     "shortOrg": "TNPFC IT Personnel",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "r",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6425,10 +6425,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Northeast Frontier Railway Apprentice Recruitment 2026 - Apply Online for 6777 Posts | Last Date 19-08-2026",
     "org": "Northeast Frontier Railway Apprentice",
     "shortOrg": "Northeast Frontier Railway App",
-    "posts": "6777 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 6777,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -6455,7 +6455,7 @@ window.ROZGAR_DATA = (function() {
     "title": "BARC Scientific Assistant Recruitment 2026 - Apply Online for 06 Posts, Notification | Last Date 18-08-2026",
     "org": "BARC Scientific Assistant",
     "shortOrg": "BARC Scientific Assistant",
-    "posts": "06 Posts, Notification",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 6,
     "salary": "Level-7",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6487,10 +6487,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BHEL Ranipet Apprentice Vacancy 2026 - Walk in Interview for 305 Posts",
     "org": "BHEL Ranipet Apprentice Vacancy 2026",
     "shortOrg": "BHEL Ranipet Apprentice Vacanc",
-    "posts": "305 Posts",
+    "posts": "BHEL Ranipet Apprentice",
     "vacancies": 305,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -6518,10 +6518,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BHEL Trichy Trade Apprentice Recruitment 2026 - Apply Online for 380 Posts | Last Date 12th September 2026",
     "org": "BHEL Trichy Trade Apprentice",
     "shortOrg": "BHEL Trichy Trade Apprentice",
-    "posts": "380 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 380,
     "salary": "₹10,560 – ₹11,040",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -6549,10 +6549,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Rajasthan Safai Karamchari Recruitment 2026 - Apply Online for 24752 Posts | Last Date 28-09-2026",
     "org": "Rajasthan Safai Karamchari",
     "shortOrg": "Rajasthan Safai Karamchari",
-    "posts": "24752 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 24752,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6578,10 +6578,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MECON Executive Recruitment 2026 - Apply Online for 07 Manager Posts | Last Date 13-09-2026",
     "org": "MECON Executive",
     "shortOrg": "MECON Executive",
-    "posts": "07 Manager Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
-    "salary": "Pay Scale &amp; Age Limit 2026:",
-    "qualificationText": ".",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6607,10 +6607,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MPESB Patwari Recruitment 2026: Apply Online for 200 Posts | Last Date 18-08-2026",
     "org": "MPESB Patwari",
     "shortOrg": "MPESB Patwari",
-    "posts": "200 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 200,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6636,10 +6636,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NABFINS Customer Service Officer Recruitment 2026 - Notification, Online Form | Last Date 18-08-2026",
     "org": "NABFINS Customer Service Officer",
     "shortOrg": "NABFINS Customer Service Offic",
-    "posts": "Prescribed Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6665,10 +6665,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RUHS Medical Officer Recruitment 2026 - Apply Online for 600 Posts | Last Date 13-10-2026",
     "org": "RUHS Medical Officer",
     "shortOrg": "RUHS Medical Officer",
-    "posts": "600 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 600,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "medical-nursing"
@@ -6695,10 +6695,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSSSC Veterinary Pharmacist Recruitment 2026 - Apply Online for 1308 Posts | Last Date 05-10-2026",
     "org": "UPSSSC Veterinary Pharmacist",
     "shortOrg": "UPSSSC Veterinary Pharmacist",
-    "posts": "1308 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 1308,
     "salary": "pay scale in UPSSSC Veterinary Pharmacist Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6724,10 +6724,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DPCC Various Posts Recruitment 2026 - Apply for 54 Engineer, Scientist & Assistant Posts",
     "org": "DPCC Various Posts",
     "shortOrg": "DPCC Various Posts",
-    "posts": "54 Engineer, Scientist & Assistant Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ".",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -6754,10 +6754,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSSSC Junior Engineer Agriculture Recruitment 2026 -Apply Online for 134 Posts | Last Date 07-10-2026",
     "org": "UPSSSC Junior Engineer Agriculture",
     "shortOrg": "UPSSSC Junior Engineer Agricul",
-    "posts": "134 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 134,
     "salary": "pay scale in UPSSSC Junior Engineer Agriculture Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -6784,7 +6784,7 @@ window.ROZGAR_DATA = (function() {
     "title": "MP High Court Assistant Recruitment 2026 - Apply Online for 1174 Posts | Last Date 15-09-2026",
     "org": "MP High Court Assistant",
     "shortOrg": "MP High Court Assistant",
-    "posts": "1174 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 1174,
     "salary": "pay scale in MP High Court Assistant Grade-III Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6817,7 +6817,7 @@ window.ROZGAR_DATA = (function() {
     "title": "RSSB Junior Engineer Recruitment 2026 - Apply Online for 874 Posts | Last date 14-09-2026",
     "org": "RSSB Junior Engineer",
     "shortOrg": "RSSB Junior Engineer",
-    "posts": "874 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 874,
     "salary": "pay scale in RSSB Junior Engineer Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -6850,10 +6850,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSSSC Scientific Assistant & Lab Assistant Recruitment 2026: Apply Online for 208 Posts | Last Date 17-08-2026",
     "org": "UPSSSC Scientific Assistant & Lab Assistant",
     "shortOrg": "UPSSSC Scientific Assistant & ",
-    "posts": "208 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 208,
     "salary": "pay scale in UPSSSC Scientific Assistant &amp; Lab Assistant Recruitme",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6879,10 +6879,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Oil India Limited Chemist Recruitment 2026: Walk in Interview on 17-08-2026",
     "org": "Oil India Limited Chemist",
     "shortOrg": "Oil India Limited Chemist",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -6909,10 +6909,10 @@ window.ROZGAR_DATA = (function() {
     "title": "GSSSB Horticulture Assistant Recruitment 2026 - Apply Online for 100 Posts | Last Date 17-08-2026",
     "org": "GSSSB Horticulture Assistant",
     "shortOrg": "GSSSB Horticulture Assistant",
-    "posts": "100 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 100,
     "salary": "Level-4 (7th CPC)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6938,10 +6938,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Indian Army JAG Entry 2026: Apply Online for 10 Law Graduate Posts | Last Date 17-08-2026",
     "org": "Indian Army JAG Entry 2026: Apply Online for 10 Law Graduate Posts | Last Date 17",
     "shortOrg": "Indian Army JAG Entry 2026: Ap",
-    "posts": "10 Law Graduate Posts",
+    "posts": "Indian Army JAG Entry 2026:",
     "vacancies": 700,
     "salary": "Pay Scale (₹)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "law-llb"
@@ -6968,10 +6968,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BRIC NIAB JRF Recruitment 2026: Apply Online, Notification | Last Date 17-08-2026",
     "org": "BRIC NIAB JRF",
     "shortOrg": "BRIC NIAB JRF",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in BRIC NIAB JRF Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -6997,10 +6997,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SPMCIL Young Professional Recruitment 2026 - Apply Online for 06 Posts | Last Date 17-08-2026",
     "org": "SPMCIL Young Professional",
     "shortOrg": "SPMCIL Young Professional",
-    "posts": "06 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 6,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7026,10 +7026,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RITES Assistant Manager Mechanical Recruitment 2026 - Apply Online for 24 Posts | Last Date 17-08-2026",
     "org": "RITES Assistant Manager Mechanical",
     "shortOrg": "RITES Assistant Manager Mechan",
-    "posts": "24 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 24,
     "salary": "pay scale for RITES Assistant Manager (Mechanical) posts?",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7055,10 +7055,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MGAHV Faculty Recruitment 2026 - Apply Online for 11 Posts | Last Date 17-08-2026",
     "org": "MGAHV Faculty",
     "shortOrg": "MGAHV Faculty",
-    "posts": "11 Posts",
+    "posts": "Faculty / Assistant Professor / Associate Professor",
     "vacancies": 11,
     "salary": "Level-13A",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -7085,10 +7085,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NCRTC Assistant Manager Civil Recruitment 2026 - Apply Online, Notification | Last Date 12-09-2026",
     "org": "NCRTC Assistant Manager Civil",
     "shortOrg": "NCRTC Assistant Manager Civil",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Pay Scale – E2)",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7114,7 +7114,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Sports Quota Recruitment 2026 (1000+ Govt Vacancies Opening)",
     "org": "Sports Quota",
     "shortOrg": "Sports Quota",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 126,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -7146,10 +7146,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BPSSC Range Officer Recruitment 2026 - Apply Online for 16 Posts | Last Date 16-08-2026",
     "org": "BPSSC Range Officer",
     "shortOrg": "BPSSC Range Officer",
-    "posts": "16 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 16,
     "salary": "Level-6 (₹35,400 – ₹1,12,400)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7175,10 +7175,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NALCO Medical Officer Recruitment 2026: Apply Online for 06 Posts | Last Date 16-08-2026",
     "org": "NALCO Medical Officer",
     "shortOrg": "NALCO Medical Officer",
-    "posts": "06 Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 6,
     "salary": "Pay Scale) + NPA &amp; Benefits",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "medical-nursing"
@@ -7205,7 +7205,7 @@ window.ROZGAR_DATA = (function() {
     "title": "DRDL Hyderabad Paid Internship Recruitment 2026: Apply for 168 Posts | Last Date 16-08-2026",
     "org": "DRDL Hyderabad Paid Internship",
     "shortOrg": "DRDL Hyderabad Paid Internship",
-    "posts": "168 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 168,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -7237,10 +7237,10 @@ window.ROZGAR_DATA = (function() {
     "title": "SCCL Apprentice Recruitment 2026 - Apply Online for 300 Posts | Last Date 16-08-2026",
     "org": "SCCL Apprentice",
     "shortOrg": "SCCL Apprentice",
-    "posts": "300 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 300,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -7267,10 +7267,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ITAT Private Secretary Recruitment 2026 - Apply Online for 42 Posts, Notification | Last Date 16-08-2026",
     "org": "ITAT Private Secretary",
     "shortOrg": "ITAT Private Secretary",
-    "posts": "42 Posts, Notification",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 42,
     "salary": "Level-8",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7296,10 +7296,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ISRO Scientist Engineer Recruitment 2026 - Apply Online for 93 Posts | Last Date 17-08-2026",
     "org": "ISRO Scientist Engineer",
     "shortOrg": "ISRO Scientist Engineer",
-    "posts": "93 Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 93,
     "salary": "Level-10 (₹56,100/-)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -7326,10 +7326,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BSIP Scientist B Recruitment 2026: Notification for 19 Posts | Apply Online up to 04-09-2026",
     "org": "BSIP Scientist B",
     "shortOrg": "BSIP Scientist B",
-    "posts": "19 Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 19,
     "salary": "Level-10",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7355,10 +7355,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DRDO DIHAR JRF & RA Recruitment 2026: Apply for 18 Posts | Walk in Interview on 01-09-2026",
     "org": "DRDO DIHAR JRF & RA",
     "shortOrg": "DRDO DIHAR JRF & RA",
-    "posts": "18 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 18,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -7385,10 +7385,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Integral Coach Factory (ICF) Apprentice Recruitment 2026 - Apply Online for 1010 Posts | Last Date 07-09-2026",
     "org": "Integral Coach Factory (ICF) Apprentice",
     "shortOrg": "Integral Coach Factory (ICF) A",
-    "posts": "1010 Posts",
+    "posts": "Integral Coach Factory (ICF) Apprentice",
     "vacancies": 1010,
     "salary": "₹8,200 – ₹9,600",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -7415,10 +7415,10 @@ window.ROZGAR_DATA = (function() {
     "title": "TNPSC CTSE Diploma ITI Recruitment 2026: Apply Online for 839 Posts | Last Date 15-08-2026",
     "org": "TNPSC CTSE Diploma ITI",
     "shortOrg": "TNPSC CTSE Diploma ITI",
-    "posts": "839 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 839,
     "salary": "Level-11",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "diploma",
@@ -7446,10 +7446,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Visakhapatnam DCCB Bank Recruitment 2026: Apply Online for 47 Staff Assistant Posts | Last Date 15-08-2026",
     "org": "Visakhapatnam DCCB Bank",
     "shortOrg": "Visakhapatnam DCCB Bank",
-    "posts": "47 Staff Assistant Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
-    "salary": "Pay Scale:",
-    "qualificationText": ":",
+    "salary": "Pay Matrix Level-1 / Level-2 (₹36,000 – ₹89,890/- + Bank Allowances)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7475,10 +7475,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UKSSSC Assistant Accountant Recruitment 2026 - Apply Online for 339 Posts | Last Date 15-08-2026",
     "org": "UKSSSC Assistant Accountant",
     "shortOrg": "UKSSSC Assistant Accountant",
-    "posts": "339 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 339,
     "salary": "Level-04 to Level-06",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7504,7 +7504,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Union Bank of India SO Recruitment 2026: Apply Online for 395 Posts | Last Date Extended 15-08-2026",
     "org": "Union Bank of India SO",
     "shortOrg": "Union Bank of India SO",
-    "posts": "395 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 395,
     "salary": "pay scale, eligibility, selection process, and important dates.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -7536,7 +7536,7 @@ window.ROZGAR_DATA = (function() {
     "title": "AAI Advt No 12/2026: Apply Online for 389 Manager and Junior Executive Posts | Last Date 07-09-2026",
     "org": "AAI Advt No 12/2026: Apply Online for 389 Manager and Junior Executive Posts | Last Date 07",
     "shortOrg": "AAI Advt No 12/2026: Apply Onl",
-    "posts": "389 Manager and Junior Executive Posts",
+    "posts": "AAI Advt No 12/2026:",
     "vacancies": 700,
     "salary": "pay scale, and important dates.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -7568,7 +7568,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Naval Ship Repair Yard Apprentice Recruitment 2026 - Apply Online for 50 Posts | Last Date 10-10-2026",
     "org": "Naval Ship Repair Yard Apprentice",
     "shortOrg": "Naval Ship Repair Yard Apprent",
-    "posts": "50 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 50,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -7601,10 +7601,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RRB Section Controller Recruitment 2026 - Apply Online for 119 Posts | Last Date 14-08-2026",
     "org": "RRB Section Controller",
     "shortOrg": "RRB Section Controller",
-    "posts": "119 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 119,
     "salary": "pay scale, age limit, and important dates. Detailed CEN with full elig",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7630,10 +7630,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Government Jobs in Tamil Nadu 2026 - Latest TN Govt Jobs Alert",
     "org": "Government Jobs in Tamil Nadu 2026",
     "shortOrg": "Government Jobs in Tamil Nadu ",
-    "posts": "Prescribed Posts",
+    "posts": "Latest TN Govt Jobs Alert",
     "vacancies": 145,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7659,10 +7659,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IRCTC North Zone Tourism Monitor Recruitment 2026 - Walk in Interview for 09 Posts",
     "org": "IRCTC North Zone Tourism Monitor",
     "shortOrg": "IRCTC North Zone Tourism Monit",
-    "posts": "09 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 9,
     "salary": "₹30,000 – ₹35,000",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass"
@@ -7689,10 +7689,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Central Railway Sports Quota Recruitment 2026 - Apply Online for 59 Group C & D Posts | Last Date 14-08-2026",
     "org": "Central Railway Sports Quota",
     "shortOrg": "Central Railway Sports Quota",
-    "posts": "59 Group C & D Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in Central Railway Sports Quota Recruitment 2026?",
-    "qualificationText": "y",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7718,10 +7718,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HAL DT MT Recruitment 2026: Apply Online for 120 Posts, Notification | Last Date 14-08-2026",
     "org": "HAL DT MT",
     "shortOrg": "HAL DT MT",
-    "posts": "120 Posts, Notification",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 120,
     "salary": "pay scale in HAL DT MT Recruitment 2026?",
-    "qualificationText": "s",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7747,10 +7747,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CSIR CMERI Technician Recruitment 2026 - Apply Online for 27 Posts | Last Date 13-09-2026",
     "org": "CSIR CMERI Technician",
     "shortOrg": "CSIR CMERI Technician",
-    "posts": "27 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 27,
     "salary": "Level-2",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7776,10 +7776,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MECL Executive Trainee Recruitment 2026: Apply Online for 13 Posts | Last Date 14-08-2026",
     "org": "MECL Executive Trainee",
     "shortOrg": "MECL Executive Trainee",
-    "posts": "13 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 13,
     "salary": "pay scale of Rs. 40,000 – 1,40,000/- (E-1 IDA) + applicable Industrial",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7805,10 +7805,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HVPNL Apprentice Recruitment 2026: Apply Online for 114 Posts | Last Date 14-08-2026",
     "org": "HVPNL Apprentice",
     "shortOrg": "HVPNL Apprentice",
-    "posts": "114 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 114,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -7835,10 +7835,10 @@ window.ROZGAR_DATA = (function() {
     "title": "High Court of Karnataka Assistant Recruitment 2026: Apply Online for 18 Posts | Last Date 11-09-2026",
     "org": "High Court of Karnataka Assistant",
     "shortOrg": "High Court of Karnataka Assist",
-    "posts": "18 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 18,
     "salary": "Pay Scale ₹25,500–81,100 (Level-4). Age 18 to 35/40 years. Online appl",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "law-llb"
@@ -7865,10 +7865,10 @@ window.ROZGAR_DATA = (function() {
     "title": "MUCB Bank Recruitment 2026: Apply Online for AGM IT & Assistant Treasury Officer Posts | Last Date 24-08-2026",
     "org": "MUCB Bank",
     "shortOrg": "MUCB Bank",
-    "posts": "AGM IT & Assistant Treasury Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7894,10 +7894,10 @@ window.ROZGAR_DATA = (function() {
     "title": "TNPSC Group 2 2A Notification 2026 - Apply Online for 821 Various Posts | Last Date 09-09-2026",
     "org": "TNPSC Group 2 2A Notification 2026",
     "shortOrg": "TNPSC Group 2 2A Notification ",
-    "posts": "821 Various Posts",
+    "posts": "TNPSC Group 2 2A",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -7923,10 +7923,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IOCL Apprentice Recruitment 2026 - Apply Online for 1883 Posts, Notifications",
     "org": "IOCL Apprentice",
     "shortOrg": "IOCL Apprentice",
-    "posts": "1883 Posts, Notifications",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 1883,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "n",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -7953,10 +7953,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IOCL Panipat Refinery Apprentice Recruitment 2026: Apply Online for 1450 Posts | Last Date 12-08-2026",
     "org": "IOCL Panipat Refinery Apprentice",
     "shortOrg": "IOCL Panipat Refinery Apprenti",
-    "posts": "1450 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 1450,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -7983,10 +7983,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RITES Limited IT Professionals Recruitment 2026: Apply Online for 03 Posts | Last Date 24-08-2026",
     "org": "RITES Limited IT Professionals",
     "shortOrg": "RITES Limited IT Professionals",
-    "posts": "03 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 3,
     "salary": "Pay Scale)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8012,7 +8012,7 @@ window.ROZGAR_DATA = (function() {
     "title": "BEML Officer Recruitment 2026 - Apply Online for 05 Safety Posts",
     "org": "BEML Officer",
     "shortOrg": "BEML Officer",
-    "posts": "05 Safety Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale, application fee, last date, and other conditions.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8044,7 +8044,7 @@ window.ROZGAR_DATA = (function() {
     "title": "THDC Engineer Trainee Recruitment through GATE 2027 - Notification Out",
     "org": "THDC Engineer Trainee",
     "shortOrg": "THDC Engineer Trainee",
-    "posts": "Prescribed Posts",
+    "posts": "Recruitment through GATE 2027 – Notification Out",
     "vacancies": 700,
     "salary": "pay scale in THDC Engineer Trainee Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8077,10 +8077,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ADA Project Assistant Recruitment 2026 - Apply Online for 111 Posts | Last Date 13-08-2026",
     "org": "ADA Project Assistant",
     "shortOrg": "ADA Project Assistant",
-    "posts": "111 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 111,
     "salary": "₹31,000 – ₹37,000",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8106,10 +8106,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Young Professional Recruitment 2026 - Latest YP Central Govt Job Vacancies",
     "org": "Young Professional",
     "shortOrg": "Young Professional",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 231,
     "salary": "₹30,000 to ₹1,00,000,",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8135,7 +8135,7 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSC Advertisement No.09/2026 - Apply Online for 39 Various Posts | Last Date 14-08-2026",
     "org": "UPSC Advertisement No.09/2026",
     "shortOrg": "UPSC Advertisement No.09/2026",
-    "posts": "39 Various Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale, selection process and online application link.",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8167,10 +8167,10 @@ window.ROZGAR_DATA = (function() {
     "title": "AMTRON Recruitment 2026: Apply Online for 15 IT Professional Posts | Last Date 12-08-2026",
     "org": "AMTRON",
     "shortOrg": "AMTRON",
-    "posts": "15 IT Professional Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "₹35,000 – ₹90,000",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8196,7 +8196,7 @@ window.ROZGAR_DATA = (function() {
     "title": "OUAT Assistant Recruitment 2026 - Apply Offline for 31 Posts | Last Date 12-08-2026",
     "org": "OUAT Assistant",
     "shortOrg": "OUAT Assistant",
-    "posts": "31 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 31,
     "salary": "pay scale in OUAT Assistant Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8228,10 +8228,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Central Railway Scouts & Guides Quota Recruitment 2026 - Apply Online for 12 Posts | Last Date 12-08-2026",
     "org": "Central Railway Scouts & Guides Quota",
     "shortOrg": "Central Railway Scouts & Guide",
-    "posts": "12 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 12,
     "salary": "pay scale in Central Railway Scouts &amp; Guides Quota Recruitment 202",
-    "qualificationText": "y",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8257,10 +8257,10 @@ window.ROZGAR_DATA = (function() {
     "title": "ICAI Executive Assistant Recruitment 2026: Apply Online for 20 Posts | Last Date 12-08-2026",
     "org": "ICAI Executive Assistant",
     "shortOrg": "ICAI Executive Assistant",
-    "posts": "20 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 20,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8286,10 +8286,10 @@ window.ROZGAR_DATA = (function() {
     "title": "KRIBHCO Recruitment 2026 - Apply Online for Senior Manager & Junior Accounts Assistant Posts | Last Date 10-09-2026",
     "org": "KRIBHCO",
     "shortOrg": "KRIBHCO",
-    "posts": "Senior Manager & Junior Accounts Assistant Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in KRIBHCO Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8315,7 +8315,7 @@ window.ROZGAR_DATA = (function() {
     "title": "BRIC-NIAB Scientist-B & Farm Manager Recruitment 2026 - Apply Online for 02 Posts | Last Date 11-09-2026",
     "org": "BRIC",
     "shortOrg": "BRIC",
-    "posts": "02 Posts",
+    "posts": "NIAB Scientist-B & Farm Manager",
     "vacancies": 2,
     "salary": "pay scale in BRIC-NIAB Recruitment 2026?",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8347,10 +8347,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NTPC Green Energy Recruitment 2026 - Apply Online for 147 Engineer & Executive Posts | Last Date 07-09-2026",
     "org": "NTPC Green Energy",
     "shortOrg": "NTPC Green Energy",
-    "posts": "147 Engineer & Executive Posts",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -8377,7 +8377,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NMDC Steel Limited Recruitment 2026: Apply Online for 102 Executive Trainee Posts | Last Date 11-08-2026",
     "org": "NMDC Steel Limited",
     "shortOrg": "NMDC Steel Limited",
-    "posts": "102 Executive Trainee Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8409,10 +8409,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BEL Project Engineer Recruitment 2026: Apply for 14 Posts in Rajasthan and Gujarat | Walk in Date 11-08-2026",
     "org": "BEL Project Engineer",
     "shortOrg": "BEL Project Engineer",
-    "posts": "14 Posts in Rajasthan and Gujarat",
+    "posts": "Project Engineer / Executive Trainee",
     "vacancies": 14,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "btech-engineering"
@@ -8439,10 +8439,10 @@ window.ROZGAR_DATA = (function() {
     "title": "UPSC Principal and Vice Principal Recruitment 2026 - Apply Online for 828 Posts, Notification | Last Date 14-08-2026",
     "org": "UPSC Principal and Vice Principal",
     "shortOrg": "UPSC Principal and Vice Princi",
-    "posts": "828 Posts, Notification",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 828,
     "salary": "pay scale, important dates and application process below.",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8468,10 +8468,10 @@ window.ROZGAR_DATA = (function() {
     "title": "VAMNICOM Officer Recruitment 2026 - Apply Online, Notification",
     "org": "VAMNICOM Officer",
     "shortOrg": "VAMNICOM Officer",
-    "posts": "Prescribed Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "pay scale in VAMNICOM Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8497,10 +8497,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CNCI Specialist and Scientist Recruitment 2026: Apply for 08 Posts | Last Date 31-08-2026",
     "org": "CNCI Specialist and Scientist",
     "shortOrg": "CNCI Specialist and Scientist",
-    "posts": "08 Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 8,
     "salary": "pay scale in CNCI Specialist and Scientist Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8526,7 +8526,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Balachadi Recruitment 2026 - Apply 16 Teaching and Non-Teaching Posts | Last Date 10-08-2026",
     "org": "Sainik School Balachadi",
     "shortOrg": "Sainik School Balachadi",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Pay Scale / Salary",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8558,10 +8558,10 @@ window.ROZGAR_DATA = (function() {
     "title": "iDEX DIO Recruitment 2026: Apply Online 06 Consultant Posts | Last Date 10-08-2026",
     "org": "iDEX DIO",
     "shortOrg": "iDEX DIO",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "₹1,80,000 – ₹2,40,000",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8587,10 +8587,10 @@ window.ROZGAR_DATA = (function() {
     "title": "DRDO Paid Internship 2026 Notification - Apply for 05 Fresher Engineering Graduates | Last Date 10-08-2026",
     "org": "DRDO Paid Internship 2026 Notification",
     "shortOrg": "DRDO Paid Internship 2026 Noti",
-    "posts": "05 Fresher Engineering Graduates",
+    "posts": "Apply for 05 Fresher Engineering Graduates | Last Date 10-08-2026",
     "vacancies": 50,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -8618,10 +8618,10 @@ window.ROZGAR_DATA = (function() {
     "title": "PDCC Bank Peon Recruitment 2026: Apply Online for 289 Posts | Last Date 10-08-2026",
     "org": "PDCC Bank Peon",
     "shortOrg": "PDCC Bank Peon",
-    "posts": "289 Posts",
+    "posts": "Peon / Office Attendant",
     "vacancies": 289,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8647,10 +8647,10 @@ window.ROZGAR_DATA = (function() {
     "title": "CSL Executive Trainee Recruitment 2026: Notification, Online Form | Last Date 10-08-2026",
     "org": "CSL Executive Trainee",
     "shortOrg": "CSL Executive Trainee",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "pay scale in CSL Executive Trainee Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8676,7 +8676,7 @@ window.ROZGAR_DATA = (function() {
     "title": "MP High Court SCPA Recruitment 2026 - Apply Online for 130 Posts, Notification | Last Date 10-08-2026",
     "org": "MP High Court SCPA",
     "shortOrg": "MP High Court SCPA",
-    "posts": "130 Posts, Notification",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 130,
     "salary": "₹36,200 – ₹1,14,800",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8709,10 +8709,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Rajasthan High Court Stenographer Recruitment 2026: Apply Online for 163 Posts | Last Date 10-08-2026",
     "org": "Rajasthan High Court Stenographer",
     "shortOrg": "Rajasthan High Court Stenograp",
-    "posts": "163 Posts",
+    "posts": "Stenographer Grade-III / Typist",
     "vacancies": 163,
     "salary": "pay scale for Stenographer posts?",
-    "qualificationText": "d",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "law-llb"
@@ -8739,10 +8739,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IIT Mandi Non Teaching Recruitment 2026: Apply Online for 11 Posts | Last Date 10-08-2026",
     "org": "IIT Mandi Non Teaching",
     "shortOrg": "IIT Mandi Non Teaching",
-    "posts": "11 Posts",
+    "posts": "Non-Teaching Group A, B & C Staff",
     "vacancies": 11,
     "salary": "pay scale in IIT Mandi Non Teaching Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8768,7 +8768,7 @@ window.ROZGAR_DATA = (function() {
     "title": "PSC Recruitment 2026 - Latest State wise PSC Jobs Notifications",
     "org": "PSC",
     "shortOrg": "PSC",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 186,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8800,10 +8800,10 @@ window.ROZGAR_DATA = (function() {
     "title": "RRB Recruitment 2026 - Apply Online for Latest RRB Job Vacancies",
     "org": "RRB",
     "shortOrg": "RRB",
-    "posts": "Latest RRB Job Vacancies",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 158,
-    "salary": "pay scales include:",
-    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "salary": "As per 7th Pay Matrix / Institutional Pay Rules (Refer Official Notification)",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8829,10 +8829,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Scientist Govt Jobs 2026 - 100+ Scientific & Research Vacancies | Latest Jobs",
     "org": "Scientist Govt Jobs 2026",
     "shortOrg": "Scientist Govt Jobs 2026",
-    "posts": "Prescribed Posts",
+    "posts": "Scientist Govt",
     "vacancies": 134,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8858,10 +8858,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Faculty Govt Jobs 2026 (500+ Vacancies Open Now)",
     "org": "Latest Faculty Govt Jobs 2026 (500+ Vacancies Open Now)",
     "shortOrg": "Latest Faculty Govt Jobs 2026 ",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Faculty Govt",
     "vacancies": 132,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "?",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "bed-teaching"
@@ -8888,10 +8888,10 @@ window.ROZGAR_DATA = (function() {
     "title": "HARTRON Junior Programmer Recruitment 2026: Apply Online for 530 Posts | Last Date 09-08-2026",
     "org": "HARTRON Junior Programmer",
     "shortOrg": "HARTRON Junior Programmer",
-    "posts": "530 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 530,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ")",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -8917,7 +8917,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Botanical Survey of India JRF Recruitment 2026: Apply for 06 Posts | Last Date 09-08-2026",
     "org": "Botanical Survey of India JRF",
     "shortOrg": "Botanical Survey of India JRF",
-    "posts": "06 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 6,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8949,7 +8949,7 @@ window.ROZGAR_DATA = (function() {
     "title": "NSU Manipur Recruitment 2026 - Apply Online 11 Teaching & Non-Teaching Posts | Last Date 09-08-2026",
     "org": "NSU Manipur",
     "shortOrg": "NSU Manipur",
-    "posts": "Prescribed Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 11,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -8981,10 +8981,10 @@ window.ROZGAR_DATA = (function() {
     "title": "BRIC Scientist Recruitment 2026 - Apply Online for 05 Posts | Last Date 09-08-2026",
     "org": "BRIC Scientist",
     "shortOrg": "BRIC Scientist",
-    "posts": "05 Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 5,
     "salary": "pay scale in BRIC Scientist Recruitment 2026?",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -9010,10 +9010,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Latest Police Jobs 2026 (1000+ New Vacancies Open)",
     "org": "Latest Police Jobs 2026 (1000+ New Vacancies Open)",
     "shortOrg": "Latest Police Jobs 2026 (1000+",
-    "posts": "Prescribed Posts",
+    "posts": "Latest Police",
     "vacancies": 124,
     "salary": "Level-3 Pay Matrix ₹ 21,700 - 69,100/- (As per 7th CPC)",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -9039,10 +9039,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Army Ordnance Corps Recruitment 2026 Notification for 2615 MTS, Fireman and Other Posts | Apply Online up to 22-09-2026",
     "org": "Army Ordnance Corps",
     "shortOrg": "Army Ordnance Corps",
-    "posts": "2615 MTS, Fireman and Other Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-1 to Level-5",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -9068,10 +9068,10 @@ window.ROZGAR_DATA = (function() {
     "title": "TSLPRB Police Constable Recruitment 2026: Apply Online for 7112 Constable, Fire Fighter, Warder Posts",
     "org": "TSLPRB Police Constable",
     "shortOrg": "TSLPRB Police Constable",
-    "posts": "7112 Constable, Fire Fighter, Warder Posts",
+    "posts": "Police Constable / Sub Inspector",
     "vacancies": 700,
     "salary": "pay scale of",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -9097,10 +9097,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Telangana Police Recruitment 2026 - Notification for 325 SI, Constable, ASI & Fire Officer Posts | Apply Online up to 09-09-2026",
     "org": "Telangana Police",
     "shortOrg": "Telangana Police",
-    "posts": "325 SI, Constable, ASI & Fire Officer Posts",
+    "posts": "Specialist Officer / Executive Officer",
     "vacancies": 700,
     "salary": "Pay Scale (₹)",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],
@@ -9126,10 +9126,10 @@ window.ROZGAR_DATA = (function() {
     "title": "IOCL Marketing Division Apprentice Recruitment 2026 - Notification for 433 Posts | Apply Online up to 06-09-2026",
     "org": "IOCL Marketing Division Apprentice",
     "shortOrg": "IOCL Marketing Division Appren",
-    "posts": "433 Posts",
+    "posts": "Apprentice (Trade / Technician / Graduate)",
     "vacancies": 433,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -9156,10 +9156,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Navodaya Vidyalaya Samiti Recruitment 2026 - Project Scientist-I & Accountant Posts",
     "org": "Navodaya Vidyalaya Samiti",
     "shortOrg": "Navodaya Vidyalaya Samiti",
-    "posts": "Prescribed Posts",
+    "posts": "Scientist / Research Associate",
     "vacancies": 700,
     "salary": "pay scale in NVS Project Staff Recruitment 2026?",
-    "qualificationText": ".",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "iti"
@@ -9186,10 +9186,10 @@ window.ROZGAR_DATA = (function() {
     "title": "Sainik School Kalikiri Teacher Recruitment 2026: Walk in Interview for TGT Posts",
     "org": "Sainik School Kalikiri Teacher",
     "shortOrg": "Sainik School Kalikiri Teacher",
-    "posts": "TGT Posts",
+    "posts": "School Teacher / TGT / PGT",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": ":",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate",
       "12th-pass",
@@ -9217,7 +9217,7 @@ window.ROZGAR_DATA = (function() {
     "title": "Punjab National Bank LBO Recruitment 2026: Apply Online for 545 Posts | Last Date 09-08-2026",
     "org": "Punjab National Bank LBO",
     "shortOrg": "Punjab National Bank LBO",
-    "posts": "545 Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 545,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
     "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
@@ -9249,10 +9249,10 @@ window.ROZGAR_DATA = (function() {
     "title": "NIUM Recruitment 2026: Apply Online for 10 Professional Posts | Last Date 08-08-2026",
     "org": "NIUM",
     "shortOrg": "NIUM",
-    "posts": "10 Professional Posts",
+    "posts": "Various Technical & Administrative Posts",
     "vacancies": 700,
     "salary": "Level-6 / Level-7 Pay Scale + Allowances",
-    "qualificationText": "e",
+    "qualificationText": "Bachelor’s Degree in any discipline from recognized University",
     "qualifications": [
       "graduate"
     ],

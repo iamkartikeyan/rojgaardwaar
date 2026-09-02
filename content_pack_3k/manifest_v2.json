@@ -1,0 +1,11 @@
+{
+  "site": "https://www.indgovtjobs.in/",
+  "retrieved": "2026-09-02",
+  "records": 40,
+  "minimum_word_tokens": 5455,
+  "maximum_word_tokens": 5550,
+  "cross_blog_shared_4_word_phrases": 60,
+  "articles_under_3000_tokens": 0,
+  "content_type": "original_rewritten",
+  "youtube_links_policy": "only verified URLs; none available in the verified source data"
+}
