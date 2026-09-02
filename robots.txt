@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rojgaardwaar.in/sitemap.xml
+Sitemap: https://rozgardwaar.com/sitemap.xml
