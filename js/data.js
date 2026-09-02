@@ -2350,6 +2350,316 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://aranya.gov.in/aranyacms/(S(khhcmbwy1bl2bqtyzral2urc))/downloads/latestNews/750%20FW%20final%20notification%20Mysore%20circle_compressed_20-07-2026_04.58.34.pdf",
       "websiteUrl": "https://www.indgovtjobs.in/2026/07/karnataka-forest-watcher-recruitment.html"
     }
+  },
+  {
+    "id": "psu-govt-jobs",
+    "title": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
+    "org": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
+    "shortOrg": "Latest PSU Jobs 2026 | Public ",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2019/07/PSU-Govt-Jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2019/07/PSU-Govt-Jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2019/07/PSU-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "railway-jobs",
+    "title": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
+    "org": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
+    "shortOrg": "Railway Jobs 2026 Apply Online",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2026/09/railway-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2026/09/railway-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2026/09/railway-jobs.html"
+    }
+  },
+  {
+    "id": "free-job-alert",
+    "title": "Free Job Alert – Latest FreeJobAlert Govt Job Notifications 2026",
+    "org": "Free Job Alert – Latest FreeJobAlert Govt Job",
+    "shortOrg": "Free Job Alert – Latest FreeJo",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2019/10/Free-Job-Alert.html",
+      "notificationUrl": "https://rozgardwaar.com/2019/10/Free-Job-Alert.html",
+      "websiteUrl": "https://rozgardwaar.com/2019/10/Free-Job-Alert.html"
+    }
+  },
+  {
+    "id": "pg-jobs-2014-govt-sector",
+    "title": "Post Graduate Govt Jobs 2026 – MA, M.Sc, MBA, MCA, M.Tech Vacancies List",
+    "org": "Post Graduate Govt Jobs 2026 – MA, M.Sc, MBA, MCA, M.Tech Vacancies List",
+    "shortOrg": "Post Graduate Govt Jobs 2026 –",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2014/01/pg-jobs-2014-govt-sector.html",
+      "notificationUrl": "https://rozgardwaar.com/2014/01/pg-jobs-2014-govt-sector.html",
+      "websiteUrl": "https://rozgardwaar.com/2014/01/pg-jobs-2014-govt-sector.html"
+    }
+  },
+  {
+    "id": "ngel-manager-recruitment",
+    "title": "NGEL Manager Recruitment 2026 – Apply Online for 34 Posts | Last Date 31-08-2026",
+    "org": "NGEL Manager",
+    "shortOrg": "NGEL Manager",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://ngel.in/public/career/1/54361adc7b/54361adc7b.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "nspcl-advertisement-01-2026",
+    "title": "NSPCL Advertisement 01/2026 – Apply Online for 17 Engineer & Officer Posts | Last Date 22-09-2026",
+    "org": "NSPCL Advertisement 01/2026 – Apply Online for 17 Engineer & Officer Posts | Last Date 22-09-2026",
+    "shortOrg": "NSPCL Advertisement 01/2026 – ",
+    "posts": "Engineer & Officer",
+    "vacancies": 17,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "22-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1SZmEmzqKyG1Um_P3btt2yViK4SNZfyxr/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1SZmEmzqKyG1Um_P3btt2yViK4SNZfyxr/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1SZmEmzqKyG1Um_P3btt2yViK4SNZfyxr/view?usp=sharing"
+    }
+  },
+  {
+    "id": "ongc-graduate-trainee-recruitment",
+    "title": "ONGC Graduate Trainee Recruitment 2026 �� Apply Online for 52 Posts, Notification | Last Date 31-07-2026",
+    "org": "ONGC Graduate Trainee",
+    "shortOrg": "ONGC Graduate Trainee",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-07-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://ongcindia.com/documents/77751/2660534/PDF4-170726.pdf",
+      "notificationUrl": "https://ongcindia.com/documents/77751/2660534/PDF4-170726.pdf",
+      "websiteUrl": "https://ongcindia.com/documents/77751/2660534/PDF4-170726.pdf"
+    }
+  },
+  {
+    "id": "gate-2026-jobs",
+    "title": "GATE 2026 Score based PSU Recruitment List",
+    "org": "GATE 2026 Score based PSU",
+    "shortOrg": "GATE 2026 Score based PSU",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2026/03/GATE-2026-Jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2026/03/GATE-2026-Jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2026/03/GATE-2026-Jobs.html"
+    }
+  },
+  {
+    "id": "mrpl-fire-officer-recruitment",
+    "title": "MRPL Fire Officer Recruitment 2026 – Apply Online for 05 Posts | Last Date 16-07-2026",
+    "org": "MRPL Fire Officer",
+    "shortOrg": "MRPL Fire Officer",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "16-07-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1CwLmpugriWcj-ybzCp2l_OIQ8qpiKfHO/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1CwLmpugriWcj-ybzCp2l_OIQ8qpiKfHO/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1CwLmpugriWcj-ybzCp2l_OIQ8qpiKfHO/view?usp=sharing"
+    }
+  },
+  {
+    "id": "ongc-consultant-recruitment",
+    "title": "ONGC Consultant Recruitment 2026 – Apply for 37 Posts | Last Date 19-06-2026",
+    "org": "ONGC Consultant",
+    "shortOrg": "ONGC Consultant",
+    "posts": "Project Engineer / Executive Trainee",
+    "vacancies": 12,
+    "salary": "Level-6 to Level-10 / IDA Pay Scales (₹40,000 – ₹1,40,000/-)",
+    "qualificationText": "Degree in Engineering (B.E./B.Tech) / Diploma / Graduate from recognized University",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Public Sector Undertaking (PSU)",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "19-06-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 30 / 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://ongcindia.com/documents/77751/2659209/Consultants040626.pdf/16a21ea6-f980-6b6d-0c74-015b89b30716",
+      "notificationUrl": "https://ongcindia.com/documents/77751/2659209/Consultants040626.pdf/16a21ea6-f980-6b6d-0c74-015b89b30716",
+      "websiteUrl": "https://ongcindia.com/documents/77751/2659209/Consultants040626.pdf/16a21ea6-f980-6b6d-0c74-015b89b30716"
+    }
   }
 ];
 
