@@ -433,15 +433,6 @@ data.RECRUITMENTS.forEach(job => {
     return q ? q.name : qId;
   }).join(' / ');
 
-  const urVac = Math.round(job.vacancies * 0.40);
-  const obcVac = Math.round(job.vacancies * 0.27);
-  const ewsVac = Math.round(job.vacancies * 0.10);
-  const scVac = Math.round(job.vacancies * 0.15);
-  const stVac = Math.round(job.vacancies * 0.08);
-
-  const grossEst = Math.round(38000 + (job.vacancies % 25) * 1200);
-  const netEst = Math.round(32000 + (job.vacancies % 25) * 1050);
-
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -498,173 +489,66 @@ data.RECRUITMENTS.forEach(job => {
               </a>
             </div>
 
-            <!-- 1. Executive Summary -->
+            <!-- 1. Official Recruitment Summary Table -->
             <div class="green-check-title">
-              ${SVG_CHECK} <span>1. Executive Summary &amp; Official Recruitment Overview:</span>
+              ${SVG_CHECK} <span>1. Official Recruitment Overview &amp; Key Details:</span>
             </div>
-            <p style="font-size:13.5px; line-height:1.75; color:#333; margin-bottom:14px;">
-              The recruitment board of <strong>${escapeHtml(job.org)} (${escapeHtml(job.shortOrg)})</strong> has officially released the employment notification for filling up <strong>${job.vacancies.toLocaleString('en-IN')} Vacancies</strong> of <strong>${escapeHtml(job.posts)}</strong> for the 2026-2027 recruitment cycle. This notification provides an exceptional public sector career opportunity for candidates possessing <strong>${escapeHtml(job.qualificationText)}</strong>. Selected applicants will be posted across designated divisions in <strong>${escapeHtml(stateObj.name)}</strong> and Central offices throughout India. The online application registration window is actively open from <strong>${job.importantDates.startDate}</strong> and will officially close on <strong>${job.importantDates.lastDate}</strong>.
-            </p>
-
-            <!-- Quick Summary Table -->
+            
             <table class="detail-table-custom">
               <tbody>
                 <tr><th style="width:32%;">Recruiting Organization</th><td><strong>${escapeHtml(job.org)} (${escapeHtml(job.shortOrg)})</strong></td></tr>
                 <tr><th>Advertised Post / Designation</th><td><strong>${escapeHtml(job.posts)}</strong></td></tr>
                 <tr><th>Total Sanctioned Vacancies</th><td><strong style="color:#008000; font-size:14.5px;">${job.vacancies.toLocaleString('en-IN')} Posts</strong></td></tr>
-                <tr><th>7th CPC / IDA Pay Scale</th><td>${escapeHtml(job.salary)} (Approx. Gross Pay: ₹${grossEst.toLocaleString('en-IN')}/month)</td></tr>
-                <tr><th>Prescribed Educational Qualification</th><td>${escapeHtml(qualNames)} (${escapeHtml(job.qualificationText)})</td></tr>
-                <tr><th>Age Limitations</th><td>${escapeHtml(job.ageLimit)} (Crucial Date: ${job.importantDates.startDate})</td></tr>
-                <tr><th>Age Relaxation Slabs</th><td>${escapeHtml(job.ageRelaxation)}</td></tr>
+                <tr><th>Pay Scale / Remuneration</th><td><strong>${escapeHtml(job.salary)}</strong></td></tr>
+                <tr><th>Educational Qualification</th><td>${escapeHtml(qualNames)} (${escapeHtml(job.qualificationText)})</td></tr>
+                <tr><th>Age Limit Criteria</th><td>${escapeHtml(job.ageLimit)}</td></tr>
+                ${job.ageRelaxation ? `<tr><th>Applicable Age Relaxation</th><td>${escapeHtml(job.ageRelaxation)}</td></tr>` : ''}
                 <tr><th>Application Registration Fee</th><td>${escapeHtml(job.fee)}</td></tr>
-                <tr><th>Online Application Closing Date</th><td><strong style="color:#cc0000; font-size:14.5px;">${job.importantDates.lastDate}</strong></td></tr>
-                <tr><th>Tentative Examination / Selection Date</th><td>${job.importantDates.examDate}</td></tr>
-                <tr><th>Primary Job Location</th><td>${escapeHtml(stateObj.name)} / All India Postings</td></tr>
+                <tr><th>Application Start Date</th><td>${job.importantDates.startDate}</td></tr>
+                <tr><th>Application Closing Date</th><td><strong style="color:#cc0000; font-size:14.5px;">${job.importantDates.lastDate}</strong></td></tr>
+                ${job.importantDates.examDate ? `<tr><th>Exam / Selection Date</th><td>${job.importantDates.examDate}</td></tr>` : ''}
+                <tr><th>Primary Posting Location</th><td>${escapeHtml(stateObj.name)}</td></tr>
               </tbody>
             </table>
 
-            <!-- 2. About Department -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>2. About ${escapeHtml(job.org)} &amp; Organizational Profile:</span>
+            <!-- 2. Educational Eligibility -->
+            <div class="green-check-title" style="margin-top:18px;">
+              ${SVG_CHECK} <span>2. Educational Qualification &amp; Eligibility:</span>
             </div>
             <p style="font-size:13.5px; line-height:1.75; color:#333; margin-bottom:14px;">
-              ${escapeHtml(job.org)} is a premier constitutional, statutory, or central public sector enterprise mandated with executing crucial governance, infrastructure, financial, administrative, and public utility operations. Employing thousands of personnel across regional, zonal, and departmental wings, ${escapeHtml(job.org)} maintains state-of-the-art administrative facilities, merit-driven evaluation systems, and extensive healthcare, residential, and retirement security infrastructures. Serving in ${escapeHtml(job.org)} offers public recognition, structured promotions, and defined pension security.
+              Candidates applying for <strong>${escapeHtml(job.posts)}</strong> in <strong>${escapeHtml(job.org)}</strong> must possess <strong>${escapeHtml(job.qualificationText)}</strong> from a recognized board, council, or university. Candidates should verify all eligibility criteria and certificates prior to the closing date (<strong>${job.importantDates.lastDate}</strong>).
             </p>
 
-            <!-- 3. Vacancy Matrix -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>3. Category-Wise Vacancy Distribution Matrix:</span>
-            </div>
-            <p style="font-size:13px; line-height:1.6; color:#444; margin-bottom:8px;">
-              In accordance with the Central and State reservation rosters prescribed by the Department of Personnel and Training (DoPT), the total ${job.vacancies.toLocaleString('en-IN')} vacancies are classified across categories:
-            </p>
-            <table class="detail-table-custom" style="text-align:center;">
-              <thead>
-                <tr><th>Category</th><th>Reservation %</th><th>Estimated Vacancies</th><th>Applicable Relaxations</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><strong>Unreserved (UR / General)</strong></td><td>40%</td><td><strong>${urVac}</strong></td><td>Merit Based (Open to All)</td></tr>
-                <tr><td><strong>Other Backward Classes (OBC-NCL)</strong></td><td>27%</td><td><strong>${obcVac}</strong></td><td>+3 Years Upper Age Relaxation</td></tr>
-                <tr><td><strong>Economically Weaker Section (EWS)</strong></td><td>10%</td><td><strong>${ewsVac}</strong></td><td>Standard Income &amp; Asset Criteria</td></tr>
-                <tr><td><strong>Scheduled Caste (SC)</strong></td><td>15%</td><td><strong>${scVac}</strong></td><td>+5 Years Age &amp; Fee Exemption</td></tr>
-                <tr><td><strong>Scheduled Tribe (ST)</strong></td><td>7.5%</td><td><strong>${stVac}</strong></td><td>+5 Years Age &amp; Fee Exemption</td></tr>
-                <tr><td><strong>PwBD &amp; Ex-Servicemen (ESM)</strong></td><td>Horizontal</td><td>Identified Posts</td><td>+10 to 15 Years Relaxation</td></tr>
-              </tbody>
-            </table>
-
-            <!-- 4. Salary Structure -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>4. Salary Structure, Allowances &amp; Monthly In-Hand Pay:</span>
-            </div>
-            <p style="font-size:13.5px; line-height:1.75; color:#333; margin-bottom:10px;">
-              Selected candidates for <strong>${escapeHtml(job.posts)}</strong> will receive compensation under the pay matrix of <strong>${escapeHtml(job.salary)}</strong>. In addition to Basic Pay, employees are entitled to comprehensive allowances:
-            </p>
-            <ul style="padding-left:22px; line-height:1.75; font-size:13px; color:#333; margin-bottom:14px;">
-              <li><strong>Dearness Allowance (DA):</strong> Paid at the prevailing government-notified rate (currently 50%+ of Basic Pay), revised every 6 months to offset cost-of-living increases.</li>
-              <li><strong>House Rent Allowance (HRA):</strong> Disbursed based on posting city classification: 30% for Class X (Metros), 20% for Class Y (State Capitals), and 10% for Class Z (Rural/Towns). Government accommodation/quarters may be allotted in lieu of HRA.</li>
-              <li><strong>Transport Allowance (TA):</strong> Fixed monthly allowance plus applicable DA to support daily commuting expenses.</li>
-              <li><strong>Comprehensive Medical Facility:</strong> Full medical reimbursement / cashless treatment for employee and dependent family members under CGHS, ECHS, or company medical panel.</li>
-              <li><strong>Children Education Allowance (CEA):</strong> Annual reimbursement of up to ₹27,000 per child (up to two children) plus hostel subsidies.</li>
-              <li><strong>Pension &amp; Social Security:</strong> Covered under the Defined National Pension System (NPS) / Unified Pension Scheme with statutory matching government contributions.</li>
-              <li><strong>Monthly In-Hand Net Pay:</strong> After mandatory statutory deductions (NPS 10%, Professional Tax, TDS), the net credited salary is estimated between <strong>₹${netEst.toLocaleString('en-IN')}</strong> and <strong>₹${(netEst + 8000).toLocaleString('en-IN')}</strong> per month.</li>
-            </ul>
-
-            <!-- 5. Educational Qualification -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>5. In-Depth Educational Qualification &amp; Experience Criteria:</span>
-            </div>
-            <p style="font-size:13.5px; line-height:1.75; color:#333; margin-bottom:10px;">
-              To ensure high administrative and technical standards, candidates must strictly satisfy the following minimum criteria:
-            </p>
-            <ul style="padding-left:22px; line-height:1.75; font-size:13px; color:#333; margin-bottom:14px;">
-              <li><strong>Mandatory Degree / Certificate:</strong> ${escapeHtml(job.qualificationText)}. The degree/diploma must be obtained from a University or Institution recognized by UGC, AICTE, NCVT, or State Government.</li>
-              <li><strong>Minimum Aggregate Marks:</strong> A minimum aggregate of 50% to 60% marks (or equivalent CGPA) in the qualifying degree for General/OBC candidates, with passing marks required for SC/ST/PwBD candidates.</li>
-              <li><strong>Final Year Students:</strong> Candidates appearing in their final semester/year are eligible to submit applications provided they acquire their provisional degree/marksheet on or before <strong>${job.importantDates.lastDate}</strong>.</li>
-              <li><strong>Professional Registrations:</strong> For technical, nursing, legal, or trade posts, candidates must hold valid council registrations at the time of online document verification.</li>
-            </ul>
-
-            <!-- 6. Age Relaxation -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>6. Age Limits &amp; Category-Wise Age Relaxation Table:</span>
+            <!-- 3. Official Links & Application -->
+            <div class="green-check-title" style="margin-top:18px;">
+              ${SVG_CHECK} <span>3. Official Notification &amp; Application Links:</span>
             </div>
             <table class="detail-table-custom">
-              <thead>
-                <tr><th>Candidate Category</th><th>Permissible Age Relaxation</th><th>Max Upper Age Limit</th></tr>
-              </thead>
               <tbody>
-                <tr><td>General / Unreserved / EWS</td><td>No Relaxation</td><td>Standard Ceiling (${escapeHtml(job.ageLimit)})</td></tr>
-                <tr><td>OBC (Non-Creamy Layer)</td><td>03 Years</td><td>Ceiling + 3 Years</td></tr>
-                <tr><td>SC / ST Candidates</td><td>05 Years</td><td>Ceiling + 5 Years</td></tr>
-                <tr><td>PwBD (General / EWS)</td><td>10 Years</td><td>Ceiling + 10 Years</td></tr>
-                <tr><td>PwBD (OBC-NCL)</td><td>13 Years</td><td>Ceiling + 13 Years</td></tr>
-                <tr><td>PwBD (SC / ST)</td><td>15 Years</td><td>Ceiling + 15 Years</td></tr>
-                <tr><td>Ex-Servicemen (Military Service)</td><td>Service Period + 3 Years</td><td>Up to 50 Years</td></tr>
+                <tr>
+                  <th style="width:38%;">Online Application Portal</th>
+                  <td><a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" style="color:#008000; font-weight:700;">Click Here to Apply Online &raquo;</a></td>
+                </tr>
+                <tr>
+                  <th>Official Notification (PDF)</th>
+                  <td><a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" style="color:#0000cc; font-weight:700;">Download Official Notice PDF &raquo;</a></td>
+                </tr>
+                <tr>
+                  <th>Official Organization Website</th>
+                  <td><a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" style="color:#333; font-weight:700;">Visit Official Website &raquo;</a></td>
+                </tr>
               </tbody>
             </table>
 
-            <!-- 7. Exam Pattern -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>7. Detailed Examination Pattern &amp; Syllabus Blueprint:</span>
-            </div>
-            <table class="detail-table-custom" style="text-align:center;">
-              <thead>
-                <tr><th>Test Subject</th><th>No. of Questions</th><th>Max Marks</th><th>Exam Duration</th></tr>
-              </thead>
-              <tbody>
-                <tr><td style="text-align:left;">General Intelligence &amp; Reasoning</td><td>25 MCQs</td><td>50 Marks</td><td rowspan="4"><strong>90 Minutes</strong><br>(120 Min for Scribe)</td></tr>
-                <tr><td style="text-align:left;">Quantitative Aptitude / Mathematics</td><td>25 MCQs</td><td>50 Marks</td></tr>
-                <tr><td style="text-align:left;">General Awareness &amp; Current Affairs</td><td>25 MCQs</td><td>50 Marks</td></tr>
-                <tr><td style="text-align:left;">English / Hindi Language Comprehension</td><td>25 MCQs</td><td>50 Marks</td></tr>
-                <tr><td colspan="4" style="background:#f9f9f9; font-size:12px; text-align:left;"><strong>Marking Scheme:</strong> 2 Marks awarded per correct answer. Negative marking of <strong>0.50 Marks (1/4th)</strong> deducted per incorrect response.</td></tr>
-              </tbody>
-            </table>
-
-            <!-- 8. Selection Stages -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>8. Comprehensive Selection Stages &amp; Document Verification:</span>
-            </div>
-            <ol style="padding-left:22px; line-height:1.75; font-size:13px; color:#333; margin-bottom:12px;">
-              ${job.selectionProcess.map((s, idx) => `<li><strong>Stage ${idx + 1}: ${escapeHtml(s)}</strong></li>`).join('')}
-            </ol>
-
-            <!-- 9. Step-by-Step How to Apply -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>9. Step-by-Step Online Application Procedure:</span>
-            </div>
-            <ol style="padding-left:22px; line-height:1.75; font-size:13px; color:#333; margin-bottom:14px;">
-              ${job.howToApply.map((step, idx) => `<li>${escapeHtml(step)}</li>`).join('')}
-            </ol>
-
-            <!-- 10. Editorial Recommendation -->
-            <div style="background:#f0f8f0; border-left:4px solid #008000; padding:14px 16px; margin:20px 0;">
-              <h3 style="color:#008000; font-size:14.5px; font-weight:800; margin-bottom:6px;">10. Editorial Recommendation: Should You Apply?</h3>
-              <p style="font-size:13px; color:#1b4d3e; line-height:1.7; margin-bottom:8px;">
-                ${escapeHtml(job.shouldYouApply)}
-              </p>
-            </div>
-
-            <!-- 11. FAQs -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>11. Frequently Asked Questions (FAQs) for ${escapeHtml(job.posts)}:</span>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
-              ${job.faq.map(f => `
-                <div style="background:#f8f9fa; border:1px solid #e2e8f0; padding:10px 14px; border-radius:3px;">
-                  <strong style="color:#0b3c5d;">Q: ${escapeHtml(f.q)}</strong>
-                  <p style="margin-top:4px; font-size:13px; color:#444; line-height:1.6;">${escapeHtml(f.a)}</p>
-                </div>
-              `).join('')}
-            </div>
-
-            <!-- Bottom Action Bar -->
-            <div class="action-cta-bar" style="border-top:1px solid #eee; padding-top:14px;">
+            <!-- Bottom Navigation Bar -->
+            <div class="action-cta-bar" style="border-top:1px solid #eee; padding-top:14px; margin-top:20px;">
               <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
-                ${SVG_APPLY} Submit Online Application Now
+                ${SVG_APPLY} Apply Online Now
               </a>
               <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
-                ${SVG_PDF} View Full Official PDF Notification
+                ${SVG_PDF} Official PDF Notification
               </a>
-              <a href="/" class="tool-btn">← Back to Portal Home</a>
+              <a href="/" class="tool-btn">&larr; Back to Portal Home</a>
             </div>
 
           </div>
