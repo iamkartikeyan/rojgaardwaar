@@ -1,1579 +1,9350 @@
 /**
  * ROZGARDWAAR (ROZGARDWAAR.in) - Master Government Recruitment Data Engine
- * Contains 300+ meticulously structured government job recruitments, admit cards,
- * exam results, qualification classifications, and state-wise listings across India.
- * 
- * Every record includes official notification links, eligibility criteria, pay scales,
- * important dates, vacancy details, FAQs, and practical "Should You Apply?" insights.
+ * Synchronized with 300+ live recruitment notices from IndGovtJobs.in
  */
 
 window.ROZGAR_DATA = (function() {
   
-  // All 28 States & 8 Union Territories of India
   const STATES = [
-    { id: "all-india", name: "All India / Central", code: "AI", totalActive: 142 },
-    { id: "andhra-pradesh", name: "Andhra Pradesh", code: "AP", totalActive: 18 },
-    { id: "arunachal-pradesh", name: "Arunachal Pradesh", code: "AR", totalActive: 8 },
-    { id: "assam", name: "Assam", code: "AS", totalActive: 22 },
-    { id: "bihar", name: "Bihar", code: "BR", totalActive: 38 },
-    { id: "chandigarh", name: "Chandigarh", code: "CH", totalActive: 6 },
-    { id: "chhattisgarh", name: "Chhattisgarh", code: "CG", totalActive: 16 },
-    { id: "delhi", name: "Delhi NCR", code: "DL", totalActive: 45 },
-    { id: "goa", name: "Goa", code: "GA", totalActive: 9 },
-    { id: "gujarat", name: "Gujarat", code: "GJ", totalActive: 26 },
-    { id: "haryana", name: "Haryana", code: "HR", totalActive: 24 },
-    { id: "himachal-pradesh", name: "Himachal Pradesh", code: "HP", totalActive: 14 },
-    { id: "jammu-kashmir", name: "Jammu & Kashmir", code: "JK", totalActive: 19 },
-    { id: "jharkhand", name: "Jharkhand", code: "JH", totalActive: 17 },
-    { id: "karnataka", name: "Karnataka", code: "KA", totalActive: 29 },
-    { id: "kerala", name: "Kerala", code: "KL", totalActive: 23 },
-    { id: "ladakh", name: "Ladakh", code: "LA", totalActive: 5 },
-    { id: "madhya-pradesh", name: "Madhya Pradesh", code: "MP", totalActive: 31 },
-    { id: "maharashtra", name: "Maharashtra", code: "MH", totalActive: 39 },
-    { id: "manipur", name: "Manipur", code: "MN", totalActive: 7 },
-    { id: "meghalaya", name: "Meghalaya", code: "ML", totalActive: 6 },
-    { id: "mizoram", name: "Mizoram", code: "MZ", totalActive: 5 },
-    { id: "nagaland", name: "Nagaland", code: "NL", totalActive: 6 },
-    { id: "odisha", name: "Odisha", code: "OD", totalActive: 25 },
-    { id: "puducherry", name: "Puducherry", code: "PY", totalActive: 7 },
-    { id: "punjab", name: "Punjab", code: "PB", totalActive: 21 },
-    { id: "rajasthan", name: "Rajasthan", code: "RJ", totalActive: 34 },
-    { id: "sikkim", name: "Sikkim", code: "SK", totalActive: 6 },
-    { id: "tamil-nadu", name: "Tamil Nadu", code: "TN", totalActive: 28 },
-    { id: "telangana", name: "Telangana", code: "TS", totalActive: 24 },
-    { id: "tripura", name: "Tripura", code: "TR", totalActive: 7 },
-    { id: "uttar-pradesh", name: "Uttar Pradesh", code: "UP", totalActive: 52 },
-    { id: "uttarakhand", name: "Uttarakhand", code: "UK", totalActive: 19 },
-    { id: "west-bengal", name: "West Bengal", code: "WB", totalActive: 33 }
-  ];
-
-  // Primary Qualifications
+  {
+    "id": "all-india",
+    "name": "All India / Central",
+    "code": "AI",
+    "totalActive": 142
+  },
+  {
+    "id": "andhra-pradesh",
+    "name": "Andhra Pradesh",
+    "code": "AP",
+    "totalActive": 18
+  },
+  {
+    "id": "arunachal-pradesh",
+    "name": "Arunachal Pradesh",
+    "code": "AR",
+    "totalActive": 8
+  },
+  {
+    "id": "assam",
+    "name": "Assam",
+    "code": "AS",
+    "totalActive": 22
+  },
+  {
+    "id": "bihar",
+    "name": "Bihar",
+    "code": "BR",
+    "totalActive": 38
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "code": "CH",
+    "totalActive": 6
+  },
+  {
+    "id": "chhattisgarh",
+    "name": "Chhattisgarh",
+    "code": "CG",
+    "totalActive": 16
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi NCR",
+    "code": "DL",
+    "totalActive": 45
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "code": "GA",
+    "totalActive": 9
+  },
+  {
+    "id": "gujarat",
+    "name": "Gujarat",
+    "code": "GJ",
+    "totalActive": 26
+  },
+  {
+    "id": "haryana",
+    "name": "Haryana",
+    "code": "HR",
+    "totalActive": 24
+  },
+  {
+    "id": "himachal-pradesh",
+    "name": "Himachal Pradesh",
+    "code": "HP",
+    "totalActive": 14
+  },
+  {
+    "id": "jammu-kashmir",
+    "name": "Jammu & Kashmir",
+    "code": "JK",
+    "totalActive": 16
+  },
+  {
+    "id": "jharkhand",
+    "name": "Jharkhand",
+    "code": "JH",
+    "totalActive": 20
+  },
+  {
+    "id": "karnataka",
+    "name": "Karnataka",
+    "code": "KA",
+    "totalActive": 32
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "code": "KL",
+    "totalActive": 24
+  },
+  {
+    "id": "madhya-pradesh",
+    "name": "Madhya Pradesh",
+    "code": "MP",
+    "totalActive": 30
+  },
+  {
+    "id": "maharashtra",
+    "name": "Maharashtra",
+    "code": "MH",
+    "totalActive": 42
+  },
+  {
+    "id": "manipur",
+    "name": "Manipur",
+    "code": "MN",
+    "totalActive": 7
+  },
+  {
+    "id": "meghalaya",
+    "name": "Meghalaya",
+    "code": "ML",
+    "totalActive": 6
+  },
+  {
+    "id": "mizoram",
+    "name": "Mizoram",
+    "code": "MZ",
+    "totalActive": 5
+  },
+  {
+    "id": "nagaland",
+    "name": "Nagaland",
+    "code": "NL",
+    "totalActive": 6
+  },
+  {
+    "id": "odisha",
+    "name": "Odisha",
+    "code": "OR",
+    "totalActive": 22
+  },
+  {
+    "id": "punjab",
+    "name": "Punjab",
+    "code": "PB",
+    "totalActive": 20
+  },
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "code": "RJ",
+    "totalActive": 34
+  },
+  {
+    "id": "sikkim",
+    "name": "Sikkim",
+    "code": "SK",
+    "totalActive": 5
+  },
+  {
+    "id": "tamil-nadu",
+    "name": "Tamil Nadu",
+    "code": "TN",
+    "totalActive": 36
+  },
+  {
+    "id": "telangana",
+    "name": "Telangana",
+    "code": "TS",
+    "totalActive": 22
+  },
+  {
+    "id": "tripura",
+    "name": "Tripura",
+    "code": "TR",
+    "totalActive": 6
+  },
+  {
+    "id": "uttar-pradesh",
+    "name": "Uttar Pradesh",
+    "code": "UP",
+    "totalActive": 48
+  },
+  {
+    "id": "uttarakhand",
+    "name": "Uttarakhand",
+    "code": "UK",
+    "totalActive": 14
+  },
+  {
+    "id": "west-bengal",
+    "name": "West Bengal",
+    "code": "WB",
+    "totalActive": 28
+  }
+];
   const QUALIFICATIONS = [
-    { id: "10th-pass", name: "10th Pass / Matriculation", shortName: "10th Pass", desc: "Matriculation jobs in Indian Army, Post Office, MTS, Group D, Police & Railways" },
-    { id: "12th-pass", name: "12th Pass / Intermediate / 10+2", shortName: "12th Pass", desc: "Clerk, CHSL, Constable, NDA, Airmen, Stenographer, Assistant & Technical Posts" },
-    { id: "graduate", name: "Graduate (BA, BSc, BCom, Any Degree)", shortName: "Graduate", desc: "UPSC Civil Services, SSC CGL, IBPS PO, State PSC, Bank Clerk, Assistant Officers" },
-    { id: "diploma", name: "Polytechnic / Engineering Diploma", shortName: "Diploma", desc: "Junior Engineer (JE), Technical Assistant, Sub-Overseer, PSU Diploma Trainee" },
-    { id: "iti", name: "ITI (NCVT / SCVT All Trades)", shortName: "ITI Pass", desc: "Railway ALP, Technician, Ordnance Factory, DRDO CEPTAM, ISRO, PSU Trade Apprentices" },
-    { id: "btech-engineering", name: "B.Tech / B.E. / Engineering", shortName: "B.Tech / B.E.", desc: "GATE PSU Recruitment, UPSC ESE, Assistant Engineer, ISRO Scientist, DRDO Scientist" },
-    { id: "post-graduate", name: "Post Graduate (MA, MSc, MCom)", shortName: "Post Graduate", desc: "UGC NET, Lecturer, Research Assistant, Statistical Officer, Specialist Positions" },
-    { id: "mba-pgdm", name: "MBA / PGDM / Management", shortName: "MBA", desc: "Management Trainee, HR Officer, Marketing Manager, Bank Specialist Officer (SO)" },
-    { id: "mca-bca-it", name: "MCA / BCA / B.Sc (IT / CS)", shortName: "MCA / BCA / IT", desc: "Programmer, IT Officer, Cyber Security Analyst, NIC Scientist, System Admin" },
-    { id: "law-llb", name: "Law / LLB / LLM", shortName: "Law / LLB", desc: "Judicial Service Civil Judge, Legal Advisor, Law Officer, Public Prosecutor, High Court" },
-    { id: "medical-nursing", name: "Medical / MBBS / Nursing / BDS / B.Pharm", shortName: "Medical & Nursing", desc: "Staff Nurse, Medical Officer, Pharmacist, Lab Technician, AIIMS, ESIC, Railway Hospital" },
-    { id: "bed-teaching", name: "B.Ed / D.El.Ed / CTET / TET", shortName: "Teaching / B.Ed", desc: "PRT, TGT, PGT, KVS, NVS, DSSSB, State Teacher Recruitment, Professor" }
-  ];
-
-  // Primary Sectors / Categories
-  const CATEGORIES = [
-    { id: "central-govt", name: "Central Government Jobs", count: 85 },
-    { id: "state-govt", name: "State Government Jobs", count: 96 },
-    { id: "railway", name: "Railway Jobs (RRB & RRC)", count: 32 },
-    { id: "banking", name: "Bank & Financial Sector Jobs", count: 28 },
-    { id: "psu", name: "PSU / Public Sector Undertakings", count: 42 },
-    { id: "ssc", name: "SSC Jobs (Staff Selection Commission)", count: 18 },
-    { id: "upsc", name: "UPSC Jobs (Civil & Engineering Services)", count: 14 },
-    { id: "defence", name: "Defence Jobs (Army, Navy, Air Force, Coast Guard)", count: 26 },
-    { id: "police", name: "Police & Paramilitary (CAPF, State Police, SI)", count: 30 },
-    { id: "teaching", name: "Teaching & School Faculty", count: 22 },
-    { id: "university", name: "University & College Faculty", count: 15 },
-    { id: "courts", name: "Courts & Judicial Services", count: 12 },
-    { id: "engineering", name: "Engineering & Technical Jobs", count: 45 },
-    { id: "no-exam", name: "No Written Exam / Merit & Interview Jobs", count: 35 },
-    { id: "fresher", name: "Fresher Eligible Government Jobs", count: 110 },
-    { id: "apprenticeship", name: "Apprenticeship Openings", count: 24 },
-    { id: "admit-card", name: "Admit Cards & Hall Tickets", count: 48 },
-    { id: "results", name: "Govt Exam Results & Cutoffs", count: 42 }
-  ];
-
-  // Helper generator to build 300+ realistic, high-quality, fully parsed government job records
-  const generateFullRecruitmentDatabase = () => {
-    const records = [];
-
-    // Detailed Anchor Recruitments (Top Central, Railway, SSC, UPSC, Bank, Defence, States, PSUs)
-    const anchorJobs = [
-      {
-        id: "rrb-alp-technician-2026",
-        title: "Railway RRB Assistant Loco Pilot (ALP) & Technician Recruitment 2026",
-        org: "Railway Recruitment Control Board (RRB)",
-        shortOrg: "RRB / Indian Railways",
-        posts: "Assistant Loco Pilot (ALP), Technician Grade I & III",
-        vacancies: 18799,
-        category: "railway",
-        subCategory: "Central Govt",
-        qualifications: ["10th-pass", "iti", "diploma", "btech-engineering"],
-        qualificationText: "Matriculation (10th) + ITI in relevant trade OR Diploma / Degree in Mechanical / Electrical / Electronics / Automobile Engineering",
-        state: "all-india",
-        location: "Pan India (All Railway Zones)",
-        ageLimit: "18 to 30 Years (ALP), 18 to 33 Years (Technician)",
-        ageRelaxation: "SC/ST: 5 Years, OBC (NCL): 3 Years, PwBD: 10-15 Years, Ex-SM as per rules",
-        salary: "Level-2 (₹19,900 - ₹63,200) + Running Allowances (Gross Approx ₹35,000 - ₹48,000/month)",
-        fee: "General / OBC: ₹500 (₹400 refundable on CBT-1 attendance), SC / ST / Ex-SM / PwBD / Female / EWS: ₹250 (Full Refundable)",
-        importantDates: {
-          notificationDate: "2026-08-15",
-          startDate: "2026-08-20",
-          lastDate: "2026-09-28",
-          feeLastDate: "2026-09-30",
-          examDate: "November / December 2026"
-        },
-        selectionProcess: [
-          "First Stage Computer Based Test (CBT-1) - Screening Test (75 Questions, 60 Minutes)",
-          "Second Stage CBT (CBT-2) - Part A (General Awareness, Maths, Basic Science & Engg) & Part B (Trade Test qualifying 35%)",
-          "Computer Based Aptitude Test (CBAT) - Only for ALP Candidates",
-          "Document Verification (DV) & Comprehensive Medical Examination (A-1 Medical Standard for ALP)"
-        ],
-        documentsRequired: [
-          "Scanned Passport size color photograph (30-70 KB, JPG/JPEG)",
-          "Scanned Candidate signature (30-70 KB)",
-          "Class 10th / Matriculation Certificate & Marksheet for DOB proof",
-          "ITI / National Trade Certificate (NTC) / Diploma / Degree Certificate",
-          "Caste Certificate (SC/ST/OBC-NCL in Central Govt format)",
-          "Income Certificate for EWS / Fee Concession if applicable"
-        ],
-        howToApply: [
-          "Visit the official website of the concerned RRB zone (e.g., rrbcdg.gov.in, rrbapply.gov.in).",
-          "Click on the 'CEN 01/2026 Online Application' link and complete the 'Create an Account' registration.",
-          "Fill personal details, educational qualifications, trade selection, and post preferences.",
-          "Upload photograph, signature, and community certificates as per specifications.",
-          "Pay the online application fee via Net Banking, UPI, Debit/Credit Card.",
-          "Download and print the submitted application form and note down your Registration Number."
-        ],
-        faq: [
-          { q: "Can B.Tech or Diploma holders apply for RRB ALP?", a: "Yes, candidates holding a 3-Year Diploma or B.E./B.Tech in Mechanical, Electrical, Electronics, or Automobile Engineering from an AICTE-recognized institute are fully eligible for ALP." },
-          { q: "Is there negative marking in RRB CBT exams?", a: "Yes, 1/3rd (0.33) marks will be deducted for every incorrect answer in both CBT-1 and Part A of CBT-2. There is no negative marking in the CBAT Aptitude test." },
-          { q: "What is the medical standard required for ALP?", a: "A-1 Medical Standard is strictly compulsory for ALP, including Distant Vision: 6/6, 6/6 without glasses (no fogging test), Near Vision: Sn 0.6, 0.6 without glasses, and must pass tests for Color Vision, Binocular Vision, Field of Vision, and Night Vision." }
-        ],
-        shouldYouApply: "RRB ALP is among the most sought-after Indian Railway technical careers. If you have clear 6/6 vision without glasses and meet the ITI/Diploma/B.Tech qualifications, this is a prime opportunity with strong post-training perks, running allowances, and railway quarters. Ensure your trade matches the qualifying syllabus before selecting Part B trade in CBT-2.",
-        officialLinks: {
-          notificationUrl: "https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,4,1244",
-          applyUrl: "https://www.rrbapply.gov.in/#/auth/home",
-          websiteUrl: "https://indianrailways.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-01",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "ssc-cgl-2026-combined-graduate-level",
-        title: "SSC CGL 2026 Notification - 14,582 Group B & Group C Inspector & Assistant Posts",
-        org: "Staff Selection Commission (SSC)",
-        shortOrg: "SSC Central Govt",
-        posts: "Assistant Section Officer (ASO), Income Tax Inspector, Central Excise Inspector, Assistant Enforcement Officer, Sub-Inspector (CBI), Auditor, Accountant, Tax Assistant, Junior Statistical Officer (JSO)",
-        vacancies: 14582,
-        category: "ssc",
-        subCategory: "Central Govt",
-        qualifications: ["graduate", "post-graduate"],
-        qualificationText: "Bachelor's Degree in any discipline from a recognized University / Institute. (For JSO: Degree with 60% in Maths at 10+2 level or Degree with Statistics as a subject).",
-        state: "all-india",
-        location: "All India Ministries & Central Govt Departments",
-        ageLimit: "18 to 30 / 32 Years (Post-wise varies as on 01-08-2026)",
-        ageRelaxation: "OBC: 3 Years, SC/ST: 5 Years, PwD: 10 Years, Ex-SM: 3 Years after deduction of military service",
-        salary: "Pay Level-4 (₹25,500 - ₹81,100) to Pay Level-8 (₹47,600 - ₹1,51,100) (In-hand ₹42,000 - ₹88,000/month)",
-        fee: "General / OBC / EWS: ₹100 | Women, SC, ST, PwBD & Ex-Servicemen: NIL (Exempted)",
-        importantDates: {
-          notificationDate: "2026-08-10",
-          startDate: "2026-08-12",
-          lastDate: "2026-09-24",
-          feeLastDate: "2026-09-25",
-          examDate: "Tier-1: October 2026 | Tier-2: December 2026"
-        },
-        selectionProcess: [
-          "Tier-I Computer Based Examination (Objective Multiple Choice - 100 Questions, 200 Marks)",
-          "Tier-II Computer Based Examination (Paper-I: Mathematical Abilities, Reasoning, English, General Awareness, Computer Knowledge Module & Data Entry Speed Test)",
-          "Paper-II (Only for Junior Statistical Officer applicants)",
-          "Document Verification & Final Merit Allotment as per post preference"
-        ],
-        documentsRequired: [
-          "Recent passport photograph captured via SSC Live Camera portal",
-          "Signature on white paper (10 to 20 KB in JPEG)",
-          "Graduation Degree Certificate / Provisional Degree",
-          "10th Marksheet (DOB Proof)",
-          "Category Certificate (OBC-NCL / EWS / SC / ST / PwD)"
-        ],
-        howToApply: [
-          "Visit the official portal at ssc.gov.in and complete One Time Registration (OTR).",
-          "Login with your OTR Registration ID and Password.",
-          "Click on 'Apply' under Combined Graduate Level Examination 2026.",
-          "Select Examination Centers and confirm educational details.",
-          "Capture live photograph and upload scanned signature.",
-          "Pay ₹100 application fee online (if applicable) and print the final confirmation slip."
-        ],
-        faq: [
-          { q: "Can final year graduation students apply for SSC CGL?", a: "Yes, provided they acquire the essential educational qualification degree certificate on or before the cutoff date specified in the official notification." },
-          { q: "Is Computer Proficiency test mandatory for all SSC CGL posts?", a: "Yes, the Computer Knowledge Module (20 Questions, 60 Marks) and Data Entry Speed Test (DEST) in Tier-II are mandatory for all posts, though qualifying in nature with higher cutoffs for specific posts like ASO, Inspector, and Tax Assistant." }
-        ],
-        shouldYouApply: "SSC CGL is the premier gateway to prestigious Group 'B' gazetted and non-gazetted posts in Central Ministries (CSS, MEA, MoD, CBDT, CBIC, CBI, ED). High job security, attractive allowances, and structured promotion ladders make this a top-tier recommendation for all graduates.",
-        officialLinks: {
-          notificationUrl: "https://ssc.gov.in/api/announcement",
-          applyUrl: "https://ssc.gov.in",
-          websiteUrl: "https://ssc.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "ibps-po-cwe-2026",
-        title: "IBPS PO / MT 2026 Recruitment - 6,850 Probationary Officer Vacancies",
-        org: "Institute of Banking Personnel Selection (IBPS)",
-        shortOrg: "IBPS / Public Sector Banks",
-        posts: "Probationary Officer (PO) / Management Trainee (MT)",
-        vacancies: 6850,
-        category: "banking",
-        subCategory: "Banking & Financial",
-        qualifications: ["graduate", "btech-engineering", "post-graduate", "mba-pgdm"],
-        qualificationText: "A Degree (Graduation) in any discipline from a University recognized by the Govt. Of India or any equivalent qualification recognized as such by the Central Government.",
-        state: "all-india",
-        location: "11 Participating Public Sector Banks Across India (PNB, BoB, Canara, Union Bank, etc.)",
-        ageLimit: "20 to 30 Years (as on 01-08-2026)",
-        ageRelaxation: "SC/ST: 5 Years, OBC (NCL): 3 Years, PwD: 10 Years, Ex-Servicemen: 5 Years",
-        salary: "Basic Pay ₹48,480/- + DA, HRA, CCA, Special Allowance (In-Hand Approx ₹62,000 - ₹68,000/month + Leased Accommodation)",
-        fee: "General / EWS / OBC: ₹850 | SC / ST / PwD: ₹175",
-        importantDates: {
-          notificationDate: "2026-08-01",
-          startDate: "2026-08-02",
-          lastDate: "2026-09-15",
-          feeLastDate: "2026-09-15",
-          examDate: "Prelims: October 2026 | Mains: November 2026 | Interview: Jan/Feb 2027"
-        },
-        selectionProcess: [
-          "Online Preliminary Examination (100 Marks - English, Quantitative Aptitude, Reasoning Ability)",
-          "Online Main Examination (200 Marks Objective + 25 Marks Descriptive English Essay & Letter)",
-          "Common Personal Interview (100 Marks conducted by participating banks)",
-          "Combined Final Merit (80:20 Ratio of Mains & Interview)"
-        ],
-        documentsRequired: [
-          "Scanned Photograph & Signature",
-          "Left thumb impression scan",
-          "Handwritten declaration text scan",
-          "Graduation marksheets & degree certificate",
-          "Valid ID Proof (Aadhaar, PAN, Voter ID, Passport)"
-        ],
-        howToApply: [
-          "Visit www.ibps.in and click on 'CRP PO/MT'.",
-          "Click on 'Click here for New Registration' and enter basic details.",
-          "Upload photograph, signature, left thumb impression, and handwritten declaration.",
-          "Fill bank preference list, academic records, and personal details.",
-          "Pay the online application fee via NetBanking/Credit Card/UPI.",
-          "Save the registration slip and e-receipt."
-        ],
-        faq: [
-          { q: "Is there sectional cutoff in IBPS PO?", a: "Yes, candidates must qualify in each of the three tests in Prelims and all sections in Mains by securing minimum cutoff marks decided by IBPS." }
-        ],
-        shouldYouApply: "IBPS PO offers rapid career growth, early management postings, subsidized bank loans, and robust financial perks. Ideal for energetic graduates who enjoy analytical and managerial responsibilities in the banking industry.",
-        officialLinks: {
-          notificationUrl: "https://www.ibps.in",
-          applyUrl: "https://ibpsonline.ibps.in",
-          websiteUrl: "https://www.ibps.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "upsc-civil-services-ias-ips-2026",
-        title: "UPSC Civil Services Examination (CSE) 2026 - 1,150 IAS, IPS, IFS & Group A Vacancies",
-        org: "Union Public Service Commission (UPSC)",
-        shortOrg: "UPSC",
-        posts: "IAS, IPS, IFS, IRS, IA&AS, IDAS, Indian Postal Service & other Central Group A/B Services",
-        vacancies: 1150,
-        category: "upsc",
-        subCategory: "Central Govt",
-        qualifications: ["graduate", "btech-engineering", "post-graduate", "law-llb", "medical-nursing"],
-        qualificationText: "A candidate must hold a degree of any of the Universities incorporated by an Act of the Central or State Legislature in India or other educational institutions established by an Act of Parliament.",
-        state: "all-india",
-        location: "Pan India Cadres & Central Ministries",
-        ageLimit: "21 to 32 Years (as on 01-08-2026)",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, Defence Personnel: 3 Years, PwBD: 10 Years",
-        salary: "Pay Level-10 (₹56,100 - ₹1,77,500) up to Cabinet Secretary Pay Level-18 (₹2,50,000 fixed)",
-        fee: "General / OBC / EWS Male: ₹100 | Female / SC / ST / PwBD: Exempted (NIL)",
-        importantDates: {
-          notificationDate: "2026-08-05",
-          startDate: "2026-08-05",
-          lastDate: "2026-09-30",
-          feeLastDate: "2026-09-30",
-          examDate: "Prelims: May 2027 | Mains: September 2027"
-        },
-        selectionProcess: [
-          "Civil Services (Preliminary) Examination (Objective - GS Paper I & CSAT Paper II qualifying 33%)",
-          "Civil Services (Main) Examination (Written - 9 Descriptive Papers: 2 Qualifying Language + 7 Merit Papers total 1750 Marks)",
-          "Personality Test / Interview (275 Marks at Dholpur House, New Delhi)"
-        ],
-        documentsRequired: [
-          "Valid Govt Photo ID (Aadhaar / Voter ID / Passport / Driving License)",
-          "Scanned Photograph & Signature conforming to UPSC OTR dimensions",
-          "Graduation Degree Certificate",
-          "Category / PwBD Certificate if applicable"
-        ],
-        howToApply: [
-          "Register on UPSC OTR portal at upsconline.nic.in.",
-          "Fill Part-I registration and provide examination center choices for Prelims and Mains.",
-          "Upload valid photo ID proof, photograph, and signature.",
-          "Pay the ₹100 application fee through SBI Net Banking / Cards / UPI.",
-          "Submit Part-II and download the application confirmation form."
-        ],
-        faq: [
-          { q: "How many attempts are permitted for UPSC Civil Services?", a: "General / EWS: 6 Attempts (up to 32 yrs), OBC: 9 Attempts (up to 35 yrs), SC/ST: Unlimited attempts (up to 37 yrs), PwBD: 9 Attempts (General/OBC) & Unlimited (SC/ST)." }
-        ],
-        shouldYouApply: "The most prestigious public service career in India with direct policy-making authority, district governance, and national impact. Requires serious sustained preparation across general studies, essay writing, and an optional subject.",
-        officialLinks: {
-          notificationUrl: "https://upsc.gov.in/examinations/active-examinations",
-          applyUrl: "https://upsconline.nic.in",
-          websiteUrl: "https://upsc.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "ongc-graduate-trainee-engineering-geosciences-2026",
-        title: "ONGC Recruitment of Graduate Trainees in Engineering & Geo-Sciences through GATE 2026",
-        org: "Oil and Natural Gas Corporation Limited (ONGC)",
-        shortOrg: "ONGC / Maharatna PSU",
-        posts: "AEE (Mechanical, Petroleum, Civil, Electrical, Electronics, Instrumentation, Chemical), Geologist, Geophysicist, Chemist",
-        vacancies: 642,
-        category: "psu",
-        subCategory: "Engineering / PSU",
-        qualifications: ["btech-engineering", "post-graduate"],
-        qualificationText: "Graduate Degree in Engineering (Mechanical / Petroleum / Civil / Electrical / Electronics / Telecom / Instrumentation / Chemical) with minimum 60% marks OR Post Graduate Degree in Geophysics / Geology / Chemistry with min 60% marks.",
-        state: "all-india",
-        location: "Dehradun, Mumbai, Delhi, Assam, Gujarat, Offshore & Pan-India Units",
-        ageLimit: "28 to 30 Years (as on last date of application)",
-        ageRelaxation: "OBC (NCL): 3 Years, SC/ST: 5 Years, PwBD: 10 Years, Ex-Servicemen: 5 Years",
-        salary: "E-1 Level (₹60,000 - ₹1,80,000) (Annual CTC Approx ₹22.5 to ₹24.5 Lakhs)",
-        fee: "General / EWS / OBC: ₹300 | SC / ST / PwBD: Exempted (NIL)",
-        importantDates: {
-          notificationDate: "2026-08-18",
-          startDate: "2026-08-22",
-          lastDate: "2026-09-22",
-          feeLastDate: "2026-09-22",
-          examDate: "Direct Interview based on GATE 2026 Score"
-        },
-        selectionProcess: [
-          "Weightage of GATE 2026 Score (60 Marks)",
-          "Qualification / Academic Weightage (25 Marks including 5 marks for M.Tech/Ph.D)",
-          "Personal Interview (15 Marks)",
-          "Total Composite Score (100 Marks)"
-        ],
-        documentsRequired: [
-          "GATE 2026 Scorecard & Admit Card",
-          "B.E. / B.Tech / M.Sc Degree & All Semester Marksheets",
-          "Proof of Date of Birth (10th Board Certificate)",
-          "Category / Caste Certificate (Central Govt format)"
-        ],
-        howToApply: [
-          "Log on to www.ongcindia.com and navigate to Career -> Recruitment Notices.",
-          "Enter your GATE 2026 Registration Number and date of birth.",
-          "Fill in academic qualification details, contact details, and category.",
-          "Upload passport photograph, signature, and GATE scorecard.",
-          "Pay the online fee and retain a copy of the completed registration receipt."
-        ],
-        faq: [
-          { q: "Is prior work experience required for ONGC GT?", a: "No, this recruitment is open for fresh engineering graduates who qualified GATE 2026 with a competitive score." }
-        ],
-        shouldYouApply: "ONGC is a premier Maharatna energy titan offering an extraordinary compensation package (~₹24 Lakh CTC), world-class executive development, medical benefits, and offshore allowances.",
-        officialLinks: {
-          notificationUrl: "https://www.ongcindia.com/wps/wcm/connect/en/career/recruitment-notice",
-          applyUrl: "https://www.ongcindia.com",
-          websiteUrl: "https://www.ongcindia.com"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: true,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "indian-army-agniveer-rally-2026",
-        title: "Indian Army Agniveer Recruitment Rally 2026 - GD, Technical, Clerk, Tradesmen",
-        org: "Join Indian Army (Ministry of Defence)",
-        shortOrg: "Indian Army / Defence",
-        posts: "Agniveer General Duty (GD), Agniveer Technical, Agniveer Clerk / Store Keeper Technical, Agniveer Tradesmen (10th & 8th Pass)",
-        vacancies: 25000,
-        category: "defence",
-        subCategory: "Armed Forces",
-        qualifications: ["10th-pass", "12th-pass", "iti"],
-        qualificationText: "GD: 10th Pass with 45% aggregate & 33% in each subject | Tech: 10+2 with PCM & English (50% aggregate) or 10th + ITI | Clerk: 10+2 with 60% aggregate & 50% in English/Maths/Accounts | Tradesmen: 10th / 8th Pass with 33% in each subject.",
-        state: "all-india",
-        location: "All ARO / ZRO Zones Across All Indian States & UTs",
-        ageLimit: "17.5 to 21 Years (Born between 01 Oct 2005 and 01 April 2009)",
-        ageRelaxation: "Age criteria strictly enforced for all categories as per Agnipath Scheme guidelines.",
-        salary: "Year 1: ₹30,000/mo (In-hand ₹21,000) -> Year 4: ₹40,000/mo (In-hand ₹28,000) + ₹11.71 Lakh Seva Nidhi Package on completion + 25% Permanent Absorption",
-        fee: "₹250 + GST for all candidates",
-        importantDates: {
-          notificationDate: "2026-08-01",
-          startDate: "2026-08-05",
-          lastDate: "2026-09-20",
-          feeLastDate: "2026-09-20",
-          examDate: "Online CEE Exam: October/November 2026 followed by Physical Rally"
-        },
-        selectionProcess: [
-          "Phase-I: Online Common Entrance Exam (Online CEE)",
-          "Phase-II: Recruitment Rally (1.6 Km Run, Beam Pull-ups, 9ft Ditch, Zig-Zag Balance)",
-          "Phase-III: Physical Measurement Test (PMT) & Adaptability Test",
-          "Phase-IV: Detailed Medical Examination (DME)"
-        ],
-        documentsRequired: [
-          "Admit Card printed on Laser Printer",
-          "20 Unattested passport size color photographs (white background)",
-          "Original Educational Certificates & Marksheets",
-          "Domicile / Nativity Certificate with photograph issued by Tehsildar/District Magistrate",
-          "Caste & Character Certificate (issued by Village Sarpanch/Ward Member within last 6 months)",
-          "Unmarried Certificate for candidates below 21 years"
-        ],
-        howToApply: [
-          "Go to joinindianarmy.nic.in and complete Aadhaar/DigiLocker verification.",
-          "Select your respective ARO / Headquarters Recruiting Zone.",
-          "Check eligibility for desired Agniveer trade.",
-          "Fill all details, upload photograph and signature.",
-          "Pay the ₹250 examination fee online and note your Roll Number."
-        ],
-        faq: [
-          { q: "What is the 1.6 km run timing for Indian Army Agniveer Rally?", a: "Group I (60 Marks): Up to 5 Min 30 Sec | Group II (48 Marks): 5 Min 31 Sec to 5 Min 45 Sec." }
-        ],
-        shouldYouApply: "Exceptional discipline, national service pride, robust athletic training, comprehensive medical coverage, and a guaranteed ₹11.71 Lakh tax-free Seva Nidhi fund, plus priority in CAPFs/State police recruitments upon completion.",
-        officialLinks: {
-          notificationUrl: "https://joinindianarmy.nic.in",
-          applyUrl: "https://joinindianarmy.nic.in/Authentication.aspx",
-          websiteUrl: "https://joinindianarmy.nic.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "uppbpb-up-police-constable-si-2026",
-        title: "UP Police Constable & Sub Inspector (SI) Recruitment 2026 - 42,000 Vacancies",
-        org: "Uttar Pradesh Police Recruitment & Promotion Board (UPPRPB)",
-        shortOrg: "UPPRPB / UP Police",
-        posts: "Civil Police Constable, PAC Constable, Sub Inspector (SI), Fireman, Special Security Force (SSF)",
-        vacancies: 42000,
-        category: "police",
-        subCategory: "State Govt",
-        qualifications: ["12th-pass", "graduate"],
-        qualificationText: "Constable: 12th (Intermediate) Pass from any recognized Board | Sub Inspector: Bachelor's Degree in any stream from a recognized University.",
-        state: "uttar-pradesh",
-        location: "Uttar Pradesh (All Districts)",
-        ageLimit: "Constable: 18 to 25 Years (Male), 18 to 28 Years (Female) | SI: 21 to 28 Years",
-        ageRelaxation: "SC/ST/OBC of UP Domicile: 5 Years relaxation in upper age limit",
-        salary: "Constable: Pay Band ₹5,200 - ₹20,200 (Grade Pay ₹2,000 / Level 3 ₹21,700 - ₹69,100) | SI: Level 6 (₹35,400 - ₹1,12,400)",
-        fee: "All Candidates: ₹400",
-        importantDates: {
-          notificationDate: "2026-08-14",
-          startDate: "2026-08-18",
-          lastDate: "2026-09-25",
-          feeLastDate: "2026-09-27",
-          examDate: "OMR Based Written Examination: November 2026"
-        },
-        selectionProcess: [
-          "Written Examination (OMR Based - 300 Marks: General Knowledge, General Hindi, Numerical & Mental Ability, Mental Aptitude/IQ/Reasoning)",
-          "Document Verification & Physical Standard Test (PST - Height & Chest Measurement)",
-          "Physical Efficiency Test (PET - Male: 4.8 Km in 25 Min | Female: 2.4 Km in 14 Min)",
-          "Final Merit List based strictly on written examination marks"
-        ],
-        documentsRequired: [
-          "10th (High School) & 12th (Intermediate) Marksheets and Certificates",
-          "Graduation Degree (for SI applicants)",
-          "UP Domicile / Residence Certificate",
-          "OBC-NCL / SC / ST / EWS Certificate issued by competent UP Revenue authority",
-          "Scanned Photograph (white or light grey background) & Signature"
-        ],
-        howToApply: [
-          "Visit uppbpb.gov.in and click on the Police Constable / SI 2026 Application link.",
-          "Complete primary registration with personal, communication, and educational details.",
-          "Upload documents, recent color photo, and signature.",
-          "Pay the ₹400 application fee via State Bank Collect / Debit / Credit / UPI.",
-          "Download and print the complete submitted registration form."
-        ],
-        faq: [
-          { q: "Can candidates from other states (non-UP) apply for UP Police?", a: "Yes, candidates from other states can apply under the Unreserved (General) category regardless of their caste in their home state." }
-        ],
-        shouldYouApply: "Massive vacancy count (42,000+) makes this one of the highest probability opportunities for 12th pass and graduate youth in North India. High job security, prestige, pension benefits, and state police allowances.",
-        officialLinks: {
-          notificationUrl: "https://uppbpb.gov.in",
-          applyUrl: "https://uppbpb.gov.in",
-          websiteUrl: "https://uppbpb.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "bpsc-70th-cce-bihar-civil-services-2026",
-        title: "BPSC 70th Combined Competitive Examination (CCE) 2026 - 1,950 Administrative & Police Posts",
-        org: "Bihar Public Service Commission (BPSC)",
-        shortOrg: "BPSC Bihar",
-        posts: "Sub-Divisional Officer (SDO/BAS), Deputy Superintendent of Police (DySP), Commercial Tax Officer, Block Panchayati Raj Officer, Revenue Officer, Block Education Officer",
-        vacancies: 1950,
-        category: "state-govt",
-        subCategory: "State PSC",
-        qualifications: ["graduate", "post-graduate", "law-llb"],
-        qualificationText: "Graduation or equivalent degree from a recognized University.",
-        state: "bihar",
-        location: "Bihar (All Sub-Divisions & Districts)",
-        ageLimit: "20 / 21 / 22 to 37 Years (Male General), Up to 40 Years (Female General/OBC/EBC), Up to 42 Years (SC/ST)",
-        ageRelaxation: "BC/EBC: 3 Years, SC/ST: 5 Years, PwD: 10 Years as per Bihar Govt reservation rules",
-        salary: "Level-7 (₹44,900 - ₹1,42,400) to Level-9 (₹53,100 - ₹1,67,800)",
-        fee: "General / Other State Candidates: ₹600 | Bihar Female / SC / ST / PwD: ₹150",
-        importantDates: {
-          notificationDate: "2026-08-08",
-          startDate: "2026-08-12",
-          lastDate: "2026-09-18",
-          feeLastDate: "2026-09-18",
-          examDate: "Prelims: November 2026 | Mains: January 2027"
-        },
-        selectionProcess: [
-          "Preliminary Exam (150 Marks Objective - 2 Hours, Negative Marking 1/3rd)",
-          "Mains Written Exam (General Hindi 100 Marks Qualifying + GS-I 300M + GS-II 300M + Essay 300M + Optional Subject Qualifying)",
-          "Personal Interview (120 Marks)",
-          "Final Merit ranking based on 1020 Marks (GS-I + GS-II + Essay + Interview)"
-        ],
-        documentsRequired: [
-          "Graduation Degree & Marksheet",
-          "10th Certificate (Age Proof)",
-          "Bihar Domicile Certificate",
-          "EWS / BC / EBC / SC / ST Certificate (as per Bihar Govt format)",
-          "Aadhaar Card, Passport Photo & Hindi/English Signatures"
-        ],
-        howToApply: [
-          "Visit onlinebpsc.bihar.gov.in.",
-          "Complete One-Time Registration (OTR) with active mobile number & email.",
-          "Access the 70th CCE application form and input educational & category details.",
-          "Upload passport photo and signature in Hindi and English.",
-          "Pay the exam fee and save the Application PDF with Barcode."
-        ],
-        faq: [
-          { q: "Is the Optional Subject marks counted in BPSC final merit?", a: "No, under the revised BPSC pattern, the Optional Subject paper is MCQ-based and qualifying in nature (Pass marks: 40% for General). The Essay paper (300 Marks) is counted for merit." }
-        ],
-        shouldYouApply: "The gold-standard leadership path for state administration in Bihar with direct magistrate and policing powers, official bungalow, vehicle, and gazetted status.",
-        officialLinks: {
-          notificationUrl: "https://www.bpsc.bih.nic.in",
-          applyUrl: "https://onlinebpsc.bihar.gov.in",
-          websiteUrl: "https://www.bpsc.bih.nic.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "aiims-norcet-staff-nurse-nursing-officer-2026",
-        title: "AIIMS NORCET 2026 - 4,800 Nursing Officer Posts across All India AIIMS Institutes",
-        org: "All India Institute of Medical Sciences (AIIMS New Delhi)",
-        shortOrg: "AIIMS New Delhi / Medical",
-        posts: "Nursing Officer (Group B)",
-        vacancies: 4800,
-        category: "central-govt",
-        subCategory: "Healthcare / Medical",
-        qualifications: ["medical-nursing", "graduate", "diploma"],
-        qualificationText: "B.Sc. (Hons.) Nursing / B.Sc. Nursing from an Indian Nursing Council recognized Institute OR B.Sc. (Post-Certificate) / Post-Basic B.Sc. Nursing OR Diploma in General Nursing Midwifery (GNM) with 2 Years' experience in a minimum 50-bedded hospital.",
-        state: "all-india",
-        location: "AIIMS New Delhi, Bhopal, Bhubaneswar, Jodhpur, Patna, Raipur, Rishikesh, Nagpur, Kalyani, Mangalagiri, Gorakhpur, Bibinagar, Deoghar, Jammu, Rajkot, Guwahati, Bilaspur",
-        ageLimit: "18 to 30 Years",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years, Ex-Servicemen: 5 Years",
-        salary: "Level-7 (₹44,900 - ₹1,42,400) + Nursing Allowances (Gross Approx ₹75,000 - ₹82,000/month)",
-        fee: "General / OBC: ₹3000 | SC / ST / EWS: ₹2400 (Refundable upon appearing in exam) | PwBD: Exempted",
-        importantDates: {
-          notificationDate: "2026-08-11",
-          startDate: "2026-08-12",
-          lastDate: "2026-09-16",
-          feeLastDate: "2026-09-16",
-          examDate: "Stage-1 Prelims: September 2026 | Stage-2 Mains: October 2026"
-        },
-        selectionProcess: [
-          "Stage-I: NORCET Preliminary Online CBT Exam (100 MCQs, 90 Minutes, Qualifying for Stage-II)",
-          "Stage-II: NORCET Mains Online CBT Exam (100 MCQs - Clinical Scenario & Nursing Skill Based)",
-          "AIIMS Institute Allocation Based on NORCET Mains Merit Rank & Preference",
-          "Document Verification and Medical Fitness"
-        ],
-        documentsRequired: [
-          "State / Indian Nursing Council Registration Certificate",
-          "B.Sc Nursing Degree / GNM Diploma & Hospital Experience Certificates",
-          "10th Marksheet (DOB Proof)",
-          "Category Certificate (OBC-NCL / SC / ST / EWS)",
-          "Photograph & Signature as per AIIMS guidelines"
-        ],
-        howToApply: [
-          "Visit aiimsexams.ac.in and click on 'NORCET 2026 Registration'.",
-          "Complete MyPage registration with valid contact details.",
-          "Upload prescribed photo, signature, and left thumb impression.",
-          "Pay the online application fee.",
-          "Choose city preferences and submit the final application."
-        ],
-        faq: [
-          { q: "Is GNM eligible without experience for AIIMS NORCET?", a: "No, candidates with GNM diploma must possess a minimum 2 years of clinical experience in a minimum 50-bedded hospital recognized by competent health authorities." }
-        ],
-        shouldYouApply: "AIIMS offers the most prestigious clinical nursing career in India with 7th Pay Commission Level-7 compensation, quarters, modern medical facilities, and promotional growth to Assistant Nursing Superintendent.",
-        officialLinks: {
-          notificationUrl: "https://www.aiimsexams.ac.in",
-          applyUrl: "https://www.aiimsexams.ac.in",
-          websiteUrl: "https://www.aiimsexams.ac.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "drdo-ceptam-technician-senior-technical-assistant-2026",
-        title: "DRDO CEPTAM-11 Recruitment 2026 - 2,450 STA-B & Technician-A Posts",
-        org: "Defence Research and Development Organisation (DRDO)",
-        shortOrg: "DRDO / Ministry of Defence",
-        posts: "Senior Technical Assistant-B (STA-B), Technician-A (Tech-A)",
-        vacancies: 2450,
-        category: "engineering",
-        subCategory: "Defence Research",
-        qualifications: ["iti", "diploma", "graduate", "mca-bca-it"],
-        qualificationText: "STA-B: 3-Year Diploma in Engineering or B.Sc. in relevant discipline (CS, IT, Electronics, Mechanical, Physics, Chemistry) | Tech-A: 10th Pass + ITI Certificate in recognized trade (Fitter, Electrician, Machinist, COPA, Turner, Welder, Electronic Mechanic).",
-        state: "all-india",
-        location: "DRDO Labs Across India (Delhi, Bengaluru, Hyderabad, Pune, Chandigarh, Dehradun, Kochi, etc.)",
-        ageLimit: "18 to 28 Years",
-        ageRelaxation: "SC/ST: 5 Years, OBC-NCL: 3 Years, PwBD: 10 Years, ESM as per rules",
-        salary: "STA-B: Pay Level-6 (₹35,400 - ₹1,12,400) | Tech-A: Pay Level-2 (₹19,900 - ₹63,200) + Central Govt DA & Allowances",
-        fee: "General / OBC / EWS: ₹100 | Women / SC / ST / PwBD / ESM: Exempted (NIL)",
-        importantDates: {
-          notificationDate: "2026-08-16",
-          startDate: "2026-08-20",
-          lastDate: "2026-09-29",
-          feeLastDate: "2026-09-29",
-          examDate: "Tier-I CBT: November 2026 | Tier-II CBT / Trade Test: January 2027"
-        },
-        selectionProcess: [
-          "For STA-B: Tier-I CBT (Screening - 120 Marks) -> Tier-II CBT (Technical Subject Specific - 100 Marks for Final Merit)",
-          "For Tech-A: Tier-I CBT (Provisional Selection - 120 Marks) -> Tier-II Trade Test (Qualifying in nature)"
-        ],
-        documentsRequired: [
-          "Scanned Photograph (20-50 KB) & Signature (10-20 KB)",
-          "10th / Matriculation Certificate",
-          "ITI / Diploma / B.Sc Marksheets & Degree",
-          "Caste / Category Certificate",
-          "EWS Income Certificate if applicable"
-        ],
-        howToApply: [
-          "Visit www.drdo.gov.in and open CEPTAM Notice Board.",
-          "Register using your mobile number and active email ID.",
-          "Select post applied (STA-B or Tech-A) and specific trade/discipline.",
-          "Upload educational documents, photo, and signature.",
-          "Submit application fee online and print registration acknowledgment."
-        ],
-        faq: [
-          { q: "Is there an interview in DRDO CEPTAM recruitment?", a: "No, there is no interview for Group B non-gazetted and Group C posts in DRDO. Selection is purely based on Tier-II Computer Based Test marks (for STA-B) and Tier-I CBT marks (for Tech-A)." }
-        ],
-        shouldYouApply: "One of India's premier scientific and defence research organizations. Provides outstanding research lab work environment, high safety, central government medical facilities, and promotional growth.",
-        officialLinks: {
-          notificationUrl: "https://www.drdo.gov.in/drdo/careers",
-          applyUrl: "https://www.drdo.gov.in",
-          websiteUrl: "https://www.drdo.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "dsssb-teacher-tgt-prt-pgt-recruitment-2026",
-        title: "DSSSB Delhi Teacher Recruitment 2026 - 8,420 TGT, PGT, PRT & Special Educator Posts",
-        org: "Delhi Subordinate Services Selection Board (DSSSB)",
-        shortOrg: "DSSSB / Delhi Govt",
-        posts: "Trained Graduate Teacher (TGT English, Maths, Science, Social Science, Hindi, Sanskrit), PGT, Primary Teacher (PRT), Special Educator",
-        vacancies: 8420,
-        category: "teaching",
-        subCategory: "Delhi Govt / Education",
-        qualifications: ["bed-teaching", "graduate", "post-graduate", "12th-pass"],
-        qualificationText: "PRT: 12th with 50% + 2-Year D.El.Ed / B.El.Ed + CTET Paper-I | TGT: Bachelor's Degree in relevant subject with min 45% + B.Ed + CTET Paper-II | PGT: Master's Degree in concerned subject + B.Ed degree.",
-        state: "delhi",
-        location: "Directorate of Education, GNCT of Delhi & MCD Schools",
-        ageLimit: "PRT: Below 30 Years | TGT: Below 32 Years (Relaxable for Females up to 40 Years for DoE) | PGT: Below 36 Years",
-        ageRelaxation: "SC/ST: 5 Years, OBC (Delhi Domicile only): 3 Years, PwD: 10 Years",
-        salary: "PRT: Pay Level-6 (₹35,400 - ₹1,12,400) | TGT: Pay Level-7 (₹44,900 - ₹1,42,400) | PGT: Pay Level-8 (₹47,600 - ₹1,51,100)",
-        fee: "General / OBC Male: ₹100 | Women, SC, ST, PwD & Ex-Servicemen: Exempted (NIL)",
-        importantDates: {
-          notificationDate: "2026-08-04",
-          startDate: "2026-08-09",
-          lastDate: "2026-09-22",
-          feeLastDate: "2026-09-22",
-          examDate: "Computer Based One-Tier Examination: November 2026"
-        },
-        selectionProcess: [
-          "One-Tier Computer Based Online Examination (200 MCQs, 200 Marks, 2 Hours Duration)",
-          "Section A (100 Marks: General Awareness, Reasoning, Numerical Ability, Hindi, English - 20 Marks each)",
-          "Section B (100 Marks: Subject Specific Methodology, Teaching Aptitude & Subject Content)",
-          "Document Verification & Final Merit List"
-        ],
-        documentsRequired: [
-          "CTET Qualifying Marksheet & Certificate (from DigiLocker)",
-          "Graduation / Post Graduation & B.Ed / D.El.Ed Marksheets",
-          "10th Marksheet (DOB Proof)",
-          "Delhi OBC Certificate / Central SC/ST/EWS Certificate",
-          "Scanned Photo, Signature & Left/Right Thumb Impressions"
-        ],
-        howToApply: [
-          "Visit dsssbonline.nic.in.",
-          "Complete user registration with 10th roll number, year of passing, and Aadhaar.",
-          "Log in and select the relevant Post Code under Apply Online.",
-          "Enter educational qualifications and CTET roll number/year.",
-          "Upload passport photograph, signature, left thumb, and right thumb impressions.",
-          "Pay the ₹100 fee online and print the submission receipt."
-        ],
-        faq: [
-          { q: "Is CTET mandatory for DSSSB PGT posts?", a: "No, CTET is mandatory only for PRT (Paper 1) and TGT (Paper 2). CTET is not conducted for PGT level." }
-        ],
-        shouldYouApply: "Delhi government school teaching jobs provide the highest teacher pay packages in India, high urban stability in Delhi NCR, fixed working hours, and extensive vacation periods.",
-        officialLinks: {
-          notificationUrl: "https://dsssb.delhi.gov.in",
-          applyUrl: "https://dsssbonline.nic.in",
-          websiteUrl: "https://dsssb.delhi.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "india-post-gds-direct-merit-recruitment-2026",
-        title: "India Post GDS Recruitment 2026 - 44,228 Gramin Dak Sevak Vacancies (No Exam / Direct 10th Merit)",
-        org: "Department of Posts (India Post)",
-        shortOrg: "India Post / Ministry of Communications",
-        posts: "Branch Postmaster (BPM), Assistant Branch Postmaster (ABPM), Dak Sevak",
-        vacancies: 44228,
-        category: "no-exam",
-        subCategory: "Central Govt / Postal",
-        qualifications: ["10th-pass"],
-        qualificationText: "Secondary School Examination pass certificate of 10th standard with passing marks in Mathematics and English conducted by any recognized Board. Compulsory knowledge of local language & basic computer operation.",
-        state: "all-india",
-        location: "All 23 Postal Circles Across India (All Villages & Rural Post Offices)",
-        ageLimit: "18 to 40 Years (as on closing date)",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, EWS: No relaxation, PwD: 10-15 Years",
-        salary: "BPM: TRCA Slab ₹12,000 - ₹29,380 | ABPM/Dak Sevak: TRCA Slab ₹10,000 - ₹24,470 + DA and Social Security Allowances",
-        fee: "General / OBC Male: ₹100 | All Female, SC, ST, PwD, Transgender: Exempted (NIL)",
-        importantDates: {
-          notificationDate: "2026-08-01",
-          startDate: "2026-08-05",
-          lastDate: "2026-09-15",
-          feeLastDate: "2026-09-15",
-          examDate: "NO WRITTEN EXAM - 1st Merit List Expected: 25th September 2026"
-        },
-        selectionProcess: [
-          "System-generated Merit List prepared automatically on the basis of 10th standard Board percentage/marks.",
-          "No written examination, physical test, or interview is conducted.",
-          "Document Verification at respective Divisional Head Post Offices.",
-          "Final Appointment Order Issue"
-        ],
-        documentsRequired: [
-          "10th Standard Marks Memo / Certificate",
-          "Basic Computer Training Certificate (Minimum 60 Days duration from recognized institute)",
-          "Community / Caste Certificate (SC/ST/OBC/EWS/PwD)",
-          "Aadhaar Card and Passport Photo"
-        ],
-        howToApply: [
-          "Visit indiapostgdsonline.gov.in.",
-          "Click on 'Stage 1 - Registration' and enter mobile, email, name, and 10th passing board.",
-          "Pay the ₹100 registration fee online (if applicable).",
-          "Under 'Stage 3 - Apply Online', select your preferred Circle and Division.",
-          "Submit your post preferences (up to maximum available posts in the division).",
-          "Save the application preview receipt."
-        ],
-        faq: [
-          { q: "Is computer certificate compulsory for India Post GDS?", a: "A basic computer training certificate of minimum 60 days is required, but it is relaxed if you studied computer as a subject in 10th, 12th, or college level." }
-        ],
-        shouldYouApply: "Guaranteed transparent selection with zero exam stress. If you scored 85%+ in your 10th board exams, you have a very strong chance of landing a direct government appointment in your home district.",
-        officialLinks: {
-          notificationUrl: "https://indiapostgdsonline.gov.in",
-          applyUrl: "https://indiapostgdsonline.gov.in",
-          websiteUrl: "https://indiapostgdsonline.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: true,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "rbi-grade-b-officer-recruitment-2026",
-        title: "RBI Grade B Officer (General / DEPR / DSIM) Recruitment 2026 - 195 Vacancies",
-        org: "Reserve Bank of India (RBI)",
-        shortOrg: "Reserve Bank of India",
-        posts: "Officers in Grade 'B' (Direct Recruit - DR) - General, DEPR, DSIM",
-        vacancies: 195,
-        category: "banking",
-        subCategory: "Regulatory Bodies",
-        qualifications: ["graduate", "post-graduate", "mba-pgdm", "btech-engineering"],
-        qualificationText: "Graduation in any discipline / Equivalent technical or professional qualification with minimum 60% marks (50% for SC/ST/PwBD) OR Post-Graduation / Master's Degree with minimum 55% marks.",
-        state: "all-india",
-        location: "Mumbai, New Delhi, Kolkata, Chennai & All RBI Regional Offices Across India",
-        ageLimit: "21 to 30 Years (Up to 32 Years for M.Phil / 34 Years for Ph.D holders)",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years, Ex-Servicemen: 5 Years",
-        salary: "Starting Basic Pay ₹55,200/- (Gross Monthly Emoluments Approx ₹1,16,000/month + RBI Leased Housing + Medical & Petrol Perks)",
-        fee: "General / OBC / EWS: ₹850 + 18% GST | SC / ST / PwBD: ₹100 + 18% GST",
-        importantDates: {
-          notificationDate: "2026-08-10",
-          startDate: "2026-08-14",
-          lastDate: "2026-09-20",
-          feeLastDate: "2026-09-20",
-          examDate: "Phase-I Online Exam: October 2026 | Phase-II Exam: December 2026 | Interview: Feb 2027"
-        },
-        selectionProcess: [
-          "Phase-I Online Examination (200 Marks - General Awareness, English, Quantitative Aptitude, Reasoning)",
-          "Phase-II Online Examination (Paper-I: Economic & Social Issues, Paper-II: English Writing Skills, Paper-III: Finance & Management - Total 300 Marks)",
-          "Phase-III Interview (75 Marks conducted at RBI Mumbai/Regional Centers)",
-          "Final Merit ranking based on Phase-II (300M) + Interview (75M) = 375 Marks"
-        ],
-        documentsRequired: [
-          "Graduation / PG Marksheets and Degree Certificate",
-          "10th Marksheet (DOB Proof)",
-          "Caste / Category Certificate",
-          "Scanned Photo, Signature, Left Thumb Impression, Handwritten Declaration"
-        ],
-        howToApply: [
-          "Visit opportunities.rbi.org.in and navigate to Current Vacancies -> Vacancies.",
-          "Click on 'Recruitment for the post of Officers in Grade B'.",
-          "Register and fill personal, educational, and communication details.",
-          "Upload documents as per RBI guidelines.",
-          "Pay the online fee and print the completed application form."
-        ],
-        faq: [
-          { q: "Is there an attempt limit for RBI Grade B exam?", a: "Yes, candidates belonging to Unreserved / General category who have already appeared 6 times in Phase-I examination are not eligible to apply. There is no attempt restriction for SC/ST/OBC/PwBD/EWS candidates." }
-        ],
-        shouldYouApply: "Widely regarded as the most prestigious central banking career in South Asia. Unrivaled policy exposure to monetary policy, macroeconomic regulation, banking supervision, and luxurious central banking perks.",
-        officialLinks: {
-          notificationUrl: "https://opportunities.rbi.org.in",
-          applyUrl: "https://ibpsonline.ibps.in/rbiojul24/",
-          websiteUrl: "https://www.rbi.org.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "isro-scientist-engineer-sc-recruitment-2026",
-        title: "ISRO Scientist / Engineer 'SC' Recruitment 2026 - 325 Scientific Vacancies (ICRB)",
-        org: "Indian Space Research Organisation (ISRO)",
-        shortOrg: "ISRO / Dept of Space",
-        posts: "Scientist / Engineer 'SC' (Civil, Electrical, Mechanical, Electronics, Computer Science, Architecture)",
-        vacancies: 325,
-        category: "engineering",
-        subCategory: "Space Science & Tech",
-        qualifications: ["btech-engineering", "mca-bca-it", "post-graduate"],
-        qualificationText: "B.E. / B.Tech or equivalent in first class with an aggregate minimum of 65% marks or CGPA 6.84/10 in relevant engineering discipline from an AICTE/UGC recognized university.",
-        state: "all-india",
-        location: "ISRO Headquarters Bengaluru, VSSC Thiruvananthapuram, URSC Bengaluru, SDSC SHAR Sriharikota, SAC Ahmedabad, NRSC Hyderabad",
-        ageLimit: "28 to 30 Years",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years as per Govt of India rules",
-        salary: "Level-10 (₹56,100 - ₹1,77,500) + DA, HRA, Transport Allowance (Gross Monthly CTC Approx ₹95,000/month + Space Housing & Medical)",
-        fee: "₹250 (All candidates pay initially ₹750, ₹500 refunded to non-exempted upon exam attendance; full ₹750 refunded to Women, SC, ST, PwBD, ESM)",
-        importantDates: {
-          notificationDate: "2026-08-15",
-          startDate: "2026-08-18",
-          lastDate: "2026-09-26",
-          feeLastDate: "2026-09-28",
-          examDate: "Written Test: November 2026 | Interview: January 2027"
-        },
-        selectionProcess: [
-          "Written Test (80 MCQs - 75% Discipline Specific Core Engineering + 25% Aptitude/Reasoning/Maths, Duration 120 Mins)",
-          "Interview (100 Marks - Candidates shortlisted in 1:5 ratio based on written test cutoff)",
-          "Final Selection based on minimum 60% aggregate score in personal interview"
-        ],
-        documentsRequired: [
-          "B.Tech / B.E. Consolidated Marksheet & Provisional/Degree Certificate",
-          "Class 10th Certificate for DOB proof",
-          "Category Certificate (OBC-NCL / SC / ST / EWS / PwBD)",
-          "Scanned Passport Photo & Signature"
-        ],
-        howToApply: [
-          "Visit www.isro.gov.in and click on Careers -> ICRB Recruitment Notices.",
-          "Complete online application and register with personal and academic percentage scores.",
-          "Select written test city preference.",
-          "Pay the application fee via SBI e-Pay.",
-          "Download and print the multi-page registration summary."
-        ],
-        faq: [
-          { q: "Is GATE mandatory for ISRO ICRB Scientist recruitment?", a: "No, ISRO ICRB conducts its own independent all-India written examination. GATE score is not mandatory for ICRB advertised posts." }
-        ],
-        shouldYouApply: "The ultimate dream job for Indian engineering and technology graduates. Contribute directly to Chandrayaan, Gaganyaan, Aditya solar missions, and deep space exploration programs with peerless scientific autonomy.",
-        officialLinks: {
-          notificationUrl: "https://www.isro.gov.in/Careers.html",
-          applyUrl: "https://www.isro.gov.in",
-          websiteUrl: "https://www.isro.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: true,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "ntpc-engineering-executive-trainee-eet-2026",
-        title: "NTPC Engineering Executive Trainee (EET-2026) - 495 Vacancies through GATE",
-        org: "NTPC Limited (Maharatna PSU)",
-        shortOrg: "NTPC Limited",
-        posts: "Executive Trainee (Electrical, Mechanical, Electronics, Instrumentation, Civil, Mining)",
-        vacancies: 495,
-        category: "psu",
-        subCategory: "Power & Energy",
-        qualifications: ["btech-engineering"],
-        qualificationText: "Full-time Bachelor's Degree in Engineering or Technology / AMIE with not less than 65% marks in relevant branches.",
-        state: "all-india",
-        location: "NTPC Power Stations Across India",
-        ageLimit: "27 Years (as on last date of application)",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
-        salary: "E-1 Scale (₹40,000 - ₹1,40,000) with CTC approx ₹18.5 Lakhs per annum + Township Quarters",
-        fee: "General / EWS / OBC: ₹300 | SC / ST / PwBD / Female: NIL",
-        importantDates: {
-          notificationDate: "2026-08-17",
-          startDate: "2026-08-20",
-          lastDate: "2026-09-25",
-          feeLastDate: "2026-09-25",
-          examDate: "Shortlisting on GATE 2026 score followed by GD & Personal Interview"
-        },
-        selectionProcess: [
-          "GATE 2026 Performance Score",
-          "Group Discussion (GD)",
-          "Personal Interview (PI)",
-          "Final Merit Ranking"
-        ],
-        documentsRequired: ["GATE 2026 Scorecard", "B.Tech Degree & Marksheets", "Caste Certificate", "Photo & Signature"],
-        howToApply: ["Apply online at careers.ntpc.co.in using your GATE 2026 registration number."],
-        faq: [{ q: "Is final year eligible?", a: "Yes, students appearing in final semester who appeared in GATE 2026 are eligible." }],
-        shouldYouApply: "Leading power sector PSU offering premier remuneration, townships, schools, sports complexes, and career progression.",
-        officialLinks: {
-          notificationUrl: "https://careers.ntpc.co.in",
-          applyUrl: "https://careers.ntpc.co.in",
-          websiteUrl: "https://www.ntpc.co.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: false,
-        urgent: false,
-        noExam: true,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "rrc-northern-railway-apprentice-recruitment-2026",
-        title: "RRC Northern Railway Apprentice Recruitment 2026 - 4,096 Trade Apprentice Vacancies (Direct Merit)",
-        org: "Railway Recruitment Cell (RRC Northern Railway)",
-        shortOrg: "RRC Northern Railway",
-        posts: "Trade Apprentice (Fitter, Welder, Electrician, Carpenter, Painter, Machinist, Wireman, COPA)",
-        vacancies: 4096,
-        category: "apprenticeship",
-        subCategory: "Indian Railways",
-        qualifications: ["10th-pass", "iti"],
-        qualificationText: "Passed 10th class examination with 50% marks + ITI in relevant trade recognized by NCVT / SCVT.",
-        state: "delhi",
-        location: "Delhi, Punjab, Haryana, Uttar Pradesh, Himachal Pradesh, Jammu & Kashmir Divisions",
-        ageLimit: "15 to 24 Years",
-        ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
-        salary: "Monthly Stipend ₹7,700 - ₹9,200 as per Apprenticeship Rules + 20% Railway Group D Quota Advantage",
-        fee: "General / OBC Male: ₹100 | SC / ST / PwD / Female: NIL",
-        importantDates: {
-          notificationDate: "2026-08-12",
-          startDate: "2026-08-15",
-          lastDate: "2026-09-24",
-          feeLastDate: "2026-09-24",
-          examDate: "NO EXAM - Selection on 10th + ITI Combined Average Merit"
-        },
-        selectionProcess: [
-          "Merit calculated by taking average of percentage marks in 10th and ITI.",
-          "Document verification & medical fitness check.",
-          "No written test or interview."
-        ],
-        documentsRequired: ["10th Marksheet", "ITI NCVT/SCVT Certificate", "Caste Certificate", "Aadhaar Card"],
-        howToApply: ["Apply online at www.rrcnr.org by filling academic details and uploading trade certificates."],
-        faq: [{ q: "What is the benefit of Railway Apprentice?", a: "Under Railway rules, Course Completed Act Apprentices (CCAAs) receive 20% horizontal reservation in Level-1 (Group D) recruitments and 1/3rd marks weightage in NCVT examination." }],
-        shouldYouApply: "Crucial stepping stone for ITI pass youths targeting permanent Railway Group D positions with 20% reserved vacancy advantage.",
-        officialLinks: {
-          notificationUrl: "https://www.rrcnr.org",
-          applyUrl: "https://www.rrcnr.org",
-          websiteUrl: "https://www.rrcnr.org"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: false,
-        urgent: false,
-        noExam: true,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "delhi-high-court-judicial-service-civil-judge-2026",
-        title: "Delhi High Court Judicial Service (DHJS & DJS) 2026 - 124 Civil Judge / Judicial Magistrate Posts",
-        org: "High Court of Delhi (New Delhi)",
-        shortOrg: "Delhi High Court",
-        posts: "Civil Judge (Junior Division) / Metropolitan Magistrate",
-        vacancies: 124,
-        category: "courts",
-        subCategory: "Judiciary",
-        qualifications: ["law-llb", "post-graduate"],
-        qualificationText: "Degree in Law (LL.B 3-Year / 5-Year integrated) from a recognized University and enrolled as an Advocate under the Advocates Act, 1961.",
-        state: "delhi",
-        location: "Delhi District Courts (Tis Hazari, Saket, Rohini, Dwarka, Karkardooma, Patiala House)",
-        ageLimit: "Up to 32 Years (for DJS) / 35 to 45 Years (for DHJS)",
-        ageRelaxation: "SC/ST: 5 Years, PwD: 10 Years, Ex-Servicemen as per rules",
-        salary: "Junior Time Scale (₹77,840 - ₹1,36,520) with judicial perks, official car, and court residence",
-        fee: "General / Other: ₹1500 | SC / ST / PwD: ₹400",
-        importantDates: {
-          notificationDate: "2026-08-07",
-          startDate: "2026-08-10",
-          lastDate: "2026-09-17",
-          feeLastDate: "2026-09-17",
-          examDate: "Preliminary Objective: October 2026 | Mains Written: December 2026"
-        },
-        selectionProcess: [
-          "Preliminary Exam (Objective Multiple Choice - 200 Marks, 25% Negative Marking)",
-          "Mains Examination (Written - General Knowledge & Language 250M, Civil Law-I 200M, Civil Law-II 200M, Criminal Law 200M)",
-          "Viva Voce / Personal Interview (150 Marks)"
-        ],
-        documentsRequired: ["LL.B Degree & Consolidated Marksheet", "Bar Council Enrollment Certificate", "10th Marksheet", "Caste Certificate"],
-        howToApply: ["Apply online at delhihighcourt.nic.in under Public Notice -> Job Openings."],
-        faq: [{ q: "Is prior practice experience mandatory for Delhi Junior Judicial Service?", a: "No, fresh law graduates enrolled as Advocates with Bar Council can appear for DJS." }],
-        shouldYouApply: "Prestigious judicial career offering instant gazetted judicial magistrate powers, high honor, security, and structured elevation to High Court Bench.",
-        officialLinks: {
-          notificationUrl: "https://delhihighcourt.nic.in",
-          applyUrl: "https://delhihighcourt.nic.in",
-          websiteUrl: "https://delhihighcourt.nic.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: false,
-        urgent: true,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      },
-      {
-        id: "rajasthan-rsmssb-junior-instructor-patwari-2026",
-        title: "Rajasthan RSMSSB Patwari & Junior Instructor Recruitment 2026 - 3,820 Posts",
-        org: "Rajasthan Staff Selection Board (RSMSSB)",
-        shortOrg: "RSMSSB Rajasthan",
-        posts: "Patwari (Revenue), Junior Instructor (ITI Trades), Junior Accountant",
-        vacancies: 3820,
-        category: "state-govt",
-        subCategory: "Rajasthan Govt",
-        qualifications: ["graduate", "diploma", "iti", "mca-bca-it"],
-        qualificationText: "Graduate from recognized university + RSCIT / 'O' Level / Computer Diploma Certificate.",
-        state: "rajasthan",
-        location: "Rajasthan (All 50 Districts)",
-        ageLimit: "18 to 40 Years",
-        ageRelaxation: "SC/ST/OBC/MBC/EWS Male of Rajasthan: 5 Years, Rajasthan Female: 10 Years",
-        salary: "Pay Matrix Level L-5 (₹20,800 - ₹65,900) to Level L-10 (₹33,800 - ₹1,06,700)",
-        fee: "General / OBC Creamy: ₹600 | BC / EBC Non-Creamy / SC / ST / PwD: ₹400",
-        importantDates: {
-          notificationDate: "2026-08-10",
-          startDate: "2026-08-14",
-          lastDate: "2026-09-27",
-          feeLastDate: "2026-09-27",
-          examDate: "Written Exam: November 2026"
-        },
-        selectionProcess: ["Written Examination (150 Questions, 300 Marks, 3 Hours)", "Document Verification & Merit"],
-        documentsRequired: ["Graduation Degree", "RSCIT / Computer Certificate", "Rajasthan Domicile", "Caste Certificate"],
-        howToApply: ["Apply through Rajasthan SSO portal at sso.rajasthan.gov.in using Recruitment Portal app."],
-        faq: [{ q: "Is CET exam required for Patwari?", a: "Yes, candidates must have qualified Rajasthan Common Eligibility Test (CET Graduate Level)." }],
-        shouldYouApply: "High revenue field power and immense popularity in Rajasthan rural governance.",
-        officialLinks: {
-          notificationUrl: "https://rsmssb.rajasthan.gov.in",
-          applyUrl: "https://sso.rajasthan.gov.in",
-          websiteUrl: "https://rsmssb.rajasthan.gov.in"
-        },
-        verified: true,
-        lastVerified: "2026-09-02",
-        featured: false,
-        urgent: false,
-        noExam: false,
-        fresher: true,
-        womenFriendly: true
-      }
-    ];
-
-    records.push(...anchorJobs);
-
-    // Dynamic High-Volume Generator to cover all other 285+ positions across all 28 states, 8 UTs, and all qualifications
-    const orgTemplates = [
-      // Central & PSUs
-      { org: "Steel Authority of India Limited (SAIL)", shortOrg: "SAIL / Maharatna", cat: "psu", qual: ["diploma", "iti", "btech-engineering"], salary: "₹25,070 - ₹50,500 (S-3 / E-1)", fee: "₹500 / ₹200", state: "all-india" },
-      { org: "Bharat Electronics Limited (BEL)", shortOrg: "BEL / Navratna PSU", cat: "psu", qual: ["btech-engineering", "diploma", "mca-bca-it"], salary: "₹40,000 - ₹1,40,000 (E-II)", fee: "₹472 / NIL", state: "karnataka" },
-      { org: "Hindustan Aeronautics Limited (HAL)", shortOrg: "HAL / Defence PSU", cat: "psu", qual: ["iti", "diploma", "btech-engineering"], salary: "₹23,000 - ₹1,20,000", fee: "₹500 / NIL", state: "karnataka" },
-      { org: "Coal India Limited (CIL)", shortOrg: "Coal India / Maharatna", cat: "psu", qual: ["btech-engineering", "post-graduate", "mba-pgdm"], salary: "₹50,000 - ₹1,60,000 (MT)", fee: "₹1180 / NIL", state: "west-bengal" },
-      { org: "Bharat Petroleum Corporation Limited (BPCL)", shortOrg: "BPCL / Maharatna", cat: "psu", qual: ["btech-engineering", "mba-pgdm", "graduate"], salary: "₹60,000 - ₹1,80,000", fee: "NIL / Exempted", state: "maharashtra" },
-      { org: "Indian Oil Corporation Limited (IOCL)", shortOrg: "IOCL / Maharatna", cat: "psu", qual: ["10th-pass", "iti", "diploma", "btech-engineering"], salary: "₹25,000 - ₹1,05,000", fee: "₹300 / NIL", state: "all-india" },
-      { org: "Gas Authority of India Limited (GAIL)", shortOrg: "GAIL India", cat: "psu", qual: ["btech-engineering", "mba-pgdm", "law-llb"], salary: "₹60,000 - ₹1,80,000", fee: "₹200 / NIL", state: "delhi" },
-      { org: "Nuclear Power Corporation of India (NPCIL)", shortOrg: "NPCIL / Dept of Atomic Energy", cat: "psu", qual: ["iti", "diploma", "btech-engineering"], salary: "₹35,400 - ₹78,000", fee: "₹500 / NIL", state: "maharashtra" },
-      { org: "Bhabha Atomic Research Centre (BARC)", shortOrg: "BARC / DAE", cat: "central-govt", qual: ["iti", "diploma", "graduate", "post-graduate"], salary: "₹21,700 - ₹67,700", fee: "₹150 / NIL", state: "maharashtra" },
-      { org: "Bureau of Indian Standards (BIS)", shortOrg: "BIS India", cat: "central-govt", qual: ["graduate", "btech-engineering", "post-graduate"], salary: "Level-6 to Level-10", fee: "₹500 / NIL", state: "delhi" },
-      { org: "Food Safety and Standards Authority of India (FSSAI)", shortOrg: "FSSAI / Health Ministry", cat: "central-govt", qual: ["graduate", "post-graduate", "medical-nursing"], salary: "Level-4 to Level-11", fee: "₹1000 / ₹250", state: "delhi" },
-      { org: "Council of Scientific and Industrial Research (CSIR)", shortOrg: "CSIR Labs", cat: "central-govt", qual: ["12th-pass", "graduate", "post-graduate"], salary: "₹19,900 - ₹1,42,400", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Employees' State Insurance Corporation (ESIC)", shortOrg: "ESIC / Labour Ministry", cat: "central-govt", qual: ["10th-pass", "12th-pass", "graduate", "medical-nursing"], salary: "Level-1 to Level-7", fee: "₹500 / ₹250", state: "all-india" },
-      { org: "Employees' Provident Fund Organisation (EPFO)", shortOrg: "EPFO India", cat: "central-govt", qual: ["graduate", "law-llb"], salary: "Level-8 (₹47,600 - ₹1,51,100)", fee: "₹100 / NIL", state: "all-india" },
-      { org: "National Bank for Agriculture and Rural Development (NABARD)", shortOrg: "NABARD", cat: "banking", qual: ["graduate", "post-graduate", "btech-engineering", "mba-pgdm"], salary: "Grade A (₹44,500 - ₹89,150)", fee: "₹800 / ₹150", state: "maharashtra" },
-      { org: "Small Industries Development Bank of India (SIDBI)", shortOrg: "SIDBI Bank", cat: "banking", qual: ["graduate", "mba-pgdm", "law-llb", "btech-engineering"], salary: "Grade A Assistant Manager", fee: "₹1100 / ₹175", state: "uttar-pradesh" },
-      { org: "State Bank of India (SBI)", shortOrg: "SBI", cat: "banking", qual: ["graduate", "post-graduate"], salary: "Junior Associate / PO (₹32,000 - ₹68,000)", fee: "₹750 / NIL", state: "all-india" },
-      { org: "Life Insurance Corporation of India (LIC)", shortOrg: "LIC India", cat: "banking", qual: ["graduate", "post-graduate", "mca-bca-it"], salary: "Assistant / AAO (₹35,000 - ₹92,000)", fee: "₹700 / ₹100", state: "all-india" },
-      { org: "Central Reserve Police Force (CRPF)", shortOrg: "CRPF / MHA", cat: "police", qual: ["10th-pass", "12th-pass", "graduate"], salary: "Level-3 to Level-6 (₹21,700 - ₹1,12,400)", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Border Security Force (BSF)", shortOrg: "BSF / MHA", cat: "police", qual: ["10th-pass", "12th-pass", "iti", "diploma"], salary: "Level-3 Constable & Sub-Inspector", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Central Industrial Security Force (CISF)", shortOrg: "CISF / MHA", cat: "police", qual: ["10th-pass", "12th-pass"], salary: "Level-3 Constable / Tradesmen", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Indo-Tibetan Border Police (ITBP)", shortOrg: "ITBP / MHA", cat: "police", qual: ["10th-pass", "12th-pass", "medical-nursing"], salary: "Level-3 to Level-5", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Sashastra Seema Bal (SSB)", shortOrg: "SSB / MHA", cat: "police", qual: ["10th-pass", "12th-pass", "diploma"], salary: "Level-3 Constable & SI", fee: "₹100 / NIL", state: "all-india" },
-      { org: "Indian Navy", shortOrg: "Indian Navy", cat: "defence", qual: ["10th-pass", "12th-pass", "btech-engineering"], salary: "Agniveer MR/SSR & SSC Officer", fee: "₹250 / NIL", state: "all-india" },
-      { org: "Indian Air Force (IAF)", shortOrg: "Indian Air Force", cat: "defence", qual: ["12th-pass", "graduate", "btech-engineering"], salary: "Agniveervayu & AFCAT Flying/Ground Duty", fee: "₹250 / ₹550", state: "all-india" },
-      { org: "Indian Coast Guard (ICG)", shortOrg: "Indian Coast Guard", cat: "defence", qual: ["10th-pass", "12th-pass", "diploma", "btech-engineering"], salary: "Navik GD / DB & Yantrik (Level-3 / 5)", fee: "₹300 / NIL", state: "all-india" },
-      { org: "Kendriya Vidyalaya Sangathan (KVS)", shortOrg: "KVS Schools", cat: "teaching", qual: ["bed-teaching", "graduate", "post-graduate", "12th-pass"], salary: "PRT / TGT / PGT (Level-6 to Level-8)", fee: "₹1500 / NIL", state: "all-india" },
-      { org: "Navodaya Vidyalaya Samiti (NVS)", shortOrg: "NVS Schools", cat: "teaching", qual: ["bed-teaching", "graduate", "post-graduate"], salary: "TGT / PGT / Non-Teaching Staff", fee: "₹1500 / NIL", state: "all-india" },
-      
-      // State Specific Boards
-      { org: "Maharashtra Public Service Commission (MPSC)", shortOrg: "MPSC Maharashtra", cat: "state-govt", qual: ["graduate", "btech-engineering", "post-graduate"], salary: "Group A & B (₹41,800 - ₹1,77,500)", fee: "₹394 / ₹294", state: "maharashtra" },
-      { org: "Tamil Nadu Public Service Commission (TNPSC)", shortOrg: "TNPSC Tamil Nadu", cat: "state-govt", qual: ["10th-pass", "graduate", "diploma"], salary: "Group 2 / 4 (₹19,500 - ₹1,14,000)", fee: "₹100 / ₹150", state: "tamil-nadu" },
-      { org: "Karnataka Public Service Commission (KPSC)", shortOrg: "KPSC Karnataka", cat: "state-govt", qual: ["10th-pass", "graduate", "diploma"], salary: "FDA / SDA / KAS Officers", fee: "₹600 / ₹300", state: "karnataka" },
-      { org: "West Bengal Public Service Commission (WBPSC)", shortOrg: "WBPSC West Bengal", cat: "state-govt", qual: ["10th-pass", "graduate", "btech-engineering"], salary: "WBCS Executive & Clerkship", fee: "₹210 / NIL", state: "west-bengal" },
-      { org: "Madhya Pradesh Staff Selection Board (MPESB)", shortOrg: "MPESB / MP Vyapam", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate", "iti"], salary: "Patwari / Constable / Forest Guard", fee: "₹500 / ₹250", state: "madhya-pradesh" },
-      { org: "Gujarat Subordinate Service Selection Board (GSSSB)", shortOrg: "GSSSB Gujarat", cat: "state-govt", qual: ["12th-pass", "graduate", "diploma"], salary: "Head Clerk / Junior Clerk / Surveyor", fee: "₹100 / NIL", state: "gujarat" },
-      { org: "Haryana Staff Selection Commission (HSSC)", shortOrg: "HSSC Haryana", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate", "iti"], salary: "Group C & D CET Posts", fee: "₹100 / ₹50", state: "haryana" },
-      { org: "Punjab Subordinate Services Selection Board (PSSSB)", shortOrg: "PSSSB Punjab", cat: "state-govt", qual: ["10th-pass", "graduate", "diploma"], salary: "Clerk / Patwari / Junior Engineer", fee: "₹1000 / ₹250", state: "punjab" },
-      { org: "Telangana State Public Service Commission (TGPSC)", shortOrg: "TGPSC Telangana", cat: "state-govt", qual: ["graduate", "btech-engineering", "10th-pass"], salary: "Group 1 / 2 / 3 / 4 Officers", fee: "₹200 / Exempted", state: "telangana" },
-      { org: "Andhra Pradesh Public Service Commission (APPSC)", shortOrg: "APPSC Andhra", cat: "state-govt", qual: ["graduate", "diploma", "10th-pass"], salary: "Group 1 / 2 & Executive Posts", fee: "₹250 / ₹80", state: "andhra-pradesh" },
-      { org: "Kerala Public Service Commission (Kerala PSC)", shortOrg: "Kerala PSC", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "LDC / Police Constable / Secretariat Assistant", fee: "NIL (Free Application)", state: "kerala" },
-      { org: "Odisha Staff Selection Commission (OSSC)", shortOrg: "OSSC Odisha", cat: "state-govt", qual: ["10th-pass", "graduate", "diploma"], salary: "CGL / Junior Clerk / Accountant", fee: "NIL (State Free Policy)", state: "odisha" },
-      { org: "Assam Public Service Commission (APSC)", shortOrg: "APSC Assam", cat: "state-govt", qual: ["graduate", "btech-engineering", "post-graduate"], salary: "Combined Competitive CCE / AE", fee: "₹297 / ₹197", state: "assam" },
-      { org: "Jharkhand Staff Selection Commission (JSSC)", shortOrg: "JSSC Jharkhand", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "JSSC CGL / Constable / Panchayat Sachiv", fee: "₹100 / ₹50", state: "jharkhand" },
-      { org: "Chhattisgarh Professional Examination Board (CG Vyapam)", shortOrg: "CG Vyapam", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "Revenue Inspector / Patwari / Teacher", fee: "NIL (Free for CG Domicile)", state: "chhattisgarh" },
-      { org: "Himachal Pradesh Public Service Commission (HPPSC)", shortOrg: "HPPSC Shimla", cat: "state-govt", qual: ["graduate", "btech-engineering"], salary: "HPAS / Assistant Engineer / Lecturer", fee: "₹400 / ₹100", state: "himachal-pradesh" },
-      { org: "Uttarakhand Subordinate Service Selection Commission (UKSSSC)", shortOrg: "UKSSSC Dehradun", cat: "state-govt", qual: ["12th-pass", "graduate", "diploma"], salary: "VDO / VPDO / Junior Assistant", fee: "₹300 / ₹150", state: "uttarakhand" },
-      { org: "Jammu and Kashmir Services Selection Board (JKSSB)", shortOrg: "JKSSB", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "Panchayat Secretary / Junior Assistant / Sub Inspector", fee: "₹500 / ₹400", state: "jammu-kashmir" },
-      { org: "Goa Public Service Commission (Goa PSC)", shortOrg: "Goa PSC", cat: "state-govt", qual: ["graduate", "medical-nursing", "law-llb"], salary: "Junior Scale Officer / Medical Officer", fee: "₹500 / ₹250", state: "goa" },
-      { org: "Tripura Public Service Commission (TPSC)", shortOrg: "TPSC Agartala", cat: "state-govt", qual: ["graduate", "diploma"], salary: "Tripura Judicial / TCS / TPS", fee: "₹350 / ₹250", state: "tripura" },
-      { org: "Manipur Public Service Commission (MPSC Manipur)", shortOrg: "MPSC Manipur", cat: "state-govt", qual: ["graduate"], salary: "Civil Services MCS / MPS", fee: "₹600 / ₹400", state: "manipur" },
-      { org: "Meghalaya Public Service Commission (MPSC Meghalaya)", shortOrg: "MPSC Shillong", cat: "state-govt", qual: ["graduate", "diploma"], salary: "LDA / Junior Engineer / Inspector", fee: "₹460 / ₹230", state: "meghalaya" },
-      { org: "Nagaland Public Service Commission (NPSC)", shortOrg: "NPSC Kohima", cat: "state-govt", qual: ["graduate", "btech-engineering"], salary: "NCS / NPS / Assistant Professor", fee: "₹300 / ₹150", state: "nagaland" },
-      { org: "Mizoram Public Service Commission (MPSC Aizawl)", shortOrg: "MPSC Mizoram", cat: "state-govt", qual: ["graduate"], salary: "MCS / Inspector of Taxes", fee: "₹300 / ₹150", state: "mizoram" },
-      { org: "Sikkim Public Service Commission (SPSC)", shortOrg: "SPSC Gangtok", cat: "state-govt", qual: ["graduate", "12th-pass"], salary: "Under Secretary / Accounts Officer", fee: "₹200 / ₹100", state: "sikkim" },
-      { org: "Arunachal Pradesh Public Service Commission (APPSC Itanagar)", shortOrg: "APPSC Arunachal", cat: "state-govt", qual: ["graduate", "diploma"], salary: "APPSCCE / Section Officer", fee: "₹150 / ₹100", state: "arunachal-pradesh" },
-      { org: "Chandigarh Administration Recruitment Cell", shortOrg: "Chandigarh Admin", cat: "state-govt", qual: ["12th-pass", "graduate", "iti"], salary: "Clerk / Steno / Junior Technician", fee: "₹500 / ₹250", state: "chandigarh" },
-      { org: "Puducherry Staff Selection Commission (PSSC)", shortOrg: "Puducherry Govt", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "Lower Division Clerk / Village Administrative Officer", fee: "NIL", state: "puducherry" },
-      { org: "Administration of UT of Ladakh (SSRB Ladakh)", shortOrg: "SSRB Ladakh", cat: "state-govt", qual: ["10th-pass", "12th-pass", "graduate"], salary: "District Cadre Junior Assistant / Forester", fee: "₹200 / ₹100", state: "ladakh" }
-    ];
-
-    const postRoles = [
-      { name: "Junior Engineer (Civil / Electrical / Mechanical)", qual: ["diploma", "btech-engineering"], cat: "engineering", vacRange: [45, 850], noExamChance: 0.2 },
-      { name: "Assistant Section Officer / Clerk / Computer Assistant", qual: ["graduate", "12th-pass", "mca-bca-it"], cat: "central-govt", vacRange: [60, 1200], noExamChance: 0.1 },
-      { name: "Trade Apprentice / ITI Trainee Openings", qual: ["10th-pass", "iti"], cat: "apprenticeship", vacRange: [150, 3200], noExamChance: 0.95 },
-      { name: "Staff Nurse / Pharmacist / Lab Technician", qual: ["medical-nursing", "diploma", "graduate"], cat: "state-govt", vacRange: [80, 2400], noExamChance: 0.3 },
-      { name: "Sub-Inspector / Police Constable / Jail Warder", qual: ["12th-pass", "graduate"], cat: "police", vacRange: [200, 7500], noExamChance: 0 },
-      { name: "Management Trainee / Finance Executive (MBA / CA / ICWA)", qual: ["mba-pgdm", "graduate", "post-graduate"], cat: "psu", vacRange: [20, 350], noExamChance: 0.4 },
-      { name: "Legal Officer / Law Trainee / Court Reader", qual: ["law-llb", "post-graduate"], cat: "courts", vacRange: [15, 180], noExamChance: 0.2 },
-      { name: "School Teacher / Faculty / Assistant Professor", qual: ["bed-teaching", "post-graduate", "graduate"], cat: "teaching", vacRange: [120, 4200], noExamChance: 0.15 },
-      { name: "Multi-Tasking Staff (MTS) / Office Attendant / Peon", qual: ["10th-pass"], cat: "no-exam", vacRange: [90, 2800], noExamChance: 0.8 },
-      { name: "Data Entry Operator / Stenographer Grade C & D", qual: ["12th-pass", "graduate", "mca-bca-it"], cat: "central-govt", vacRange: [40, 650], noExamChance: 0.1 }
-    ];
-
-    let currentIdx = 1;
-    // Generate systematically to reach 300+ records
-    for (let i = 0; i < orgTemplates.length; i++) {
-      const template = orgTemplates[i];
-      
-      // Generate 5-7 distinct recruitments per template
-      const postsToGen = (i % 3 === 0) ? 6 : (i % 2 === 0 ? 5 : 4);
-      
-      for (let p = 0; p < postsToGen; p++) {
-        const role = postRoles[(i + p) % postRoles.length];
-        const vacCount = Math.floor(Math.random() * (role.vacRange[1] - role.vacRange[0])) + role.vacRange[0];
-        const isNoExam = Math.random() < role.noExamChance;
-        const isUrgent = (currentIdx % 4 === 0);
-        
-        // Days till closing (staggered from closing today, tomorrow, this week, to next month)
-        const daysOffset = (currentIdx % 15) === 0 ? 0 : ((currentIdx % 7) === 0 ? 2 : ((currentIdx % 4) === 0 ? 5 : 12 + (currentIdx % 25)));
-        
-        const now = new Date();
-        const lastDateObj = new Date(now.getTime() + daysOffset * 24 * 60 * 60 * 1000);
-        const startDateObj = new Date(now.getTime() - (20 - (daysOffset % 10)) * 24 * 60 * 60 * 1000);
-        const notifDateObj = new Date(startDateObj.getTime() - 3 * 24 * 60 * 60 * 1000);
-        
-        const pad = (n) => String(n).padStart(2, '0');
-        const formatDate = (d) => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
-
-        const chosenQuals = Array.from(new Set([...template.qual.slice(0, 2), ...role.qual.slice(0, 2)]));
-        const qualNames = chosenQuals.map(q => {
-          const found = QUALIFICATIONS.find(item => item.id === q);
-          return found ? found.shortName : q;
-        }).join(" / ");
-
-        const stateObj = STATES.find(s => s.id === template.state) || STATES[0];
-        const recordCategory = isNoExam ? "no-exam" : (role.cat || template.cat);
-
-        records.push({
-          id: `recruitment-${template.shortOrg.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${role.name.toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 25)}-${currentIdx}`,
-          title: `${template.shortOrg} ${role.name} Recruitment 2026 - ${vacCount} Posts`,
-          org: template.org,
-          shortOrg: template.shortOrg,
-          posts: role.name,
-          vacancies: vacCount,
-          category: recordCategory,
-          subCategory: template.shortOrg,
-          qualifications: chosenQuals,
-          qualificationText: `${qualNames} from a recognized Board / University / Institute.`,
-          state: template.state,
-          location: `${stateObj.name} & Respective Regional Field Units`,
-          ageLimit: chosenQuals.includes("10th-pass") ? "18 to 27 / 30 Years" : (chosenQuals.includes("iti") ? "18 to 28 Years" : "21 to 32 / 35 Years"),
-          ageRelaxation: "SC/ST: 5 Years, OBC: 3 Years, PwD: 10 Years as per Govt guidelines",
-          salary: template.salary,
-          fee: template.fee,
-          importantDates: {
-            notificationDate: formatDate(notifDateObj),
-            startDate: formatDate(startDateObj),
-            lastDate: formatDate(lastDateObj),
-            feeLastDate: formatDate(lastDateObj),
-            examDate: isNoExam ? "Direct Merit List / Interview Shortlist" : "October / November 2026"
-          },
-          selectionProcess: isNoExam ? [
-            "Merit shortlisting based on educational marks and qualification criteria",
-            "Document Verification and Identity Validation",
-            "Medical Examination and Final Joining"
-          ] : [
-            "Written Examination / Computer Based Test (CBT)",
-            "Skill Test / Trade Test / Physical Test (where applicable)",
-            "Document Verification (DV)",
-            "Pre-employment Medical Examination"
-          ],
-          documentsRequired: [
-            "Class 10th Certificate for Date of Birth Verification",
-            "Essential Educational Qualification Certificates & Marksheets",
-            "Caste / Category / Domicile Certificate in prescribed format",
-            "Valid Govt ID (Aadhaar / Voter Card / PAN)",
-            "Recent Passport Size Photograph & Scanned Signature"
-          ],
-          howToApply: [
-            `Visit the official website of ${template.shortOrg}.`,
-            "Locate the Career / Recruitment notification tab for 2026.",
-            "Complete registration and input academic qualifications accurately.",
-            "Upload necessary credentials, photo, and signature.",
-            "Pay the application fee online (if applicable) and submit.",
-            "Download and safely preserve the final application printout."
-          ],
-          faq: [
-            { q: `What is the last date to apply for ${template.shortOrg} ${role.name}?`, a: `The online application window closes on ${formatDate(lastDateObj)}. Candidates are advised to apply well before the deadline.` },
-            { q: `Is there any offline application mode?`, a: `No, only online applications submitted through the recruiting department's official website are accepted.` }
-          ],
-          shouldYouApply: `Ideal opening for eligible candidates holding ${qualNames}. Ensure you fulfill age criteria and keep all category certificates ready before the closing date.`,
-          officialLinks: {
-            notificationUrl: `https://www.google.com/search?q=${encodeURIComponent(template.org + ' Official Recruitment Notification 2026')}`,
-            applyUrl: `https://www.google.com/search?q=${encodeURIComponent(template.org + ' Online Application Portal 2026')}`,
-            websiteUrl: `https://www.google.com/search?q=${encodeURIComponent(template.org + ' Official Website')}`
-          },
-          verified: true,
-          lastVerified: "2026-09-02",
-          featured: (currentIdx % 9 === 0),
-          urgent: isUrgent,
-          noExam: isNoExam,
-          fresher: true,
-          womenFriendly: true
-        });
-
-        currentIdx++;
-      }
+  {
+    "id": "10th-pass",
+    "name": "10th Pass (Matriculation)"
+  },
+  {
+    "id": "12th-pass",
+    "name": "12th Pass (Higher Secondary / Intermediate)"
+  },
+  {
+    "id": "iti",
+    "name": "ITI (Industrial Training Institute)"
+  },
+  {
+    "id": "diploma",
+    "name": "Polytechnic / Engineering Diploma"
+  },
+  {
+    "id": "graduate",
+    "name": "Graduate (BA, BSc, BCom, Any Degree)"
+  },
+  {
+    "id": "btech-engineering",
+    "name": "B.Tech / B.E. (Engineering)"
+  },
+  {
+    "id": "post-graduate",
+    "name": "Post Graduate (MA, MSc, MCom, MCA)"
+  },
+  {
+    "id": "mba-pgdm",
+    "name": "MBA / PGDM (Management)"
+  },
+  {
+    "id": "medical-nursing",
+    "name": "Medical / MBBS / Nursing / BDS / B.Pharm"
+  },
+  {
+    "id": "law-llb",
+    "name": "Law / LLB / LLM"
+  },
+  {
+    "id": "bed-teaching",
+    "name": "B.Ed / D.El.Ed / Teaching Qualifications"
+  }
+];
+  const RECRUITMENTS = [
+  {
+    "id": "mpesb-si-subedar-recruitment-2026-apply-online-for-504-posts-last-date-23-09-202",
+    "title": "MPESB SI & Subedar Recruitment 2026 - Apply Online for 504 Posts | Last Date 23-09-2026",
+    "org": "MPESB SI & Subedar",
+    "shortOrg": "MPESB SI & Subedar",
+    "posts": "504 Posts",
+    "vacancies": 504,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "23-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/mpesb-si-subedar-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1H_TOnZ5UxR5647hpbkcBg15FtcC42lko/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/mpesb-si-subedar-recruitment.html"
     }
-
-    return records;
-  };
-
-  const RECRUITMENTS = generateFullRecruitmentDatabase();
-
-  // Admit Cards Dataset (30+ Live/Upcoming Hall Tickets)
+  },
+  {
+    "id": "jkssb-notification-no-09-of-2026-apply-online-for-2863-mts-sanitation-worker-pos",
+    "title": "JKSSB Notification No. 09 of 2026 - Apply Online for 2863 MTS & Sanitation Worker Posts | Last Date 03-11-2026",
+    "org": "JKSSB Notification No. 09 of 2026",
+    "shortOrg": "JKSSB Notification No. 09 of 2",
+    "posts": "2863 MTS & Sanitation Worker Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "03-11-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/jkssb-notification-no-09-of-2026.html",
+      "notificationUrl": "https://jkssb.nic.in/Pdf/ADVT_09OF2026_01092026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/jkssb-notification-no-09-of-2026.html"
+    }
+  },
+  {
+    "id": "bpsc-school-teacher-tre-40-recruitment-2026-apply-online-for-32388-posts",
+    "title": "BPSC School Teacher TRE 4.0 Recruitment 2026 - Apply Online for 32388 Posts",
+    "org": "BPSC School Teacher TRE 4.0",
+    "shortOrg": "BPSC School Teacher TRE 4.0",
+    "posts": "32388 Posts",
+    "vacancies": 32388,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/bpsc-school-teacher-tre-40-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/10W7B0ADuDdx0T9xhDF38q1KyGyDfnqtO/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/bpsc-school-teacher-tre-40-recruitment.html"
+    }
+  },
+  {
+    "id": "iim-kozhikode-faculty-recruitment-2026-apply-online-for-28-posts-last-date-30-09",
+    "title": "IIM Kozhikode Faculty Recruitment 2026 - Apply Online for 28 Posts | Last Date 30-09-2026",
+    "org": "IIM Kozhikode Faculty",
+    "shortOrg": "IIM Kozhikode Faculty",
+    "posts": "28 Posts",
+    "vacancies": 28,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "s",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/iim-kozhikode-faculty-recruitment-2026.html",
+      "notificationUrl": "https://iimk.ac.in/uploads/userfiles/Notification_A-02.2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/iim-kozhikode-faculty-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "istc-executive-recruitment-2026-apply-online-for-09-engineer-it-finance-hr-posts",
+    "title": "ISTC Executive Recruitment 2026 - Apply Online for 09 Engineer, IT, Finance, HR Posts | Last Date 18-09-2026",
+    "org": "ISTC Executive",
+    "shortOrg": "ISTC Executive",
+    "posts": "09 Engineer, IT, Finance, HR Posts",
+    "vacancies": 700,
+    "salary": "₹30,000 to ₹2,00,000",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "18-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://csl.cochinshipyard.in:8000/sap/bc/webdynpro/sap/hrrcf_a_candidate_registration?sap-language=EN#",
+      "notificationUrl": "https://cochinshipyard.in/uploads/career/cd5346e2da18d06f6905eb292e8ce195.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/istc-executive-recruitment.html"
+    }
+  },
+  {
+    "id": "icar-igfri-young-professional-recruitment-2026-walk-in-interview-for-05-posts",
+    "title": "ICAR IGFRI Young Professional Recruitment 2026 - Walk in Interview for 05 Posts",
+    "org": "ICAR IGFRI Young Professional",
+    "shortOrg": "ICAR IGFRI Young Professional",
+    "posts": "05 Posts",
+    "vacancies": 5,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/icar-igfri-young-professional.html",
+      "notificationUrl": "https://igfri.org.in/uploads/20260828055528802yp-II%205%20Post.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/icar-igfri-young-professional.html"
+    }
+  },
+  {
+    "id": "nit-goa-faculty-recruitment-2026-apply-online-for-28-posts-last-date-30-09-2026",
+    "title": "NIT Goa Faculty Recruitment 2026 - Apply Online for 28 Posts | Last Date 30-09-2026",
+    "org": "NIT Goa Faculty",
+    "shortOrg": "NIT Goa Faculty",
+    "posts": "28 Posts",
+    "vacancies": 28,
+    "salary": "pay scale in NIT Goa Faculty Recruitment 2026?",
+    "qualificationText": "s",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "goa",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/nit-goa-faculty-recruitment-2026.html",
+      "notificationUrl": "https://www.nitgoa.ac.in/uploads/faculty_recruitment2026/Advt_Faculty%20_%20Recruitment%2031august2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/nit-goa-faculty-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "latest-it-govt-jobs-2026-1000-fresher-experienced-vacancies",
+    "title": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
+    "org": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
+    "shortOrg": "Latest IT Govt Jobs 2026 (1000",
+    "posts": "Prescribed Posts",
+    "vacancies": 126,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/04/it-fresher-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/04/it-fresher-jobs.html"
+    }
+  },
+  {
+    "id": "latest-psu-jobs-2026-public-sector-company-jobs-4433-vacancies",
+    "title": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
+    "org": "Latest PSU Jobs 2026 | Public Sector Company Jobs | 4433+ Vacancies",
+    "shortOrg": "Latest PSU Jobs 2026 | Public ",
+    "posts": "Prescribed Posts",
+    "vacancies": 118,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/07/PSU-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/07/PSU-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "iocl-executive-recruitment-through-cbt-2026-apply-online-for-470-engineer-office",
+    "title": "IOCL Executive Recruitment through CBT 2026 - Apply Online for 470 Engineer, Officer & Law Posts | Last Date 03-09-2026",
+    "org": "IOCL Executive",
+    "shortOrg": "IOCL Executive",
+    "posts": "470 Engineer, Officer & Law Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "law-llb"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "03-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iocl-executive-recruitment-through-cbt.html",
+      "notificationUrl": "https://iocl.com/admin/img/UploadedFiles/LatestJobOpening/Files/DetailedAd14082026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iocl-executive-recruitment-through-cbt.html"
+    }
+  },
+  {
+    "id": "railway-jobs-2026-apply-online-11338-new-vacancies",
+    "title": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
+    "org": "Railway Jobs 2026 Apply Online (11338 New Vacancies)",
+    "shortOrg": "Railway Jobs 2026 Apply Online",
+    "posts": "Prescribed Posts",
+    "vacancies": 134,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/railway-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/railway-jobs.html"
+    }
+  },
+  {
+    "id": "southern-railway-apprentice-recruitment-2026-apply-online-for-4471-fresher-posts",
+    "title": "Southern Railway Apprentice Recruitment 2026 - Apply Online for 4471 Fresher Posts | Last Date 27-09-2026",
+    "org": "Southern Railway Apprentice",
+    "shortOrg": "Southern Railway Apprentice",
+    "posts": "4471 Fresher Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "27-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://sronline.etrpindia.com/rrcchennaiapprentice26/notifications/Act%20Apprentices%20Notification%202026-27%20with%20enclosures.pdf",
+      "notificationUrl": "https://sronline.etrpindia.com/rrcchennaiapprentice26/notifications/Act%20Apprentices%20Notification%202026-27%20with%20enclosures.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/southern-railway-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "nic-sta-recruitment-2026-apply-online-for-376-fresher-posts-last-date-30-09-2026",
+    "title": "NIC STA Recruitment 2026 - Apply Online for 376 Fresher Posts | Last Date 30-09-2026",
+    "org": "NIC STA",
+    "shortOrg": "NIC STA",
+    "posts": "376 Fresher Posts",
+    "vacancies": 700,
+    "salary": "pay scale in NIC STA Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nic-sta-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1_MOj3rA6LtfMeoMGojBZlxdQvIarc2AZ/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nic-sta-recruitment.html"
+    }
+  },
+  {
+    "id": "bank-jobs-2026-latest-banking-recruitment-18820-vacancies",
+    "title": "Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies",
+    "org": "Bank Jobs 2026: Latest Banking",
+    "shortOrg": "Bank Jobs 2026: Latest Banking",
+    "posts": "Prescribed Posts",
+    "vacancies": 18820,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bank-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bank-jobs.html"
+    }
+  },
+  {
+    "id": "bank-of-india-officer-recruitment-2026-apply-online-for-205-posts-last-date-25-0",
+    "title": "Bank of India Officer Recruitment 2026 - Apply Online for 205 Posts | Last Date 25-09-2026",
+    "org": "Bank of India Officer",
+    "shortOrg": "Bank of India Officer",
+    "posts": "205 Posts",
+    "vacancies": 205,
+    "salary": "pay scale, eligibility, application fee, selection process, official n",
+    "qualificationText": "s",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "25-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/bank-of-india-officer-recruitment.html",
+      "notificationUrl": "https://bankofindia.bank.in/documents/20121/27827843/FINAL-NOTICE-SPECIALIST-OFFICER-2026-27-02-NOTICE-DATE-01.08.2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/bank-of-india-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "uksssc-inter-level-recruitment-2026-apply-online-for-553-various-posts-last-date",
+    "title": "UKSSSC Inter Level Recruitment 2026 - Apply Online for 553 Various Posts | Last Date 07-10-2026",
+    "org": "UKSSSC Inter Level",
+    "shortOrg": "UKSSSC Inter Level",
+    "posts": "553 Various Posts",
+    "vacancies": 700,
+    "salary": "₹19,900 – ₹92,300",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "07-10-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/uksssc-inter-level-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1ikWO0ewO9BImGzvfrZ7Gp5F2xOFs2riV/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/uksssc-inter-level-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "gail-et-recruitment-gate-2027-notification-out",
+    "title": "GAIL ET Recruitment GATE 2027 Notification Out",
+    "org": "GAIL ET",
+    "shortOrg": "GAIL ET",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale, GATE paper mapping, important dates and official links.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.gailonline.com",
+      "notificationUrl": "https://drive.google.com/file/d/16FYMUTWfYBEVG5NnJ6RpCNSuGuCLtW07/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/gail-et-recruitment-gate-2027.html"
+    }
+  },
+  {
+    "id": "dmrc-supervisor-recruitment-2026-apply-for-04-posts-last-date-15-09-2026",
+    "title": "DMRC Supervisor Recruitment 2026 - Apply for 04 Posts | Last Date 15-09-2026",
+    "org": "DMRC Supervisor",
+    "shortOrg": "DMRC Supervisor",
+    "posts": "04 Posts",
+    "vacancies": 4,
+    "salary": "Level-9 (GP 5400) / Level-8 (GP 4800)",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/dmrc-supervisor-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1sVL7tFLyQS70U751G8-yxl2uZ1qHJJaM/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/dmrc-supervisor-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "idrbt-oracle-database-architect-vacancy-2026-notification-online-form",
+    "title": "IDRBT Oracle Database Architect Vacancy 2026 - Notification, Online Form",
+    "org": "IDRBT Oracle Database Architect Vacancy 2026",
+    "shortOrg": "IDRBT Oracle Database Architec",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/idrbt-oracle-database-architect-vacancy.html",
+      "notificationUrl": "https://www.idrbt.ac.in/wp-content/uploads/2026/08/Oracle-DBA-Advt-31-Aug-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/idrbt-oracle-database-architect-vacancy.html"
+    }
+  },
+  {
+    "id": "idrbt-faculty-recruitment-2026-apply-online-for-15-posts-rolling-advertisement",
+    "title": "IDRBT Faculty Recruitment 2026 - Apply Online for 15 Posts | Rolling Advertisement",
+    "org": "IDRBT Faculty",
+    "shortOrg": "IDRBT Faculty",
+    "posts": "15 Posts",
+    "vacancies": 15,
+    "salary": "pay scale in IDRBT Faculty Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/idrbt-faculty-recruitment.html",
+      "notificationUrl": "https://www.idrbt.ac.in/wp-content/uploads/2026/08/Fac_Advt_July-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/idrbt-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "indian-ports-association-consultant-recruitment-2026-apply-for-05-posts-last-dat",
+    "title": "Indian Ports Association Consultant Recruitment 2026 - Apply for 05 Posts | Last Date 18-09-2026",
+    "org": "Indian Ports Association Consultant",
+    "shortOrg": "Indian Ports Association Consu",
+    "posts": "05 Posts",
+    "vacancies": 5,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "18-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/indian-ports-association-consultant.html",
+      "notificationUrl": "https://docs.google.com/viewer?url=https%3A%2F%2Fwww.vocport.gov.in%2Fapi%2Ffiles%2Fcareers%2Fcareer-1788167885992-674329431.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/indian-ports-association-consultant.html"
+    }
+  },
+  {
+    "id": "niscpr-project-staff-recruitment-2026-walk-in-interview-for-14-posts",
+    "title": "NISCPR Project Staff Recruitment 2026 - Walk in Interview for 14 Posts",
+    "org": "NISCPR Project Staff",
+    "shortOrg": "NISCPR Project Staff",
+    "posts": "14 Posts",
+    "vacancies": 14,
+    "salary": "₹25,000 to ₹42,000",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/niscpr-project-staff-recruitment-2026.html",
+      "notificationUrl": "https://niscpr.res.in/includes/images/jobs/Advertisment-ULIP-VII-2026-2026-07-31-03-05-19pm.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/niscpr-project-staff-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "moil-limited-manager-medical-services-recruitment-2026-walk-in-interview-on-22-0",
+    "title": "MOIL Limited Manager Medical Services Recruitment 2026 - Walk in Interview on 22-09-2026",
+    "org": "MOIL Limited Manager Medical Services",
+    "shortOrg": "MOIL Limited Manager Medical S",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/moil-limited-manager-medical-services.html",
+      "notificationUrl": "https://drive.google.com/file/d/1MjEim73WYqgcZzvIgDu5KiklEU5t3mnA/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/moil-limited-manager-medical-services.html"
+    }
+  },
+  {
+    "id": "bel-kochi-deputy-engineer-recruitment-2026-apply-for-14-posts-last-date-23-09-20",
+    "title": "BEL Kochi Deputy Engineer Recruitment 2026 - Apply for 14 Posts | Last Date 23-09-2026",
+    "org": "BEL Kochi Deputy Engineer",
+    "shortOrg": "BEL Kochi Deputy Engineer",
+    "posts": "14 Posts",
+    "vacancies": 14,
+    "salary": "pay scale, reservation, official notification and application form lin",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "23-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/09/bel-kochi-deputy-engineer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1JrDhlewR_hTBCf9ZqMjXwnKLMn4UlVWS/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/09/bel-kochi-deputy-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "stockholding-ciso-recruitment-2026-apply-online-for-02-posts-last-date-02-09-202",
+    "title": "StockHolding CISO Recruitment 2026 - Apply Online for 02 Posts | Last Date 02-09-2026",
+    "org": "StockHolding CISO",
+    "shortOrg": "StockHolding CISO",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "02-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://online.stockholding.com/oln_career/cand_login_dtls.aspx?code=DYCISOFTE",
+      "notificationUrl": "https://drive.google.com/file/d/1A2VXKgqeyJzIP3b2K_NnaG98lASko556/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/stockholding-ciso-recruitment.html"
+    }
+  },
+  {
+    "id": "gmdc-it-professional-recruitment-2026-notification-online-form-last-date-02-09-2",
+    "title": "GMDC IT Professional Recruitment 2026: Notification, Online Form | Last Date 02-09-2026",
+    "org": "GMDC IT Professional",
+    "shortOrg": "GMDC IT Professional",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "02-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/gmdc-it-professional-recruitment.html",
+      "notificationUrl": "https://www.gmdcltd.com/wp-content/uploads/2026/08/filenamehnbaOELZIdxYAdvertisement_IT-Dept.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/gmdc-it-professional-recruitment.html"
+    }
+  },
+  {
+    "id": "free-job-alert-latest-freejobalert-govt-job-notifications-2026",
+    "title": "Free Job Alert - Latest FreeJobAlert Govt Job Notifications 2026",
+    "org": "Free Job Alert",
+    "shortOrg": "Free Job Alert",
+    "posts": "Prescribed Posts",
+    "vacancies": 172,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/10/Free-Job-Alert.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/10/Free-Job-Alert.html"
+    }
+  },
+  {
+    "id": "all-india-government-jobs-2026-latest-sarkari-naukri-134403-vacancies",
+    "title": "All India Government Jobs 2026 - Latest Sarkari Naukri 134403+ Vacancies",
+    "org": "All India Government Jobs 2026",
+    "shortOrg": "All India Government Jobs 2026",
+    "posts": "Prescribed Posts",
+    "vacancies": 172,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/10/Government-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/10/Government-Jobs.html"
+    }
+  },
+  {
+    "id": "ibps-rrb-xv-recruitment-2026-apply-online-for-13742-office-assistant-and-officer",
+    "title": "IBPS RRB XV Recruitment 2026 - Apply Online for 13742+ Office Assistant and Officer Posts | Last Date 21-09-2026",
+    "org": "IBPS RRB XV",
+    "shortOrg": "IBPS RRB XV",
+    "posts": "13742+ Office Assistant and Officer Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-01",
+      "lastDate": "21-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ibps-rrb-xv-recruitment.html",
+      "notificationUrl": "https://www.ibps.in/wp-content/uploads/CRP-RRBs-XV-notification.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ibps-rrb-xv-recruitment.html"
+    }
+  },
+  {
+    "id": "bgssl-recruitment-2026-apply-online-for-1949-various-posts-last-date-30-09-2026",
+    "title": "BGSSL Recruitment 2026 Apply Online for 1949 Various Posts | Last Date 30-09-2026",
+    "org": "BGSSL",
+    "shortOrg": "BGSSL",
+    "posts": "1949 Various Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bgssl-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1oaR3jQAIHIz4EI8L_y8zZueyaypttKPX/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bgssl-recruitment.html"
+    }
+  },
+  {
+    "id": "beml-non-executive-recruitment-2026-apply-online-for-10-posts-for-fresher-diplom",
+    "title": "BEML Non Executive Recruitment 2026 - Apply Online for 10 Posts for Fresher Diploma | Last Date 08-09-2026",
+    "org": "BEML Non Executive",
+    "shortOrg": "BEML Non Executive",
+    "posts": "10 Posts",
+    "vacancies": 10,
+    "salary": "pay scale, application fee, last date and selection process.",
+    "qualificationText": "3 Year Full time Polytechnic Engineering Diploma in Electronics &amp; Communication, Electrical &amp; Electronics, Instr",
+    "qualifications": [
+      "graduate",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://beml.registrationform.in/secuRegister_14Of2026vEr27/notification/KP_S_14_2026%20-V1.pdf",
+      "notificationUrl": "https://beml.registrationform.in/secuRegister_14Of2026vEr27/notification/KP_S_14_2026%20-V1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/beml-non-executive-recruitment.html"
+    }
+  },
+  {
+    "id": "india-post-gds-july-recruitment-2026-apply-online-for-23757-posts-last-date-21-0",
+    "title": "India Post GDS July Recruitment 2026 Apply Online for 23757 Posts | Last Date 21-09-2026",
+    "org": "India Post GDS July",
+    "shortOrg": "India Post GDS July",
+    "posts": "23757 Posts",
+    "vacancies": 23757,
+    "salary": "₹12,000 – ₹29,380",
+    "qualificationText": "Secondary School Examination (10th) pass with passing marks in Mathematics and English from a recognized Board. Candidat",
+    "qualifications": [
+      "graduate",
+      "10th-pass"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "21-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://indiapost.gov.in/gdsonlineengagement/pdf/descriptive-notification.pdf",
+      "notificationUrl": "https://indiapost.gov.in/gdsonlineengagement/pdf/descriptive-notification.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/india-post-gds-july-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "sbi-trade-finance-officer-recruitment-2026-apply-online-for-35-posts-last-date-1",
+    "title": "SBI Trade Finance Officer Recruitment 2026: Apply Online for 35 Posts | Last Date 19-09-2026",
+    "org": "SBI Trade Finance Officer",
+    "shortOrg": "SBI Trade Finance Officer",
+    "posts": "35 Posts",
+    "vacancies": 35,
+    "salary": "pay scale, application fee, selection process, official notification a",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "19-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://recruitment.sbi.bank.in/crpd-sco-2026-27-15/apply",
+      "notificationUrl": "https://drive.google.com/file/d/1Ax0inIxvFcU7Eyp7amgU1WXbRVbrVmgz/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sbi-trade-finance-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "western-railway-sports-quota-recruitment-2026-apply-online-for-64-posts-last-dat",
+    "title": "Western Railway Sports Quota Recruitment 2026 - Apply Online for 64 Posts | Last Date 30-09-2026",
+    "org": "Western Railway Sports Quota",
+    "shortOrg": "Western Railway Sports Quota",
+    "posts": "64 Posts",
+    "vacancies": 64,
+    "salary": "pay scale in Western Railway Sports Quota Recruitment 2026?",
+    "qualificationText": "Level-5/4 – 70, Level-3/2 – 65, Level-1 – 60. Merit will decide appointment. In case of a tie, the younger candidate wil",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/western-railway-sports-quota.html",
+      "notificationUrl": "https://drive.google.com/file/d/1xMM9oezrXcN5F8M9KGbRaMqFdoHj9kGL/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/western-railway-sports-quota.html"
+    }
+  },
+  {
+    "id": "uco-bank-it-specialist-officer-recruitment-2026-apply-online-for-20-posts-last-d",
+    "title": "UCO Bank IT Specialist Officer Recruitment 2026 - Apply Online for 20 Posts | Last Date 18-09-2026",
+    "org": "UCO Bank IT Specialist Officer",
+    "shortOrg": "UCO Bank IT Specialist Officer",
+    "posts": "20 Posts",
+    "vacancies": 20,
+    "salary": "pay scale, application fee, selection process, official notification, ",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "18-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://onlineappl.ucoonline.bank.in/SPE_RCER/",
+      "notificationUrl": "https://drive.google.com/file/d/1DGYQDfN2zNYW2yWqoP2jMpqTrryWc5TC/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/uco-bank-it-specialist-officer.html"
+    }
+  },
+  {
+    "id": "concor-mt-and-assistant-officer-recruitment-2026-apply-online-for-77-posts-last-",
+    "title": "CONCOR MT and Assistant Officer Recruitment 2026 - Apply Online for 77 Posts | Last Date 30-09-2026",
+    "org": "CONCOR MT and Assistant Officer",
+    "shortOrg": "CONCOR MT and Assistant Office",
+    "posts": "77 Posts",
+    "vacancies": 77,
+    "salary": "pay scale, and how to apply.",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/concor-mt-assistant-officer.html",
+      "notificationUrl": "https://cms.concorindia.co.in:8000/uploads/cms/pdf/Asf6Xc3Mnw5BWdp_FinalAdvertisement-18thAug2026(Published).pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/concor-mt-assistant-officer.html"
+    }
+  },
+  {
+    "id": "iob-generalist-so-recruitment-2026-apply-online-for-291-posts-last-date-15-09-20",
+    "title": "IOB Generalist SO Recruitment 2026 - Apply Online for 291 Posts | Last Date 15-09-2026",
+    "org": "IOB Generalist SO",
+    "shortOrg": "IOB Generalist SO",
+    "posts": "291 Posts",
+    "vacancies": 291,
+    "salary": "pay scale, exam pattern, official notification PDF and apply online li",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iob-generalist-so-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1jUZOts6VGIH1XqPi1LMwvIcA2rFzSjWF/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iob-generalist-so-recruitment.html"
+    }
+  },
+  {
+    "id": "indian-overseas-bank-security-guard-recruitment-2026-apply-online-for-25-posts-l",
+    "title": "Indian Overseas Bank Security Guard Recruitment 2026 - Apply Online for 25 Posts | Last Date 14-09-2026",
+    "org": "Indian Overseas Bank Security Guard",
+    "shortOrg": "Indian Overseas Bank Security ",
+    "posts": "25 Posts",
+    "vacancies": 25,
+    "salary": "Pay Scale (Subordinate Staff Cadre as per 12th Bipartite Settlement):",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "14-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/indian-overseas-bank-security-guard.html",
+      "notificationUrl": "https://drive.google.com/file/d/1ikbI308kCQJlTE6WCF0AsN7FmUMnXDx2/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/indian-overseas-bank-security-guard.html"
+    }
+  },
+  {
+    "id": "rail-wheel-factory-sports-quota-recruitment-2026-notification-for-15-posts-appli",
+    "title": "Rail Wheel Factory Sports Quota Recruitment 2026 - Notification for 15 Posts, Application Form | Last Date 31-08-2026",
+    "org": "Rail Wheel Factory Sports Quota",
+    "shortOrg": "Rail Wheel Factory Sports Quot",
+    "posts": "15 Posts, Application Form",
+    "vacancies": 15,
+    "salary": "Level-2 (GP 1900) and Level-1 (GP 1800). Interested and eligible candi",
+    "qualificationText": ")",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-31",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/rail-wheel-factory-sports-quota.html",
+      "notificationUrl": "https://drive.google.com/file/d/11WgJJcLz51BGvpPQZz-kVeO5JByl8ddf/view",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rail-wheel-factory-sports-quota.html"
+    }
+  },
+  {
+    "id": "sbi-clerk-recruitment-2026-apply-online-for-9766-regular-backlog-posts-last-date",
+    "title": "SBI Clerk Recruitment 2026 - Apply Online for 9766 Regular & Backlog Posts | Last Date 31-08-2026",
+    "org": "SBI Clerk",
+    "shortOrg": "SBI Clerk",
+    "posts": "9766 Regular & Backlog Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sbi-clerk-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1OdqZgvx1KsJlKhio8kbW_Pn5QKSPvRfL/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sbi-clerk-recruitment.html"
+    }
+  },
+  {
+    "id": "31-august-2026-closing-govt-jobs-notifications-list-apply-online",
+    "title": "31 August 2026 Closing Govt Jobs - Notifications List, Apply Online",
+    "org": "31 August 2026 Closing Govt Jobs",
+    "shortOrg": "31 August 2026 Closing Govt Jo",
+    "posts": "Prescribed Posts",
+    "vacancies": 193,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2024/02/last-date-government-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2024/02/last-date-government-jobs.html"
+    }
+  },
+  {
+    "id": "indbank-relationship-manager-dealer-recruitment-2026-apply-for-14-posts-last-dat",
+    "title": "Indbank Relationship Manager & Dealer Recruitment 2026 - Apply for 14 Posts | Last Date 31-08-2026",
+    "org": "Indbank Relationship Manager & Dealer",
+    "shortOrg": "Indbank Relationship Manager &",
+    "posts": "14 Posts",
+    "vacancies": 14,
+    "salary": "pay scale in Indbank Relationship Manager &amp; Dealer Recruitment 202",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indbankonline.com/v/?v=2026/08/Advertisement-for-the-post-of-Relationshipmanager-Dealer-dated-10.08.2026.pdf",
+      "notificationUrl": "https://www.indbankonline.com/v/?v=2026/08/Advertisement-for-the-post-of-Relationshipmanager-Dealer-dated-10.08.2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/indbank-relationship-manager-dealer.html"
+    }
+  },
+  {
+    "id": "gpcb-bank-clerk-recruitment-2026-apply-online-for-13-posts-last-date-31-08-2026",
+    "title": "GPCB Bank Clerk Recruitment 2026 - Apply Online for 13 Posts | Last Date 31-08-2026",
+    "org": "GPCB Bank Clerk",
+    "shortOrg": "GPCB Bank Clerk",
+    "posts": "13 Posts",
+    "vacancies": 13,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/gpcb-bank-clerk-recruitment.html",
+      "notificationUrl": "https://gpcb.bank.in/assets/documents/Detailed-Adevertisement.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/gpcb-bank-clerk-recruitment.html"
+    }
+  },
+  {
+    "id": "nalanda-university-non-teaching-recruitment-2026-apply-online-for-assistant-libr",
+    "title": "Nalanda University Non Teaching Recruitment 2026 - Apply Online for Assistant, Librarian & Engineer Posts | Last Date 31-08-2026",
+    "org": "Nalanda University Non Teaching",
+    "shortOrg": "Nalanda University Non Teachin",
+    "posts": "Assistant, Librarian & Engineer Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nalanda-university-non-teaching.html",
+      "notificationUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nalanda-university-non-teaching.html"
+    }
+  },
+  {
+    "id": "sgpgims-faculty-recruitment-2026-apply-offline-for-70-posts-last-date-31-08-2026",
+    "title": "SGPGIMS Faculty Recruitment 2026: Apply Offline for 70 Posts | Last Date 31-08-2026",
+    "org": "SGPGIMS Faculty",
+    "shortOrg": "SGPGIMS Faculty",
+    "posts": "70 Posts",
+    "vacancies": 70,
+    "salary": "pay scale, official short notification, and how to apply.",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-30",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/sgpgims-faculty-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1Qu71XzT2tRYBTlQrooNjA-bf5fhJuYX7/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/sgpgims-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "latest-officer-govt-jobs-2026-2000-vacancies-opening",
+    "title": "Latest Officer Govt Jobs 2026 (2000+ Vacancies Opening)",
+    "org": "Latest Officer Govt Jobs 2026 (2000+ Vacancies Opening)",
+    "shortOrg": "Latest Officer Govt Jobs 2026 ",
+    "posts": "Prescribed Posts",
+    "vacancies": 131,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2023/04/Officer-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2023/04/Officer-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "teacher-government-jobs-2026-50000-vacancies-opening",
+    "title": "Teacher Government Jobs 2026 (50000+ Vacancies Opening)",
+    "org": "Teacher Government Jobs 2026 (50000+ Vacancies Opening)",
+    "shortOrg": "Teacher Government Jobs 2026 (",
+    "posts": "Prescribed Posts",
+    "vacancies": 50,
+    "salary": "pay scales and additional benefits compared to state-level positions.",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/11/govt-teachers-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/11/govt-teachers-jobs.html"
+    }
+  },
+  {
+    "id": "latest-stenographer-typist-govt-jobs-2026-500-vacancies",
+    "title": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
+    "org": "Latest Stenographer & Typist Govt Jobs 2026 | 500+ Vacancies",
+    "shortOrg": "Latest Stenographer & Typist G",
+    "posts": "Prescribed Posts",
+    "vacancies": 132,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2017/03/Stenographer-Jobs-Typist.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2017/03/Stenographer-Jobs-Typist.html"
+    }
+  },
+  {
+    "id": "cpcb-recruitment-2026-apply-online-for-51-scientist-assistant-deo-other-posts-la",
+    "title": "CPCB Recruitment 2026 - Apply Online for 51 Scientist, Assistant, DEO & Other Posts | Last Date 07-09-2026",
+    "org": "CPCB",
+    "shortOrg": "CPCB",
+    "posts": "51 Scientist, Assistant, DEO & Other Posts",
+    "vacancies": 700,
+    "salary": "₹38,741 – ₹1,71,597",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/cpcb-recruitment-advt-no-02-2026.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/cpcb-recruitment-advt-no-02-2026.html"
+    }
+  },
+  {
+    "id": "income-tax-pune-sports-quota-recruitment-2026-apply-online-for-85-posts-last-dat",
+    "title": "Income Tax Pune Sports Quota Recruitment 2026 - Apply Online for 85 Posts | Last Date 15-09-2026",
+    "org": "Income Tax Pune Sports Quota",
+    "shortOrg": "Income Tax Pune Sports Quota",
+    "posts": "85 Posts",
+    "vacancies": 85,
+    "salary": "Level-4 (₹25,500 – 81,100)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/income-tax-pune-sports-quota.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/income-tax-pune-sports-quota.html"
+    }
+  },
+  {
+    "id": "aai-northern-region-apprentice-recruitment-2026-apply-online-for-205-posts-last-",
+    "title": "AAI Northern Region Apprentice Recruitment 2026 - Apply Online for 205 Posts | Last Date 16-09-2026",
+    "org": "AAI Northern Region Apprentice",
+    "shortOrg": "AAI Northern Region Apprentice",
+    "posts": "205 Posts",
+    "vacancies": 205,
+    "salary": "₹9,600 to ₹15,000",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "16-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aai-northern-region-apprentice.html",
+      "notificationUrl": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Final%20Advt.%20App.%202026-27-RHQ-NR.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aai-northern-region-apprentice.html"
+    }
+  },
+  {
+    "id": "employment-news-29-august-to-04-september-2026-pdf-download-weekly-govt-job-noti",
+    "title": "Employment News 29 August to 04 September 2026 - Pdf Download, Weekly Govt Job Notifications",
+    "org": "Employment News 29 August to 04 September 2026",
+    "shortOrg": "Employment News 29 August to 0",
+    "posts": "Prescribed Posts",
+    "vacancies": 147,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "\"Question\",",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2017/04/Employment-News.html",
+      "notificationUrl": "https://drive.google.com/file/d/1anLu7LkWZilCXGXj_FVSINT5XW_Pg-Hu/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2017/04/Employment-News.html"
+    }
+  },
+  {
+    "id": "post-graduate-govt-jobs-2026-ma-msc-mba-mca-mtech-vacancies-list",
+    "title": "Post Graduate Govt Jobs 2026 - MA, M.Sc, MBA, MCA, M.Tech Vacancies List",
+    "org": "Post Graduate Govt Jobs 2026",
+    "shortOrg": "Post Graduate Govt Jobs 2026",
+    "posts": "Prescribed Posts",
+    "vacancies": 131,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/01/pg-jobs-2014-govt-sector.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/01/pg-jobs-2014-govt-sector.html"
+    }
+  },
+  {
+    "id": "sainik-school-recruitment-2026-latest-vacancy-notifications",
+    "title": "Sainik School Recruitment 2026 - Latest Vacancy Notifications",
+    "org": "Sainik School",
+    "shortOrg": "Sainik School",
+    "posts": "Prescribed Posts",
+    "vacancies": 118,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2024/05/Sainik-School-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2024/05/Sainik-School-Recruitment.html"
+    }
+  },
+  {
+    "id": "sainik-school-ambikapur-recruitment-2026-apply-for-ward-boy-band-master-pem-pti-",
+    "title": "Sainik School Ambikapur Recruitment 2026 - Apply for Ward Boy, Band Master, PEM PTI & Lab Assistant Posts",
+    "org": "Sainik School Ambikapur",
+    "shortOrg": "Sainik School Ambikapur",
+    "posts": "Ward Boy, Band Master, PEM PTI & Lab Assistant Posts",
+    "vacancies": 700,
+    "salary": "pay scale in Sainik School Ambikapur Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "post-graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "11 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-ambikapur-recruitment.html",
+      "notificationUrl": "https://www.sainikschoolambikapur.org.in/pdf/Recruit%20of%20Staff_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-ambikapur-recruitment.html"
+    }
+  },
+  {
+    "id": "latest-mts-govt-jobs-2026-20000-vacancies-open-now",
+    "title": "Latest MTS Govt Jobs 2026 (20000+ Vacancies Open Now)",
+    "org": "Latest MTS Govt Jobs 2026 (20000+ Vacancies Open Now)",
+    "shortOrg": "Latest MTS Govt Jobs 2026 (200",
+    "posts": "Prescribed Posts",
+    "vacancies": 132,
+    "salary": "Pay Scale for MTS Jobs in Govt Sector?",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/10/MTS-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/10/MTS-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-assistant-govt-jobs-2026-60222-vacancies-open-now",
+    "title": "Latest Assistant Govt Jobs 2026 (60222+ Vacancies Open Now)",
+    "org": "Latest Assistant Govt Jobs 2026 (60222+ Vacancies Open Now)",
+    "shortOrg": "Latest Assistant Govt Jobs 202",
+    "posts": "Prescribed Posts",
+    "vacancies": 164,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/08/Assistant-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/08/Assistant-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-court-jobs-2026-1192-govt-vacancies-opening",
+    "title": "Latest Court Jobs 2026 (1192+ Govt Vacancies Opening)",
+    "org": "Latest Court Jobs 2026 (1192+ Govt Vacancies Opening)",
+    "shortOrg": "Latest Court Jobs 2026 (1192+ ",
+    "posts": "Prescribed Posts",
+    "vacancies": 126,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2024/06/High-Court-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2024/06/High-Court-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-clerk-govt-jobs-2026-25000-vacancies-opening",
+    "title": "Latest Clerk Govt Jobs 2026 (25000+ Vacancies Opening)",
+    "org": "Latest Clerk Govt Jobs 2026 (25000+ Vacancies Opening)",
+    "shortOrg": "Latest Clerk Govt Jobs 2026 (2",
+    "posts": "Prescribed Posts",
+    "vacancies": 130,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/02/clerk-jobs-opening.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/02/clerk-jobs-opening.html"
+    }
+  },
+  {
+    "id": "stockholding-executive-recruitment-2026-apply-online-for-65-posts-last-date-30-0",
+    "title": "StockHolding Executive Recruitment 2026 - Apply Online for 65 Posts | Last Date 30-08-2026",
+    "org": "StockHolding Executive",
+    "shortOrg": "StockHolding Executive",
+    "posts": "65 Posts",
+    "vacancies": 65,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "30-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://online.stockholding.com/oln_career/cand_login_dtls.aspx?code=FTEREG",
+      "notificationUrl": "https://drive.google.com/file/d/1A2VXKgqeyJzIP3b2K_NnaG98lASko556/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/stockholding-executive-recruitment.html"
+    }
+  },
+  {
+    "id": "sindhudurg-bank-peon-recruitment-2026-apply-online-for-32-posts-last-date-30-08-",
+    "title": "Sindhudurg Bank Peon Recruitment 2026 - Apply Online for 32 Posts | Last Date 30-08-2026",
+    "org": "Sindhudurg Bank Peon",
+    "shortOrg": "Sindhudurg Bank Peon",
+    "posts": "32 Posts",
+    "vacancies": 32,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "30-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sindhudurg-bank-peon-recruitment.html",
+      "notificationUrl": "https://sindhudurgdcc.bank.in/public/uploads/Peon-Advertise-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sindhudurg-bank-peon-recruitment.html"
+    }
+  },
+  {
+    "id": "jharkhand-para-teacher-recruitment-2026-apply-online-for-7299-posts-last-date-30",
+    "title": "Jharkhand Para Teacher Recruitment 2026: Apply Online for 7299 Posts | Last Date 30-08-2026",
+    "org": "Jharkhand Para Teacher",
+    "shortOrg": "Jharkhand Para Teacher",
+    "posts": "7299 Posts",
+    "vacancies": 7299,
+    "salary": "Pay Scale:",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "jharkhand",
+    "importantDates": {
+      "startDate": "2026-08-29",
+      "lastDate": "30-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/jharkhand-para-teacher-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1RYoc1LtoU1lLgxXMirm10FQUZVZatWa8/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/jharkhand-para-teacher-recruitment.html"
+    }
+  },
+  {
+    "id": "latest-fireman-fire-and-safety-govt-job-vacancies-2026",
+    "title": "Latest Fireman, Fire and Safety Govt Job Vacancies 2026",
+    "org": "Latest Fireman, Fire and Safety Govt Job Vacancies 2026",
+    "shortOrg": "Latest Fireman, Fire and Safet",
+    "posts": "Prescribed Posts",
+    "vacancies": 134,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/12/Fireman-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/12/Fireman-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-forest-govt-jobs-2026-500-new-vacancies-open",
+    "title": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
+    "org": "Latest Forest Govt Jobs 2026 (500+ New Vacancies Open)",
+    "shortOrg": "Latest Forest Govt Jobs 2026 (",
+    "posts": "Prescribed Posts",
+    "vacancies": 140,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2019/12/Forest-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2019/12/Forest-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-defence-jobs-2026-2500-govt-vacancies-open-now",
+    "title": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
+    "org": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
+    "shortOrg": "Latest Defence Jobs 2026 (2500",
+    "posts": "Prescribed Posts",
+    "vacancies": 131,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2018/02/defence-jobs-govt-vacancy.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2018/02/defence-jobs-govt-vacancy.html"
+    }
+  },
+  {
+    "id": "south-indian-bank-junior-officer-recruitment-2026-notification-online-form-last-",
+    "title": "South Indian Bank Junior Officer Recruitment 2026 - Notification, Online Form | Last Date 31-08-2026",
+    "org": "South Indian Bank Junior Officer",
+    "shortOrg": "South Indian Bank Junior Offic",
+    "posts": "Prescribed Posts",
+    "vacancies": 50,
+    "salary": "₹5,000–₹10,000",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/south-indian-bank-junior-officer.html",
+      "notificationUrl": "https://drive.google.com/file/d/1q1jCUpNLc3lWkHs7ruMNbU49d6sa3nn6/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/south-indian-bank-junior-officer.html"
+    }
+  },
+  {
+    "id": "ngel-manager-recruitment-2026-apply-online-for-34-posts-last-date-31-08-2026",
+    "title": "NGEL Manager Recruitment 2026 - Apply Online for 34 Posts | Last Date 31-08-2026",
+    "org": "NGEL Manager",
+    "shortOrg": "NGEL Manager",
+    "posts": "34 Posts",
+    "vacancies": 34,
+    "salary": "Pay Scale:",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ngel-manager-recruitment.html",
+      "notificationUrl": "https://ngel.in/public/career/1/54361adc7b/54361adc7b.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ngel-manager-recruitment.html"
+    }
+  },
+  {
+    "id": "neepco-junior-engineer-recruitment-2026-apply-online-for-07-posts-last-date-31-0",
+    "title": "NEEPCO Junior Engineer Recruitment 2026 - Apply Online for 07 Posts | Last Date 31-08-2026",
+    "org": "NEEPCO Junior Engineer",
+    "shortOrg": "NEEPCO Junior Engineer",
+    "posts": "07 Posts",
+    "vacancies": 7,
+    "salary": "pay scale in NEEPCO Junior Engineer Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/neepco-junior-engineer-recruitment.html",
+      "notificationUrl": "https://neepco.co.in/neepco/sites/default/files/2026-08/advt_je_english_version_aggbps_tgbps_0.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/neepco-junior-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "karnataka-forest-watcher-recruitment-2026-notification-out-for-774-posts-apply-o",
+    "title": "Karnataka Forest Watcher Recruitment 2026 Notification Out for 774 Posts | Apply Online up to 31-08-2026",
+    "org": "Karnataka Forest Watcher",
+    "shortOrg": "Karnataka Forest Watcher",
+    "posts": "774 Posts",
+    "vacancies": 774,
+    "salary": "Pay Scale:",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "karnataka",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/karnataka-forest-watcher-recruitment.html",
+      "notificationUrl": "https://aranya.gov.in/aranyacms/(S(khhcmbwy1bl2bqtyzral2urc))/downloads/latestNews/750%20FW%20final%20notification%20Mysore%20circle_compressed_20-07-2026_04.58.34.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/karnataka-forest-watcher-recruitment.html"
+    }
+  },
+  {
+    "id": "national-board-of-accreditation-recruitment-2026-apply-for-07-manager-director-p",
+    "title": "National Board of Accreditation Recruitment 2026: Apply for 07 Manager, Director Posts | Last Date 31-08-2026",
+    "org": "National Board of Accreditation",
+    "shortOrg": "National Board of Accreditatio",
+    "posts": "07 Manager, Director Posts",
+    "vacancies": 700,
+    "salary": "Level-10 / Level-11 / Level-13A (7th CPC)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/national-board-of-accreditation.html",
+      "notificationUrl": "https://www.nbaind.org/Uploads/Advt.,%20General%20terms%20&amp;%20Conditions_Format_20260724175301.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/national-board-of-accreditation.html"
+    }
+  },
+  {
+    "id": "iit-dhanbad-assistant-professor-recruitment-2026-apply-online-for-30-posts-last-",
+    "title": "IIT Dhanbad Assistant Professor Recruitment 2026: Apply Online for 30 Posts | Last Date 31-08-2026",
+    "org": "IIT Dhanbad Assistant Professor",
+    "shortOrg": "IIT Dhanbad Assistant Professo",
+    "posts": "30 Posts",
+    "vacancies": 30,
+    "salary": "pay scale in IIT Dhanbad Assistant Professor Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/iit-dhanbad-assistant-professor.html",
+      "notificationUrl": "https://fr.iitism.ac.in/assets/docs/Advt_41100212026_Dean_Fac_1_Assistant_prof30062026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/iit-dhanbad-assistant-professor.html"
+    }
+  },
+  {
+    "id": "data-entry-computer-jobs-in-govt-sector-2026-5000-vacancies-open-now",
+    "title": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
+    "org": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
+    "shortOrg": "Data Entry & Computer Jobs in ",
+    "posts": "Prescribed Posts",
+    "vacancies": 132,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/03/data-entry-computer-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/03/data-entry-computer-jobs.html"
+    }
+  },
+  {
+    "id": "nspcl-advertisement-012026-apply-online-for-17-engineer-officer-posts-last-date-",
+    "title": "NSPCL Advertisement 01/2026 - Apply Online for 17 Engineer & Officer Posts | Last Date 22-09-2026",
+    "org": "NSPCL Advertisement 01/2026",
+    "shortOrg": "NSPCL Advertisement 01/2026",
+    "posts": "17 Engineer & Officer Posts",
+    "vacancies": 700,
+    "salary": "pay scale, selection process and application link on this page.",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "22-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nspcl-advertisement-01-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1SZmEmzqKyG1Um_P3btt2yViK4SNZfyxr/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nspcl-advertisement-01-2026.html"
+    }
+  },
+  {
+    "id": "latest-bank-jobs-2026-12442-vacancies-open-now",
+    "title": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
+    "org": "Latest Bank Jobs 2026 (12442 Vacancies Open Now)",
+    "shortOrg": "Latest Bank Jobs 2026 (12442 V",
+    "posts": "Prescribed Posts",
+    "vacancies": 12442,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/08/bank-jobs-openings-august-2013.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/08/bank-jobs-openings-august-2013.html"
+    }
+  },
+  {
+    "id": "latest-mba-govt-jobs-2026-100-vacancies-opening",
+    "title": "Latest MBA Govt Jobs 2026 (100+ Vacancies Opening)",
+    "org": "Latest MBA Govt Jobs 2026 (100+ Vacancies Opening)",
+    "shortOrg": "Latest MBA Govt Jobs 2026 (100",
+    "posts": "Prescribed Posts",
+    "vacancies": 139,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "mba-pgdm"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/08/MBA-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/08/MBA-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-law-govt-jobs-2026-bl-llb-and-advocate-job-updates",
+    "title": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
+    "org": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
+    "shortOrg": "Latest Law Govt Jobs 2026 | BL",
+    "posts": "Prescribed Posts",
+    "vacancies": 134,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/07/Law-LLB-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/07/Law-LLB-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "government-jobs-for-engineers-2026-17126-vacancies-opening",
+    "title": "Government Jobs for Engineers 2026 (17126+ Vacancies Opening)",
+    "org": "Government Jobs for Engineers 2026 (17126+ Vacancies Opening)",
+    "shortOrg": "Government Jobs for Engineers ",
+    "posts": "Engineers 2026 (17126+ Vacancies Opening)",
+    "vacancies": 145,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-engineers-2013-2014.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-engineers-2013-2014.html"
+    }
+  },
+  {
+    "id": "cci-advertisement-no-co032026-apply-for-engineer-officer-analyst-posts-last-date",
+    "title": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15-09-2026",
+    "org": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15",
+    "shortOrg": "CCI Advertisement No CO/03/202",
+    "posts": "Engineer, Officer & Analyst Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/cci-advertisement-no-co-03-2026.html",
+      "notificationUrl": "https://cciltd.in/UserFiles/files/Approved%20-%20draft%20advertisement%20-%20CO-03-2026(2).pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/cci-advertisement-no-co-03-2026.html"
+    }
+  },
+  {
+    "id": "govt-jobs-for-diploma-holders-2026-6191-vacancies-opening",
+    "title": "Govt Jobs for Diploma Holders 2026 (6191+ Vacancies Opening)",
+    "org": "Govt Jobs for Diploma Holders 2026 (6191+ Vacancies Opening)",
+    "shortOrg": "Govt Jobs for Diploma Holders ",
+    "posts": "Diploma Holders 2026 (6191+ Vacancies Opening)",
+    "vacancies": 145,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-diploma-holders.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-diploma-holders.html"
+    }
+  },
+  {
+    "id": "nsi-kanpur-young-professional-recruitment-2026-notification-application-form-las",
+    "title": "NSI Kanpur Young Professional Recruitment 2026 - Notification, Application Form | Last Date 31-08-2026",
+    "org": "NSI Kanpur Young Professional",
+    "shortOrg": "NSI Kanpur Young Professional",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nsi-kanpur-young-professional.html",
+      "notificationUrl": "https://nsi.gov.in/storage/notices/3vRY0KIM4K5GuAJwN0AD22A1hczthu0gWb7bfdd5.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nsi-kanpur-young-professional.html"
+    }
+  },
+  {
+    "id": "latest-iti-govt-jobs-2026-9238-vacancies-opening",
+    "title": "Latest ITI Govt Jobs 2026 (9238+ Vacancies Opening)",
+    "org": "Latest ITI Govt Jobs 2026 (9238+ Vacancies Opening)",
+    "shortOrg": "Latest ITI Govt Jobs 2026 (923",
+    "posts": "Prescribed Posts",
+    "vacancies": 153,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/iti-fresher-jobs-2013-list.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/iti-fresher-jobs-2013-list.html"
+    }
+  },
+  {
+    "id": "csir-technician-recruitment-2026-apply-online-for-43-posts-last-date-17-09-2026",
+    "title": "CSIR Technician Recruitment 2026 - Apply Online for 43 Posts | Last Date 17-09-2026",
+    "org": "CSIR Technician",
+    "shortOrg": "CSIR Technician",
+    "posts": "43 Posts",
+    "vacancies": 43,
+    "salary": "Level-2",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "17-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/csir-technician-recruitment.html",
+      "notificationUrl": "https://www.csir.res.in/sites/default/files/2026-08/gr._ii_advertisement.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/csir-technician-recruitment.html"
+    }
+  },
+  {
+    "id": "10th-12th-pass-govt-jobs-2026-50000-vacancies-opening",
+    "title": "10th 12th Pass Govt Jobs 2026 (50000+ Vacancies Opening)",
+    "org": "10th 12th Pass Govt Jobs 2026 (50000+ Vacancies Opening)",
+    "shortOrg": "10th 12th Pass Govt Jobs 2026 ",
+    "posts": "Prescribed Posts",
+    "vacancies": 112,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/10th-12th-pass-govt-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/10th-12th-pass-govt-jobs.html"
+    }
+  },
+  {
+    "id": "aiims-mangalagiri-faculty-recruitment-2026-apply-for-79-posts",
+    "title": "AIIMS Mangalagiri Faculty Recruitment 2026 - Apply for 79 Posts",
+    "org": "AIIMS Mangalagiri Faculty",
+    "shortOrg": "AIIMS Mangalagiri Faculty",
+    "posts": "79 Posts",
+    "vacancies": 79,
+    "salary": "Pay Scale:",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiims-mangalagiri-faculty-recruitment.html",
+      "notificationUrl": "https://www.aiimsmangalagiri.edu.in/wp-content/uploads/2026/08/ADVERTISEMENT-FOR-RECRUITMENT-TO-THE-POSTS-OF-FACULTY-GROUP-A-ON-DIRECT-RECRUITMENT-DEPUTATION-BASIS-IN-VARIOUS-DEPARTMENTS-OF-AIIMS-MANGALAGIRI-1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-mangalagiri-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "csir-nal-mts-recruitment-2026-apply-online-for-06-posts-last-date-21-09-2026",
+    "title": "CSIR NAL MTS Recruitment 2026 - Apply Online for 06 Posts | Last Date 21-09-2026",
+    "org": "CSIR NAL MTS",
+    "shortOrg": "CSIR NAL MTS",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "pay scale, application fee, selection process and official notificatio",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "21-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/csir-nal-mts-recruitment.html",
+      "notificationUrl": "https://nal.res.in/sites/default/files/2026-08/MTS%20Notification%2812.08.2026%29.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/csir-nal-mts-recruitment.html"
+    }
+  },
+  {
+    "id": "drrmlims-non-teaching-recruitment-2026-apply-online-for-74-posts",
+    "title": "DRRMLIMS Non Teaching Recruitment 2026 - Apply Online for 74 Posts",
+    "org": "DRRMLIMS Non Teaching",
+    "shortOrg": "DRRMLIMS Non Teaching",
+    "posts": "74 Posts",
+    "vacancies": 74,
+    "salary": "pay scale, application fee, selection process and official notificatio",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/drrmlims-non-teaching-recruitment-2026.html",
+      "notificationUrl": "https://www.drrmlims.ac.in/Assets/pages/recruitment/Final_Advt_2026_GROUP_B_C_D_1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/drrmlims-non-teaching-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "isro-icrb-scientist-engineer-sc-recruitment-2026-apply-online-for-175-posts-last",
+    "title": "ISRO ICRB Scientist Engineer SC Recruitment 2026 - Apply Online for 175 Posts | Last Date 16-09-2026",
+    "org": "ISRO ICRB Scientist Engineer SC",
+    "shortOrg": "ISRO ICRB Scientist Engineer S",
+    "posts": "175 Posts",
+    "vacancies": 175,
+    "salary": "pay scale, application fee, selection process and official apply link.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "16-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/isro-icrb-scientist-engineer-sc.html",
+      "notificationUrl": "https://drive.google.com/file/d/16V1g_zh2HCBS461qrmTbKKvOWVJgv-GT/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/isro-icrb-scientist-engineer-sc.html"
+    }
+  },
+  {
+    "id": "icar-nrc-mithun-yp-recruitment-2026-walk-in-interview-for-young-professional-ii-",
+    "title": "ICAR NRC Mithun YP Recruitment 2026 - Walk-in Interview for Young Professional-II Posts",
+    "org": "ICAR NRC Mithun YP",
+    "shortOrg": "ICAR NRC Mithun YP",
+    "posts": "Young Professional-II Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/icar-nrc-mithun-yp-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1PC1Vrumfie9Z8R8JqCkcgss-zQFd6CcM/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/icar-nrc-mithun-yp-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "isro-lpsc-advertisement-no-lpsc022026-apply-online-for-19-posts-last-date-04-09-",
+    "title": "ISRO LPSC Advertisement No. LPSC/02/2026 - Apply Online for 19 Posts | Last Date 04-09-2026",
+    "org": "ISRO LPSC Advertisement No. LPSC/02/2026",
+    "shortOrg": "ISRO LPSC Advertisement No. LP",
+    "posts": "19 Posts",
+    "vacancies": 19,
+    "salary": "pay scale in ISRO LPSC Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/isro-lpsc-advertisement-no-lpsc-02-2026.html",
+      "notificationUrl": "https://www.lpsc.gov.in/docs/02-2026%20Detailed%20With%20Annexures.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/isro-lpsc-advertisement-no-lpsc-02-2026.html"
+    }
+  },
+  {
+    "id": "aweil-executive-finance-recruitment-2026-apply-for-09-posts-last-date-31-08-2026",
+    "title": "AWEIL Executive Finance Recruitment 2026 - Apply for 09 Posts | Last Date 31-08-2026",
+    "org": "AWEIL Executive Finance",
+    "shortOrg": "AWEIL Executive Finance",
+    "posts": "09 Posts",
+    "vacancies": 9,
+    "salary": "pay scale in AWEIL Executive Finance Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aweil-executive-finance-recruitment.html",
+      "notificationUrl": "https://www.aweil.in/download/recruitment/2026/Executive-Finance-terms-and-conditions-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aweil-executive-finance-recruitment.html"
+    }
+  },
+  {
+    "id": "iit-bombay-non-faculty-recruitment-2026-apply-online-for-27-posts-last-date-04-0",
+    "title": "IIT Bombay Non Faculty Recruitment 2026 - Apply Online for 27 Posts | Last Date 04-09-2026",
+    "org": "IIT Bombay Non Faculty",
+    "shortOrg": "IIT Bombay Non Faculty",
+    "posts": "27 Posts",
+    "vacancies": 27,
+    "salary": "₹21,700 – ₹1,77,500",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "mba-pgdm"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.iitb.ac.in/career/apply",
+      "notificationUrl": "https://drive.google.com/file/d/1Ton_2T_VzA29zuQm5C_UXslaEKatkZ2Y/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iit-bombay-non-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "rci-hyderabad-jrf-ra-recruitment-2026-apply-for-21-posts-last-date-13-09-2026",
+    "title": "RCI Hyderabad JRF & RA Recruitment 2026 - Apply for 21 Posts | Last Date 13-09-2026",
+    "org": "RCI Hyderabad JRF & RA",
+    "shortOrg": "RCI Hyderabad JRF & RA",
+    "posts": "21 Posts",
+    "vacancies": 21,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "13-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/rci-hyderabad-jrf-ra-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1r3N4sWLEstDN1o0W1pgs0qPLjaR95774/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/rci-hyderabad-jrf-ra-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "latest-driver-govt-jobs-2026-all-india-vacancies",
+    "title": "Latest Driver Govt Jobs 2026 | All India Vacancies",
+    "org": "Latest Driver Govt Jobs 2026 | All India Vacancies",
+    "shortOrg": "Latest Driver Govt Jobs 2026 |",
+    "posts": "Prescribed Posts",
+    "vacancies": 125,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-28",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/10/Driver-Govt-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/10/Driver-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "no-exam-government-jobs-2026-25000-vacancies-opening",
+    "title": "No Exam Government Jobs 2026 (25000+ Vacancies Opening)",
+    "org": "No Exam Government Jobs 2026 (25000+ Vacancies Opening)",
+    "shortOrg": "No Exam Government Jobs 2026 (",
+    "posts": "Prescribed Posts",
+    "vacancies": 180,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2024/11/No-Exam-Government-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2024/11/No-Exam-Government-Jobs.html"
+    }
+  },
+  {
+    "id": "federal-bank-sales-officer-recruitment-2026-notification-online-form-last-date-3",
+    "title": "Federal Bank Sales Officer Recruitment 2026 - Notification, Online Form | Last Date 31-08-2026",
+    "org": "Federal Bank Sales Officer",
+    "shortOrg": "Federal Bank Sales Officer",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/federal-bank-sales-officer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1NqmkFLWQcHUTRC6Rb-2Zen9Q6yWbe4pH/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/federal-bank-sales-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "latest-nursing-govt-jobs-2026-staff-nurse-anm-nursing-officer-vacancies",
+    "title": "Latest Nursing Govt Jobs 2026 - Staff Nurse, ANM, Nursing Officer Vacancies",
+    "org": "Latest Nursing Govt Jobs 2026",
+    "shortOrg": "Latest Nursing Govt Jobs 2026",
+    "posts": "Prescribed Posts",
+    "vacancies": 140,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/12/nursing-govt-jobs-vacancy.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/12/nursing-govt-jobs-vacancy.html"
+    }
+  },
+  {
+    "id": "cpcl-junior-engineering-assistant-recruitment-2026-apply-online-for-60-posts-las",
+    "title": "CPCL Junior Engineering Assistant Recruitment 2026 - Apply Online for 60 Posts | Last Date 11-09-2026",
+    "org": "CPCL Junior Engineering Assistant",
+    "shortOrg": "CPCL Junior Engineering Assist",
+    "posts": "60 Posts",
+    "vacancies": 60,
+    "salary": "pay scale for CPCL Junior Engineering Assistant-IV?",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "11-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://cpcl.onlineregistrationform.org/TNCPCL/index.action",
+      "notificationUrl": "https://drive.google.com/file/d/1JS2l4KDoFtGg37oLfn1gyCRMrIC0Ci8v/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/cpcl-junior-engineering-assistant.html"
+    }
+  },
+  {
+    "id": "upsc-epfo-apfc-recruitment-2026-apply-online-for-80-posts-last-date-11-09-2026",
+    "title": "UPSC EPFO APFC Recruitment 2026 - Apply Online for 80 Posts | Last Date 11-09-2026",
+    "org": "UPSC EPFO APFC",
+    "shortOrg": "UPSC EPFO APFC",
+    "posts": "80 Posts",
+    "vacancies": 80,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "11-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://upsconline.nic.in/",
+      "notificationUrl": "https://drive.google.com/file/d/1IRv_ZIQIGgc16jYtB9G72YsDhOHMceNx/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/upsc-epfo-apfc-recruitment.html"
+    }
+  },
+  {
+    "id": "latest-graduate-level-govt-jobs-2026-50000-vacancies-opening",
+    "title": "Latest Graduate Level Govt Jobs 2026 (50000+ Vacancies Opening)",
+    "org": "Latest Graduate Level Govt Jobs 2026 (50000+ Vacancies Opening)",
+    "shortOrg": "Latest Graduate Level Govt Job",
+    "posts": "Prescribed Posts",
+    "vacancies": 172,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-graduates-2013-2014.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-for-graduates-2013-2014.html"
+    }
+  },
+  {
+    "id": "114359-fresher-govt-jobs-2026-latest-no-experience-sarkari-vacancies",
+    "title": "114359 Fresher Govt Jobs 2026 - Latest No Experience Sarkari Vacancies",
+    "org": "114359 Fresher Govt Jobs 2026",
+    "shortOrg": "114359 Fresher Govt Jobs 2026",
+    "posts": "Prescribed Posts",
+    "vacancies": 131,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2015/01/fresher-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2015/01/fresher-jobs.html"
+    }
+  },
+  {
+    "id": "ministry-of-home-affairs-recruitment-2026-apply-for-38-various-contract-posts-la",
+    "title": "Ministry of Home Affairs Recruitment 2026 - Apply for 38 Various Contract Posts | Last Date 28-08-2026",
+    "org": "Ministry of Home Affairs",
+    "shortOrg": "Ministry of Home Affairs",
+    "posts": "38 Various Contract Posts",
+    "vacancies": 700,
+    "salary": "₹30,000 – ₹1,18,000",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ministry-of-home-affairs-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1J4SWpAO5SbtROlVrjL04mFOfP54uUyQl/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ministry-of-home-affairs-recruitment.html"
+    }
+  },
+  {
+    "id": "isro-ursc-apprentice-recruitment-2026-apply-online-for-410-posts-last-date-28-08",
+    "title": "ISRO URSC Apprentice Recruitment 2026: Apply Online for 410 Posts | Last Date 28-08-2026",
+    "org": "ISRO URSC Apprentice",
+    "shortOrg": "ISRO URSC Apprentice",
+    "posts": "410 Posts",
+    "vacancies": 410,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/isro-ursc-apprentice-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1qgBhJOB1o22Gbh1c_9tHBNbGcFuCedFP/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/isro-ursc-apprentice-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "ibps-clerk-notification-2026-apply-online-for-11403-posts-last-date-28-08-2026",
+    "title": "IBPS Clerk Notification 2026 - Apply Online for 11403+ Posts | Last Date 28-08-2026",
+    "org": "IBPS Clerk Notification 2026",
+    "shortOrg": "IBPS Clerk Notification 2026",
+    "posts": "11403+ Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/IBPS-Clerk-Notification.html",
+      "notificationUrl": "https://www.ibps.in/wp-content/uploads/Notification_CRP_CSA_XVI-Final.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/IBPS-Clerk-Notification.html"
+    }
+  },
+  {
+    "id": "latest-mca-govt-jobs-2026-100-vacancies-opening",
+    "title": "Latest MCA Govt Jobs 2026 (100+ Vacancies Opening)",
+    "org": "Latest MCA Govt Jobs 2026 (100+ Vacancies Opening)",
+    "shortOrg": "Latest MCA Govt Jobs 2026 (100",
+    "posts": "Prescribed Posts",
+    "vacancies": 135,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/08/MCA-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/08/MCA-Jobs.html"
+    }
+  },
+  {
+    "id": "zhdce-assistant-professor-recruitment-2026-apply-online-for-06-posts-last-date-2",
+    "title": "ZHDCE Assistant Professor Recruitment 2026 - Apply Online for 06 Posts | Last Date 28-08-2026",
+    "org": "ZHDCE Assistant Professor",
+    "shortOrg": "ZHDCE Assistant Professor",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "pay scale in ZHDCE Assistant Professor Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/zhdce-assistant-professor-recruitment.html",
+      "notificationUrl": "https://www.zhdce.ac.in/notices/jm120fyj5ekeyoj1w1i4p5ctTeaching%20Advt.August_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/zhdce-assistant-professor-recruitment.html"
+    }
+  },
+  {
+    "id": "ncscm-project-staff-recruitment-2026-apply-online-for-06-posts-last-date-28-08-2",
+    "title": "NCSCM Project Staff Recruitment 2026 - Apply Online for 06 Posts | Last Date 28-08-2026",
+    "org": "NCSCM Project Staff",
+    "shortOrg": "NCSCM Project Staff",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "₹29,000 – ₹67,000",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ncscm-project-staff-recruitment.html",
+      "notificationUrl": "https://ncscm.res.in/wp-content/uploads/2026/08/HR0226-13082026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ncscm-project-staff-recruitment.html"
+    }
+  },
+  {
+    "id": "dgqa-technician-recruitment-2026-application-form-notification-15-posts-last-dat",
+    "title": "DGQA Technician Recruitment 2026 - Application Form, Notification, 15 Posts | Last Date 28-08-2026",
+    "org": "DGQA Technician",
+    "shortOrg": "DGQA Technician",
+    "posts": "Prescribed Posts",
+    "vacancies": 15,
+    "salary": "pay scale for DGQA Technician posts?",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/dgqa-technician-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1AuNbQvPYaQWkIHA5-vrc5DM9WRFozUWp/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/dgqa-technician-recruitment.html"
+    }
+  },
+  {
+    "id": "hemrl-pune-apprentice-recruitment-2026-apply-for-50-posts-last-date-28-08-2026",
+    "title": "HEMRL Pune Apprentice Recruitment 2026 - Apply for 50 Posts | Last Date 28-08-2026",
+    "org": "HEMRL Pune Apprentice",
+    "shortOrg": "HEMRL Pune Apprentice",
+    "posts": "50 Posts",
+    "vacancies": 50,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/hemrl-pune-apprentice-recruitment-2026.html",
+      "notificationUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtHEMRL10082026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/hemrl-pune-apprentice-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "iit-mandi-registrar-recruitment-2026-apply-online-for-04-posts-last-date-28-08-2",
+    "title": "IIT Mandi Registrar Recruitment 2026: Apply Online for 04 Posts | Last Date 28-08-2026",
+    "org": "IIT Mandi Registrar",
+    "shortOrg": "IIT Mandi Registrar",
+    "posts": "04 Posts",
+    "vacancies": 4,
+    "salary": "pay scale in IIT Mandi Registrar Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-27",
+      "lastDate": "28-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iit-mandi-registrar-recruitment.html",
+      "notificationUrl": "https://iitmandi.ac.in/recruitment/Advt_AR_DR_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iit-mandi-registrar-recruitment.html"
+    }
+  },
+  {
+    "id": "indian-railway-jobs-2026-new-vacancy-updates",
+    "title": "Indian Railway Jobs 2026 | New Vacancy Updates",
+    "org": "Indian Railway Jobs 2026 | New Vacancy Updates",
+    "shortOrg": "Indian Railway Jobs 2026 | New",
+    "posts": "Prescribed Posts",
+    "vacancies": 134,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/railway-jobs-recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/railway-jobs-recruitment.html"
+    }
+  },
+  {
+    "id": "south-indian-bank-business-promotion-officer-recruitment-2026-online-form-notifi",
+    "title": "South Indian Bank Business Promotion Officer Recruitment 2026 - Online Form, Notification",
+    "org": "South Indian Bank Business Promotion Officer",
+    "shortOrg": "South Indian Bank Business Pro",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "31 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/south-indian-bank-business-promotion-officer.html",
+      "notificationUrl": "https://drive.google.com/file/d/1ZIn9IKUcVZUfn-7BYdKg61xIgAwKlFIQ/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/south-indian-bank-business-promotion-officer.html"
+    }
+  },
+  {
+    "id": "rrb-je-recruitment-2026-apply-online-for-4029-posts-last-date-13-09-2026",
+    "title": "RRB JE Recruitment 2026 - Apply Online for 4029 Posts | Last Date 13-09-2026",
+    "org": "RRB JE",
+    "shortOrg": "RRB JE",
+    "posts": "4029 Posts",
+    "vacancies": 4029,
+    "salary": "pay scale for RRB JE posts?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "13-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.rrbapply.gov.in/assets/forms/CEN_04_2026_JE.pdf",
+      "notificationUrl": "https://www.rrbapply.gov.in/assets/forms/CEN_04_2026_JE.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/RRB-JE-Recruitment.html"
+    }
+  },
+  {
+    "id": "central-university-of-rajasthan-non-teaching-recruitment-2026-apply-online-for-0",
+    "title": "Central University of Rajasthan Non Teaching Recruitment 2026 - Apply Online for 04 Posts | Last Date 23-09-2026",
+    "org": "Central University of Rajasthan Non Teaching",
+    "shortOrg": "Central University of Rajastha",
+    "posts": "04 Posts",
+    "vacancies": 4,
+    "salary": "pay scale in CURAJ Non Teaching Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "rajasthan",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "23-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/central-university-of-rajasthan-non.html",
+      "notificationUrl": "https://www.curaj.ac.in/sites/default/files/Advertisement%20No.%206460%20Dated%2004.08.2026%20Non-Teaching%20Positions%20under%20Direct%20Recruitment%20%282%29.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/central-university-of-rajasthan-non.html"
+    }
+  },
+  {
+    "id": "iiit-vadodara-assistant-professor-recruitment-2026-apply-online-for-25-posts-las",
+    "title": "IIIT Vadodara Assistant Professor Recruitment 2026 - Apply Online for 25 Posts | Last Date 15-09-2026",
+    "org": "IIIT Vadodara Assistant Professor",
+    "shortOrg": "IIIT Vadodara Assistant Profes",
+    "posts": "25 Posts",
+    "vacancies": 25,
+    "salary": "pay scale, application fee, selection process and official links.",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iiit-vadodara-assistant-professor.html",
+      "notificationUrl": "https://iiitvadodara.ac.in/upload_sk/Advertisement%20for%20Faculty%20Position.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iiit-vadodara-assistant-professor.html"
+    }
+  },
+  {
+    "id": "sainik-school-jhunjhunu-recruitment-2026-apply-for-18-various-regular-contractua",
+    "title": "Sainik School Jhunjhunu Recruitment 2026 - Apply for 18 Various Regular & Contractual Posts | Last Date 12-09-2026",
+    "org": "Sainik School Jhunjhunu",
+    "shortOrg": "Sainik School Jhunjhunu",
+    "posts": "18 Various Regular & Contractual Posts",
+    "vacancies": 700,
+    "salary": "pay scale, selection process, application fee and official notificatio",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "12-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-jhunjhunu-recruitment.html",
+      "notificationUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-jhunjhunu-recruitment.html"
+    }
+  },
+  {
+    "id": "iit-bhu-non-teaching-recruitment-2026-apply-online-for-55-posts-last-date-24-09-",
+    "title": "IIT BHU Non Teaching Recruitment 2026 - Apply Online for 55 Posts | Last Date 24-09-2026",
+    "org": "IIT BHU Non Teaching",
+    "shortOrg": "IIT BHU Non Teaching",
+    "posts": "55 Posts",
+    "vacancies": 55,
+    "salary": "pay scale in IIT BHU Non Teaching Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "24-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iit-bhu-non-teaching-recruitment-2026.html",
+      "notificationUrl": "https://www.iitbhu.ac.in/contents/institute/2026/alerts/alerts_adv_032026-27.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iit-bhu-non-teaching-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "maharashtra-metro-rail-recruitment-2026-apply-for-56-engineer-technician-assista",
+    "title": "Maharashtra Metro Rail Recruitment 2026 - Apply for 56 Engineer, Technician, Assistant & Attendant Posts | Last Date 25-09-2026",
+    "org": "Maharashtra Metro Rail",
+    "shortOrg": "Maharashtra Metro Rail",
+    "posts": "56 Engineer, Technician, Assistant & Attendant Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "maharashtra",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "25-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/maharashtra-metro-rail-recruitment-2026.html",
+      "notificationUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/maharashtra-metro-rail-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "maha-metro-manager-level-posts-recruitment-2026-apply-online-for-05-vacancies-la",
+    "title": "MAHA Metro Manager Level Posts Recruitment 2026 - Apply Online for 05 Vacancies | Last Date 18-09-2026",
+    "org": "MAHA Metro Manager Level Posts",
+    "shortOrg": "MAHA Metro Manager Level Posts",
+    "posts": "05 Vacancies",
+    "vacancies": 5,
+    "salary": "Pay Scale)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "18-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/maha-metro-manager-level-posts.html",
+      "notificationUrl": "https://mahametro.org/pdf/Advt.%20N_HR_06__2026..pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/maha-metro-manager-level-posts.html"
+    }
+  },
+  {
+    "id": "moil-limited-manager-recruitment-2026-walk-in-interview-for-04-posts",
+    "title": "MOIL Limited Manager Recruitment 2026 - Walk in Interview for 04 Posts",
+    "org": "MOIL Limited Manager",
+    "shortOrg": "MOIL Limited Manager",
+    "posts": "04 Posts",
+    "vacancies": 4,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "17 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/moil-limited-manager-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1PndE_r7z9W5dSYmI84x_NCKDI46Hqt9u/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/moil-limited-manager-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "gipcl-diploma-mechanical-engineer-vacancy-2026-apply-online-for-07-posts-last-da",
+    "title": "GIPCL Diploma Mechanical Engineer Vacancy 2026 - Apply Online for 07 Posts | Last Date 04-09-2026",
+    "org": "GIPCL Diploma Mechanical Engineer Vacancy 2026",
+    "shortOrg": "GIPCL Diploma Mechanical Engin",
+    "posts": "07 Posts",
+    "vacancies": 7,
+    "salary": "₹27,000 – ₹29,760",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/gipcl-diploma-mechanical-engineer.html",
+      "notificationUrl": "https://www.gipcl.com/webfiles/resources/25112026041104Website-Add---Diploma-Mech-Engg-SLPP.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/gipcl-diploma-mechanical-engineer.html"
+    }
+  },
+  {
+    "id": "rfcl-experienced-professionals-recruitment-2026-apply-online-for-40-engineer-off",
+    "title": "RFCL Experienced Professionals Recruitment 2026 - Apply Online for 40 Engineer, Officer & Manager Posts | Last Date 24-09-2026",
+    "org": "RFCL Experienced Professionals",
+    "shortOrg": "RFCL Experienced Professionals",
+    "posts": "40 Engineer, Officer & Manager Posts",
+    "vacancies": 700,
+    "salary": "pay scale, application fee, selection process, official notification P",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "24-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/rfcl-experienced-professionals.html",
+      "notificationUrl": "https://www.rfcl.co.in/upload/Detailed%20Advt%2001_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/rfcl-experienced-professionals.html"
+    }
+  },
+  {
+    "id": "govt-of-manipur-recruitment-2026-apply-for-11-various-contract-posts-last-date-3",
+    "title": "Govt of Manipur Recruitment 2026 - Apply for 11 Various Contract Posts | Last Date 31-08-2026",
+    "org": "Govt of Manipur",
+    "shortOrg": "Govt of Manipur",
+    "posts": "11 Various Contract Posts",
+    "vacancies": 700,
+    "salary": "₹50,000 – ₹1,00,000",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "manipur",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/govt-of-manipur-recruitment-2026-apply.html",
+      "notificationUrl": "https://www.iimshillong.ac.in/wp-content/uploads/2026/08/Recruitment-State-Support-Mission-Manipur.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/govt-of-manipur-recruitment-2026-apply.html"
+    }
+  },
+  {
+    "id": "east-coast-railway-apprentice-recruitment-2026-apply-online-for-1599-posts-last-",
+    "title": "East Coast Railway Apprentice Recruitment 2026 - Apply Online for 1599 Posts | Last Date 15-09-2026",
+    "org": "East Coast Railway Apprentice",
+    "shortOrg": "East Coast Railway Apprentice",
+    "posts": "1599 Posts",
+    "vacancies": 1599,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-26",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/east-coast-railway-apprentice.html",
+      "notificationUrl": "https://www.rrcbbs.org.in/Act-apprenticeship.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/east-coast-railway-apprentice.html"
+    }
+  },
+  {
+    "id": "hpcl-biofuels-limited-recruitment-2026-apply-offline-for-58-management-non-manag",
+    "title": "HPCL Biofuels Limited Recruitment 2026: Apply Offline for 58 Management & Non-Management Posts | Last Date 27-08-2026",
+    "org": "HPCL Biofuels Limited",
+    "shortOrg": "HPCL Biofuels Limited",
+    "posts": "58 Management & Non-Management Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "n",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/hpcl-biofuels-limited-recruitment.html",
+      "notificationUrl": "https://hpclbiofuels.co.in/downloads/HBL-Advertisement-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/hpcl-biofuels-limited-recruitment.html"
+    }
+  },
+  {
+    "id": "kmrl-recruitment-2026-apply-online-for-05-engineer-manager-posts-last-date-27-08",
+    "title": "KMRL Recruitment 2026: Apply Online for 05 Engineer, Manager Posts | Last Date 27-08-2026",
+    "org": "KMRL",
+    "shortOrg": "KMRL",
+    "posts": "05 Engineer, Manager Posts",
+    "vacancies": 700,
+    "salary": "pay scale in KMRL Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/KMRL-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/KMRL-Recruitment.html"
+    }
+  },
+  {
+    "id": "sbi-specialist-cadre-officer-recruitment-2026-apply-online-for-38-various-posts-",
+    "title": "SBI Specialist Cadre Officer Recruitment 2026 - Apply Online for 38 Various Posts | Last Date 27-08-2026",
+    "org": "SBI Specialist Cadre Officer",
+    "shortOrg": "SBI Specialist Cadre Officer",
+    "posts": "38 Various Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://recruitment.sbi.bank.in/crpd-sco-2026-27-11/apply",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sbi-specialist-cadre-officer.html"
+    }
+  },
+  {
+    "id": "high-court-of-patna-assistant-recruitment-2026-apply-online-for-68-posts-last-da",
+    "title": "High Court of Patna Assistant Recruitment 2026 - Apply Online for 68 Posts | Last Date 27-08-2026",
+    "org": "High Court of Patna Assistant",
+    "shortOrg": "High Court of Patna Assistant",
+    "posts": "68 Posts",
+    "vacancies": 68,
+    "salary": "Level-4 of the 7th Pay Matrix.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/high-court-of-patna-assistant.html",
+      "notificationUrl": "https://drive.google.com/file/d/1RfwMjgre8bGXcIwAvg-GHWpVeEnoFQtR/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/high-court-of-patna-assistant.html"
+    }
+  },
+  {
+    "id": "sbi-junior-associates-backlog-vacancy-2026-apply-online-for-1538-clerk-posts-las",
+    "title": "SBI Junior Associates Backlog Vacancy 2026 - Apply Online for 1538 Clerk Posts | Last Date 27-08-2026",
+    "org": "SBI Junior Associates Backlog Vacancy 2026",
+    "shortOrg": "SBI Junior Associates Backlog ",
+    "posts": "1538 Clerk Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sbi-junior-associate-backlog.html",
+      "notificationUrl": "https://sbi.bank.in/webfiles/uploads/files_2627/08/JA_2026_Backlog_Detailed_Advt_ENG.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sbi-junior-associate-backlog.html"
+    }
+  },
+  {
+    "id": "ntpc-deputy-manager-recruitment-2026-apply-online-for-135-posts-last-date-26-08-",
+    "title": "NTPC Deputy Manager Recruitment 2026 - Apply Online for 135 Posts | Last Date 26-08-2026",
+    "org": "NTPC Deputy Manager",
+    "shortOrg": "NTPC Deputy Manager",
+    "posts": "135 Posts",
+    "vacancies": 135,
+    "salary": "pay scale of ₹60,000–₹1,80,000 or equivalent out of the required 10 ye",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "26-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ntpc-deputy-manager-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1FEll8nKmlw6o3SisnkoJO8IyKwCsINWe/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ntpc-deputy-manager-recruitment.html"
+    }
+  },
+  {
+    "id": "sjvn-limited-recruitment-2026-apply-online-for-21-experienced-engineer-posts-las",
+    "title": "SJVN Limited Recruitment 2026: Apply Online for 21 Experienced Engineer Posts | Last Date 26-08-2026",
+    "org": "SJVN Limited",
+    "shortOrg": "SJVN Limited",
+    "posts": "21 Experienced Engineer Posts",
+    "vacancies": 700,
+    "salary": "pay scale), and certificates of Educational Qualification, Age, Catego",
+    "qualificationText": "Advt. No. 127/2026, O/o DGM (HR/Recruitment), SJVN Limited, Shakti Sadan, Corporate Head Quarters, Shanan, Shimla, HP-17",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "26-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/sjvn-limited-recruitment.html",
+      "notificationUrl": "https://sjvn.nic.in/sites/default/files/2026-07/Detailed%20Advt%20127.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/sjvn-limited-recruitment.html"
+    }
+  },
+  {
+    "id": "sail-rsp-apprentice-recruitment-2026-notification-for-1110-posts-apply-online-up",
+    "title": "SAIL RSP Apprentice Recruitment 2026: Notification for 1110 Posts | Apply Online up to 26-08-2026",
+    "org": "SAIL RSP Apprentice",
+    "shortOrg": "SAIL RSP Apprentice",
+    "posts": "1110 Posts",
+    "vacancies": 1110,
+    "salary": "₹9,600 – ₹12,300",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "26 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/sail-rsp-apprentice-recruitment.html",
+      "notificationUrl": "https://aima-web-images.s3.ap-south-1.amazonaws.com/sailcareers.com/Downloads/RSP_News%20&amp;%20Jobs_17072026_140526.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/sail-rsp-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "rcfl-management-trainee-recruitment-2026-apply-online-for-94-posts-last-date-10-",
+    "title": "RCFL Management Trainee Recruitment 2026 - Apply Online for 94 Posts | Last Date 10-09-2026",
+    "org": "RCFL Management Trainee",
+    "shortOrg": "RCFL Management Trainee",
+    "posts": "94 Posts",
+    "vacancies": 94,
+    "salary": "Pay Scale (After Training)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "10-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/rcfl-management-trainee-recruitment.html",
+      "notificationUrl": "https://rcfltd.com/files/MT%202026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rcfl-management-trainee-recruitment.html"
+    }
+  },
+  {
+    "id": "eil-associate-engineer-recruitment-2026-walk-in-interview-for-12-posts-last-date",
+    "title": "EIL Associate Engineer Recruitment 2026 - Walk in Interview for 12 Posts | last Date 08-09-2026",
+    "org": "EIL Associate Engineer",
+    "shortOrg": "EIL Associate Engineer",
+    "posts": "12 Posts",
+    "vacancies": 12,
+    "salary": "₹57,600 – ₹64,000",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/eil-associate-engineer-recruitment-2026.html",
+      "notificationUrl": "https://recruitment.eil.co.in/hrdnew/others/73.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/eil-associate-engineer-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "sahitya-akademi-recruitment-2026-apply-for-30-deputy-secretary-assistant-clerk-o",
+    "title": "Sahitya Akademi Recruitment 2026 Apply for 30 Deputy Secretary, Assistant, Clerk & Other Posts | Last Date 21-09-2026",
+    "org": "Sahitya Akademi",
+    "shortOrg": "Sahitya Akademi",
+    "posts": "30 Deputy Secretary, Assistant, Clerk & Other Posts",
+    "vacancies": 700,
+    "salary": "pay scale, selection process, important dates and how to apply.",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "21-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sahitya-akademi-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1fVXbiOHG2eSYwgtpru3F7pfOOROiMgUd/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sahitya-akademi-recruitment.html"
+    }
+  },
+  {
+    "id": "iocl-production-manager-recruitment-2026-notification-out",
+    "title": "IOCL Production Manager Recruitment 2026 - Notification Out",
+    "org": "IOCL Production Manager",
+    "shortOrg": "IOCL Production Manager",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale, important dates, and how to apply.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "16 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iocl-production-manager-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1ADFD3-pEL8WJFy75uw2dkSsPM1WLCZQX/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iocl-production-manager-recruitment.html"
+    }
+  },
+  {
+    "id": "bel-havildar-security-recruitment-2026-apply-online-for-05-posts-last-date-14-09",
+    "title": "BEL Havildar Security Recruitment 2026 Apply Online for 05 Posts | Last Date 14-09-2026",
+    "org": "BEL Havildar Security",
+    "shortOrg": "BEL Havildar Security",
+    "posts": "05 Posts",
+    "vacancies": 5,
+    "salary": "pay scale, and direct apply link.",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "14-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://jobapply.in/BEL2026KotdwarHavildarSecurity",
+      "notificationUrl": "https://bel-india.in/wp-content/uploads/2026/08/Deatiled-Security-Havildar-Advertisment.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bel-havildar-security-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "seci-experienced-professionals-recruitment-2026-apply-online-for-28-posts-last-d",
+    "title": "SECI Experienced Professionals Recruitment 2026 - Apply Online for 28 Posts | Last Date 23-09-2026",
+    "org": "SECI Experienced Professionals",
+    "shortOrg": "SECI Experienced Professionals",
+    "posts": "28 Posts",
+    "vacancies": 28,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "23-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/seci-experienced-professionals.html",
+      "notificationUrl": "https://drive.google.com/file/d/1wYTK7K_QoZqOp4hhrjKeABmJMxSM979b/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/seci-experienced-professionals.html"
+    }
+  },
+  {
+    "id": "beml-apprentice-recruitment-2026-apply-online-for-1346-posts-last-date-08-09-202",
+    "title": "BEML Apprentice Recruitment 2026 - Apply Online for 1346 Posts | Last Date 08-09-2026",
+    "org": "BEML Apprentice",
+    "shortOrg": "BEML Apprentice",
+    "posts": "1346 Posts",
+    "vacancies": 1346,
+    "salary": "₹9,600 – ₹12,300",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/beml-apprentice-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1GZG8W6SmsYXKpXXaUm9WeWZDXNnKN9uz/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/beml-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "avfccl-executive-recruitment-2026-apply-online-notification-last-date-31-08-2026",
+    "title": "AVFCCL Executive Recruitment 2026 - Apply Online, Notification | Last Date 31-08-2026",
+    "org": "AVFCCL Executive",
+    "shortOrg": "AVFCCL Executive",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in AVFCCL Executive Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-25",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/avfccl-executive-recruitment.html",
+      "notificationUrl": "https://jobse042026.avfccl.net.in/others/AVFCCL%20E04%202026_Final.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/avfccl-executive-recruitment.html"
+    }
+  },
+  {
+    "id": "upsc-advertisement-no102026-apply-online-for-34-posts-last-date-04-09-2026",
+    "title": "UPSC Advertisement No.10/2026 - Apply Online for 34 Posts | Last Date 04-09-2026",
+    "org": "UPSC Advertisement No.10/2026",
+    "shortOrg": "UPSC Advertisement No.10/2026",
+    "posts": "34 Posts",
+    "vacancies": 34,
+    "salary": "Level-07 to Level-10",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://upsconline.nic.in/",
+      "notificationUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-10-2026-Engl-070826.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/upsc-advertisement-no-10-2026.html"
+    }
+  },
+  {
+    "id": "sainik-school-amaravathinagar-recruitment-2026-apply-for-teaching-non-teaching-p",
+    "title": "Sainik School Amaravathinagar Recruitment 2026 - Apply for Teaching & Non-Teaching Posts | Last Date 25-08-2026",
+    "org": "Sainik School Amaravathinagar",
+    "shortOrg": "Sainik School Amaravathinagar",
+    "posts": "Teaching & Non-Teaching Posts",
+    "vacancies": 700,
+    "salary": "Level-8)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "25-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-amaravathinagar.html",
+      "notificationUrl": "https://drive.google.com/file/d/1uOgUZuwLHp1YBIWJ8dxuTtteENM6ZFWw/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-amaravathinagar.html"
+    }
+  },
+  {
+    "id": "indian-overseas-bank-lbo-recruitment-2026-apply-online-for-250-posts-last-date-2",
+    "title": "Indian Overseas Bank LBO Recruitment 2026 - Apply Online for 250 Posts | Last Date 24-08-2026",
+    "org": "Indian Overseas Bank LBO",
+    "shortOrg": "Indian Overseas Bank LBO",
+    "posts": "250 Posts",
+    "vacancies": 250,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/indian-overseas-bank-lbo-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1d8J5XzaCpZuPGcySREjA9cPTYC9REiKW/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/indian-overseas-bank-lbo-recruitment.html"
+    }
+  },
+  {
+    "id": "rvunl-junior-engineer-assistant-accountant-recruitment-2026-apply-online-for-200",
+    "title": "RVUNL Junior Engineer, Assistant & Accountant Recruitment 2026: Apply Online for 2005 Posts | Last Date 25-08-2026",
+    "org": "RVUNL Junior Engineer, Assistant & Accountant",
+    "shortOrg": "RVUNL Junior Engineer, Assista",
+    "posts": "2005 Posts",
+    "vacancies": 2005,
+    "salary": "pay scale in RVUNL Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "25-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/rvunl-junior-engineer-assistant.html",
+      "notificationUrl": "https://drive.google.com/file/d/16B0roj3PdzsukRIAu_xCC3uDibstNYkU/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rvunl-junior-engineer-assistant.html"
+    }
+  },
+  {
+    "id": "iari-young-professional-recruitment-2026-apply-for-04-posts-last-date-25-08-2026",
+    "title": "IARI Young Professional Recruitment 2026: Apply for 04 Posts | Last Date 25-08-2026",
+    "org": "IARI Young Professional",
+    "shortOrg": "IARI Young Professional",
+    "posts": "04 Posts",
+    "vacancies": 4,
+    "salary": "pay scale in IARI Young Professional Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "25-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/04/IARI-Young-Professional.html",
+      "notificationUrl": "https://iari.res.in/files/jobs/Young_Professional_I_and_II_04082026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/04/IARI-Young-Professional.html"
+    }
+  },
+  {
+    "id": "jkssb-warder-recruitment-2026-apply-online-for-288-posts-last-date-25-08-2026",
+    "title": "JKSSB Warder Recruitment 2026: Apply Online for 288 Posts | Last Date 25-08-2026",
+    "org": "JKSSB Warder",
+    "shortOrg": "JKSSB Warder",
+    "posts": "288 Posts",
+    "vacancies": 288,
+    "salary": "pay scale in JKSSB Warder Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "25-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/jkssb-warder-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1zkga0LSJjwhxlApdhEC-4dMZvrlfR7gE/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/jkssb-warder-recruitment.html"
+    }
+  },
+  {
+    "id": "apprentice-govt-jobs-2026-8936-iti-diploma-graduate-vacancies",
+    "title": "Apprentice Govt Jobs 2026 (8936 ITI, Diploma, Graduate Vacancies)",
+    "org": "Apprentice Govt Jobs 2026 (8936 ITI, Diploma, Graduate Vacancies)",
+    "shortOrg": "Apprentice Govt Jobs 2026 (893",
+    "posts": "Prescribed Posts",
+    "vacancies": 256,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2017/04/Apprentice-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2017/04/Apprentice-Jobs.html"
+    }
+  },
+  {
+    "id": "powergrid-apprentice-recruitment-2026-apply-online-for-270-posts-last-date-10-09",
+    "title": "POWERGRID Apprentice Recruitment 2026 - Apply Online for 270 Posts | Last Date 10-09-2026",
+    "org": "POWERGRID Apprentice",
+    "shortOrg": "POWERGRID Apprentice",
+    "posts": "270 Posts",
+    "vacancies": 270,
+    "salary": "₹13,500 – ₹17,500",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "10-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/powergrid-apprentice-recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/powergrid-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "mtpf-ambarnath-apprentice-recruitment-2026-apply-offline-for-48-posts-last-date-",
+    "title": "MTPF Ambarnath Apprentice Recruitment 2026 - Apply Offline for 48 Posts | Last date 04-09-2026",
+    "org": "MTPF Ambarnath Apprentice",
+    "shortOrg": "MTPF Ambarnath Apprentice",
+    "posts": "48 Posts",
+    "vacancies": 48,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti",
+      "mba-pgdm"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/mtpf-ambarnath-apprentice-recruitment.html",
+      "notificationUrl": "https://avnl.co.in/files/careers-vacancies-document/mtpfdipadv_compressed.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mtpf-ambarnath-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "aiims-awantipora-senior-resident-recruitment-2026-apply-online-for-40-posts-last",
+    "title": "AIIMS Awantipora Senior Resident Recruitment 2026 - Apply Online for 40 Posts | Last Date 27-08-2026",
+    "org": "AIIMS Awantipora Senior Resident",
+    "shortOrg": "AIIMS Awantipora Senior Reside",
+    "posts": "40 Posts",
+    "vacancies": 40,
+    "salary": "pay scale in AIIMS Awantipora Senior Resident Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "27-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiims-awantipora-senior-resident.html",
+      "notificationUrl": "https://www.aiimsjammu.edu.in/wp-content/uploads/2026/08/SR-Advertisement-AIIMS-Awantipora.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-awantipora-senior-resident.html"
+    }
+  },
+  {
+    "id": "dpcc-environmental-engineer-recruitment-2026-apply-offline-for-17-posts",
+    "title": "DPCC Environmental Engineer Recruitment 2026 - Apply Offline for 17 Posts",
+    "org": "DPCC Environmental Engineer",
+    "shortOrg": "DPCC Environmental Engineer",
+    "posts": "17 Posts",
+    "vacancies": 17,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/dpcc-environmental-engineer-recruitment.html",
+      "notificationUrl": "https://dpcc.delhi.gov.in/sites/default/files/DPCC/important-news/details_group-a_dpcc_1%29.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/dpcc-environmental-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "ngel-advt-no0426-apply-online-for-147-engineer-executive-posts-last-date-07-09-2",
+    "title": "NGEL Advt No.04/26 - Apply Online for 147 Engineer & Executive Posts | Last Date 07-09-2026",
+    "org": "NGEL Advt No.04/26",
+    "shortOrg": "NGEL Advt No.04/26",
+    "posts": "147 Engineer & Executive Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/NGEL-Advt-No-04-26.html",
+      "notificationUrl": "https://ngel.in/public/career/1/9bef2e6c3c/9bef2e6c3c.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/NGEL-Advt-No-04-26.html"
+    }
+  },
+  {
+    "id": "nainital-bank-specialist-officer-recruitment-2026-apply-online-for-41-posts-last",
+    "title": "Nainital Bank Specialist Officer Recruitment 2026 - Apply Online for 41 Posts | Last Date 07-09-2026",
+    "org": "Nainital Bank Specialist Officer",
+    "shortOrg": "Nainital Bank Specialist Offic",
+    "posts": "41 Posts",
+    "vacancies": 41,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nainital-bank-specialist-officer.html",
+      "notificationUrl": "https://www.nainitalbank.bank.in/pdf/Notification%202026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nainital-bank-specialist-officer.html"
+    }
+  },
+  {
+    "id": "bank-of-baroda-local-bank-officer-recruitment-2026-apply-online-for-2482-posts-l",
+    "title": "Bank of Baroda Local Bank Officer Recruitment 2026 - Apply Online for 2482 Posts | Last Date 07-09-2026",
+    "org": "Bank of Baroda Local Bank Officer",
+    "shortOrg": "Bank of Baroda Local Bank Offi",
+    "posts": "2482 Posts",
+    "vacancies": 2482,
+    "salary": "₹48,480 – ₹85,920",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bank-of-baroda-local-bank-officer.html",
+      "notificationUrl": "https://drive.google.com/file/d/1KcB8eJX32X7FLyzTeb7AyR4GIMin86JU/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bank-of-baroda-local-bank-officer.html"
+    }
+  },
+  {
+    "id": "bel-ghaziabad-deputy-engineer-recruitment-2026-apply-online-for-02-posts-last-da",
+    "title": "BEL Ghaziabad Deputy Engineer Recruitment 2026 - Apply Online for 02 Posts | Last Date 04-09-2026",
+    "org": "BEL Ghaziabad Deputy Engineer",
+    "shortOrg": "BEL Ghaziabad Deputy Engineer",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://jobapply.in/bel2026GZBRADARDE/",
+      "notificationUrl": "https://bel-india.in/wp-content/uploads/2026/08/Detail-advt-Agalega.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bel-ghaziabad-deputy-engineer.html"
+    }
+  },
+  {
+    "id": "fcri-research-engineer-recruitment-2026-apply-online-for-19-posts-last-date-24-0",
+    "title": "FCRI Research Engineer Recruitment 2026: Apply Online for 19 Posts | Last Date 24-08-2026",
+    "org": "FCRI Research Engineer",
+    "shortOrg": "FCRI Research Engineer",
+    "posts": "19 Posts",
+    "vacancies": 19,
+    "salary": "Level-10 (₹56,100 – ₹1,77,500) |",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://cdn3.digialm.com/EForms/configuredHtml/33139/2000068/Registration.html",
+      "notificationUrl": "https://www.fcriindia.com/wp-content/uploads/2026/07/Notification-RE-JRE-R620260722-English.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/fcri-research-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "spmcil-advertisement-no022026-apply-online-for-24-assistant-manager-posts-last-d",
+    "title": "SPMCIL Advertisement No.02/2026: Apply Online for 24 Assistant Manager Posts | Last Date 24-08-2026",
+    "org": "SPMCIL Advertisement No.02/2026: Apply Online for 24 Assistant Manager Posts | Last Date 24",
+    "shortOrg": "SPMCIL Advertisement No.02/202",
+    "posts": "24 Assistant Manager Posts",
+    "vacancies": 700,
+    "salary": "pay scale in SPMCIL Assistant Manager Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/SPMCIL-Advertisement-No.02-2026.html",
+      "notificationUrl": "https://test.cbexams.com/EDPSU/SPMCIL/SPM/docs/Recruitment%20Advt.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/SPMCIL-Advertisement-No.02-2026.html"
+    }
+  },
+  {
+    "id": "physical-research-laboratory-recruitment-2026-apply-online-for-05-officer-posts-",
+    "title": "Physical Research Laboratory Recruitment 2026 - Apply Online for 05 Officer Posts | Last Date: 24-08-2026",
+    "org": "Physical Research Laboratory",
+    "shortOrg": "Physical Research Laboratory",
+    "posts": "05 Officer Posts",
+    "vacancies": 700,
+    "salary": "pay scale for PRL Officer posts?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "24 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/physical-research-laboratory.html",
+      "notificationUrl": "https://www.prl.res.in/~notices/websitedocs/2026/07/23/PRL-Bilingual.Advt.Officers-2026-23-07-2026-16-48-05.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/physical-research-laboratory.html"
+    }
+  },
+  {
+    "id": "nid-andhra-pradesh-non-teaching-recruitment-2026-apply-online-for-22-posts-last-",
+    "title": "NID Andhra Pradesh Non Teaching Recruitment 2026 - Apply Online for 22 Posts | Last Date 24-08-2026",
+    "org": "NID Andhra Pradesh Non Teaching",
+    "shortOrg": "NID Andhra Pradesh Non Teachin",
+    "posts": "22 Posts",
+    "vacancies": 22,
+    "salary": "pay scale in NID Andhra Pradesh Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "andhra-pradesh",
+    "importantDates": {
+      "startDate": "2026-08-24",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm",
+      "notificationUrl": "https://www.nid.ac.in/sites/default/files/2026-07/detailed_recruitment_notification_2.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/nid-andhra-pradesh-non-teaching.html"
+    }
+  },
+  {
+    "id": "nisr-recruitment-2026-apply-for-11-various-faculty-medical-administrative-posts-",
+    "title": "NISR Recruitment 2026: Apply for 11 Various Faculty, Medical & Administrative Posts | Last Date 23-08-2026",
+    "org": "NISR",
+    "shortOrg": "NISR",
+    "posts": "11 Various Faculty, Medical & Administrative Posts",
+    "vacancies": 700,
+    "salary": "Level-5 to Level-10 (7th CPC)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "medical-nursing",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-22",
+      "lastDate": "23-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/nisr-recruitment.html",
+      "notificationUrl": "https://www.sowarigpainstitute.in/uploads/career/attachment_file_0_11c7d04a4804f7ade1bab32d9b0451c8.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/nisr-recruitment.html"
+    }
+  },
+  {
+    "id": "northeast-frontier-railway-sports-quota-recruitment-2026-apply-online-for-56-pos",
+    "title": "Northeast Frontier Railway Sports Quota Recruitment 2026 - Apply Online for 56 Posts | Last Date 24-08-2026",
+    "org": "Northeast Frontier Railway Sports Quota",
+    "shortOrg": "Northeast Frontier Railway Spo",
+    "posts": "56 Posts",
+    "vacancies": 56,
+    "salary": "Level-1 / Level-2 / Level-3 (7th CPC)",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-22",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/northeast-frontier-railway-sports-quota.html",
+      "notificationUrl": "https://nfr.indianrailways.gov.in/cris//uploads/files/1784804295361-FINAL%20NOTIFICATION%20OF%20SQ%20OPEN%20ADVERTISEMENT%202026-27.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/northeast-frontier-railway-sports-quota.html"
+    }
+  },
+  {
+    "id": "krcl-executive-engineer-recruitment-2026-apply-for-05-posts-last-date-08-09-2026",
+    "title": "KRCL Executive Engineer Recruitment 2026 - Apply for 05 Posts | Last Date 08-09-2026",
+    "org": "KRCL Executive Engineer",
+    "shortOrg": "KRCL Executive Engineer",
+    "posts": "05 Posts",
+    "vacancies": 5,
+    "salary": "pay scale in KRCL Executive Engineer Recruitment 2026?",
+    "qualificationText": "t",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-21",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/krcl-executive-engineer-recruitment.html",
+      "notificationUrl": "https://konkanrailway.com/sites/default/files/2026-08/NOTIFICATION_AEN_ASTE_AME_19082026_0.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/krcl-executive-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "krcl-apprentice-recruitment-2026-apply-online-for-134-graduate-diploma-posts",
+    "title": "KRCL Apprentice Recruitment 2026 - Apply Online for 134 Graduate & Diploma Posts",
+    "org": "KRCL Apprentice",
+    "shortOrg": "KRCL Apprentice",
+    "posts": "134 Graduate & Diploma Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-21",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/krcl-apprentice-recruitment.html",
+      "notificationUrl": "https://konkanrailway.com/sites/default/files/2026-08/Notification_%20for_Apprentice%20Trainee_2026_27.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/krcl-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "income-tax-canteen-attendant-recruitment-2026-apply-online-for-07-posts-last-dat",
+    "title": "Income Tax Canteen Attendant Recruitment 2026 - Apply Online for 07 Posts | Last Date 31-08-2026",
+    "org": "Income Tax Canteen Attendant",
+    "shortOrg": "Income Tax Canteen Attendant",
+    "posts": "07 Posts",
+    "vacancies": 7,
+    "salary": "pay scale in Income Tax Canteen Attendant Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-21",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/income-tax-canteen-attendant.html",
+      "notificationUrl": "https://drive.google.com/file/d/1vz5-zoLL4-F1CMF-ubehN325lmCNWqOB/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/income-tax-canteen-attendant.html"
+    }
+  },
+  {
+    "id": "hurl-recruitment-2026-apply-online-for-75-executive-and-non-executive-posts-last",
+    "title": "HURL Recruitment 2026 - Apply Online for 75 Executive and Non Executive Posts | Last Date 26-08-2026",
+    "org": "HURL",
+    "shortOrg": "HURL",
+    "posts": "75 Executive and Non Executive Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-21",
+      "lastDate": "26-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/HURL-Recruitment.html",
+      "notificationUrl": "https://jobse4.hurl.net.in/others/E-04-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/HURL-Recruitment.html"
+    }
+  },
+  {
+    "id": "iit-bombay-advertisement-no022026-apply-online-for-27-technical-officer-nursing-",
+    "title": "IIT Bombay Advertisement No.02/2026 - Apply Online for 27 Technical, Officer, Nursing & Other Posts | Last Date 04-09-2026",
+    "org": "IIT Bombay Advertisement No.02/2026",
+    "shortOrg": "IIT Bombay Advertisement No.02",
+    "posts": "27 Technical, Officer, Nursing & Other Posts",
+    "vacancies": 700,
+    "salary": "pay scale, official notification, and online application link.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "medical-nursing",
+      "mba-pgdm"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "04-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.iitb.ac.in/career/apply",
+      "notificationUrl": "https://drive.google.com/file/d/1VPS9A4hMs91zDFuI0YDTw8EjDbsW1oGX/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iit-bombay-advertisement-no-02-2026.html"
+    }
+  },
+  {
+    "id": "mecon-limited-draftsman-recruitment-2026-apply-online-for-17-posts-last-date-22-",
+    "title": "MECON Limited Draftsman Recruitment 2026 - Apply Online for 17 Posts | Last Date 22-08-2026",
+    "org": "MECON Limited Draftsman",
+    "shortOrg": "MECON Limited Draftsman",
+    "posts": "17 Posts",
+    "vacancies": 17,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "22-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/mecon-limited-draftsman-recruitment.html",
+      "notificationUrl": "https://careers.meconlimited.co.in/api/download?file=20260731_171655_Advt%20-%20Draftsman%2027%2005%202026%20(Final)%20_.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mecon-limited-draftsman-recruitment.html"
+    }
+  },
+  {
+    "id": "indian-institute-of-packaging-recruitment-2026-apply-for-20-technical-non-techni",
+    "title": "Indian Institute of Packaging Recruitment 2026: Apply for 20 Technical & Non Technical Posts | Last Date 22-08-2026",
+    "org": "Indian Institute of Packaging",
+    "shortOrg": "Indian Institute of Packaging",
+    "posts": "20 Technical & Non Technical Posts",
+    "vacancies": 700,
+    "salary": "pay scale in Indian Institute of Packaging Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "22-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/indian-institute-of-packaging.html",
+      "notificationUrl": "https://iip-in.com/uploads/News1/Pdf/Contractual%20employment%20ad%20and%20conditions%20.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/indian-institute-of-packaging.html"
+    }
+  },
+  {
+    "id": "ndsa-young-professional-recruitment-2026-apply-for-02-posts-last-date-22-08-2026",
+    "title": "NDSA Young Professional Recruitment 2026: Apply for 02 Posts | Last Date 22-08-2026",
+    "org": "NDSA Young Professional",
+    "shortOrg": "NDSA Young Professional",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "pay scale in NDSA Young Professional Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "22-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ndsa-young-professional-recruitment.html",
+      "notificationUrl": "https://ndsa.gov.in/ndsa-backend/web/sites/default/files/2026-07/vacancy%20circular%20dated%2027.07.2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ndsa-young-professional-recruitment.html"
+    }
+  },
+  {
+    "id": "npcc-recruitment-2026-apply-online-for-26-finance-law-hr-engineer-posts-last-dat",
+    "title": "NPCC Recruitment 2026: Apply Online for 26 Finance, Law, HR & Engineer Posts | Last Date 22-08-2026",
+    "org": "NPCC",
+    "shortOrg": "NPCC",
+    "posts": "26 Finance, Law, HR & Engineer Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale (IDA)",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "22-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/npcc-recruitment.html",
+      "notificationUrl": "http://npcc.gov.in/writereaddata/others/Advt-Final.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/npcc-recruitment.html"
+    }
+  },
+  {
+    "id": "skau-kurukshetra-recruitment-2026-apply-online-for-60-nurse-pharmacist-clerk-pos",
+    "title": "SKAU Kurukshetra Recruitment 2026 - Apply Online for 60 Nurse, Pharmacist & Clerk Posts | Last Date 21-08-2026",
+    "org": "SKAU Kurukshetra",
+    "shortOrg": "SKAU Kurukshetra",
+    "posts": "60 Nurse, Pharmacist & Clerk Posts",
+    "vacancies": 700,
+    "salary": "pay scale in SKAU Kurukshetra Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/skau-kurukshetra-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1tYyauMvJoTvk0DB72ZZsgcGcipmlK2uF/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/skau-kurukshetra-recruitment.html"
+    }
+  },
+  {
+    "id": "nitttr-bhopal-faculty-recruitment-2026-apply-for-22-posts-walk-in-interview",
+    "title": "NITTTR Bhopal Faculty Recruitment 2026 - Apply for 22 Posts, Walk in Interview",
+    "org": "NITTTR Bhopal Faculty",
+    "shortOrg": "NITTTR Bhopal Faculty",
+    "posts": "22 Posts, Walk in Interview",
+    "vacancies": 22,
+    "salary": "₹65,000 – ₹80,000",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nitttr-bhopal-faculty-recruitment.html",
+      "notificationUrl": "https://nitttrbpl.ac.in/vacancy26_27/Walk_in_Interview_contFaculty_200826.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nitttr-bhopal-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "karnataka-school-education-recruitment-2026-apply-online-for-15000-teacher-posts",
+    "title": "Karnataka School Education Recruitment 2026 - Apply Online for 15000+ Teacher Posts | Last Date 07-09-2026",
+    "org": "Karnataka School Education",
+    "shortOrg": "Karnataka School Education",
+    "posts": "15000+ Teacher Posts",
+    "vacancies": 700,
+    "salary": "pay scale from the official notification/gazette.",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "karnataka",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/karnataka-school-education-recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/karnataka-school-education-recruitment.html"
+    }
+  },
+  {
+    "id": "apsc-veterinary-officer-recruitment-2026-apply-online-for-137-posts-06-09-2026",
+    "title": "APSC Veterinary Officer Recruitment 2026 - Apply Online for 137 Posts | 06-09-2026",
+    "org": "APSC Veterinary Officer",
+    "shortOrg": "APSC Veterinary Officer",
+    "posts": "137 Posts",
+    "vacancies": 137,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "06 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/apsc-veterinary-officer-recruitment.html",
+      "notificationUrl": "https://apsc.nic.in/advt_2026/Advt_no_11-2026_website.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/apsc-veterinary-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "bihar-tre-40-vacancy-2026-notification-out-apply-online-for-32388-posts-last-dat",
+    "title": "Bihar TRE 4.0 Vacancy 2026 Notification Out - Apply Online for 32388 Posts | Last Date 30-09-2026",
+    "org": "Bihar TRE 4.0 Vacancy 2026 Notification Out",
+    "shortOrg": "Bihar TRE 4.0 Vacancy 2026 Not",
+    "posts": "32388 Posts",
+    "vacancies": 32388,
+    "salary": "₹25,000 – ₹32,000",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "bihar",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://bpsconline.bihar.gov.in/",
+      "notificationUrl": "https://drive.google.com/file/d/1UXMHS1B4N4u4neezBJa0J5CELfKYPxOn/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bihar-tre-4-vacancy.html"
+    }
+  },
+  {
+    "id": "nabfins-telecaller-recruitment-2026-work-from-home-jobs-in-bihar",
+    "title": "NABFINS Telecaller Recruitment 2026 - Work From Home Jobs in Bihar",
+    "org": "NABFINS Telecaller",
+    "shortOrg": "NABFINS Telecaller",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "bihar",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nabfins-telecaller-recruitment-2026.html",
+      "notificationUrl": "https://nabfins.org/Careers/download.php?file=17871394391782292468Telle_caller_WFH.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nabfins-telecaller-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "ncr-prayagraj-apprentice-recruitment-2026-apply-online-3205-posts-last-date-31-0",
+    "title": "NCR Prayagraj Apprentice Recruitment 2026 - Apply Online 3205 Posts | Last Date 31-08-2026",
+    "org": "NCR Prayagraj Apprentice",
+    "shortOrg": "NCR Prayagraj Apprentice",
+    "posts": "Prescribed Posts",
+    "vacancies": 3205,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/ncr-prayagraj-apprentice-recruitment.html",
+      "notificationUrl": "https://rrcpryj.org/wp-content/uploads/2026/07/Notification-act-apprentice-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/ncr-prayagraj-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "north-central-railway-cultural-quota-recruitment-2026-apply-online-for-02-posts-",
+    "title": "North Central Railway Cultural Quota Recruitment 2026 - Apply Online for 02 Posts | Last Date 19-09-2026",
+    "org": "North Central Railway Cultural Quota",
+    "shortOrg": "North Central Railway Cultural",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "Level-2 (Grade Pay ₹1900/-) for Sitar and Tabla streams.",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "19-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/north-central-railway-cultural-quota.html",
+      "notificationUrl": "https://rrcpryj.org/wp-content/uploads/2026/08/Notification-for-Cultural-Quota-Ope-Market-Recruitment-2026-27-for-NCR-1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/north-central-railway-cultural-quota.html"
+    }
+  },
+  {
+    "id": "indian-army-ncc-special-entry-women-125-course-april-2027-apply-online-for-06-wo",
+    "title": "Indian Army NCC Special Entry Women 125 Course April 2027 - Apply Online for 06 Women Officer Posts | Last Date 21-08-2026",
+    "org": "Indian Army NCC Special Entry Women 125 Course April 2027",
+    "shortOrg": "Indian Army NCC Special Entry ",
+    "posts": "06 Women Officer Posts",
+    "vacancies": 6,
+    "salary": "Level-10 (₹56,100 – ₹1,77,500)",
+    "qualificationText": "{\"@type\":\"Answer\",\"text\":\"Bachelor's Degree with NCC 'C' Certificate (minimum 'B' Grade).\"}",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/Indian-Army-NCC-Special-Entry-Women.html",
+      "notificationUrl": "https://drive.google.com/file/d/11dOVSI67PwtBAFGvCmcsjIXytKS3z5oA/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/Indian-Army-NCC-Special-Entry-Women.html"
+    }
+  },
+  {
+    "id": "hppsc-police-constable-recruitment-2026-apply-online-for-734-posts-last-date-21-",
+    "title": "HPPSC Police Constable Recruitment 2026 - Apply Online for 734 Posts | Last Date 21-08-2026",
+    "org": "HPPSC Police Constable",
+    "shortOrg": "HPPSC Police Constable",
+    "posts": "734 Posts",
+    "vacancies": 734,
+    "salary": "Level-3 (₹20,200 – ₹64,000)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://hppsconline.hp.gov.in/HPPSC/ApplicantRegistration/Home/Login",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/hppsc-police-constable-recruitment.html"
+    }
+  },
+  {
+    "id": "aiims-bathinda-faculty-recruitment-2026-apply-online-for-77-posts-last-date-21-0",
+    "title": "AIIMS Bathinda Faculty Recruitment 2026 - Apply Online for 77 Posts | Last Date 21-08-2026",
+    "org": "AIIMS Bathinda Faculty",
+    "shortOrg": "AIIMS Bathinda Faculty",
+    "posts": "77 Posts",
+    "vacancies": 77,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2322756",
+      "notificationUrl": "https://aiimsbathinda.edu.in/images/Reqruitment/20260731062847.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-bathinda-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "sspl-drdo-apprentice-recruitment-2026-apply-for-41-iti-diploma-graduate-posts-la",
+    "title": "SSPL DRDO Apprentice Recruitment 2026 - Apply for 41 ITI, Diploma & Graduate Posts | Last Date 21-08-2026",
+    "org": "SSPL DRDO Apprentice",
+    "shortOrg": "SSPL DRDO Apprentice",
+    "posts": "41 ITI, Diploma & Graduate Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sspl-drdo-apprentice-recruitment.html",
+      "notificationUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtSSPL_APP30072026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sspl-drdo-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "sainik-school-kodagu-recruitment-2026-apply-offline-for-05-teaching-non-teaching",
+    "title": "Sainik School Kodagu Recruitment 2026 - Apply Offline for 05 Teaching & Non-Teaching Posts | Last Date 21-08-2026",
+    "org": "Sainik School Kodagu",
+    "shortOrg": "Sainik School Kodagu",
+    "posts": "05 Teaching & Non-Teaching Posts",
+    "vacancies": 700,
+    "salary": "pay scale, reservation criteria, age limit, and other eligibility cond",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-kodagu-recruitment-2026.html",
+      "notificationUrl": "https://drive.google.com/file/d/1HGchTnpFqmP9a55tt-SsxCM3PL1GvKUK/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-kodagu-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "assam-psc-junior-manager-recruitment-2026-apply-online-for-31-posts-last-date-21",
+    "title": "Assam PSC Junior Manager Recruitment 2026 - Apply Online for 31 Posts | Last Date 21-08-2026",
+    "org": "Assam PSC Junior Manager",
+    "shortOrg": "Assam PSC Junior Manager",
+    "posts": "31 Posts",
+    "vacancies": 31,
+    "salary": "₹25,000 – ₹92,000",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "assam",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/assam-psc-junior-manager-recruitment.html",
+      "notificationUrl": "https://apsc.nic.in/advt_2026/Advt_10_2026_APGCL.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/assam-psc-junior-manager-recruitment.html"
+    }
+  },
+  {
+    "id": "igdtuw-faculty-recruitment-2026-apply-online-for-36-posts-last-date-21-08-2026",
+    "title": "IGDTUW Faculty Recruitment 2026 - Apply Online for 36 Posts | Last Date 21-08-2026",
+    "org": "IGDTUW Faculty",
+    "shortOrg": "IGDTUW Faculty",
+    "posts": "36 Posts",
+    "vacancies": 36,
+    "salary": "Level-10 / Level-13A1 / Level-14 (as per 7th CPC)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-20",
+      "lastDate": "21-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/igdtuw-faculty-recruitment.html",
+      "notificationUrl": "https://www.igdtuw.ac.in/IGDTUW/uploads/953014443.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/igdtuw-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "state-wise-govt-jobs-2026-73473-sarkari-naukri-vacancies",
+    "title": "State wise Govt Jobs 2026 (73473 Sarkari Naukri Vacancies)",
+    "org": "State wise Govt Jobs 2026  (73473 Sarkari Naukri Vacancies)",
+    "shortOrg": "State wise Govt Jobs 2026  (73",
+    "posts": "Prescribed Posts",
+    "vacancies": 174,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "-",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/03/state-wise-govt-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/03/state-wise-govt-jobs.html"
+    }
+  },
+  {
+    "id": "psssb-craft-instructor-recruitment-2026-apply-online-for-681-posts-last-date-25-",
+    "title": "PSSSB Craft Instructor Recruitment 2026 - Apply Online for 681 Posts | Last Date 25-08-2026",
+    "org": "PSSSB Craft Instructor",
+    "shortOrg": "PSSSB Craft Instructor",
+    "posts": "681 Posts",
+    "vacancies": 681,
+    "salary": "pay scale in PSSSB Craft Instructor Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "25-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/psssb-craft-instructor-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1jVrQk4soLsvyJtxP9pZGBkDy_qPWWTgO/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/psssb-craft-instructor-recruitment.html"
+    }
+  },
+  {
+    "id": "aiims-gorakhpur-junior-resident-recruitment-2026-walk-in-interview-for-24-posts",
+    "title": "AIIMS Gorakhpur Junior Resident Recruitment 2026 - Walk in Interview for 24 Posts",
+    "org": "AIIMS Gorakhpur Junior Resident",
+    "shortOrg": "AIIMS Gorakhpur Junior Residen",
+    "posts": "24 Posts",
+    "vacancies": 24,
+    "salary": "pay scale, documents required and interview schedule.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiims-gorakhpur-junior-resident.html",
+      "notificationUrl": "https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/08/JR-Advertisement-1-1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-gorakhpur-junior-resident.html"
+    }
+  },
+  {
+    "id": "aiims-gorakhpur-research-scientist-recruitment-2026-apply-for-02-posts-last-date",
+    "title": "AIIMS Gorakhpur Research Scientist Recruitment 2026 - Apply for 02 Posts | Last Date 30-08-2026",
+    "org": "AIIMS Gorakhpur Research Scientist",
+    "shortOrg": "AIIMS Gorakhpur Research Scien",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "30-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiim-gorakhpur-research-scientist.html",
+      "notificationUrl": "https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/08/AI_PCOS_recruitment_aiims_gorakhpur-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiim-gorakhpur-research-scientist.html"
+    }
+  },
+  {
+    "id": "bcgcl-recruitment-2026-apply-online-for-executive-posts-last-date-08-09-2026",
+    "title": "BCGCL Recruitment 2026 - Apply Online for Executive Posts | Last Date 08-09-2026",
+    "org": "BCGCL",
+    "shortOrg": "BCGCL",
+    "posts": "Executive Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bcgcl-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1Mve67Egml_S7SXS1BY_UHhxju_YEbbPw/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bcgcl-recruitment.html"
+    }
+  },
+  {
+    "id": "eastern-railway-scouts-and-guides-quota-2026-15-posts-notification-online-form-l",
+    "title": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts, Notification, Online Form | Last Date 06-09-2026",
+    "org": "Eastern Railway Scouts and Guides Quota 2026: 15 Posts, Notification, Online Form | Last Date 06",
+    "shortOrg": "Eastern Railway Scouts and Gui",
+    "posts": "Prescribed Posts",
+    "vacancies": 15,
+    "salary": "Level-2 (Group ‘C’) and 10 in Level-1 (Erstwhile Group ‘D’). Only cand",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "06-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://rrceronline.co.in/SnG26v02LvalmDM/",
+      "notificationUrl": "https://rrcer.org/Final%20notification%20S&amp;G%202026-27%20along%20with%20relevant%20annexures%20pdf.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/eastern-railway-scouts-and-guides-quota.html"
+    }
+  },
+  {
+    "id": "itbp-medical-officer-recruitment-2026-apply-online-for-282-posts-last-date-08-09",
+    "title": "ITBP Medical Officer Recruitment 2026 - Apply Online for 282 Posts | Last Date 08-09-2026",
+    "org": "ITBP Medical Officer",
+    "shortOrg": "ITBP Medical Officer",
+    "posts": "282 Posts",
+    "vacancies": 282,
+    "salary": "pay scale in ITBP Medical Officer Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/itbp-medical-officer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1v8aBl1QOZTztqVsAlUU_XOt5CTO4yNfO/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/itbp-medical-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "aiims-nagpur-non-faculty-recruitment-2026-apply-online-for-09-posts-last-date-07",
+    "title": "AIIMS Nagpur Non Faculty Recruitment 2026 - Apply Online for 09 Posts | Last Date 07-09-2026",
+    "org": "AIIMS Nagpur Non Faculty",
+    "shortOrg": "AIIMS Nagpur Non Faculty",
+    "posts": "09 Posts",
+    "vacancies": 9,
+    "salary": "pay scale in AIIMS Nagpur Non Faculty Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-19",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiims-nagpur-non-faculty-recruitment.html",
+      "notificationUrl": "https://aiimsnagpur.edu.in/upload/recruitment/AIIMS_Nagpur_Group_A_Posts_Advertisement.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-nagpur-non-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "ntpc-eet-recruitment-through-gate-2027-short-notification-out",
+    "title": "NTPC EET Recruitment through GATE 2027 - Short Notification Out",
+    "org": "NTPC EET",
+    "shortOrg": "NTPC EET",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ntpc-eet-recruitment-through-gate-2027.html",
+      "notificationUrl": "https://drive.google.com/file/d/1GW1Yscmb1uAzHzia0UlJzTVmvfK29ckI/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ntpc-eet-recruitment-through-gate-2027.html"
+    }
+  },
+  {
+    "id": "aiims-bilaspur-senior-resident-recruitment-2026-walk-in-interview-for-69-posts",
+    "title": "AIIMS Bilaspur Senior Resident Recruitment 2026 - Walk in Interview for 69 Posts",
+    "org": "AIIMS Bilaspur Senior Resident",
+    "shortOrg": "AIIMS Bilaspur Senior Resident",
+    "posts": "69 Posts",
+    "vacancies": 69,
+    "salary": "pay scale, application fee, documents and interview venue.",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/aiims-bilaspur-senior-resident.html",
+      "notificationUrl": "https://www.aiimsbilaspur.edu.in/sites/default/files/2026-08/Advertisement%20SR%20Aug%202026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/aiims-bilaspur-senior-resident.html"
+    }
+  },
+  {
+    "id": "indian-army-ncc-special-entry-men-125th-course-2027-apply-online-for-70-posts-la",
+    "title": "Indian Army NCC Special Entry Men 125th Course 2027 - Apply Online for 70 Posts | Last Date 20-08-2026",
+    "org": "Indian Army NCC Special Entry Men 125th Course 2027",
+    "shortOrg": "Indian Army NCC Special Entry ",
+    "posts": "70 Posts",
+    "vacancies": 70,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "20-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/Indian-Army-NCC-Special-Entry-Men.html",
+      "notificationUrl": "https://drive.google.com/file/d/1yGcl2gFn6A6oVMkrv9hZvzPG74jClicf/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/Indian-Army-NCC-Special-Entry-Men.html"
+    }
+  },
+  {
+    "id": "aadhaar-supervisor-recruitment-2026-apply-online-for-316-posts-last-date-20-08-2",
+    "title": "Aadhaar Supervisor Recruitment 2026 - Apply Online for 316 Posts | Last Date 20-08-2026",
+    "org": "Aadhaar Supervisor",
+    "shortOrg": "Aadhaar Supervisor",
+    "posts": "316 Posts",
+    "vacancies": 316,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "n",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "20-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/02/Aadhaar-Supervisor-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/02/Aadhaar-Supervisor-Recruitment.html"
+    }
+  },
+  {
+    "id": "ordnance-factory-dehu-road-dbw-recruitment-2026-apply-offline-for-14-posts-last-",
+    "title": "Ordnance Factory Dehu Road DBW Recruitment 2026 - Apply Offline for 14 Posts | Last Date 20-08-2026",
+    "org": "Ordnance Factory Dehu Road DBW",
+    "shortOrg": "Ordnance Factory Dehu Road DBW",
+    "posts": "14 Posts",
+    "vacancies": 14,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "20-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ordnance-factory-dehu-road-dbw.html",
+      "notificationUrl": "https://munitionsindia.in/wp-content/uploads/English-Full-Advertisement-AOCP_OFDR.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ordnance-factory-dehu-road-dbw.html"
+    }
+  },
+  {
+    "id": "isro-assistant-jpa-udc-steno-recruitment-2026-apply-online-for-242-posts-last-da",
+    "title": "ISRO Assistant JPA UDC Steno Recruitment 2026 - Apply Online for 242 Posts | Last Date 20-08-2026",
+    "org": "ISRO Assistant JPA UDC Steno",
+    "shortOrg": "ISRO Assistant JPA UDC Steno",
+    "posts": "242 Posts",
+    "vacancies": 242,
+    "salary": "pay scale, and important dates.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "20-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/isro-assistant-jpa-udc-steno.html",
+      "notificationUrl": "https://www.isro.gov.in/media_isro/pdf/recruitmentNotice/2026/July/Bilingual%20Advertisement_Asst_JPA_UDC_Steno_ICRB_2026_27072026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/isro-assistant-jpa-udc-steno.html"
+    }
+  },
+  {
+    "id": "upessc-principal-recruitment-2026-apply-online-for-111-posts-last-date-20-08-202",
+    "title": "UPESSC Principal Recruitment 2026 - Apply Online for 111 Posts | Last Date 20-08-2026",
+    "org": "UPESSC Principal",
+    "shortOrg": "UPESSC Principal",
+    "posts": "111 Posts",
+    "vacancies": 111,
+    "salary": "pay scale, selection process, important dates and application procedur",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "20-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/upessc-principal-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1e9AQvYd3PjjOAFPLKiTjNVTQD6jAIxhc/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/upessc-principal-recruitment.html"
+    }
+  },
+  {
+    "id": "srcc-assistant-professor-recruitment-2026-apply-online-for-16-faculty-posts-last",
+    "title": "SRCC Assistant Professor Recruitment 2026 - Apply Online for 16 Faculty Posts | Last Date 29-08-2026",
+    "org": "SRCC Assistant Professor",
+    "shortOrg": "SRCC Assistant Professor",
+    "posts": "16 Faculty Posts",
+    "vacancies": 700,
+    "salary": "pay scale in SRCC Assistant Professor Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "29-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/srcc-assistant-professor-recruitment.html",
+      "notificationUrl": "https://www.srcc.edu/sites/default/files/Teaching_signed_posts_web.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/srcc-assistant-professor-recruitment.html"
+    }
+  },
+  {
+    "id": "bhel-fta-supervisor-vacancy-2026-apply-online-for-10-posts-last-date-07-09-2026",
+    "title": "BHEL FTA Supervisor Vacancy 2026 Apply Online for 10 Posts | Last Date 07-09-2026",
+    "org": "BHEL FTA Supervisor Vacancy 2026 Apply Online for 10 Posts | Last Date 07",
+    "shortOrg": "BHEL FTA Supervisor Vacancy 20",
+    "posts": "10 Posts",
+    "vacancies": 10,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bhel-fta-supervisor-vacancy.html",
+      "notificationUrl": "https://bplcareers.bhel.com/fta_tbg/TBG_DOCS/tbg_english_ad.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bhel-fta-supervisor-vacancy.html"
+    }
+  },
+  {
+    "id": "bpcl-diploma-recruitment-2026-apply-online-for-154-technician-operator-posts-las",
+    "title": "BPCL Diploma Recruitment 2026 - Apply Online for 154 Technician & Operator Posts | Last Date 19-08-2026",
+    "org": "BPCL Diploma",
+    "shortOrg": "BPCL Diploma",
+    "posts": "154 Technician & Operator Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale: ₹26,500 – ₹34,000. Online applications from 29 July 2026 to",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "19-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bpcl-diploma-recruitment.html",
+      "notificationUrl": "https://www.bharatpetroleum.in/images/files/bpcl-kr-and-mr-non-mgmt-rect-notification-july-26.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bpcl-diploma-recruitment.html"
+    }
+  },
+  {
+    "id": "nit-warangal-non-teaching-recruitment-2026-apply-online-for-05-officer-posts-las",
+    "title": "NIT Warangal Non Teaching Recruitment 2026: Apply Online for 05 Officer Posts | Last Date 19-08-2026",
+    "org": "NIT Warangal Non Teaching",
+    "shortOrg": "NIT Warangal Non Teaching",
+    "posts": "05 Officer Posts",
+    "vacancies": 700,
+    "salary": "pay scale in NIT Warangal Non Teaching Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "19-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nit-warangal-non-teaching-recruitment.html",
+      "notificationUrl": "https://nitw.ac.in/api/static/files/03_2026_2026-7-20-17-46-42.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nit-warangal-non-teaching-recruitment.html"
+    }
+  },
+  {
+    "id": "igcar-trade-apprentice-recruitment-2026-apply-online-for-200-posts-last-date-19-",
+    "title": "IGCAR Trade Apprentice Recruitment 2026 - Apply Online for 200 Posts | Last Date 19-08-2026",
+    "org": "IGCAR Trade Apprentice",
+    "shortOrg": "IGCAR Trade Apprentice",
+    "posts": "200 Posts",
+    "vacancies": 200,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "19-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/igcar-trade-apprentice-recruitment.html",
+      "notificationUrl": "https://www.igcar.gov.in/recruit/IGCAR_03_2026_Engagement_of_Trade_Apprentice_bilingual.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/igcar-trade-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "tnpfc-it-personnel-recruitment-2026-notification-application-form-last-date-19-0",
+    "title": "TNPFC IT Personnel Recruitment 2026: Notification, Application Form | Last Date 19-08-2026",
+    "org": "TNPFC IT Personnel",
+    "shortOrg": "TNPFC IT Personnel",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "r",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "19-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/tnpfc-it-personnel-recruitment.html",
+      "notificationUrl": "https://tnpfc-public-dms-assets.s3.ap-south-1.amazonaws.com/static/IT_NOTIFICATION.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/tnpfc-it-personnel-recruitment.html"
+    }
+  },
+  {
+    "id": "northeast-frontier-railway-apprentice-recruitment-2026-apply-online-for-6777-pos",
+    "title": "Northeast Frontier Railway Apprentice Recruitment 2026 - Apply Online for 6777 Posts | Last Date 19-08-2026",
+    "org": "Northeast Frontier Railway Apprentice",
+    "shortOrg": "Northeast Frontier Railway App",
+    "posts": "6777 Posts",
+    "vacancies": 6777,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-18",
+      "lastDate": "19-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/northeast-frontier-railway-apprentice.html",
+      "notificationUrl": "https://drive.google.com/file/d/1Y0PcwSWRm2kqVg3V3KfJKnS8RFDapgiN/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/northeast-frontier-railway-apprentice.html"
+    }
+  },
+  {
+    "id": "barc-scientific-assistant-recruitment-2026-apply-online-for-06-posts-notificatio",
+    "title": "BARC Scientific Assistant Recruitment 2026 - Apply Online for 06 Posts, Notification | Last Date 18-08-2026",
+    "org": "BARC Scientific Assistant",
+    "shortOrg": "BARC Scientific Assistant",
+    "posts": "06 Posts, Notification",
+    "vacancies": 6,
+    "salary": "Level-7",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "18-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/barc-scientific-assistant-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/19sVwgvyLhybeSqE64O0nMOQcoj2mmJHL/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/barc-scientific-assistant-recruitment.html"
+    }
+  },
+  {
+    "id": "bhel-ranipet-apprentice-vacancy-2026-walk-in-interview-for-305-posts",
+    "title": "BHEL Ranipet Apprentice Vacancy 2026 - Walk in Interview for 305 Posts",
+    "org": "BHEL Ranipet Apprentice Vacancy 2026",
+    "shortOrg": "BHEL Ranipet Apprentice Vacanc",
+    "posts": "305 Posts",
+    "vacancies": 305,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bhel-ranipet-apprentice-vacancy.html",
+      "notificationUrl": "https://bap.bhel.com/circulars/Walk%20in%20Interview%20Trade%20Apprentices%2018%20to%2021%20August%202026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bhel-ranipet-apprentice-vacancy.html"
+    }
+  },
+  {
+    "id": "bhel-trichy-trade-apprentice-recruitment-2026-apply-online-for-380-posts-last-da",
+    "title": "BHEL Trichy Trade Apprentice Recruitment 2026 - Apply Online for 380 Posts | Last Date 12th September 2026",
+    "org": "BHEL Trichy Trade Apprentice",
+    "shortOrg": "BHEL Trichy Trade Apprentice",
+    "posts": "380 Posts",
+    "vacancies": 380,
+    "salary": "₹10,560 – ₹11,040",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "12 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bhel-trichy-trade-apprentice.html",
+      "notificationUrl": "https://trichy.bhel.com/tms/app_pro/Trade_Apprentices_2026-2027.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bhel-trichy-trade-apprentice.html"
+    }
+  },
+  {
+    "id": "rajasthan-safai-karamchari-recruitment-2026-apply-online-for-24752-posts-last-da",
+    "title": "Rajasthan Safai Karamchari Recruitment 2026 - Apply Online for 24752 Posts | Last Date 28-09-2026",
+    "org": "Rajasthan Safai Karamchari",
+    "shortOrg": "Rajasthan Safai Karamchari",
+    "posts": "24752 Posts",
+    "vacancies": 24752,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "rajasthan",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "28-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/rajasthan-safai-karamchari-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/11Sinqzajvv1xRew_TGhqPwoI0oF8eoyL/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rajasthan-safai-karamchari-recruitment.html"
+    }
+  },
+  {
+    "id": "mecon-executive-recruitment-2026-apply-online-for-07-manager-posts-last-date-13-",
+    "title": "MECON Executive Recruitment 2026 - Apply Online for 07 Manager Posts | Last Date 13-09-2026",
+    "org": "MECON Executive",
+    "shortOrg": "MECON Executive",
+    "posts": "07 Manager Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale &amp; Age Limit 2026:",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "13-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/mecon-executive-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1oOgYcBvd5o7BOvgBlmFJ3YjZ5I5Ai59M/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mecon-executive-recruitment.html"
+    }
+  },
+  {
+    "id": "mpesb-patwari-recruitment-2026-apply-online-for-200-posts-last-date-18-08-2026",
+    "title": "MPESB Patwari Recruitment 2026: Apply Online for 200 Posts | Last Date 18-08-2026",
+    "org": "MPESB Patwari",
+    "shortOrg": "MPESB Patwari",
+    "posts": "200 Posts",
+    "vacancies": 200,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "18-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://esb.mponline.gov.in/Portal/Examinations/Vyapam/examsList.aspx",
+      "notificationUrl": "https://drive.google.com/file/d/1paZ33eSZ2S4ZykzOR6KTBfkC2ciPgDB0/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mpesb-patwari-recruitment.html"
+    }
+  },
+  {
+    "id": "nabfins-customer-service-officer-recruitment-2026-notification-online-form-last-",
+    "title": "NABFINS Customer Service Officer Recruitment 2026 - Notification, Online Form | Last Date 18-08-2026",
+    "org": "NABFINS Customer Service Officer",
+    "shortOrg": "NABFINS Customer Service Offic",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "18-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nabfins-customer-service-officer.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nabfins-customer-service-officer.html"
+    }
+  },
+  {
+    "id": "ruhs-medical-officer-recruitment-2026-apply-online-for-600-posts-last-date-13-10",
+    "title": "RUHS Medical Officer Recruitment 2026 - Apply Online for 600 Posts | Last Date 13-10-2026",
+    "org": "RUHS Medical Officer",
+    "shortOrg": "RUHS Medical Officer",
+    "posts": "600 Posts",
+    "vacancies": 600,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "13-10-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ruhs-medical-officer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1xBaHPAJKdZqa64wVY1K8m8vSgXcMq6-H/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ruhs-medical-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "upsssc-veterinary-pharmacist-recruitment-2026-apply-online-for-1308-posts-last-d",
+    "title": "UPSSSC Veterinary Pharmacist Recruitment 2026 - Apply Online for 1308 Posts | Last Date 05-10-2026",
+    "org": "UPSSSC Veterinary Pharmacist",
+    "shortOrg": "UPSSSC Veterinary Pharmacist",
+    "posts": "1308 Posts",
+    "vacancies": 1308,
+    "salary": "pay scale in UPSSSC Veterinary Pharmacist Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "05-10-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/upsssc-veterinary-pharmacist.html",
+      "notificationUrl": "https://drive.google.com/file/d/1agxzdlTp8cgnKr1dNJbcpB2iM8FCzexd/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/upsssc-veterinary-pharmacist.html"
+    }
+  },
+  {
+    "id": "dpcc-various-posts-recruitment-2026-apply-for-54-engineer-scientist-assistant-po",
+    "title": "DPCC Various Posts Recruitment 2026 - Apply for 54 Engineer, Scientist & Assistant Posts",
+    "org": "DPCC Various Posts",
+    "shortOrg": "DPCC Various Posts",
+    "posts": "54 Engineer, Scientist & Assistant Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-17",
+      "lastDate": "31 July 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/dpcc-various-posts-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1pKrxexmVVj7QeSTjgkpCzjkefO9ck7vB/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/dpcc-various-posts-recruitment.html"
+    }
+  },
+  {
+    "id": "upsssc-junior-engineer-agriculture-recruitment-2026-apply-online-for-134-posts-l",
+    "title": "UPSSSC Junior Engineer Agriculture Recruitment 2026 -Apply Online for 134 Posts | Last Date 07-10-2026",
+    "org": "UPSSSC Junior Engineer Agriculture",
+    "shortOrg": "UPSSSC Junior Engineer Agricul",
+    "posts": "134 Posts",
+    "vacancies": 134,
+    "salary": "pay scale in UPSSSC Junior Engineer Agriculture Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "07-10-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/upsssc-junior-engineer-agriculture.html",
+      "notificationUrl": "https://drive.google.com/file/d/1o83ci7Hwpqg98izwFeADa8uB4RAwlhoi/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/upsssc-junior-engineer-agriculture.html"
+    }
+  },
+  {
+    "id": "mp-high-court-assistant-recruitment-2026-apply-online-for-1174-posts-last-date-1",
+    "title": "MP High Court Assistant Recruitment 2026 - Apply Online for 1174 Posts | Last Date 15-09-2026",
+    "org": "MP High Court Assistant",
+    "shortOrg": "MP High Court Assistant",
+    "posts": "1174 Posts",
+    "vacancies": 1174,
+    "salary": "pay scale in MP High Court Assistant Grade-III Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "15-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://portal.mphc.gov.in/recruitment-result",
+      "notificationUrl": "https://drive.google.com/file/d/1vP0R_pUjSld_fBAU1NiPpadkfG1ivCQj/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mp-high-court-assistant-recruitment.html"
+    }
+  },
+  {
+    "id": "rssb-junior-engineer-recruitment-2026-apply-online-for-874-posts-last-date-14-09",
+    "title": "RSSB Junior Engineer Recruitment 2026 - Apply Online for 874 Posts | Last date 14-09-2026",
+    "org": "RSSB Junior Engineer",
+    "shortOrg": "RSSB Junior Engineer",
+    "posts": "874 Posts",
+    "vacancies": 874,
+    "salary": "pay scale in RSSB Junior Engineer Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "14-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/rssb-junior-engineer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1g3lMwvanQIgicwm3yvI0QKhCB_285KiK/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/rssb-junior-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "upsssc-scientific-assistant-lab-assistant-recruitment-2026-apply-online-for-208-",
+    "title": "UPSSSC Scientific Assistant & Lab Assistant Recruitment 2026: Apply Online for 208 Posts | Last Date 17-08-2026",
+    "org": "UPSSSC Scientific Assistant & Lab Assistant",
+    "shortOrg": "UPSSSC Scientific Assistant & ",
+    "posts": "208 Posts",
+    "vacancies": 208,
+    "salary": "pay scale in UPSSSC Scientific Assistant &amp; Lab Assistant Recruitme",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/upsssc-scientific-assistant.html",
+      "notificationUrl": "https://drive.google.com/file/d/1G3ZE0SabmrSEeQG-xlqauSxZX2LkSICs/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/upsssc-scientific-assistant.html"
+    }
+  },
+  {
+    "id": "oil-india-limited-chemist-recruitment-2026-walk-in-interview-on-17-08-2026",
+    "title": "Oil India Limited Chemist Recruitment 2026: Walk in Interview on 17-08-2026",
+    "org": "Oil India Limited Chemist",
+    "shortOrg": "Oil India Limited Chemist",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/oil-india-limited-chemist-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1QojPD8s3C6c19q03-qZf_XIFmYLWHPlE/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/oil-india-limited-chemist-recruitment.html"
+    }
+  },
+  {
+    "id": "gsssb-horticulture-assistant-recruitment-2026-apply-online-for-100-posts-last-da",
+    "title": "GSSSB Horticulture Assistant Recruitment 2026 - Apply Online for 100 Posts | Last Date 17-08-2026",
+    "org": "GSSSB Horticulture Assistant",
+    "shortOrg": "GSSSB Horticulture Assistant",
+    "posts": "100 Posts",
+    "vacancies": 100,
+    "salary": "Level-4 (7th CPC)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/gsssb-horticulture-assistant.html",
+      "notificationUrl": "https://drive.google.com/file/d/1adKnx_Dl1FLNb1xWVj7KCSR-vg8V-OyD/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/gsssb-horticulture-assistant.html"
+    }
+  },
+  {
+    "id": "indian-army-jag-entry-2026-apply-online-for-10-law-graduate-posts-last-date-17-0",
+    "title": "Indian Army JAG Entry 2026: Apply Online for 10 Law Graduate Posts | Last Date 17-08-2026",
+    "org": "Indian Army JAG Entry 2026: Apply Online for 10 Law Graduate Posts | Last Date 17",
+    "shortOrg": "Indian Army JAG Entry 2026: Ap",
+    "posts": "10 Law Graduate Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale (₹)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://joinindianarmy.nic.in/writereaddata/Portal/NotificationPDF/Notification_for_JAG_Entry_Scheme_125th_Course_Apr_2027.pdf",
+      "notificationUrl": "https://joinindianarmy.nic.in/writereaddata/Portal/NotificationPDF/Notification_for_JAG_Entry_Scheme_125th_Course_Apr_2027.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/Indian-Army-JAG-Entry.html"
+    }
+  },
+  {
+    "id": "bric-niab-jrf-recruitment-2026-apply-online-notification-last-date-17-08-2026",
+    "title": "BRIC NIAB JRF Recruitment 2026: Apply Online, Notification | Last Date 17-08-2026",
+    "org": "BRIC NIAB JRF",
+    "shortOrg": "BRIC NIAB JRF",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in BRIC NIAB JRF Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.niab.org.in/Account/Login.aspx?ReturnUrl=%2f19_2026%2fAdvt_19_2026Apply.aspx",
+      "notificationUrl": "https://www.niab.org.in/Notifications/Advt_19_2026/Notification_19_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bric-niab-jrf-recruitment.html"
+    }
+  },
+  {
+    "id": "spmcil-young-professional-recruitment-2026-apply-online-for-06-posts-last-date-1",
+    "title": "SPMCIL Young Professional Recruitment 2026 - Apply Online for 06 Posts | Last Date 17-08-2026",
+    "org": "SPMCIL Young Professional",
+    "shortOrg": "SPMCIL Young Professional",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/spmcil-young-professional-recruitment.html",
+      "notificationUrl": "https://www.spmcil.com/wp-content/uploads/2026/07/Advt.-No.-04-2026-Engagement-of-Young-Professionals.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/spmcil-young-professional-recruitment.html"
+    }
+  },
+  {
+    "id": "rites-assistant-manager-mechanical-recruitment-2026-apply-online-for-24-posts-la",
+    "title": "RITES Assistant Manager Mechanical Recruitment 2026 - Apply Online for 24 Posts | Last Date 17-08-2026",
+    "org": "RITES Assistant Manager Mechanical",
+    "shortOrg": "RITES Assistant Manager Mechan",
+    "posts": "24 Posts",
+    "vacancies": 24,
+    "salary": "pay scale for RITES Assistant Manager (Mechanical) posts?",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://recruit.rites.com/frmRegistration.aspx",
+      "notificationUrl": "https://rites.com/Upload/Career/RG-11-26-AM-Mech_adv_pdf-2026-Jul-17-14-25-24.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rites-assistant-manager-mechanical.html"
+    }
+  },
+  {
+    "id": "mgahv-faculty-recruitment-2026-apply-online-for-11-posts-last-date-17-08-2026",
+    "title": "MGAHV Faculty Recruitment 2026 - Apply Online for 11 Posts | Last Date 17-08-2026",
+    "org": "MGAHV Faculty",
+    "shortOrg": "MGAHV Faculty",
+    "posts": "11 Posts",
+    "vacancies": 11,
+    "salary": "Level-13A",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-16",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/mgahv-faculty-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1ZO3Q_CjYr0UPrDqEs4mLNN_E6IZi8gSh/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/mgahv-faculty-recruitment.html"
+    }
+  },
+  {
+    "id": "ncrtc-assistant-manager-civil-recruitment-2026-apply-online-notification-last-da",
+    "title": "NCRTC Assistant Manager Civil Recruitment 2026 - Apply Online, Notification | Last Date 12-09-2026",
+    "org": "NCRTC Assistant Manager Civil",
+    "shortOrg": "NCRTC Assistant Manager Civil",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale – E2)",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "12-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ncrtc-assistant-manager-civil.html",
+      "notificationUrl": "https://www.ncrtc.co.in/hr-module/HR/uploads/2026_08_12_04_08_50302026AMCivilCONTRACT.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ncrtc-assistant-manager-civil.html"
+    }
+  },
+  {
+    "id": "sports-quota-recruitment-2026-1000-govt-vacancies-opening",
+    "title": "Sports Quota Recruitment 2026 (1000+ Govt Vacancies Opening)",
+    "org": "Sports Quota",
+    "shortOrg": "Sports Quota",
+    "posts": "Prescribed Posts",
+    "vacancies": 126,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/07/Sports-Quota-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/07/Sports-Quota-Recruitment.html"
+    }
+  },
+  {
+    "id": "bpssc-range-officer-recruitment-2026-apply-online-for-16-posts-last-date-16-08-2",
+    "title": "BPSSC Range Officer Recruitment 2026 - Apply Online for 16 Posts | Last Date 16-08-2026",
+    "org": "BPSSC Range Officer",
+    "shortOrg": "BPSSC Range Officer",
+    "posts": "16 Posts",
+    "vacancies": 16,
+    "salary": "Level-6 (₹35,400 – ₹1,12,400)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "16-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://apply-bpssc.com/bpssc_ro_v10_2026/applicationIndex",
+      "notificationUrl": "https://drive.google.com/file/d/1gG84_Bfy7sDgJJMJ4m182nVtHtrsH7wA/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/bpssc-range-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "nalco-medical-officer-recruitment-2026-apply-online-for-06-posts-last-date-16-08",
+    "title": "NALCO Medical Officer Recruitment 2026: Apply Online for 06 Posts | Last Date 16-08-2026",
+    "org": "NALCO Medical Officer",
+    "shortOrg": "NALCO Medical Officer",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "Pay Scale) + NPA &amp; Benefits",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "16-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/nalco-medical-officer-recruitment.html",
+      "notificationUrl": "https://mudira.nalcoindia.co.in/iorms/Uploaded_Data/Advertisement/639202303340126639_V1%20Detailed%20Advertisement.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/nalco-medical-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "drdl-hyderabad-paid-internship-recruitment-2026-apply-for-168-posts-last-date-16",
+    "title": "DRDL Hyderabad Paid Internship Recruitment 2026: Apply for 168 Posts | Last Date 16-08-2026",
+    "org": "DRDL Hyderabad Paid Internship",
+    "shortOrg": "DRDL Hyderabad Paid Internship",
+    "posts": "168 Posts",
+    "vacancies": 168,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "16-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/drdl-hyderabad-paid-internship.html",
+      "notificationUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtDRDL0708026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/drdl-hyderabad-paid-internship.html"
+    }
+  },
+  {
+    "id": "sccl-apprentice-recruitment-2026-apply-online-for-300-posts-last-date-16-08-2026",
+    "title": "SCCL Apprentice Recruitment 2026 - Apply Online for 300 Posts | Last Date 16-08-2026",
+    "org": "SCCL Apprentice",
+    "shortOrg": "SCCL Apprentice",
+    "posts": "300 Posts",
+    "vacancies": 300,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "16-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sccl-apprentice-recruitment.html",
+      "notificationUrl": "https://scclmines.com/apprenticeship/docs/202601_Circular_Annexure.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sccl-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "itat-private-secretary-recruitment-2026-apply-online-for-42-posts-notification-l",
+    "title": "ITAT Private Secretary Recruitment 2026 - Apply Online for 42 Posts, Notification | Last Date 16-08-2026",
+    "org": "ITAT Private Secretary",
+    "shortOrg": "ITAT Private Secretary",
+    "posts": "42 Posts, Notification",
+    "vacancies": 42,
+    "salary": "Level-8",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "16-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/itat-private-secretary-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1eW7KMWDT8qa_4XqVrW3kw8KxyTcOXllK/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/itat-private-secretary-recruitment.html"
+    }
+  },
+  {
+    "id": "isro-scientist-engineer-recruitment-2026-apply-online-for-93-posts-last-date-17-",
+    "title": "ISRO Scientist Engineer Recruitment 2026 - Apply Online for 93 Posts | Last Date 17-08-2026",
+    "org": "ISRO Scientist Engineer",
+    "shortOrg": "ISRO Scientist Engineer",
+    "posts": "93 Posts",
+    "vacancies": 93,
+    "salary": "Level-10 (₹56,100/-)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "17-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/isro-scientist-engineer-recruitment.html",
+      "notificationUrl": "https://www.isro.gov.in/media_isro/pdf/recruitmentNotice/2026/July/GATE_Bilingual_Advertisement_2026_28072026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/isro-scientist-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "bsip-scientist-b-recruitment-2026-notification-for-19-posts-apply-online-up-to-0",
+    "title": "BSIP Scientist B Recruitment 2026: Notification for 19 Posts | Apply Online up to 04-09-2026",
+    "org": "BSIP Scientist B",
+    "shortOrg": "BSIP Scientist B",
+    "posts": "19 Posts",
+    "vacancies": 19,
+    "salary": "Level-10",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-15",
+      "lastDate": "04 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bsip-scientist-b-recruitment.html",
+      "notificationUrl": "https://bsip.res.in/storage/careers/z87nghuv602wWJxsQP11gf8IRDI6AhrnkfMEP2fF.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bsip-scientist-b-recruitment.html"
+    }
+  },
+  {
+    "id": "drdo-dihar-jrf-ra-recruitment-2026-apply-for-18-posts-walk-in-interview-on-01-09",
+    "title": "DRDO DIHAR JRF & RA Recruitment 2026: Apply for 18 Posts | Walk in Interview on 01-09-2026",
+    "org": "DRDO DIHAR JRF & RA",
+    "shortOrg": "DRDO DIHAR JRF & RA",
+    "posts": "18 Posts",
+    "vacancies": 18,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-14",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/drdo-dihar-jrf-ra-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1o2HlB0Iq-9NMi1MqUOPcq8Pk3lofRmzc/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/drdo-dihar-jrf-ra-recruitment.html"
+    }
+  },
+  {
+    "id": "integral-coach-factory-icf-apprentice-recruitment-2026-apply-online-for-1010-pos",
+    "title": "Integral Coach Factory (ICF) Apprentice Recruitment 2026 - Apply Online for 1010 Posts | Last Date 07-09-2026",
+    "org": "Integral Coach Factory (ICF) Apprentice",
+    "shortOrg": "Integral Coach Factory (ICF) A",
+    "posts": "1010 Posts",
+    "vacancies": 1010,
+    "salary": "₹8,200 – ₹9,600",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-14",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/integral-coach-factory-icf-apprentice.html",
+      "notificationUrl": "https://drive.google.com/file/d/1gfcq_6g1bmFVLva-3sbKL_PBxqVDxI2K/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/integral-coach-factory-icf-apprentice.html"
+    }
+  },
+  {
+    "id": "tnpsc-ctse-diploma-iti-recruitment-2026-apply-online-for-839-posts-last-date-15-",
+    "title": "TNPSC CTSE Diploma ITI Recruitment 2026: Apply Online for 839 Posts | Last Date 15-08-2026",
+    "org": "TNPSC CTSE Diploma ITI",
+    "shortOrg": "TNPSC CTSE Diploma ITI",
+    "posts": "839 Posts",
+    "vacancies": 839,
+    "salary": "Level-11",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "diploma",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-14",
+      "lastDate": "15-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://apply.tnpscexams.in/secure?app_id=UElZMDAwMDAwMQ==",
+      "notificationUrl": "https://tnpsc.gov.in/document/english/CTS%20-%20Diploma-(English).pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/tnpsc-ctse-diploma-iti-recruitment.html"
+    }
+  },
+  {
+    "id": "visakhapatnam-dccb-bank-recruitment-2026-apply-online-for-47-staff-assistant-pos",
+    "title": "Visakhapatnam DCCB Bank Recruitment 2026: Apply Online for 47 Staff Assistant Posts | Last Date 15-08-2026",
+    "org": "Visakhapatnam DCCB Bank",
+    "shortOrg": "Visakhapatnam DCCB Bank",
+    "posts": "47 Staff Assistant Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale:",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-14",
+      "lastDate": "15-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/visakhapatnam-dccb-bank-recruitment.html",
+      "notificationUrl": "https://visakhapatnamdccb.bank.in/api/uploads/notifications/1784882134_Notification_Visakhapatnamdccb_SA%20.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/visakhapatnam-dccb-bank-recruitment.html"
+    }
+  },
+  {
+    "id": "uksssc-assistant-accountant-recruitment-2026-apply-online-for-339-posts-last-dat",
+    "title": "UKSSSC Assistant Accountant Recruitment 2026 - Apply Online for 339 Posts | Last Date 15-08-2026",
+    "org": "UKSSSC Assistant Accountant",
+    "shortOrg": "UKSSSC Assistant Accountant",
+    "posts": "339 Posts",
+    "vacancies": 339,
+    "salary": "Level-04 to Level-06",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-14",
+      "lastDate": "15-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/uksssc-assistant-accountant-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1OPRelDW8zCOlmyYeTffNlfMkd3P-Z8kH/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/uksssc-assistant-accountant-recruitment.html"
+    }
+  },
+  {
+    "id": "union-bank-of-india-so-recruitment-2026-apply-online-for-395-posts-last-date-ext",
+    "title": "Union Bank of India SO Recruitment 2026: Apply Online for 395 Posts | Last Date Extended 15-08-2026",
+    "org": "Union Bank of India SO",
+    "shortOrg": "Union Bank of India SO",
+    "posts": "395 Posts",
+    "vacancies": 395,
+    "salary": "pay scale, eligibility, selection process, and important dates.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "15 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/union-bank-of-india-so-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1STtppW7OxWgBe_8zeHg4rNFPtB8S7rfF/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/union-bank-of-india-so-recruitment.html"
+    }
+  },
+  {
+    "id": "aai-advt-no-122026-apply-online-for-389-manager-and-junior-executive-posts-last-",
+    "title": "AAI Advt No 12/2026: Apply Online for 389 Manager and Junior Executive Posts | Last Date 07-09-2026",
+    "org": "AAI Advt No 12/2026: Apply Online for 389 Manager and Junior Executive Posts | Last Date 07",
+    "shortOrg": "AAI Advt No 12/2026: Apply Onl",
+    "posts": "389 Manager and Junior Executive Posts",
+    "vacancies": 700,
+    "salary": "pay scale, and important dates.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/aai-advt-no-12-2026.html",
+      "notificationUrl": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Detailed%20Advertisement%2012-2026-CHQ.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/aai-advt-no-12-2026.html"
+    }
+  },
+  {
+    "id": "naval-ship-repair-yard-apprentice-recruitment-2026-apply-online-for-50-posts-las",
+    "title": "Naval Ship Repair Yard Apprentice Recruitment 2026 - Apply Online for 50 Posts | Last Date 10-10-2026",
+    "org": "Naval Ship Repair Yard Apprentice",
+    "shortOrg": "Naval Ship Repair Yard Apprent",
+    "posts": "50 Posts",
+    "vacancies": 50,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "10-10-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/naval-ship-repair-yard-apprentice.html",
+      "notificationUrl": "https://drive.google.com/file/d/1iCjp4Mikr01YUbWcuJ8wwE8PHQOBZw6S/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/naval-ship-repair-yard-apprentice.html"
+    }
+  },
+  {
+    "id": "rrb-section-controller-recruitment-2026-apply-online-for-119-posts-last-date-14-",
+    "title": "RRB Section Controller Recruitment 2026 - Apply Online for 119 Posts | Last Date 14-08-2026",
+    "org": "RRB Section Controller",
+    "shortOrg": "RRB Section Controller",
+    "posts": "119 Posts",
+    "vacancies": 119,
+    "salary": "pay scale, age limit, and important dates. Detailed CEN with full elig",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.rrbapply.gov.in/assets/forms/CEN_03_2026.pdf",
+      "notificationUrl": "https://www.rrbapply.gov.in/assets/forms/CEN_03_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/06/RRB-Section-Controller-Recruitment.html"
+    }
+  },
+  {
+    "id": "government-jobs-in-tamil-nadu-2026-latest-tn-govt-jobs-alert",
+    "title": "Government Jobs in Tamil Nadu 2026 - Latest TN Govt Jobs Alert",
+    "org": "Government Jobs in Tamil Nadu 2026",
+    "shortOrg": "Government Jobs in Tamil Nadu ",
+    "posts": "Prescribed Posts",
+    "vacancies": 145,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "tamil-nadu",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-in-tamilnadu.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2013/09/government-jobs-in-tamilnadu.html"
+    }
+  },
+  {
+    "id": "irctc-north-zone-tourism-monitor-recruitment-2026-walk-in-interview-for-09-posts",
+    "title": "IRCTC North Zone Tourism Monitor Recruitment 2026 - Walk in Interview for 09 Posts",
+    "org": "IRCTC North Zone Tourism Monitor",
+    "shortOrg": "IRCTC North Zone Tourism Monit",
+    "posts": "09 Posts",
+    "vacancies": 9,
+    "salary": "₹30,000 – ₹35,000",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/irctc-north-zone-tourism-monitor.html",
+      "notificationUrl": "https://www.irctc.com/assets/images2/NotificationTourismMonitorCONZ772026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/irctc-north-zone-tourism-monitor.html"
+    }
+  },
+  {
+    "id": "central-railway-sports-quota-recruitment-2026-apply-online-for-59-group-c-d-post",
+    "title": "Central Railway Sports Quota Recruitment 2026 - Apply Online for 59 Group C & D Posts | Last Date 14-08-2026",
+    "org": "Central Railway Sports Quota",
+    "shortOrg": "Central Railway Sports Quota",
+    "posts": "59 Group C & D Posts",
+    "vacancies": 700,
+    "salary": "pay scale in Central Railway Sports Quota Recruitment 2026?",
+    "qualificationText": "y",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/central-railway-sports-quota.html",
+      "notificationUrl": "https://ibtexamination.com/RRCCR_02OF2026_SPORTSQUOTA/notification/Open%20Advertisment%20Sports%20Quota%20Notification%20English.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/central-railway-sports-quota.html"
+    }
+  },
+  {
+    "id": "hal-dt-mt-recruitment-2026-apply-online-for-120-posts-notification-last-date-14-",
+    "title": "HAL DT MT Recruitment 2026: Apply Online for 120 Posts, Notification | Last Date 14-08-2026",
+    "org": "HAL DT MT",
+    "shortOrg": "HAL DT MT",
+    "posts": "120 Posts, Notification",
+    "vacancies": 120,
+    "salary": "pay scale in HAL DT MT Recruitment 2026?",
+    "qualificationText": "s",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/HAL-DT-MT-Recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1tl4lqaQRmZ4vWLB8nKUo9Jq6tvpjI-wS/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/HAL-DT-MT-Recruitment.html"
+    }
+  },
+  {
+    "id": "csir-cmeri-technician-recruitment-2026-apply-online-for-27-posts-last-date-13-09",
+    "title": "CSIR CMERI Technician Recruitment 2026 - Apply Online for 27 Posts | Last Date 13-09-2026",
+    "org": "CSIR CMERI Technician",
+    "shortOrg": "CSIR CMERI Technician",
+    "posts": "27 Posts",
+    "vacancies": 27,
+    "salary": "Level-2",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "13-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/csir-cmeri-technician-recruitment.html",
+      "notificationUrl": "https://rectt.ngri.res.in/cmeri_group2_2026/files/CSIR_CMERI_Advt_01_2026v1.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/csir-cmeri-technician-recruitment.html"
+    }
+  },
+  {
+    "id": "mecl-executive-trainee-recruitment-2026-apply-online-for-13-posts-last-date-14-0",
+    "title": "MECL Executive Trainee Recruitment 2026: Apply Online for 13 Posts | Last Date 14-08-2026",
+    "org": "MECL Executive Trainee",
+    "shortOrg": "MECL Executive Trainee",
+    "posts": "13 Posts",
+    "vacancies": 13,
+    "salary": "pay scale of Rs. 40,000 – 1,40,000/- (E-1 IDA) + applicable Industrial",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/mecl-executive-trainee-recruitment-2026.html",
+      "notificationUrl": "https://mecl.co.in/writereaddata/meclpdf/ADVT02R26.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mecl-executive-trainee-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "hvpnl-apprentice-recruitment-2026-apply-online-for-114-posts-last-date-14-08-202",
+    "title": "HVPNL Apprentice Recruitment 2026: Apply Online for 114 Posts | Last Date 14-08-2026",
+    "org": "HVPNL Apprentice",
+    "shortOrg": "HVPNL Apprentice",
+    "posts": "114 Posts",
+    "vacancies": 114,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "no-exam",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-13",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/hvpnl-apprentice-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1jEvvCGbTt8UmcRrnx2f2UfsOJZ-fERiz/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/hvpnl-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "high-court-of-karnataka-assistant-recruitment-2026-apply-online-for-18-posts-las",
+    "title": "High Court of Karnataka Assistant Recruitment 2026: Apply Online for 18 Posts | Last Date 11-09-2026",
+    "org": "High Court of Karnataka Assistant",
+    "shortOrg": "High Court of Karnataka Assist",
+    "posts": "18 Posts",
+    "vacancies": 18,
+    "salary": "Pay Scale ₹25,500–81,100 (Level-4). Age 18 to 35/40 years. Online appl",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "karnataka",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "11-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/high-court-of-karnataka-assistant.html",
+      "notificationUrl": "https://judiciary.karnataka.gov.in/common_folder/notification//SDA_Gazettee.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/high-court-of-karnataka-assistant.html"
+    }
+  },
+  {
+    "id": "mucb-bank-recruitment-2026-apply-online-for-agm-it-assistant-treasury-officer-po",
+    "title": "MUCB Bank Recruitment 2026: Apply Online for AGM IT & Assistant Treasury Officer Posts | Last Date 24-08-2026",
+    "org": "MUCB Bank",
+    "shortOrg": "MUCB Bank",
+    "posts": "AGM IT & Assistant Treasury Officer Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.mucbank.com/mucbr/rec_registration",
+      "notificationUrl": "https://mucb.bank.in/mucb/downloads/recruitment/Aug_2026/AGM_IT_Job_Description.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/mucb-bank-recruitment.html"
+    }
+  },
+  {
+    "id": "tnpsc-group-2-2a-notification-2026-apply-online-for-821-various-posts-last-date-",
+    "title": "TNPSC Group 2 2A Notification 2026 - Apply Online for 821 Various Posts | Last Date 09-09-2026",
+    "org": "TNPSC Group 2 2A Notification 2026",
+    "shortOrg": "TNPSC Group 2 2A Notification ",
+    "posts": "821 Various Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "09-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://apply.tnpscexams.in/apply-now?app_id=UElZMDAwMDAwMQ==",
+      "notificationUrl": "https://drive.google.com/file/d/1UdWlNbXLXWPKbLhD0nsq6gDRXp-JvtnG/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/tnpsc-group-2-2a-notification.html"
+    }
+  },
+  {
+    "id": "iocl-apprentice-recruitment-2026-apply-online-for-1883-posts-notifications",
+    "title": "IOCL Apprentice Recruitment 2026 - Apply Online for 1883 Posts, Notifications",
+    "org": "IOCL Apprentice",
+    "shortOrg": "IOCL Apprentice",
+    "posts": "1883 Posts, Notifications",
+    "vacancies": 1883,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "n",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/06/iocl-apprentice-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1FGUO6sZxPC6bBM0zKad3eki94qf-bSzC/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/06/iocl-apprentice-recruitment.html"
+    }
+  },
+  {
+    "id": "iocl-panipat-refinery-apprentice-recruitment-2026-apply-online-for-1450-posts-la",
+    "title": "IOCL Panipat Refinery Apprentice Recruitment 2026: Apply Online for 1450 Posts | Last Date 12-08-2026",
+    "org": "IOCL Panipat Refinery Apprentice",
+    "shortOrg": "IOCL Panipat Refinery Apprenti",
+    "posts": "1450 Posts",
+    "vacancies": 1450,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "12-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/iocl-panipat-refinery-apprentice.html",
+      "notificationUrl": "https://iocl.com/admin/img/Apprenticeships/Files/90a26aa24f4347d79b3616275c5d8f07.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/iocl-panipat-refinery-apprentice.html"
+    }
+  },
+  {
+    "id": "rites-limited-it-professionals-recruitment-2026-apply-online-for-03-posts-last-d",
+    "title": "RITES Limited IT Professionals Recruitment 2026: Apply Online for 03 Posts | Last Date 24-08-2026",
+    "org": "RITES Limited IT Professionals",
+    "shortOrg": "RITES Limited IT Professionals",
+    "posts": "03 Posts",
+    "vacancies": 3,
+    "salary": "Pay Scale)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "24-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://recruit.rites.com/frmRegistration.aspx",
+      "notificationUrl": "https://www.rites.com/Upload/Career/IT_Adv_pdf-2026-Aug-03-15-2-58.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/rites-limited-it-professionals.html"
+    }
+  },
+  {
+    "id": "beml-officer-recruitment-2026-apply-online-for-05-safety-posts",
+    "title": "BEML Officer Recruitment 2026 - Apply Online for 05 Safety Posts",
+    "org": "BEML Officer",
+    "shortOrg": "BEML Officer",
+    "posts": "05 Safety Posts",
+    "vacancies": 700,
+    "salary": "pay scale, application fee, last date, and other conditions.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/beml-officer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1OwueIIFUG2uGmMEonHygBoqe2IxMassW/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/beml-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "thdc-engineer-trainee-recruitment-through-gate-2027-notification-out",
+    "title": "THDC Engineer Trainee Recruitment through GATE 2027 - Notification Out",
+    "org": "THDC Engineer Trainee",
+    "shortOrg": "THDC Engineer Trainee",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in THDC Engineer Trainee Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/thdc-engineer-trainee-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/139zk95geBW17d86RTkyLbTolUujVoUoF/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/thdc-engineer-trainee-recruitment.html"
+    }
+  },
+  {
+    "id": "ada-project-assistant-recruitment-2026-apply-online-for-111-posts-last-date-13-0",
+    "title": "ADA Project Assistant Recruitment 2026 - Apply Online for 111 Posts | Last Date 13-08-2026",
+    "org": "ADA Project Assistant",
+    "shortOrg": "ADA Project Assistant",
+    "posts": "111 Posts",
+    "vacancies": 111,
+    "salary": "₹31,000 – ₹37,000",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "13-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/ada-project-assistant-recruitment.html",
+      "notificationUrl": "https://www.ada.gov.in/currentdocs/ADV138/ADV_138_noti.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/ada-project-assistant-recruitment.html"
+    }
+  },
+  {
+    "id": "young-professional-recruitment-2026-latest-yp-central-govt-job-vacancies",
+    "title": "Young Professional Recruitment 2026 - Latest YP Central Govt Job Vacancies",
+    "org": "Young Professional",
+    "shortOrg": "Young Professional",
+    "posts": "Prescribed Posts",
+    "vacancies": 231,
+    "salary": "₹30,000 to ₹1,00,000,",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-12",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/Young-Professional-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/Young-Professional-Recruitment.html"
+    }
+  },
+  {
+    "id": "upsc-advertisement-no092026-apply-online-for-39-various-posts-last-date-14-08-20",
+    "title": "UPSC Advertisement No.09/2026 - Apply Online for 39 Various Posts | Last Date 14-08-2026",
+    "org": "UPSC Advertisement No.09/2026",
+    "shortOrg": "UPSC Advertisement No.09/2026",
+    "posts": "39 Various Posts",
+    "vacancies": 700,
+    "salary": "pay scale, selection process and online application link.",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://upsconline.nic.in/ora/",
+      "notificationUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-09-2026-Engl-240726.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/upsc-advertisement-no-09-2026.html"
+    }
+  },
+  {
+    "id": "amtron-recruitment-2026-apply-online-for-15-it-professional-posts-last-date-12-0",
+    "title": "AMTRON Recruitment 2026: Apply Online for 15 IT Professional Posts | Last Date 12-08-2026",
+    "org": "AMTRON",
+    "shortOrg": "AMTRON",
+    "posts": "15 IT Professional Posts",
+    "vacancies": 700,
+    "salary": "₹35,000 – ₹90,000",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "12-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/amtron-recruitment.html",
+      "notificationUrl": "https://recruitment.amtron.in/pdf/aup_recruitment_notice.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/amtron-recruitment.html"
+    }
+  },
+  {
+    "id": "ouat-assistant-recruitment-2026-apply-offline-for-31-posts-last-date-12-08-2026",
+    "title": "OUAT Assistant Recruitment 2026 - Apply Offline for 31 Posts | Last Date 12-08-2026",
+    "org": "OUAT Assistant",
+    "shortOrg": "OUAT Assistant",
+    "posts": "31 Posts",
+    "vacancies": 31,
+    "salary": "pay scale in OUAT Assistant Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "12-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/ouat-assistant-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1-e3u_shUv6Tct8D99QAtGBi7W_X2ohIM/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/ouat-assistant-recruitment.html"
+    }
+  },
+  {
+    "id": "central-railway-scouts-guides-quota-recruitment-2026-apply-online-for-12-posts-l",
+    "title": "Central Railway Scouts & Guides Quota Recruitment 2026 - Apply Online for 12 Posts | Last Date 12-08-2026",
+    "org": "Central Railway Scouts & Guides Quota",
+    "shortOrg": "Central Railway Scouts & Guide",
+    "posts": "12 Posts",
+    "vacancies": 12,
+    "salary": "pay scale in Central Railway Scouts &amp; Guides Quota Recruitment 202",
+    "qualificationText": "y",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "12-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/central-railway-scouts-guides-quota.html",
+      "notificationUrl": "https://drive.google.com/file/d/1y_1boGkGOEkCEjavtB9k_fdwYNinedyi/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/central-railway-scouts-guides-quota.html"
+    }
+  },
+  {
+    "id": "icai-executive-assistant-recruitment-2026-apply-online-for-20-posts-last-date-12",
+    "title": "ICAI Executive Assistant Recruitment 2026: Apply Online for 20 Posts | Last Date 12-08-2026",
+    "org": "ICAI Executive Assistant",
+    "shortOrg": "ICAI Executive Assistant",
+    "posts": "20 Posts",
+    "vacancies": 20,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "12-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/icai-executive-assistant-recruitment.html",
+      "notificationUrl": "https://www.icsi.edu/media/webmodules/Human_Resources/A_Advt_04_2026_Website.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/icai-executive-assistant-recruitment.html"
+    }
+  },
+  {
+    "id": "kribhco-recruitment-2026-apply-online-for-senior-manager-junior-accounts-assista",
+    "title": "KRIBHCO Recruitment 2026 - Apply Online for Senior Manager & Junior Accounts Assistant Posts | Last Date 10-09-2026",
+    "org": "KRIBHCO",
+    "shortOrg": "KRIBHCO",
+    "posts": "Senior Manager & Junior Accounts Assistant Posts",
+    "vacancies": 700,
+    "salary": "pay scale in KRIBHCO Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "10-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/kribhco-recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/kribhco-recruitment.html"
+    }
+  },
+  {
+    "id": "bric-niab-scientist-b-farm-manager-recruitment-2026-apply-online-for-02-posts-la",
+    "title": "BRIC-NIAB Scientist-B & Farm Manager Recruitment 2026 - Apply Online for 02 Posts | Last Date 11-09-2026",
+    "org": "BRIC",
+    "shortOrg": "BRIC",
+    "posts": "02 Posts",
+    "vacancies": 2,
+    "salary": "pay scale in BRIC-NIAB Recruitment 2026?",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "11-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bric-niab-scientist-b-farm-manager.html",
+      "notificationUrl": "https://drive.google.com/file/d/1yZ7SLEu-qwo8HA67iRrfZuVQlgZ6Fngs/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bric-niab-scientist-b-farm-manager.html"
+    }
+  },
+  {
+    "id": "ntpc-green-energy-recruitment-2026-apply-online-for-147-engineer-executive-posts",
+    "title": "NTPC Green Energy Recruitment 2026 - Apply Online for 147 Engineer & Executive Posts | Last Date 07-09-2026",
+    "org": "NTPC Green Energy",
+    "shortOrg": "NTPC Green Energy",
+    "posts": "147 Engineer & Executive Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-11",
+      "lastDate": "07-09-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/NTPC-Green-Energy-Recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1-a8elQVc2Xrp8O8CxXOl-1XOY5ZDSNZB/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/NTPC-Green-Energy-Recruitment.html"
+    }
+  },
+  {
+    "id": "nmdc-steel-limited-recruitment-2026-apply-online-for-102-executive-trainee-posts",
+    "title": "NMDC Steel Limited Recruitment 2026: Apply Online for 102 Executive Trainee Posts | Last Date 11-08-2026",
+    "org": "NMDC Steel Limited",
+    "shortOrg": "NMDC Steel Limited",
+    "posts": "102 Executive Trainee Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-10",
+      "lastDate": "11-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/nmdc-steel-limited-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1Rwi_L7d4-0zbmV31rh-OfHszF-fN89uQ/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/nmdc-steel-limited-recruitment.html"
+    }
+  },
+  {
+    "id": "bel-project-engineer-recruitment-2026-apply-for-14-posts-in-rajasthan-and-gujara",
+    "title": "BEL Project Engineer Recruitment 2026: Apply for 14 Posts in Rajasthan and Gujarat | Walk in Date 11-08-2026",
+    "org": "BEL Project Engineer",
+    "shortOrg": "BEL Project Engineer",
+    "posts": "14 Posts in Rajasthan and Gujarat",
+    "vacancies": 14,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "btech-engineering"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "gujarat",
+    "importantDates": {
+      "startDate": "2026-08-10",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/bel-project-engineer-recruitment.html",
+      "notificationUrl": "https://bel-india.in/wp-content/uploads/2026/07/WEB-ADVERTISEMENT-RAJ-GUJ.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/bel-project-engineer-recruitment.html"
+    }
+  },
+  {
+    "id": "upsc-principal-and-vice-principal-recruitment-2026-apply-online-for-828-posts-no",
+    "title": "UPSC Principal and Vice Principal Recruitment 2026 - Apply Online for 828 Posts, Notification | Last Date 14-08-2026",
+    "org": "UPSC Principal and Vice Principal",
+    "shortOrg": "UPSC Principal and Vice Princi",
+    "posts": "828 Posts, Notification",
+    "vacancies": 828,
+    "salary": "pay scale, important dates and application process below.",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-10",
+      "lastDate": "14-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://upsconline.nic.in/",
+      "notificationUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/upsc-principal-Recruitment.html"
+    }
+  },
+  {
+    "id": "vamnicom-officer-recruitment-2026-apply-online-notification",
+    "title": "VAMNICOM Officer Recruitment 2026 - Apply Online, Notification",
+    "org": "VAMNICOM Officer",
+    "shortOrg": "VAMNICOM Officer",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in VAMNICOM Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-10",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/vamnicom-officer-recruitment.html",
+      "notificationUrl": "https://vamnicom.gov.in/uploads/pdf/c407c4589e36bcd69185399ce050c197.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/vamnicom-officer-recruitment.html"
+    }
+  },
+  {
+    "id": "cnci-specialist-and-scientist-recruitment-2026-apply-for-08-posts-last-date-31-0",
+    "title": "CNCI Specialist and Scientist Recruitment 2026: Apply for 08 Posts | Last Date 31-08-2026",
+    "org": "CNCI Specialist and Scientist",
+    "shortOrg": "CNCI Specialist and Scientist",
+    "posts": "08 Posts",
+    "vacancies": 8,
+    "salary": "pay scale in CNCI Specialist and Scientist Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-10",
+      "lastDate": "31-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/cnci-specialist-and-scientist.html",
+      "notificationUrl": "https://cnci.ac.in/backend/public/uploads/2026/08/03/FinalAdvt_R-001-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/cnci-specialist-and-scientist.html"
+    }
+  },
+  {
+    "id": "sainik-school-balachadi-recruitment-2026-apply-16-teaching-and-non-teaching-post",
+    "title": "Sainik School Balachadi Recruitment 2026 - Apply 16 Teaching and Non-Teaching Posts | Last Date 10-08-2026",
+    "org": "Sainik School Balachadi",
+    "shortOrg": "Sainik School Balachadi",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale / Salary",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/sainik-school-balachadi-recruitment.html",
+      "notificationUrl": "https://www.ssbalachadi.org/data/file-library/advat-for-various-regular-and-contr-posts-18-jul-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/sainik-school-balachadi-recruitment.html"
+    }
+  },
+  {
+    "id": "idex-dio-recruitment-2026-apply-online-06-consultant-posts-last-date-10-08-2026",
+    "title": "iDEX DIO Recruitment 2026: Apply Online 06 Consultant Posts | Last Date 10-08-2026",
+    "org": "iDEX DIO",
+    "shortOrg": "iDEX DIO",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "₹1,80,000 – ₹2,40,000",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/idex-dio-recruitment.html",
+      "notificationUrl": "https://idex.gov.in/uploads/pdf/1783505280_5e2c1af81365cc98949f.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/idex-dio-recruitment.html"
+    }
+  },
+  {
+    "id": "drdo-paid-internship-2026-notification-apply-for-05-fresher-engineering-graduate",
+    "title": "DRDO Paid Internship 2026 Notification - Apply for 05 Fresher Engineering Graduates | Last Date 10-08-2026",
+    "org": "DRDO Paid Internship 2026 Notification",
+    "shortOrg": "DRDO Paid Internship 2026 Noti",
+    "posts": "05 Fresher Engineering Graduates",
+    "vacancies": 50,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "btech-engineering"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/DRDO-Paid-Internship.html",
+      "notificationUrl": "https://drive.google.com/file/d/1Lzu8JIgTcs5Z89E3zV6VuK6xRLZ8uwWD/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/DRDO-Paid-Internship.html"
+    }
+  },
+  {
+    "id": "pdcc-bank-peon-recruitment-2026-apply-online-for-289-posts-last-date-10-08-2026",
+    "title": "PDCC Bank Peon Recruitment 2026: Apply Online for 289 Posts | Last Date 10-08-2026",
+    "org": "PDCC Bank Peon",
+    "shortOrg": "PDCC Bank Peon",
+    "posts": "289 Posts",
+    "vacancies": 289,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/pdcc-bank-peon-recruitment.html",
+      "notificationUrl": "https://form-filling-bucket-1.s3.eu-north-1.amazonaws.com/test_pdcc/important-notices/2026_08_03_23_31_04.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/pdcc-bank-peon-recruitment.html"
+    }
+  },
+  {
+    "id": "csl-executive-trainee-recruitment-2026-notification-online-form-last-date-10-08-",
+    "title": "CSL Executive Trainee Recruitment 2026: Notification, Online Form | Last Date 10-08-2026",
+    "org": "CSL Executive Trainee",
+    "shortOrg": "CSL Executive Trainee",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in CSL Executive Trainee Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/csl-executive-trainee-recruitment.html",
+      "notificationUrl": "https://cochinshipyard.in/uploads/career/d7047bc769096501f9fca730e40db8cf.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/csl-executive-trainee-recruitment.html"
+    }
+  },
+  {
+    "id": "mp-high-court-scpa-recruitment-2026-apply-online-for-130-posts-notification-last",
+    "title": "MP High Court SCPA Recruitment 2026 - Apply Online for 130 Posts, Notification | Last Date 10-08-2026",
+    "org": "MP High Court SCPA",
+    "shortOrg": "MP High Court SCPA",
+    "posts": "130 Posts, Notification",
+    "vacancies": 130,
+    "salary": "₹36,200 – ₹1,14,800",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://portal.mphc.gov.in/",
+      "notificationUrl": "https://drive.google.com/file/d/1FGaUK7D_knQioe5ptvHJErzmcbHaB_vZ/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/mp-high-court-scpa-recruitment.html"
+    }
+  },
+  {
+    "id": "rajasthan-high-court-stenographer-recruitment-2026-apply-online-for-163-posts-la",
+    "title": "Rajasthan High Court Stenographer Recruitment 2026: Apply Online for 163 Posts | Last Date 10-08-2026",
+    "org": "Rajasthan High Court Stenographer",
+    "shortOrg": "Rajasthan High Court Stenograp",
+    "posts": "163 Posts",
+    "vacancies": 163,
+    "salary": "pay scale for Stenographer posts?",
+    "qualificationText": "d",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "rajasthan",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/rajasthan-high-court-stenographer.html",
+      "notificationUrl": "https://hcraj.nic.in/hcraj/hcraj_admin/uploadfile/recruitment/steno2026178427448186.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/rajasthan-high-court-stenographer.html"
+    }
+  },
+  {
+    "id": "iit-mandi-non-teaching-recruitment-2026-apply-online-for-11-posts-last-date-10-0",
+    "title": "IIT Mandi Non Teaching Recruitment 2026: Apply Online for 11 Posts | Last Date 10-08-2026",
+    "org": "IIT Mandi Non Teaching",
+    "shortOrg": "IIT Mandi Non Teaching",
+    "posts": "11 Posts",
+    "vacancies": 11,
+    "salary": "pay scale in IIT Mandi Non Teaching Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-09",
+      "lastDate": "10-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iit-mandi-non-teaching-recruitment.html",
+      "notificationUrl": "https://iitmandi.ac.in/recruitment/Advt_Non-Teaching_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iit-mandi-non-teaching-recruitment.html"
+    }
+  },
+  {
+    "id": "psc-recruitment-2026-latest-state-wise-psc-jobs-notifications",
+    "title": "PSC Recruitment 2026 - Latest State wise PSC Jobs Notifications",
+    "org": "PSC",
+    "shortOrg": "PSC",
+    "posts": "Prescribed Posts",
+    "vacancies": 186,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2016/07/PSC-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2016/07/PSC-Recruitment.html"
+    }
+  },
+  {
+    "id": "rrb-recruitment-2026-apply-online-for-latest-rrb-job-vacancies",
+    "title": "RRB Recruitment 2026 - Apply Online for Latest RRB Job Vacancies",
+    "org": "RRB",
+    "shortOrg": "RRB",
+    "posts": "Latest RRB Job Vacancies",
+    "vacancies": 158,
+    "salary": "pay scales include:",
+    "qualificationText": "Prescribed Degree / Diploma / Certificate",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "railway",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2018/12/RRB-JE-Recruitment.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2018/12/RRB-JE-Recruitment.html"
+    }
+  },
+  {
+    "id": "scientist-govt-jobs-2026-100-scientific-research-vacancies-latest-jobs",
+    "title": "Scientist Govt Jobs 2026 - 100+ Scientific & Research Vacancies | Latest Jobs",
+    "org": "Scientist Govt Jobs 2026",
+    "shortOrg": "Scientist Govt Jobs 2026",
+    "posts": "Prescribed Posts",
+    "vacancies": 134,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2022/07/Scientist-Jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2022/07/Scientist-Jobs.html"
+    }
+  },
+  {
+    "id": "latest-faculty-govt-jobs-2026-500-vacancies-open-now",
+    "title": "Latest Faculty Govt Jobs 2026 (500+ Vacancies Open Now)",
+    "org": "Latest Faculty Govt Jobs 2026 (500+ Vacancies Open Now)",
+    "shortOrg": "Latest Faculty Govt Jobs 2026 ",
+    "posts": "Prescribed Posts",
+    "vacancies": 132,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "?",
+    "qualifications": [
+      "graduate",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/12/faculty-govt-jobs.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/12/faculty-govt-jobs.html"
+    }
+  },
+  {
+    "id": "hartron-junior-programmer-recruitment-2026-apply-online-for-530-posts-last-date-",
+    "title": "HARTRON Junior Programmer Recruitment 2026: Apply Online for 530 Posts | Last Date 09-08-2026",
+    "org": "HARTRON Junior Programmer",
+    "shortOrg": "HARTRON Junior Programmer",
+    "posts": "530 Posts",
+    "vacancies": 530,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ")",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "09-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/hartron-junior-programmer-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1VxXNOrBuBwpyQSg3vqr70Lpvz63amcEK/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/hartron-junior-programmer-recruitment.html"
+    }
+  },
+  {
+    "id": "botanical-survey-of-india-jrf-recruitment-2026-apply-for-06-posts-last-date-09-0",
+    "title": "Botanical Survey of India JRF Recruitment 2026: Apply for 06 Posts | Last Date 09-08-2026",
+    "org": "Botanical Survey of India JRF",
+    "shortOrg": "Botanical Survey of India JRF",
+    "posts": "06 Posts",
+    "vacancies": 6,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "09-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/botanical-survey-of-india-jrf.html",
+      "notificationUrl": "https://bsi.gov.in/uploads/documents/whatsnew/hindi/Recruitment_of_Junior_Research_Fellows_2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/botanical-survey-of-india-jrf.html"
+    }
+  },
+  {
+    "id": "nsu-manipur-recruitment-2026-apply-online-11-teaching-non-teaching-posts-last-da",
+    "title": "NSU Manipur Recruitment 2026 - Apply Online 11 Teaching & Non-Teaching Posts | Last Date 09-08-2026",
+    "org": "NSU Manipur",
+    "shortOrg": "NSU Manipur",
+    "posts": "Prescribed Posts",
+    "vacancies": 11,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "manipur",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "09-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/nsu-manipur-recruitment.html",
+      "notificationUrl": "https://www.nsu.ac.in/sites/default/files/Employment%20Notification%28Contractual%20posts%29.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/nsu-manipur-recruitment.html"
+    }
+  },
+  {
+    "id": "bric-scientist-recruitment-2026-apply-online-for-05-posts-last-date-09-08-2026",
+    "title": "BRIC Scientist Recruitment 2026 - Apply Online for 05 Posts | Last Date 09-08-2026",
+    "org": "BRIC Scientist",
+    "shortOrg": "BRIC Scientist",
+    "posts": "05 Posts",
+    "vacancies": 5,
+    "salary": "pay scale in BRIC Scientist Recruitment 2026?",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-08",
+      "lastDate": "09-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://app.ils.res.in/apply.php?post=U2NpZW50aXN0LUQgKDAxIC0gT0JDIC0gTm9uLUNyZWFteSBsYXllciwgMDEgLSBTQylfMTg4",
+      "notificationUrl": "https://www.ils.res.in/wp-content/uploads/2026/07/Advertisement-Scientist-B-C-D.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/bric-scientist-recruitment-2026.html"
+    }
+  },
+  {
+    "id": "latest-police-jobs-2026-1000-new-vacancies-open",
+    "title": "Latest Police Jobs 2026 (1000+ New Vacancies Open)",
+    "org": "Latest Police Jobs 2026 (1000+ New Vacancies Open)",
+    "shortOrg": "Latest Police Jobs 2026 (1000+",
+    "posts": "Prescribed Posts",
+    "vacancies": 124,
+    "salary": "Level-3 Pay Matrix ₹ 21,700 - 69,100/- (As per 7th CPC)",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2014/06/police-jobs-vacancy.html",
+      "notificationUrl": "https://www.indgovtjobs.in",
+      "websiteUrl": "https://www.indgovtjobs.in/2014/06/police-jobs-vacancy.html"
+    }
+  },
+  {
+    "id": "army-ordnance-corps-recruitment-2026-notification-for-2615-mts-fireman-and-other",
+    "title": "Army Ordnance Corps Recruitment 2026 Notification for 2615 MTS, Fireman and Other Posts | Apply Online up to 22-09-2026",
+    "org": "Army Ordnance Corps",
+    "shortOrg": "Army Ordnance Corps",
+    "posts": "2615 MTS, Fireman and Other Posts",
+    "vacancies": 700,
+    "salary": "Level-1 to Level-5",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "22 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/army-ordnance-corps-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/16-YWw1wXC5ZRtFQer6P3siyrqA5AKePR/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/army-ordnance-corps-recruitment.html"
+    }
+  },
+  {
+    "id": "tslprb-police-constable-recruitment-2026-apply-online-for-7112-constable-fire-fi",
+    "title": "TSLPRB Police Constable Recruitment 2026: Apply Online for 7112 Constable, Fire Fighter, Warder Posts",
+    "org": "TSLPRB Police Constable",
+    "shortOrg": "TSLPRB Police Constable",
+    "posts": "7112 Constable, Fire Fighter, Warder Posts",
+    "vacancies": 700,
+    "salary": "pay scale of",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "09 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/tslprb-police-constable-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1RM9kgJsGS742BKLs_HCUsm395RegRMJ3/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/tslprb-police-constable-recruitment.html"
+    }
+  },
+  {
+    "id": "telangana-police-recruitment-2026-notification-for-325-si-constable-asi-fire-off",
+    "title": "Telangana Police Recruitment 2026 - Notification for 325 SI, Constable, ASI & Fire Officer Posts | Apply Online up to 09-09-2026",
+    "org": "Telangana Police",
+    "shortOrg": "Telangana Police",
+    "posts": "325 SI, Constable, ASI & Fire Officer Posts",
+    "vacancies": 700,
+    "salary": "Pay Scale (₹)",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "police",
+    "subCategory": "Recruitment 2026",
+    "state": "telangana",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "09 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/telangana-police-recruitment.html",
+      "notificationUrl": "https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/telangana-police-recruitment.html"
+    }
+  },
+  {
+    "id": "iocl-marketing-division-apprentice-recruitment-2026-notification-for-433-posts-a",
+    "title": "IOCL Marketing Division Apprentice Recruitment 2026 - Notification for 433 Posts | Apply Online up to 06-09-2026",
+    "org": "IOCL Marketing Division Apprentice",
+    "shortOrg": "IOCL Marketing Division Appren",
+    "posts": "433 Posts",
+    "vacancies": 433,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "psu",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "06 September 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/iocl-marketing-division-apprentice.html",
+      "notificationUrl": "https://drive.google.com/file/d/1FGUO6sZxPC6bBM0zKad3eki94qf-bSzC/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/iocl-marketing-division-apprentice.html"
+    }
+  },
+  {
+    "id": "navodaya-vidyalaya-samiti-recruitment-2026-project-scientist-i-accountant-posts",
+    "title": "Navodaya Vidyalaya Samiti Recruitment 2026 - Project Scientist-I & Accountant Posts",
+    "org": "Navodaya Vidyalaya Samiti",
+    "shortOrg": "Navodaya Vidyalaya Samiti",
+    "posts": "Prescribed Posts",
+    "vacancies": 700,
+    "salary": "pay scale in NVS Project Staff Recruitment 2026?",
+    "qualificationText": ".",
+    "qualifications": [
+      "graduate",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "10 August 2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/navodaya-vidyalaya-samiti-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1nRsr3aBzR3hUbjxrcdJCEgRKM3MoB2IH/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/navodaya-vidyalaya-samiti-recruitment.html"
+    }
+  },
+  {
+    "id": "sainik-school-kalikiri-teacher-recruitment-2026-walk-in-interview-for-tgt-posts",
+    "title": "Sainik School Kalikiri Teacher Recruitment 2026: Walk in Interview for TGT Posts",
+    "org": "Sainik School Kalikiri Teacher",
+    "shortOrg": "Sainik School Kalikiri Teacher",
+    "posts": "TGT Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": ":",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "bed-teaching"
+    ],
+    "category": "teaching",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-kalikiri-teacher.html",
+      "notificationUrl": "https://drive.google.com/file/d/1zjCqfBBfaTf1ygDgs0DRyxciWerN3Xsz/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/08/sainik-school-kalikiri-teacher.html"
+    }
+  },
+  {
+    "id": "punjab-national-bank-lbo-recruitment-2026-apply-online-for-545-posts-last-date-0",
+    "title": "Punjab National Bank LBO Recruitment 2026: Apply Online for 545 Posts | Last Date 09-08-2026",
+    "org": "Punjab National Bank LBO",
+    "shortOrg": "Punjab National Bank LBO",
+    "posts": "545 Posts",
+    "vacancies": 545,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "Graduate / Degree / Diploma / 10th / 12th Pass",
+    "qualifications": [
+      "graduate",
+      "10th-pass",
+      "12th-pass",
+      "diploma"
+    ],
+    "category": "banking",
+    "subCategory": "Recruitment 2026",
+    "state": "punjab",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "09-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/punjab-national-bank-lbo-recruitment.html",
+      "notificationUrl": "https://drive.google.com/file/d/1aSD6BJnih8Dz14yclxkinkb_QJQBljAU/view?usp=sharing",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/punjab-national-bank-lbo-recruitment.html"
+    }
+  },
+  {
+    "id": "nium-recruitment-2026-apply-online-for-10-professional-posts-last-date-08-08-202",
+    "title": "NIUM Recruitment 2026: Apply Online for 10 Professional Posts | Last Date 08-08-2026",
+    "org": "NIUM",
+    "shortOrg": "NIUM",
+    "posts": "10 Professional Posts",
+    "vacancies": 700,
+    "salary": "Level-6 / Level-7 Pay Scale + Allowances",
+    "qualificationText": "e",
+    "qualifications": [
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Recruitment 2026",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-08-07",
+      "lastDate": "08-08-2026",
+      "examDate": "To be notified by board"
+    },
+    "fee": "As per Category (Refer Notification)",
+    "ageLimit": "18 to 35 Years (Relaxation as per norms)",
+    "ageRelaxation": "Standard Relaxation for SC/ST/OBC/PwBD as per Government Rules",
+    "officialLinks": {
+      "applyUrl": "https://www.indgovtjobs.in/2026/07/nium-recruitment.html",
+      "notificationUrl": "https://www.nium.org.in/wp-content/uploads/2026/07/Detailed_Termsof-Reference_NIUM_PDMU123.pdf",
+      "websiteUrl": "https://www.indgovtjobs.in/2026/07/nium-recruitment.html"
+    }
+  }
+];
   const ADMIT_CARDS = [
-    {
-      id: "ssc-cgl-tier-1-admit-card-2026",
-      title: "SSC CGL Tier 1 Admit Card 2026 & Application Status",
-      org: "Staff Selection Commission (SSC)",
-      shortOrg: "SSC",
-      examDate: "12th to 26th October 2026",
-      releaseDate: "2026-09-01",
-      status: "Available Now (All Regions NR, CR, ER, WR, SR, KKR, MPR, NER, NWR)",
-      downloadUrl: "https://ssc.gov.in",
-      category: "ssc",
-      importantNotes: "Carry 2 color passport photos, Original Photo ID (Aadhaar/Voter Card) with matching Date of Birth."
-    },
-    {
-      id: "ibps-po-prelims-hall-ticket-2026",
-      title: "IBPS PO / MT XIV Preliminary Exam Call Letter 2026",
-      org: "Institute of Banking Personnel Selection",
-      shortOrg: "IBPS",
-      examDate: "19th & 20th October 2026",
-      releaseDate: "2026-08-30",
-      status: "Call Letter Live",
-      downloadUrl: "https://www.ibps.in",
-      category: "banking",
-      importantNotes: "Affix recent photo on call letter identical to the one uploaded during registration."
-    },
-    {
-      id: "rrb-alp-cbt-1-city-intimation-2026",
-      title: "Railway RRB ALP CBT-1 Exam City Intimation Slip & Hall Ticket 2026",
-      org: "Railway Recruitment Control Board",
-      shortOrg: "RRB",
-      examDate: "November 2026",
-      releaseDate: "2026-08-28",
-      status: "City Intimation Active / Admit Card 4 Days Before Exam",
-      downloadUrl: "https://www.rrbapply.gov.in",
-      category: "railway",
-      importantNotes: "Travel pass for SC/ST candidates activated alongside city intimation slip."
-    },
-    {
-      id: "upsc-nda-cds-2-admit-card-2026",
-      title: "UPSC NDA & NA (II) / CDS (II) e-Admit Card 2026",
-      org: "Union Public Service Commission",
-      shortOrg: "UPSC",
-      examDate: "September 2026",
-      releaseDate: "2026-08-25",
-      status: "Available to Download",
-      downloadUrl: "https://upsconline.nic.in",
-      category: "upsc",
-      importantNotes: "Black Ball Point pen is strictly mandatory for marking OMR answer sheets."
-    },
-    {
-      id: "uppbpb-police-constable-re-exam-admit-card-2026",
-      title: "UP Police Constable Written Exam Admit Card & City Slip 2026",
-      org: "UP Police Recruitment & Promotion Board",
-      shortOrg: "UPPRPB",
-      examDate: "November 2026",
-      releaseDate: "2026-08-29",
-      status: "City Intimation Released",
-      downloadUrl: "https://uppbpb.gov.in",
-      category: "police",
-      importantNotes: "Admit card download requires Registration Number and Date of Birth."
-    },
-    {
-      id: "aiims-norcet-prelims-admit-card-2026",
-      title: "AIIMS NORCET 7 Stage-I Preliminary Admit Card 2026",
-      org: "AIIMS New Delhi",
-      shortOrg: "AIIMS",
-      examDate: "September 2026",
-      releaseDate: "2026-08-31",
-      status: "Available via MyPage Login",
-      downloadUrl: "https://www.aiimsexams.ac.in",
-      category: "central-govt",
-      importantNotes: "Reporting time strictly 1.5 hours prior to commencement of CBT."
-    },
-    {
-      id: "bpsc-70th-prelims-admit-card-2026",
-      title: "BPSC 70th CCE Integrated Combined Preliminary Admit Card 2026",
-      org: "Bihar Public Service Commission",
-      shortOrg: "BPSC",
-      examDate: "November 2026",
-      releaseDate: "2026-08-20",
-      status: "Coming Soon (Expected 10 Days Prior)",
-      downloadUrl: "https://onlinebpsc.bihar.gov.in",
-      category: "state-govt",
-      importantNotes: "Upload clean passport photo before downloading e-Admit card on OTR dashboard."
-    },
-    {
-      id: "dsssb-teaching-non-teaching-admit-card-2026",
-      title: "DSSSB TGT / PGT / Non-Teaching Tier-1 Online Exam Admit Card 2026",
-      org: "Delhi Subordinate Services Selection Board",
-      shortOrg: "DSSSB",
-      examDate: "October / November 2026",
-      releaseDate: "2026-08-27",
-      status: "Active for Notified Post Codes",
-      downloadUrl: "https://dsssbonline.nic.in",
-      category: "teaching",
-      importantNotes: "Dress code regulations strictly applicable: half sleeve shirts, slippers/sandals only."
-    },
-    {
-      id: "drdo-ceptam-tier-1-hall-ticket-2026",
-      title: "DRDO CEPTAM-11 Senior Technical Assistant & Tech-A Admit Card 2026",
-      org: "Defence Research & Development Organisation",
-      shortOrg: "DRDO",
-      examDate: "November 2026",
-      releaseDate: "2026-08-22",
-      status: "Admit Card Portal Ready",
-      downloadUrl: "https://www.drdo.gov.in",
-      category: "engineering",
-      importantNotes: "Carry colored printout of e-Admit card with original photo identity proof."
-    },
-    {
-      id: "rbi-grade-b-phase-1-call-letter-2026",
-      title: "RBI Grade B Phase-1 Online Examination Call Letter & Information Handout 2026",
-      org: "Reserve Bank of India Services Board",
-      shortOrg: "RBI",
-      examDate: "October 2026",
-      releaseDate: "2026-08-29",
-      status: "Call Letter Live",
-      downloadUrl: "https://opportunities.rbi.org.in",
-      category: "banking",
-      importantNotes: "Information handout contains test structure, sample questions, and guidelines."
-    }
-  ];
-
-  // Results & Cutoffs Dataset (30+ Recent Declared Results)
+  {
+    "id": "ssc-cgl-admit-card",
+    "title": "SSC CGL Tier-1 Exam 2026 Admit Card",
+    "shortOrg": "SSC",
+    "examDate": "2026-09-22",
+    "downloadUrl": "https://ssc.gov.in"
+  },
+  {
+    "id": "ibps-po-admit-card",
+    "title": "IBPS PO / MT XIV Prelims Admit Card 2026",
+    "shortOrg": "IBPS",
+    "examDate": "2026-10-19",
+    "downloadUrl": "https://www.ibps.in"
+  },
+  {
+    "id": "rrb-alp-admit-card",
+    "title": "RRB ALP & Technician CBT-1 Admit Card 2026",
+    "shortOrg": "RRB",
+    "examDate": "2026-11-25",
+    "downloadUrl": "https://www.rrbapply.gov.in"
+  },
+  {
+    "id": "upsc-cse-admit-card",
+    "title": "UPSC Civil Services Mains 2026 E-Admit Card",
+    "shortOrg": "UPSC",
+    "examDate": "2026-09-20",
+    "downloadUrl": "https://upsconline.nic.in"
+  },
+  {
+    "id": "aiims-norcet-admit-card",
+    "title": "AIIMS NORCET-7 Prelims Exam City Slip & Admit Card",
+    "shortOrg": "AIIMS",
+    "examDate": "2026-09-15",
+    "downloadUrl": "https://www.aiimsexams.ac.in"
+  }
+];
   const RESULTS = [
-    {
-      id: "ssc-chsl-tier-1-result-cutoff-2026",
-      title: "SSC CHSL (10+2) Tier-1 Written Result, Cutoff Marks & Merit List 2026",
-      org: "Staff Selection Commission (SSC)",
-      shortOrg: "SSC",
-      declarationDate: "2026-08-30",
-      status: "Result & PDF Cutoff List Released",
-      downloadUrl: "https://ssc.gov.in",
-      category: "ssc",
-      cutoffHighlights: "UR: 153.25 | OBC: 151.10 | EWS: 147.80 | SC: 135.40 | ST: 124.60",
-      description: "Candidates shortlisted for Tier-II descriptive & skill test. Scorecards available via login."
-    },
-    {
-      id: "upsc-civil-services-prelims-result-2026",
-      title: "UPSC Civil Services (CSE) Prelims Result with Roll Number PDF 2026",
-      org: "Union Public Service Commission",
-      shortOrg: "UPSC",
-      declarationDate: "2026-08-28",
-      status: "Name & Roll Wise List Published",
-      downloadUrl: "https://upsc.gov.in",
-      category: "upsc",
-      cutoffHighlights: "14,624 candidates qualified for Civil Services (Main) Examination 2026.",
-      description: "DAF-I submission window activated for qualified candidates."
-    },
-    {
-      id: "ibps-clerk-prelims-scorecard-result-2026",
-      title: "IBPS Clerk XIV Preliminary Exam Result & State-Wise Cutoff Scores 2026",
-      org: "Institute of Banking Personnel Selection",
-      shortOrg: "IBPS",
-      declarationDate: "2026-08-25",
-      status: "Scores Available Online",
-      downloadUrl: "https://www.ibps.in",
-      category: "banking",
-      cutoffHighlights: "State-wise General Cutoffs: UP 78.50, Bihar 77.25, Delhi 79.00, Maharashtra 74.50, Rajasthan 78.00.",
-      description: "Main Examination Call Letters issued simultaneously."
-    },
-    {
-      id: "india-post-gds-1st-merit-list-2026",
-      title: "India Post GDS 1st Merit List & Document Verification Schedule 2026",
-      org: "Department of Posts",
-      shortOrg: "India Post",
-      declarationDate: "2026-08-29",
-      status: "All 23 Circles PDF Released",
-      downloadUrl: "https://indiapostgdsonline.gov.in",
-      category: "no-exam",
-      cutoffHighlights: "10th Board cutoffs across northern and western circles ranged between 96.4% to 100%.",
-      description: "Selected candidates must report to designated Divisional Head within 15 days."
-    },
-    {
-      id: "rrb-technician-cbt-1-result-merit-2026",
-      title: "Railway RRB Technician Grade III & Grade I CBT-1 Results & Zone-Wise Cutoffs",
-      org: "Railway Recruitment Boards",
-      shortOrg: "RRB",
-      declarationDate: "2026-08-22",
-      status: "Results Declared for All RRBs",
-      downloadUrl: "https://indianrailways.gov.in",
-      category: "railway",
-      cutoffHighlights: "Normalized cutoff scores published zone-wise on respective regional RRB portals.",
-      description: "CBT-2 dates announced for shortlisted candidates."
-    },
-    {
-      id: "uppsc-combined-state-upper-subordinate-prelims-2026",
-      title: "UPPSC PCS Combined State / Upper Subordinate Prelims Result 2026",
-      org: "Uttar Pradesh Public Service Commission",
-      shortOrg: "UPPSC",
-      declarationDate: "2026-08-18",
-      status: "Official Result Declared",
-      downloadUrl: "https://uppsc.up.nic.in",
-      category: "state-govt",
-      cutoffHighlights: "5,840 candidates declared qualified for UPPSC PCS Mains Exam.",
-      description: "Mains exam schedule published on official commission portal."
-    },
-    {
-      id: "bpsc-teacher-tre-3-results-cutoff-2026",
-      title: "BPSC Bihar Teacher (TRE 3.0) PRT, TGT & PGT Final Results 2026",
-      org: "Bihar Public Service Commission",
-      shortOrg: "BPSC",
-      declarationDate: "2026-08-26",
-      status: "District Allotment & Score List Out",
-      downloadUrl: "https://www.bpsc.bih.nic.in",
-      category: "teaching",
-      cutoffHighlights: "Subject-wise & category-wise cutoffs uploaded on BPSC portal.",
-      description: "Biometric document verification initiated across all Bihar district headquarters."
-    },
-    {
-      id: "indian-army-agniveer-cee-written-result-2026",
-      title: "Join Indian Army Agniveer CEE Written Exam Result & Rally Shortlist 2026",
-      org: "Join Indian Army",
-      shortOrg: "Indian Army",
-      declarationDate: "2026-08-20",
-      status: "ARO-wise Shortlists Published",
-      downloadUrl: "https://joinindianarmy.nic.in",
-      category: "defence",
-      cutoffHighlights: "Roll number PDFs uploaded on official portal under CEE Result section.",
-      description: "Physical rally dates and admit cards dispatched zone-wise."
-    },
-    {
-      id: "ongc-graduate-trainee-interview-shortlist-2026",
-      title: "ONGC GT GATE Score Shortlist & Personal Interview Schedule 2026",
-      org: "Oil and Natural Gas Corporation",
-      shortOrg: "ONGC",
-      declarationDate: "2026-08-24",
-      status: "Shortlist Released",
-      downloadUrl: "https://www.ongcindia.com",
-      category: "psu",
-      cutoffHighlights: "GATE cutoffs: Mechanical 785, Electrical 740, Petroleum 680, Civil 710.",
-      description: "Interviews to be conducted at ONGC Academy Dehradun & Delhi Office."
-    },
-    {
-      id: "rbi-assistant-final-selection-merit-list-2026",
-      title: "RBI Assistant Final Selection Merit List & Office Allocation 2026",
-      org: "Reserve Bank of India",
-      shortOrg: "RBI",
-      declarationDate: "2026-08-16",
-      status: "Final Merit Declared",
-      downloadUrl: "https://opportunities.rbi.org.in",
-      category: "banking",
-      cutoffHighlights: "Regional office-wise roll numbers of recommended candidates published.",
-      description: "Pre-appointment medical formalities and character verification underway."
-    }
-  ];
+  {
+    "id": "ssc-chsl-final-result",
+    "title": "SSC Combined Higher Secondary (10+2) Final Merit List & Cutoff",
+    "shortOrg": "SSC",
+    "declareDate": "2026-08-28",
+    "downloadUrl": "https://ssc.gov.in"
+  },
+  {
+    "id": "sbi-clerk-final-result",
+    "title": "SBI Junior Associates (Clerk) Final Selection Result Declared",
+    "shortOrg": "SBI",
+    "declareDate": "2026-08-25",
+    "downloadUrl": "https://sbi.co.in/careers"
+  },
+  {
+    "id": "upsc-cds-result",
+    "title": "UPSC Combined Defence Services (CDS) Written Exam Result",
+    "shortOrg": "UPSC",
+    "declareDate": "2026-08-20",
+    "downloadUrl": "https://upsc.gov.in"
+  }
+];
 
   return {
-    STATES,
-    QUALIFICATIONS,
-    CATEGORIES,
-    RECRUITMENTS,
-    ADMIT_CARDS,
-    RESULTS
+    STATES: STATES,
+    QUALIFICATIONS: QUALIFICATIONS,
+    RECRUITMENTS: RECRUITMENTS,
+    ADMIT_CARDS: ADMIT_CARDS,
+    RESULTS: RESULTS
   };
 
 })();
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = window.ROZGAR_DATA;
+}
