@@ -146,14 +146,6 @@ const COMMON_HEADER = (activeNav = 'HOME') => `
         </div>
         <button type="submit" class="search-btn">${SVG_SEARCH} Search Jobs</button>
       </form>
-      <div class="search-trending-tags">
-        <strong style="color:#0b2545;">Trending:</strong>
-        <a href="/jobs/rrb-alp-technician-2026.html" class="trending-tag-pill">Railway ALP &amp; Tech (18k)</a>
-        <a href="/jobs/ssc-cgl-2026-combined-graduate-level.html" class="trending-tag-pill">SSC CGL 2026</a>
-        <a href="/bank-jobs.html" class="trending-tag-pill">SBI &amp; IBPS PO</a>
-        <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th Pass Jobs</a>
-        <a href="/state-govt-jobs.html" class="trending-tag-pill">UP Police (42k)</a>
-      </div>
     </div>
   </div>
 
@@ -344,9 +336,6 @@ const COMMON_FOOTER = `
       </div>
       <div class="footer-copyright-note">
         Copyright &copy; 2026 <strong>ROZGARDWAAR</strong> | Government Job Notifications &amp; Employment Information. All rights reserved.
-      </div>
-      <div class="footer-disclaimer-text">
-        <strong>Disclaimer:</strong> RozgarDwaar (rozgardwaar.com) is an independent private informational web portal and is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with the Government of India or any State Government agency.
       </div>
     </div>
   </footer>
@@ -1227,13 +1216,9 @@ const indexStaticHtml = `<!DOCTYPE html>
         <!-- Left Primary Column (Pure Static HTML) -->
         <div class="primary-content-column" id="main-content-area">
           
-          <!-- Single Optimized H1 Tag for Structural SEO -->
-          <div class="content-block" style="padding: 16px 20px 8px;">
-            <h1 class="portal-main-h1">RozgarDwaar - Latest Central &amp; State Government Jobs Recruitment 2026</h1>
-            <p style="font-size:13px; color:#444; margin-bottom:4px;">
-              Welcome to <strong>RozgarDwaar</strong>, an informational portal for Central and State Government recruitment notifications, eligibility criteria, and application procedures.
-            </p>
-          </div>
+          <h1 class="portal-main-h1" style="font-size: 16.5px; font-weight: 800; color: #0b2545; margin: 0 0 12px; padding: 4px 2px;">
+            Latest Government Jobs Recruitment Notifications 2026
+          </h1>
 
           <div class="content-block">
             <div class="section-bar-header">Latest Government Jobs</div>
@@ -1258,20 +1243,11 @@ const indexStaticHtml = `<!DOCTYPE html>
                       <a href="/jobs/${job.id}.html">${escapeHtml(job.title)}</a>
                     </h2>
                     <p class="news-feed-summary">
-                      ${escapeHtml(job.org)} has released employment recruitment notification for the post of ${escapeHtml(job.posts)}. Eligible candidates can check qualification criteria and submit online applications.
+                      ${escapeHtml(job.org)} invites online applications for ${escapeHtml(job.posts)}. <a href="/jobs/${job.id}.html" class="read-more-link">Read more &raquo;</a>
                     </p>
                   </div>
                 `;
               }).join('')}
-            </div>
-
-            <div class="portal-pagination-bar">
-              <div>Viewing <strong>15 of ${data.RECRUITMENTS.length}</strong> Total Active Openings</div>
-              <div class="page-numbers-wrap">
-                <a href="/central-govt-jobs.html" class="page-btn active">View All Central Jobs</a>
-                <a href="/railway-jobs.html" class="page-btn">Railway Jobs</a>
-                <a href="/bank-jobs.html" class="page-btn">Bank Jobs</a>
-              </div>
             </div>
           </div>
 
