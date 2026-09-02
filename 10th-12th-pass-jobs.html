@@ -53,7 +53,7 @@
 <body>
 
   
-  <!-- Top Announcement & Utility Bar -->
+  <!-- Top Announcement & Utility Bar (Desktop Only) -->
   <div class="site-top-strip">
     <div class="container">
       <div class="top-strip-inner">
@@ -85,15 +85,25 @@
             <div class="brand-tagline-text">India's Premier Government Job Discovery Gateway</div>
           </div>
         </a>
+
+        <!-- Desktop Trust Badges -->
         <div class="header-trust-badges">
           <div class="trust-badge-pill">🇮🇳 100% Free Alerts</div>
           <a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" class="trust-badge-pill whatsapp">💬 Join WhatsApp</a>
         </div>
+
+        <!-- Mobile Menu Toggle Button (Visible only on Mobile) -->
+        <button type="button" class="mobile-menu-toggle-btn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-text">MENU</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Primary Modern Navigation Bar -->
+  <!-- Primary Desktop Navigation Bar (Desktop Only) -->
   <nav class="site-primary-navbar">
     <div class="container">
       <ul class="nav-menu-list">
@@ -113,7 +123,7 @@
   <div class="site-search-strip">
     <div class="container">
       <form id="main-search-form" class="search-form-wrapper" action="/central-govt-jobs.html" method="GET">
-        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification (10th, B.Tech), or State..." autocomplete="off">
+        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
         <button type="submit" class="search-btn">🔍 Search Jobs</button>
       </form>
       <div class="search-trending-tags">
@@ -126,6 +136,65 @@
       </div>
     </div>
   </div>
+
+  <!-- Ultra-Clean Slide-In Mobile Navigation Drawer -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" onclick="toggleMobileNav()"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title">🏛️ RozgarDwaar Menu</div>
+      <button type="button" class="mobile-drawer-close-btn" onclick="toggleMobileNav()" aria-label="Close Navigation Menu">✕</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-drawer-section-title">Government Job Sectors</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/" onclick="toggleMobileNav()">🏠 Home</a></li>
+        <li><a href="/central-govt-jobs.html" onclick="toggleMobileNav()">🏛️ Central Govt Jobs</a></li>
+        <li><a href="/railway-jobs.html" onclick="toggleMobileNav()">🚆 Railway Jobs (RRB / RRC)</a></li>
+        <li><a href="/bank-jobs.html" onclick="toggleMobileNav()">🏦 Bank Jobs (IBPS / SBI / RBI)</a></li>
+        <li><a href="/psu-jobs.html" onclick="toggleMobileNav()">🏢 PSU Recruitments (IOCL / NTPC)</a></li>
+        <li><a href="/fresher-jobs.html" onclick="toggleMobileNav()">🎓 Fresher Jobs (Zero Experience)</a></li>
+        <li><a href="/graduate-jobs.html" onclick="toggleMobileNav()">📜 Graduate Jobs (Any Degree)</a></li>
+        <li><a href="/state-govt-jobs.html" onclick="toggleMobileNav()">🗺️ State Govt Jobs (All States)</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Jobs by Qualification</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/10th-12th-pass-jobs.html" onclick="toggleMobileNav()">🎒 10th &amp; 12th Pass Jobs</a></li>
+        <li><a href="/diploma-jobs.html" onclick="toggleMobileNav()">📐 Diploma / Polytechnic Jobs</a></li>
+        <li><a href="/iti-jobs.html" onclick="toggleMobileNav()">🔧 ITI Trade Jobs</a></li>
+        <li><a href="/engineering-jobs.html" onclick="toggleMobileNav()">⚙️ Engineering / B.Tech Jobs</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Quick Tools &amp; Alerts</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/admit-cards.html" onclick="toggleMobileNav()">🎟️ Admit Cards &amp; Hall Tickets</a></li>
+        <li><a href="/exam-results.html" onclick="toggleMobileNav()">📊 Exam Results &amp; Cutoffs</a></li>
+        <li><a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#128c7e !important; font-weight:700;">💬 Join WhatsApp Job Channel</a></li>
+        <li><a href="https://t.me/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#0088cc !important; font-weight:700;">📢 Join Telegram Alerts</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Legal &amp; Information</div>
+      <ul class="mobile-drawer-links legal">
+        <li><a href="/about.html" onclick="toggleMobileNav()">About Us</a></li>
+        <li><a href="/contact.html" onclick="toggleMobileNav()">Contact Us</a></li>
+        <li><a href="/privacy-policy.html" onclick="toggleMobileNav()">Privacy Policy</a></li>
+        <li><a href="/terms.html" onclick="toggleMobileNav()">Terms &amp; Conditions</a></li>
+        <li><a href="/disclaimer.html" onclick="toggleMobileNav()">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-drawer-overlay');
+      if (drawer && overlay) {
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+      }
+    }
+  </script>
 
 
   <main class="site-main-section">
@@ -216,7 +285,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 369 Posts (369 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 861 Posts (861 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-16</td>
@@ -225,7 +294,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-trade-apprentice---iti-tr-3.html">SAIL / Maharatna Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 1347 Posts (1347 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-trade-apprentice---iti-tr-3.html">SAIL / Maharatna Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 1237 Posts (1237 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-17</td>
@@ -234,7 +303,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-sub-inspector---police-co-5.html">SAIL / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 3737 Posts (3737 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-sub-inspector---police-co-5.html">SAIL / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 4746 Posts (4746 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-19</td>
@@ -243,7 +312,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 779 Posts (779 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 472 Posts (472 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-04</td>
@@ -252,7 +321,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-trade-apprentice---iti-tr-8.html">BEL / Navratna PSU Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 456 Posts (456 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-trade-apprentice---iti-tr-8.html">BEL / Navratna PSU Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 2647 Posts (2647 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -261,7 +330,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-sub-inspector---police-co-10.html">BEL / Navratna PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 2830 Posts (2830 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-sub-inspector---police-co-10.html">BEL / Navratna PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 7130 Posts (7130 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-24</td>
@@ -270,7 +339,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-hal---defence-psu-trade-apprentice---iti-tr-11.html">HAL / Defence PSU Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 2122 Posts (2122 Posts)</a>
+                      <a href="/jobs/recruitment-hal---defence-psu-trade-apprentice---iti-tr-11.html">HAL / Defence PSU Trade Apprentice / ITI Trainee Openings Recruitment 2026 - 1501 Posts (1501 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-25</td>
@@ -279,7 +348,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-hal---defence-psu-sub-inspector---police-co-13.html">HAL / Defence PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 969 Posts (969 Posts)</a>
+                      <a href="/jobs/recruitment-hal---defence-psu-sub-inspector---police-co-13.html">HAL / Defence PSU Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 373 Posts (373 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-27</td>
@@ -288,7 +357,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-coal-india---maharatna-sub-inspector---police-co-17.html">Coal India / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 5653 Posts (5653 Posts)</a>
+                      <a href="/jobs/recruitment-coal-india---maharatna-sub-inspector---police-co-17.html">Coal India / Maharatna Sub-Inspector / Police Constable / Jail Warder Recruitment 2026 - 5952 Posts (5952 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-10-01</td>

@@ -53,7 +53,7 @@
 <body>
 
   
-  <!-- Top Announcement & Utility Bar -->
+  <!-- Top Announcement & Utility Bar (Desktop Only) -->
   <div class="site-top-strip">
     <div class="container">
       <div class="top-strip-inner">
@@ -85,15 +85,25 @@
             <div class="brand-tagline-text">India's Premier Government Job Discovery Gateway</div>
           </div>
         </a>
+
+        <!-- Desktop Trust Badges -->
         <div class="header-trust-badges">
           <div class="trust-badge-pill">🇮🇳 100% Free Alerts</div>
           <a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" class="trust-badge-pill whatsapp">💬 Join WhatsApp</a>
         </div>
+
+        <!-- Mobile Menu Toggle Button (Visible only on Mobile) -->
+        <button type="button" class="mobile-menu-toggle-btn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-text">MENU</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Primary Modern Navigation Bar -->
+  <!-- Primary Desktop Navigation Bar (Desktop Only) -->
   <nav class="site-primary-navbar">
     <div class="container">
       <ul class="nav-menu-list">
@@ -113,7 +123,7 @@
   <div class="site-search-strip">
     <div class="container">
       <form id="main-search-form" class="search-form-wrapper" action="/central-govt-jobs.html" method="GET">
-        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification (10th, B.Tech), or State..." autocomplete="off">
+        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
         <button type="submit" class="search-btn">🔍 Search Jobs</button>
       </form>
       <div class="search-trending-tags">
@@ -126,6 +136,65 @@
       </div>
     </div>
   </div>
+
+  <!-- Ultra-Clean Slide-In Mobile Navigation Drawer -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" onclick="toggleMobileNav()"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title">🏛️ RozgarDwaar Menu</div>
+      <button type="button" class="mobile-drawer-close-btn" onclick="toggleMobileNav()" aria-label="Close Navigation Menu">✕</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-drawer-section-title">Government Job Sectors</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/" onclick="toggleMobileNav()">🏠 Home</a></li>
+        <li><a href="/central-govt-jobs.html" onclick="toggleMobileNav()">🏛️ Central Govt Jobs</a></li>
+        <li><a href="/railway-jobs.html" onclick="toggleMobileNav()">🚆 Railway Jobs (RRB / RRC)</a></li>
+        <li><a href="/bank-jobs.html" onclick="toggleMobileNav()">🏦 Bank Jobs (IBPS / SBI / RBI)</a></li>
+        <li><a href="/psu-jobs.html" onclick="toggleMobileNav()">🏢 PSU Recruitments (IOCL / NTPC)</a></li>
+        <li><a href="/fresher-jobs.html" onclick="toggleMobileNav()">🎓 Fresher Jobs (Zero Experience)</a></li>
+        <li><a href="/graduate-jobs.html" onclick="toggleMobileNav()">📜 Graduate Jobs (Any Degree)</a></li>
+        <li><a href="/state-govt-jobs.html" onclick="toggleMobileNav()">🗺️ State Govt Jobs (All States)</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Jobs by Qualification</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/10th-12th-pass-jobs.html" onclick="toggleMobileNav()">🎒 10th &amp; 12th Pass Jobs</a></li>
+        <li><a href="/diploma-jobs.html" onclick="toggleMobileNav()">📐 Diploma / Polytechnic Jobs</a></li>
+        <li><a href="/iti-jobs.html" onclick="toggleMobileNav()">🔧 ITI Trade Jobs</a></li>
+        <li><a href="/engineering-jobs.html" onclick="toggleMobileNav()">⚙️ Engineering / B.Tech Jobs</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Quick Tools &amp; Alerts</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/admit-cards.html" onclick="toggleMobileNav()">🎟️ Admit Cards &amp; Hall Tickets</a></li>
+        <li><a href="/exam-results.html" onclick="toggleMobileNav()">📊 Exam Results &amp; Cutoffs</a></li>
+        <li><a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#128c7e !important; font-weight:700;">💬 Join WhatsApp Job Channel</a></li>
+        <li><a href="https://t.me/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#0088cc !important; font-weight:700;">📢 Join Telegram Alerts</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Legal &amp; Information</div>
+      <ul class="mobile-drawer-links legal">
+        <li><a href="/about.html" onclick="toggleMobileNav()">About Us</a></li>
+        <li><a href="/contact.html" onclick="toggleMobileNav()">Contact Us</a></li>
+        <li><a href="/privacy-policy.html" onclick="toggleMobileNav()">Privacy Policy</a></li>
+        <li><a href="/terms.html" onclick="toggleMobileNav()">Terms &amp; Conditions</a></li>
+        <li><a href="/disclaimer.html" onclick="toggleMobileNav()">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-drawer-overlay');
+      if (drawer && overlay) {
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+      }
+    }
+  </script>
 
 
   <main class="site-main-section">
@@ -180,16 +249,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-coal-india---maharatna-management-trainee---fina-18.html">Coal India / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 289 Posts (289 Posts)</a>
-                      
-                    </td>
-                    <td class="date-col">2026-10-02</td>
-                    <td class="action-col"><a href="/jobs/recruitment-coal-india---maharatna-management-trainee---fina-18.html">APPLY ONLINE</a></td>
-                  </tr>
-                
-                  <tr>
-                    <td class="post-col">
-                      <a href="/jobs/recruitment-bpcl---maharatna-management-trainee---fina-23.html">BPCL / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 249 Posts (249 Posts)</a>
+                      <a href="/jobs/recruitment-bpcl---maharatna-management-trainee---fina-23.html">BPCL / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 197 Posts (197 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-10-07</td>
@@ -198,16 +258,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-iocl---maharatna-management-trainee---fina-27.html">IOCL / Maharatna Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 286 Posts (286 Posts)</a>
-                      
-                    </td>
-                    <td class="date-col">2026-09-16</td>
-                    <td class="action-col"><a href="/jobs/recruitment-iocl---maharatna-management-trainee---fina-27.html">APPLY ONLINE</a></td>
-                  </tr>
-                
-                  <tr>
-                    <td class="post-col">
-                      <a href="/jobs/recruitment-esic---labour-ministry-management-trainee---fina-64.html">ESIC / Labour Ministry Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 215 Posts (215 Posts)</a>
+                      <a href="/jobs/recruitment-esic---labour-ministry-management-trainee---fina-64.html">ESIC / Labour Ministry Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 102 Posts (102 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -216,7 +267,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-epfo-india-management-trainee---fina-69.html">EPFO India Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 334 Posts (334 Posts)</a>
+                      <a href="/jobs/recruitment-epfo-india-management-trainee---fina-69.html">EPFO India Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 75 Posts (75 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-10-03</td>
@@ -225,16 +276,25 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-itbp---mha-management-trainee---fina-110.html">ITBP / MHA Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 173 Posts (173 Posts)</a>
+                      <a href="/jobs/recruitment-nabard-management-trainee---fina-72.html">NABARD Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 225 Posts (225 Posts)</a>
                       
                     </td>
-                    <td class="date-col">2026-09-24</td>
-                    <td class="action-col"><a href="/jobs/recruitment-itbp---mha-management-trainee---fina-110.html">APPLY ONLINE</a></td>
+                    <td class="date-col">2026-09-07</td>
+                    <td class="action-col"><a href="/jobs/recruitment-nabard-management-trainee---fina-72.html">APPLY ONLINE</a></td>
                   </tr>
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-ssb---mha-management-trainee---fina-115.html">SSB / MHA Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 304 Posts (304 Posts)</a>
+                      <a href="/jobs/recruitment-sidbi-bank-management-trainee---fina-76.html">SIDBI Bank Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 259 Posts (259 Posts)</a>
+                      
+                    </td>
+                    <td class="date-col">2026-09-07</td>
+                    <td class="action-col"><a href="/jobs/recruitment-sidbi-bank-management-trainee---fina-76.html">APPLY ONLINE</a></td>
+                  </tr>
+                
+                  <tr>
+                    <td class="post-col">
+                      <a href="/jobs/recruitment-ssb---mha-management-trainee---fina-115.html">SSB / MHA Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 303 Posts (303 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-29</td>
@@ -243,25 +303,16 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-indian-air-force-management-trainee---fina-122.html">Indian Air Force Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 50 Posts (50 Posts)</a>
+                      <a href="/jobs/recruitment-indian-navy-management-trainee---fina-119.html">Indian Navy Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 193 Posts (193 Posts)</a>
                       
                     </td>
-                    <td class="date-col">2026-10-06</td>
-                    <td class="action-col"><a href="/jobs/recruitment-indian-air-force-management-trainee---fina-122.html">APPLY ONLINE</a></td>
+                    <td class="date-col">2026-09-04</td>
+                    <td class="action-col"><a href="/jobs/recruitment-indian-navy-management-trainee---fina-119.html">APPLY ONLINE</a></td>
                   </tr>
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-indian-coast-guard-management-trainee---fina-127.html">Indian Coast Guard Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 278 Posts (278 Posts)</a>
-                      
-                    </td>
-                    <td class="date-col">2026-09-16</td>
-                    <td class="action-col"><a href="/jobs/recruitment-indian-coast-guard-management-trainee---fina-127.html">APPLY ONLINE</a></td>
-                  </tr>
-                
-                  <tr>
-                    <td class="post-col">
-                      <a href="/jobs/recruitment-kpsc-karnataka-management-trainee---fina-156.html">KPSC Karnataka Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 97 Posts (97 Posts)</a>
+                      <a href="/jobs/recruitment-kpsc-karnataka-management-trainee---fina-156.html">KPSC Karnataka Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 208 Posts (208 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -270,16 +321,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-mpesb---mp-vyapam-management-trainee---fina-164.html">MPESB / MP Vyapam Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 125 Posts (125 Posts)</a>
-                      
-                    </td>
-                    <td class="date-col">2026-09-07</td>
-                    <td class="action-col"><a href="/jobs/recruitment-mpesb---mp-vyapam-management-trainee---fina-164.html">APPLY ONLINE</a></td>
-                  </tr>
-                
-                  <tr>
-                    <td class="post-col">
-                      <a href="/jobs/recruitment-gsssb-gujarat-management-trainee---fina-168.html">GSSSB Gujarat Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 257 Posts (257 Posts)</a>
+                      <a href="/jobs/recruitment-gsssb-gujarat-management-trainee---fina-168.html">GSSSB Gujarat Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 217 Posts (217 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-04</td>
@@ -288,11 +330,38 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-hssc-haryana-management-trainee---fina-173.html">HSSC Haryana Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 134 Posts (134 Posts)</a>
+                      <a href="/jobs/recruitment-hssc-haryana-management-trainee---fina-173.html">HSSC Haryana Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 119 Posts (119 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-10-07</td>
                     <td class="action-col"><a href="/jobs/recruitment-hssc-haryana-management-trainee---fina-173.html">APPLY ONLINE</a></td>
+                  </tr>
+                
+                  <tr>
+                    <td class="post-col">
+                      <a href="/jobs/recruitment-psssb-punjab-management-trainee---fina-177.html">PSSSB Punjab Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 69 Posts (69 Posts)</a>
+                      
+                    </td>
+                    <td class="date-col">2026-09-16</td>
+                    <td class="action-col"><a href="/jobs/recruitment-psssb-punjab-management-trainee---fina-177.html">APPLY ONLINE</a></td>
+                  </tr>
+                
+                  <tr>
+                    <td class="post-col">
+                      <a href="/jobs/recruitment-cg-vyapam-management-trainee---fina-214.html">CG Vyapam Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 129 Posts (129 Posts)</a>
+                      
+                    </td>
+                    <td class="date-col">2026-09-28</td>
+                    <td class="action-col"><a href="/jobs/recruitment-cg-vyapam-management-trainee---fina-214.html">APPLY ONLINE</a></td>
+                  </tr>
+                
+                  <tr>
+                    <td class="post-col">
+                      <a href="/jobs/recruitment-jkssb-management-trainee---fina-226.html">JKSSB Management Trainee / Finance Executive (MBA / CA / ICWA) Recruitment 2026 - 89 Posts (89 Posts)</a>
+                      
+                    </td>
+                    <td class="date-col">2026-09-15</td>
+                    <td class="action-col"><a href="/jobs/recruitment-jkssb-management-trainee---fina-226.html">APPLY ONLINE</a></td>
                   </tr>
                 
               </tbody>

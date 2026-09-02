@@ -946,7 +946,230 @@ a:hover {
    Mobile-First Ultra-Clean UI/UX & Responsive Overhaul (App-Like Experience)
    ========================================================================== */
 
+/* ==========================================================================
+   Mobile Drawer & Responsive Architecture (Zero Mobile Clutter)
+   ========================================================================== */
+
+/* Desktop Defaults: Hide Mobile Drawer */
+.mobile-menu-toggle-btn {
+  display: none;
+}
+.mobile-drawer-overlay {
+  display: none;
+}
+.mobile-nav-drawer {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  /* Hide All Desktop Clutter from Mobile Screen */
+  .site-top-strip {
+    display: none !important;
+  }
+  .header-trust-badges {
+    display: none !important;
+  }
+  .verified-portal-tag {
+    display: none !important;
+  }
+  .brand-tagline-text {
+    display: none !important;
+  }
+  .site-primary-navbar,
+  .primary-nav-bar {
+    display: none !important;
+  }
+  .search-trending-tags {
+    display: none !important;
+  }
+
+  /* Ultra-Clean App Header */
+  .site-brand-area {
+    padding: 10px 0 !important;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .brand-header-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+  }
+
+  .brand-wrapper {
+    gap: 8px !important;
+  }
+
+  .brand-logo-badge {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
+    border-radius: 8px !important;
+  }
+
+  .brand-title-text {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+  }
+
+  /* Sleek Hamburger Toggle Button */
+  .mobile-menu-toggle-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5px;
+    background: #0b2545;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(11, 37, 69, 0.2);
+  }
+
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .hamburger-text {
+    font-size: 9px;
+    font-weight: 800;
+    color: #00d2d3;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+  }
+
+  /* Mobile Slide-In Navigation Drawer */
+  .mobile-drawer-overlay {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-drawer {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 82%;
+    max-width: 320px;
+    background: #ffffff;
+    z-index: 99999;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.25);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+
+  .mobile-nav-drawer.open {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer-header {
+    background: #0b2545;
+    color: #ffffff;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #008000;
+  }
+
+  .mobile-drawer-title {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .mobile-drawer-close-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-drawer-body {
+    padding: 14px 16px 30px;
+  }
+
+  .mobile-drawer-section-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #8395a7;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin: 14px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f2f6;
+  }
+
+  .mobile-drawer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-drawer-links li {
+    margin-bottom: 2px;
+  }
+
+  .mobile-drawer-links li a {
+    display: block;
+    padding: 9px 10px;
+    color: #2f3640 !important;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+  }
+
+  .mobile-drawer-links li a:hover {
+    background: #f1f4f8;
+    color: #008000 !important;
+    text-decoration: none;
+  }
+
+  .mobile-drawer-links.legal li a {
+    font-size: 12px;
+    color: #576574 !important;
+    padding: 6px 10px;
+  }
+
+  body.no-scroll {
+    overflow: hidden !important;
+  }
+
   /* Layout & Spacing */
   body {
     font-size: 13px;
@@ -969,85 +1192,6 @@ a:hover {
   .sidebar-column {
     width: 100% !important;
     margin-top: 20px;
-  }
-
-  /* Top Strip */
-  .site-top-strip {
-    padding: 6px 0;
-  }
-
-  .top-strip-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 4px;
-  }
-
-  .top-strip-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    font-size: 11px;
-  }
-
-  /* Brand Header */
-  .site-brand-area {
-    padding: 12px 0 10px;
-  }
-
-  .brand-wrapper {
-    gap: 10px;
-  }
-
-  .brand-logo-badge {
-    width: 38px;
-    height: 38px;
-    font-size: 20px;
-  }
-
-  .brand-title-text {
-    font-size: 22px;
-  }
-
-  .brand-tagline-text {
-    font-size: 10px;
-  }
-
-  /* Swipeable App-Like Navbar */
-  .site-primary-navbar,
-  .primary-nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 4px 0;
-    overflow: hidden;
-  }
-
-  .nav-menu-list {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 4px 6px;
-    gap: 6px;
-  }
-
-  .nav-menu-list::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-menu-link {
-    padding: 8px 12px !important;
-    font-size: 11.5px !important;
-    border-right: none !important;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.08);
-    flex-shrink: 0;
-  }
-
-  .nav-menu-link.active,
-  .nav-menu-link:hover {
-    background: #008000 !important;
   }
 
   /* Search Strip */
@@ -1271,5 +1415,6 @@ a:hover {
     padding: 10px 0;
   }
 }
+
 
 

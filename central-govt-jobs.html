@@ -53,7 +53,7 @@
 <body>
 
   
-  <!-- Top Announcement & Utility Bar -->
+  <!-- Top Announcement & Utility Bar (Desktop Only) -->
   <div class="site-top-strip">
     <div class="container">
       <div class="top-strip-inner">
@@ -85,15 +85,25 @@
             <div class="brand-tagline-text">India's Premier Government Job Discovery Gateway</div>
           </div>
         </a>
+
+        <!-- Desktop Trust Badges -->
         <div class="header-trust-badges">
           <div class="trust-badge-pill">🇮🇳 100% Free Alerts</div>
           <a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" class="trust-badge-pill whatsapp">💬 Join WhatsApp</a>
         </div>
+
+        <!-- Mobile Menu Toggle Button (Visible only on Mobile) -->
+        <button type="button" class="mobile-menu-toggle-btn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-text">MENU</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Primary Modern Navigation Bar -->
+  <!-- Primary Desktop Navigation Bar (Desktop Only) -->
   <nav class="site-primary-navbar">
     <div class="container">
       <ul class="nav-menu-list">
@@ -113,7 +123,7 @@
   <div class="site-search-strip">
     <div class="container">
       <form id="main-search-form" class="search-form-wrapper" action="/central-govt-jobs.html" method="GET">
-        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification (10th, B.Tech), or State..." autocomplete="off">
+        <input type="text" id="main-search-input" name="q" class="search-input" placeholder="Search by Department, Sector (Railway, Bank, SSC), Qualification, or State..." autocomplete="off">
         <button type="submit" class="search-btn">🔍 Search Jobs</button>
       </form>
       <div class="search-trending-tags">
@@ -126,6 +136,65 @@
       </div>
     </div>
   </div>
+
+  <!-- Ultra-Clean Slide-In Mobile Navigation Drawer -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" onclick="toggleMobileNav()"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title">🏛️ RozgarDwaar Menu</div>
+      <button type="button" class="mobile-drawer-close-btn" onclick="toggleMobileNav()" aria-label="Close Navigation Menu">✕</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-drawer-section-title">Government Job Sectors</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/" onclick="toggleMobileNav()">🏠 Home</a></li>
+        <li><a href="/central-govt-jobs.html" onclick="toggleMobileNav()">🏛️ Central Govt Jobs</a></li>
+        <li><a href="/railway-jobs.html" onclick="toggleMobileNav()">🚆 Railway Jobs (RRB / RRC)</a></li>
+        <li><a href="/bank-jobs.html" onclick="toggleMobileNav()">🏦 Bank Jobs (IBPS / SBI / RBI)</a></li>
+        <li><a href="/psu-jobs.html" onclick="toggleMobileNav()">🏢 PSU Recruitments (IOCL / NTPC)</a></li>
+        <li><a href="/fresher-jobs.html" onclick="toggleMobileNav()">🎓 Fresher Jobs (Zero Experience)</a></li>
+        <li><a href="/graduate-jobs.html" onclick="toggleMobileNav()">📜 Graduate Jobs (Any Degree)</a></li>
+        <li><a href="/state-govt-jobs.html" onclick="toggleMobileNav()">🗺️ State Govt Jobs (All States)</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Jobs by Qualification</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/10th-12th-pass-jobs.html" onclick="toggleMobileNav()">🎒 10th &amp; 12th Pass Jobs</a></li>
+        <li><a href="/diploma-jobs.html" onclick="toggleMobileNav()">📐 Diploma / Polytechnic Jobs</a></li>
+        <li><a href="/iti-jobs.html" onclick="toggleMobileNav()">🔧 ITI Trade Jobs</a></li>
+        <li><a href="/engineering-jobs.html" onclick="toggleMobileNav()">⚙️ Engineering / B.Tech Jobs</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Quick Tools &amp; Alerts</div>
+      <ul class="mobile-drawer-links">
+        <li><a href="/admit-cards.html" onclick="toggleMobileNav()">🎟️ Admit Cards &amp; Hall Tickets</a></li>
+        <li><a href="/exam-results.html" onclick="toggleMobileNav()">📊 Exam Results &amp; Cutoffs</a></li>
+        <li><a href="https://whatsapp.com/channel/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#128c7e !important; font-weight:700;">💬 Join WhatsApp Job Channel</a></li>
+        <li><a href="https://t.me/ROZGARDWAAR" target="_blank" rel="noopener noreferrer" style="color:#0088cc !important; font-weight:700;">📢 Join Telegram Alerts</a></li>
+      </ul>
+
+      <div class="mobile-drawer-section-title">Legal &amp; Information</div>
+      <ul class="mobile-drawer-links legal">
+        <li><a href="/about.html" onclick="toggleMobileNav()">About Us</a></li>
+        <li><a href="/contact.html" onclick="toggleMobileNav()">Contact Us</a></li>
+        <li><a href="/privacy-policy.html" onclick="toggleMobileNav()">Privacy Policy</a></li>
+        <li><a href="/terms.html" onclick="toggleMobileNav()">Terms &amp; Conditions</a></li>
+        <li><a href="/disclaimer.html" onclick="toggleMobileNav()">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-drawer-overlay');
+      if (drawer && overlay) {
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+      }
+    }
+  </script>
 
 
   <main class="site-main-section">
@@ -189,7 +258,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 369 Posts (369 Posts)</a>
+                      <a href="/jobs/recruitment-sail---maharatna-assistant-section-officer-2.html">SAIL / Maharatna Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 861 Posts (861 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-16</td>
@@ -198,7 +267,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 779 Posts (779 Posts)</a>
+                      <a href="/jobs/recruitment-bel---navratna-psu-assistant-section-officer-7.html">BEL / Navratna PSU Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 472 Posts (472 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-04</td>
@@ -207,7 +276,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-gail-india-data-entry-operator---ste-34.html">GAIL India Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 71 Posts (71 Posts)</a>
+                      <a href="/jobs/recruitment-gail-india-data-entry-operator---ste-34.html">GAIL India Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 444 Posts (444 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-23</td>
@@ -216,7 +285,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-gail-india-assistant-section-officer-36.html">GAIL India Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1059 Posts (1059 Posts)</a>
+                      <a href="/jobs/recruitment-gail-india-assistant-section-officer-36.html">GAIL India Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1001 Posts (1001 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -225,7 +294,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-npcil---dept-of-atomic-energy-data-entry-operator---ste-39.html">NPCIL / Dept of Atomic Energy Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 63 Posts (63 Posts)</a>
+                      <a href="/jobs/recruitment-npcil---dept-of-atomic-energy-data-entry-operator---ste-39.html">NPCIL / Dept of Atomic Energy Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 285 Posts (285 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-28</td>
@@ -234,7 +303,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-barc---dae-data-entry-operator---ste-42.html">BARC / DAE Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 344 Posts (344 Posts)</a>
+                      <a href="/jobs/recruitment-barc---dae-data-entry-operator---ste-42.html">BARC / DAE Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 550 Posts (550 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-04</td>
@@ -243,7 +312,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-barc---dae-assistant-section-officer-44.html">BARC / DAE Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 979 Posts (979 Posts)</a>
+                      <a href="/jobs/recruitment-barc---dae-assistant-section-officer-44.html">BARC / DAE Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1084 Posts (1084 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -252,7 +321,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bis-india-data-entry-operator---ste-46.html">BIS India Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 436 Posts (436 Posts)</a>
+                      <a href="/jobs/recruitment-bis-india-data-entry-operator---ste-46.html">BIS India Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 416 Posts (416 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-10-05</td>
@@ -261,16 +330,16 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-bis-india-assistant-section-officer-48.html">BIS India Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 1045 Posts (1045 Posts)</a>
+                      <a href="/jobs/recruitment-fssai---health-ministry-assistant-section-officer-53.html">FSSAI / Health Ministry Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 772 Posts (772 Posts)</a>
                       
                     </td>
-                    <td class="date-col">2026-09-07</td>
-                    <td class="action-col"><a href="/jobs/recruitment-bis-india-assistant-section-officer-48.html">APPLY ONLINE</a></td>
+                    <td class="date-col">2026-09-17</td>
+                    <td class="action-col"><a href="/jobs/recruitment-fssai---health-ministry-assistant-section-officer-53.html">APPLY ONLINE</a></td>
                   </tr>
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-csir-labs-assistant-section-officer-57.html">CSIR Labs Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 68 Posts (68 Posts)</a>
+                      <a href="/jobs/recruitment-csir-labs-assistant-section-officer-57.html">CSIR Labs Assistant Section Officer / Clerk / Computer Assistant Recruitment 2026 - 532 Posts (532 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-21</td>
@@ -279,7 +348,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sidbi-bank-data-entry-operator---ste-80.html">SIDBI Bank Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 331 Posts (331 Posts)</a>
+                      <a href="/jobs/recruitment-sidbi-bank-data-entry-operator---ste-80.html">SIDBI Bank Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 74 Posts (74 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-07</td>
@@ -288,7 +357,7 @@
                 
                   <tr>
                     <td class="post-col">
-                      <a href="/jobs/recruitment-sbi-data-entry-operator---ste-85.html">SBI Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 505 Posts (505 Posts)</a>
+                      <a href="/jobs/recruitment-sbi-data-entry-operator---ste-85.html">SBI Data Entry Operator / Stenographer Grade C &amp; D Recruitment 2026 - 586 Posts (586 Posts)</a>
                       
                     </td>
                     <td class="date-col">2026-09-24</td>
