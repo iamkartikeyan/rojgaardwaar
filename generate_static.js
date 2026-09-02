@@ -424,8 +424,8 @@ function generateJobPostingSchema(job, stateObj) {
   `;
 }
 
-// 1. Generate All 303 Jobs
-console.log("Generating static HTML files with SVG Logo and zero emojis for all 303 jobs...");
+// 1. Generate All Jobs
+console.log(`Generating static HTML files with SVG Logo and zero emojis for all ${data.RECRUITMENTS.length} jobs...`);
 let generatedCount = 0;
 data.RECRUITMENTS.forEach(job => {
   const filePath = path.join(JOBS_DIR, `${job.id}.html`);
