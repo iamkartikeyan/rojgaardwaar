@@ -56,6 +56,10 @@
       state.currentRoute = 'railway';
       state.routeParam = 'railway';
       renderRailwayJobsView();
+    } else if (hash === '/category/banking') {
+      state.currentRoute = 'banking';
+      state.routeParam = 'banking';
+      renderBankJobsView();
     } else if (hash.startsWith('/qualification/')) {
       const qualId = hash.replace('/qualification/', '').trim();
       state.currentRoute = 'qualification';
@@ -112,7 +116,7 @@
   }
 
   // =========================================================================
-  // 1. Home View (Exact IndGovtJobs Layout from First Screenshot)
+  // 1. Home View (Exact IndGovtJobs Layout)
   // =========================================================================
 
   function renderHomeView() {
@@ -220,7 +224,162 @@
   }
 
   // =========================================================================
-  // 2. Railway Jobs View (Exact Layout from Third Screenshot)
+  // 2. Bank Jobs View (Exact Layout from Fourth Screenshot)
+  // =========================================================================
+
+  function renderBankJobsView() {
+    const bankJobs = [
+      { title: "Office Assistant (Multipurpose), Officer Scale-I, II & III – 13742+ Posts", vacancies: "13742", lastDate: "21/09/2026", bank: "IBPS RRB XV 2026", id: "ibps-po-recruitment-2026" },
+      { title: "Local Bank Officer (LBO) – 2432 Posts", vacancies: "2432", lastDate: "07/09/2026", bank: "Bank of Baroda", id: "ibps-po-recruitment-2026" },
+      { title: "Officers – 205 Posts", vacancies: "205", lastDate: "25/09/2026", bank: "Bank of India", id: "ibps-po-recruitment-2026" },
+      { title: "Trade Finance Officer – 35 Posts", vacancies: "35", lastDate: "10/09/2026", bank: "State Bank of India", id: "ibps-po-recruitment-2026" },
+      { title: "Specialist Officers (IT) – 20 Posts", vacancies: "20", lastDate: "15/09/2026", bank: "UCO Bank", id: "ibps-po-recruitment-2026" },
+      { title: "Specialist Officers (SO), Generalist – 251 Posts", vacancies: "251", lastDate: "15/09/2026", bank: "Indian Overseas Bank", id: "ibps-po-recruitment-2026" },
+      { title: "Security Guard – 25 Posts", vacancies: "25", lastDate: "14/09/2026", bank: "Indian Overseas Bank", id: "ibps-po-recruitment-2026" },
+      { title: "Specialist Officers – 41 Posts", vacancies: "41", lastDate: "07/09/2026", bank: "Nainital Bank", id: "ibps-po-recruitment-2026" },
+      { title: "Various Officer, Manager & Other Posts – 1679 Posts", vacancies: "1679", lastDate: "31/09/2026", bank: "Baroda Global Shared Services Limited", id: "ibps-po-recruitment-2026" },
+      { title: "Probationary Officers (PO/MT) – 6850 Posts", vacancies: "6850", lastDate: "28/09/2026", bank: "IBPS PO 2026", id: "ibps-po-recruitment-2026" },
+      { title: "Junior Associates (Customer Support & Sales) – 8283 Posts", vacancies: "8283", lastDate: "25/09/2026", bank: "State Bank of India (SBI Clerk)", id: "ibps-po-recruitment-2026" },
+      { title: "Officers in Grade 'B' (General / DEPR / DSIM) – 94 Posts", vacancies: "94", lastDate: "22/09/2026", bank: "Reserve Bank of India (RBI)", id: "ibps-po-recruitment-2026" },
+      { title: "Assistant Manager (Grade 'A' RDBS / Rajbhasha) – 102 Posts", vacancies: "102", lastDate: "26/09/2026", bank: "NABARD", id: "ibps-po-recruitment-2026" }
+    ];
+
+    let html = `
+      <div class="content-block" style="padding: 16px 18px;">
+        
+        <!-- Title & Meta Header (Exact screenshot match) -->
+        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
+          Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies
+        </h1>
+        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
+          Last Updated: September 01, 2026 | Author: Prabhu
+        </div>
+
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
+          Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27. <strong>RojgaarDwaar</strong> updates latest Public Sector Banking Vacancies and Current Private Sector Bank career openings for both fresher and experienced Indian Citizens. People find your career in Banking Sector based on your education qualification and bank / finance field experience. More than 50,000 upcoming Govt Bank vacancies are opening in 2026. Job Seekers don't miss your Job opportunities in both Government and Scheduled Banks.
+        </p>
+
+        <!-- 1. Table: Latest Bank Jobs Notifications September 2026 -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Latest Bank Jobs Notifications September 2026:</span>
+        </div>
+        <table class="ind-govt-table">
+          <thead>
+            <tr>
+              <th style="width:48%;">Post Names – Total Vacancies</th>
+              <th style="width:22%;">Last Date</th>
+              <th style="width:30%;">Job Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${bankJobs.map(j => `
+              <tr>
+                <td class="post-col">
+                  <a href="#/job/${j.id}">${escapeHtml(j.title)}</a>
+                </td>
+                <td class="date-col">${j.lastDate}</td>
+                <td class="action-col">
+                  <a href="#/job/${j.id}">${escapeHtml(j.bank)}</a>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <!-- 2. Types of Banking Jobs Available in India -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Types of Banking Jobs Available in India:</span>
+        </div>
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 8px;">
+          The banking sector offers diverse bank job opportunities for candidates with varying qualifications. Popular roles include:
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+          <li>Clerical Cadre (Clerk, Junior Associates, Cashier)</li>
+          <li>Office Assistant / Attendant / Peon</li>
+          <li>Probationary Officer (PO)</li>
+          <li>Management Trainee (MT)</li>
+          <li>Specialist Officer (SO) – IT, Law, HR, Marketing, etc.</li>
+          <li>Financial Analyst / Credit Analyst</li>
+          <li>Customer Relationship Manager</li>
+          <li>Investment Banking Roles</li>
+          <li>Loan Officer / Auditor / Chartered Accountant</li>
+          <li>Security Officer / Medical Officer</li>
+          <li>Various Manager and Officer-level positions</li>
+        </ul>
+
+        <!-- 3. Major Govt Banks In India -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Major Govt Banks In India:</span>
+        </div>
+        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+          <li>State Bank of India (SBI)</li>
+          <li>Bank of Baroda</li>
+          <li>Punjab National Bank</li>
+          <li>Canara Bank</li>
+          <li>Union Bank of India</li>
+          <li>Indian Bank</li>
+          <li>Bank of India</li>
+          <li>Central Bank of India</li>
+          <li>Indian Overseas Bank</li>
+          <li>UCO Bank</li>
+          <li>Bank of Maharashtra</li>
+          <li>Punjab and Sind Bank</li>
+        </ul>
+
+        <!-- 4. About the Indian Banking Sector -->
+        <div class="green-check-title">
+          <span>✅</span> <span>About the Indian Banking Sector:</span>
+        </div>
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
+          The Indian banking sector is one of the most robust financial systems globally, regulated by the Reserve Bank of India (RBI). It comprises scheduled banks (public sector, private sector, regional rural, and foreign banks) and Non-Scheduled Banks. With 12 public sector banks and numerous private players, the sector offers stable and rewarding bank jobs with excellent growth prospects.
+        </p>
+
+        <!-- 5. Frequently Asked Questions (FAQ) (Exact Screenshot Content) -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Frequently Asked Questions (FAQ):</span>
+        </div>
+        <div style="line-height: 1.7; font-size: 13px; color: #333;">
+          <p style="margin-bottom: 10px;">
+            <strong>1. How to apply for bank jobs in India?</strong><br>
+            Eligible candidates can apply online or offline through official notifications listed on <strong>RojgaarDwaar</strong>. The site updates daily with the latest bank job vacancies in government and public sector banks.
+          </p>
+
+          <p style="margin-bottom: 10px;">
+            <strong>2. Why choose government bank jobs?</strong><br>
+            Government bank jobs offer unmatched job security, attractive salaries, allowances, and strong career progression – making them among the most preferred careers in India.
+          </p>
+
+          <p style="margin-bottom: 10px;">
+            <strong>3. What bank jobs are available after 12th pass or graduation?</strong><br>
+            <strong>After 12th:</strong> Clerk, Office Assistant, Cashier, Peon, Customer Service roles.<br>
+            <strong>After Graduation:</strong> Probationary Officer (PO), Specialist Officer (SO), Management Trainee, IT Officer, Law Officer, Manager roles.
+          </p>
+
+          <p style="margin-bottom: 10px;">
+            <strong>4. What are the major upcoming bank exams in India?</strong><br>
+            Top upcoming bank exams include <strong>IBPS Clerk, IBPS PO, IBPS RRB, SBI Clerk, SBI PO, RBI Assistant, and RBI Grade B</strong> exams conducted for clerical and officer-level recruitment.
+          </p>
+
+          <p style="margin-bottom: 10px;">
+            <strong>5. What are the eligibility criteria and selection process for bank jobs?</strong><br>
+            <strong>Qualification:</strong> Minimum 10+2 for clerical posts; Bachelor's/Master's degree for officer roles.<br>
+            <strong>Selection:</strong> Usually online written exam + interview (for officer posts).<br>
+            <strong>Age Limit:</strong> Generally 20–30 years (relaxations applicable).
+          </p>
+        </div>
+
+        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
+          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
+        </div>
+
+      </div>
+    `;
+
+    mainContentEl.innerHTML = html;
+  }
+
+  // =========================================================================
+  // 3. Railway Jobs View
   // =========================================================================
 
   function renderRailwayJobsView() {
@@ -326,7 +485,7 @@
           <li><strong>Other Posts:</strong> This includes Course Completed Act Apprentices (CCAA with 20% reserved vacancy), Sports Quota, Cultural Quota, Scouts and Guides Quota, and more.</li>
         </ul>
 
-        <!-- 4. Frequently Asked Questions (Exact Match) -->
+        <!-- 4. Frequently Asked Questions -->
         <div class="green-check-title">
           <span>✅</span> <span>Frequently Asked Questions:</span>
         </div>
@@ -373,7 +532,7 @@
   }
 
   // =========================================================================
-  // 3. Category & Qualification Hubs
+  // 4. Category & Qualification Hubs
   // =========================================================================
 
   function renderCategoryOrGovtJobsView(type, identifier) {
@@ -521,7 +680,7 @@
   }
 
   // =========================================================================
-  // 4. Job Detail View
+  // 5. Job Detail View
   // =========================================================================
 
   function renderJobDetailView(jobId) {
@@ -649,7 +808,7 @@
   }
 
   // =========================================================================
-  // 5. Admit Cards View
+  // 6. Admit Cards View
   // =========================================================================
 
   function renderAdmitCardsView() {
@@ -684,7 +843,7 @@
   }
 
   // =========================================================================
-  // 6. Results View
+  // 7. Results View
   // =========================================================================
 
   function renderResultsView() {
@@ -719,7 +878,7 @@
   }
 
   // =========================================================================
-  // 7. Eligibility Tool View
+  // 8. Eligibility Tool View
   // =========================================================================
 
   function renderEligibilityToolView() {
@@ -753,7 +912,7 @@
   }
 
   // =========================================================================
-  // 8. Saved Jobs View
+  // 9. Saved Jobs View
   // =========================================================================
 
   function renderSavedJobsView() {
@@ -785,7 +944,7 @@
   }
 
   // =========================================================================
-  // 9. Search View
+  // 10. Search View
   // =========================================================================
 
   function renderSearchView(query) {
