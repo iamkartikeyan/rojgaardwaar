@@ -2660,6 +2660,316 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://ongcindia.com/documents/77751/2659209/Consultants040626.pdf/16a21ea6-f980-6b6d-0c74-015b89b30716",
       "websiteUrl": "https://ongcindia.com/documents/77751/2659209/Consultants040626.pdf/16a21ea6-f980-6b6d-0c74-015b89b30716"
     }
+  },
+  {
+    "id": "fresher-jobs",
+    "title": "114359 Fresher Govt Jobs 2026 – Latest No Experience Sarkari Vacancies",
+    "org": "114359 Fresher Govt Jobs 2026 – Latest No Experience Sarkari Vacancies",
+    "shortOrg": "114359 Fresher Govt Jobs 2026 ",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2015/01/fresher-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2015/01/fresher-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2015/01/fresher-jobs.html"
+    }
+  },
+  {
+    "id": "state-wise-govt-jobs",
+    "title": "State wise Govt Jobs 2026  (73473 Sarkari Naukri Vacancies)",
+    "org": "State wise Govt Jobs 2026  (73473 Sarkari Naukri Vacancies)",
+    "shortOrg": "State wise Govt Jobs 2026  (73",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2014/03/state-wise-govt-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2014/03/state-wise-govt-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2014/03/state-wise-govt-jobs.html"
+    }
+  },
+  {
+    "id": "upsssc-veterinary-pharmacist",
+    "title": "UPSSSC Veterinary Pharmacist Recruitment 2026 – Apply Online for 1308 Posts | Last Date 05-10-2026",
+    "org": "UPSSSC Veterinary Pharmacist",
+    "shortOrg": "UPSSSC Veterinary Pharmacist",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "uttar-pradesh",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "05-10-2026",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1agxzdlTp8cgnKr1dNJbcpB2iM8FCzexd/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1agxzdlTp8cgnKr1dNJbcpB2iM8FCzexd/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1agxzdlTp8cgnKr1dNJbcpB2iM8FCzexd/view?usp=sharing"
+    }
+  },
+  {
+    "id": "upsssc-junior-engineer-agriculture",
+    "title": "UPSSSC Junior Engineer Agriculture Recruitment 2026 –Apply Online for 134 Posts | Last Date 07-10-2026",
+    "org": "UPSSSC Junior Engineer Agriculture",
+    "shortOrg": "UPSSSC Junior Engineer Agricul",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "uttar-pradesh",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "07-10-2026",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1o83ci7Hwpqg98izwFeADa8uB4RAwlhoi/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1o83ci7Hwpqg98izwFeADa8uB4RAwlhoi/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1o83ci7Hwpqg98izwFeADa8uB4RAwlhoi/view?usp=sharing"
+    }
+  },
+  {
+    "id": "upsssc-scientific-assistant",
+    "title": "UPSSSC Scientific Assistant & Lab Assistant Recruitment 2026: Apply Online for 208 Posts | Last Date 17-08-2026",
+    "org": "UPSSSC Scientific Assistant & Lab Assistant",
+    "shortOrg": "UPSSSC Scientific Assistant & ",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "uttar-pradesh",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "17-08-2026",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1G3ZE0SabmrSEeQG-xlqauSxZX2LkSICs/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1G3ZE0SabmrSEeQG-xlqauSxZX2LkSICs/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1G3ZE0SabmrSEeQG-xlqauSxZX2LkSICs/view?usp=sharing"
+    }
+  },
+  {
+    "id": "psc-recruitment",
+    "title": "PSC Recruitment 2026 – Latest State wise PSC Jobs Notifications",
+    "org": "PSC",
+    "shortOrg": "PSC",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2016/07/PSC-Recruitment.html",
+      "notificationUrl": "https://rozgardwaar.com/2016/07/PSC-Recruitment.html",
+      "websiteUrl": "https://rozgardwaar.com/2016/07/PSC-Recruitment.html"
+    }
+  },
+  {
+    "id": "upsssc-forest-guard-recruitment",
+    "title": "UPSSSC Forest Guard Recruitment 2026 - Apply Online for 708 Posts | Last Date 20-07-2026",
+    "org": "UPSSSC Forest Guard",
+    "shortOrg": "UPSSSC Forest Guard",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "uttar-pradesh",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "20-07-2026",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1hokL4Ud1zg2S3Wqdp0DhSEpyxi6Fc_qC/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1hokL4Ud1zg2S3Wqdp0DhSEpyxi6Fc_qC/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1hokL4Ud1zg2S3Wqdp0DhSEpyxi6Fc_qC/view?usp=sharing"
+    }
+  },
+  {
+    "id": "bpsc-school-teacher-tre-40-recruitment",
+    "title": "BPSC School Teacher TRE 4.0 Recruitment 2026 – Apply Online for 32388 Posts",
+    "org": "BPSC School Teacher TRE 4.0",
+    "shortOrg": "BPSC School Teacher TRE 4.0",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "bihar",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/10W7B0ADuDdx0T9xhDF38q1KyGyDfnqtO/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/10W7B0ADuDdx0T9xhDF38q1KyGyDfnqtO/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/10W7B0ADuDdx0T9xhDF38q1KyGyDfnqtO/view?usp=sharing"
+    }
+  },
+  {
+    "id": "bihar-tre-4-vacancy",
+    "title": "Bihar TRE 4.0 Vacancy 2026 Notification Out – Apply Online for 32388 Posts | Last Date 30-09-2026",
+    "org": "Bihar TRE 4.0",
+    "shortOrg": "Bihar TRE 4.0",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "bihar",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1UXMHS1B4N4u4neezBJa0J5CELfKYPxOn/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1UXMHS1B4N4u4neezBJa0J5CELfKYPxOn/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1UXMHS1B4N4u4neezBJa0J5CELfKYPxOn/view?usp=sharing"
+    }
+  },
+  {
+    "id": "bpsc-sugar-cane-officer-recruitment",
+    "title": "BPSC Sugar Cane Officer Recruitment 2026 - Apply Online for 44 Posts | Last Date 31 May 2026",
+    "org": "BPSC Sugar Cane Officer",
+    "shortOrg": "BPSC Sugar Cane Officer",
+    "posts": "Various State Cadre Vacancies",
+    "vacancies": 50,
+    "salary": "Pay Matrix Level-4 to Level-8 (₹25,500 – ₹92,300/-) as per State Pay Rules",
+    "qualificationText": "10th / 12th / Diploma / Graduate from recognized Board / University",
+    "qualifications": [
+      "graduate",
+      "12th-pass",
+      "10th-pass"
+    ],
+    "category": "state-govt",
+    "subCategory": "State Government Recruitment",
+    "state": "bihar",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "As per Notification"
+    },
+    "fee": "As per State Reservation Rules (Refer Notification)",
+    "ageLimit": "18 to 40 / 42 Years (State Norms Relaxation)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://bpsconline.bihar.gov.in/",
+      "notificationUrl": "https://rozgardwaar.com/2026/05/bpsc-sugar-cane-officer-recruitment.html",
+      "websiteUrl": "https://bpsconline.bihar.gov.in/"
+    }
   }
 ];
 
