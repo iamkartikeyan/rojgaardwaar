@@ -2970,6 +2970,369 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://rozgardwaar.com/2026/05/bpsc-sugar-cane-officer-recruitment.html",
       "websiteUrl": "https://bpsconline.bihar.gov.in/"
     }
+  },
+  {
+    "id": "it-fresher-jobs",
+    "title": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
+    "org": "Latest IT Govt Jobs 2026 (1000+ Fresher & Experienced Vacancies)",
+    "shortOrg": "Latest IT Govt Jobs 2026 (1000",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2014/04/it-fresher-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2014/04/it-fresher-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2014/04/it-fresher-jobs.html"
+    }
+  },
+  {
+    "id": "southern-railway-apprentice-recruitment",
+    "title": "Southern Railway Apprentice Recruitment 2026 – Apply Online for 4471 Fresher Posts | Last Date 27-09-2026",
+    "org": "Southern Railway Apprentice",
+    "shortOrg": "Southern Railway Apprentice",
+    "posts": "Fresher",
+    "vacancies": 4471,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "no-exam",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "27-09-2026",
+      "examDate": "No Written Exam (Merit Based Selection)"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://sronline.etrpindia.com/rrcchennaiapprentice26/notifications/Act%20Apprentices%20Notification%202026-27%20with%20enclosures.pdf",
+      "notificationUrl": "https://sronline.etrpindia.com/rrcchennaiapprentice26/notifications/Act%20Apprentices%20Notification%202026-27%20with%20enclosures.pdf",
+      "websiteUrl": "https://sronline.etrpindia.com/rrcchennaiapprentice26/notifications/Act%20Apprentices%20Notification%202026-27%20with%20enclosures.pdf"
+    }
+  },
+  {
+    "id": "bgssl-recruitment",
+    "title": "BGSSL Recruitment 2026 Apply Online for 1949 Various Posts | Last Date 30-09-2026",
+    "org": "BGSSL",
+    "shortOrg": "BGSSL",
+    "posts": "Various",
+    "vacancies": 1949,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1oaR3jQAIHIz4EI8L_y8zZueyaypttKPX/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1oaR3jQAIHIz4EI8L_y8zZueyaypttKPX/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1oaR3jQAIHIz4EI8L_y8zZueyaypttKPX/view?usp=sharing"
+    }
+  },
+  {
+    "id": "nic-sta-recruitment",
+    "title": "NIC STA Recruitment 2026 – Apply Online for 376 Fresher Posts | Last Date 30-09-2026",
+    "org": "NIC STA",
+    "shortOrg": "NIC STA",
+    "posts": "Fresher",
+    "vacancies": 376,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1_MOj3rA6LtfMeoMGojBZlxdQvIarc2AZ/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1_MOj3rA6LtfMeoMGojBZlxdQvIarc2AZ/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1_MOj3rA6LtfMeoMGojBZlxdQvIarc2AZ/view?usp=sharing"
+    }
+  },
+  {
+    "id": "bank-jobs",
+    "title": "Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies",
+    "org": "Bank Jobs 2026: Latest Banking",
+    "shortOrg": "Bank Jobs 2026: Latest Banking",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2026/08/bank-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2026/08/bank-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2026/08/bank-jobs.html"
+    }
+  },
+  {
+    "id": "gail-et-recruitment-gate-2027",
+    "title": "GAIL ET Recruitment GATE 2027 Notification Out",
+    "org": "GAIL ET",
+    "shortOrg": "GAIL ET",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/16FYMUTWfYBEVG5NnJ6RpCNSuGuCLtW07/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/16FYMUTWfYBEVG5NnJ6RpCNSuGuCLtW07/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/16FYMUTWfYBEVG5NnJ6RpCNSuGuCLtW07/view?usp=sharing"
+    }
+  },
+  {
+    "id": "ibps-rrb-xv-recruitment",
+    "title": "IBPS RRB XV Recruitment 2026 – Apply Online for 13742+ Office Assistant and Officer Posts | Last Date 21-09-2026",
+    "org": "IBPS RRB XV",
+    "shortOrg": "IBPS RRB XV",
+    "posts": "Office Assistant and Officer",
+    "vacancies": 13742,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "21-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1IXJTpCFZ4YV6G_Im6wUZ3V7nJqhPvmGv/view?usp=sharing",
+      "notificationUrl": "https://www.ibps.in/wp-content/uploads/CRP-RRBs-XV-notification.pdf",
+      "websiteUrl": "https://drive.google.com/file/d/1IXJTpCFZ4YV6G_Im6wUZ3V7nJqhPvmGv/view?usp=sharing"
+    }
+  },
+  {
+    "id": "beml-non-executive-recruitment",
+    "title": "BEML Non Executive Recruitment 2026 – Apply Online for 10 Posts for Fresher Diploma | Last Date 08-09-2026",
+    "org": "BEML Non Executive",
+    "shortOrg": "BEML Non Executive",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "08-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1tw2U20vNCVeUcDmmTEJex4QqFKPnX2PL/view?usp=sharing",
+      "notificationUrl": "https://beml.registrationform.in/secuRegister_14Of2026vEr27/notification/KP_S_14_2026%20-V1.pdf",
+      "websiteUrl": "https://drive.google.com/file/d/1tw2U20vNCVeUcDmmTEJex4QqFKPnX2PL/view?usp=sharing"
+    }
+  },
+  {
+    "id": "concor-mt-assistant-officer",
+    "title": "CONCOR MT and Assistant Officer Recruitment 2026 – Apply Online for 77 Posts | Last Date 30-09-2026",
+    "org": "CONCOR MT and Assistant Officer",
+    "shortOrg": "CONCOR MT and Assistant Office",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://cms.concorindia.co.in:8000/uploads/cms/pdf/Asf6Xc3Mnw5BWdp_FinalAdvertisement-18thAug2026(Published).pdf",
+      "notificationUrl": "https://cms.concorindia.co.in:8000/uploads/cms/pdf/Asf6Xc3Mnw5BWdp_FinalAdvertisement-18thAug2026(Published).pdf",
+      "websiteUrl": "https://cms.concorindia.co.in:8000/uploads/cms/pdf/Asf6Xc3Mnw5BWdp_FinalAdvertisement-18thAug2026(Published).pdf"
+    }
+  },
+  {
+    "id": "employment-news",
+    "title": "Employment News 29 August to 04 September 2026 – Pdf Download, Weekly Govt Job Notifications",
+    "org": "Employment News 29 August to 04 September 2026 – Pdf Download, Weekly Govt Job",
+    "shortOrg": "Employment News 29 August to 0",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "central-govt",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "To be notified"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1anLu7LkWZilCXGXj_FVSINT5XW_Pg-Hu/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1anLu7LkWZilCXGXj_FVSINT5XW_Pg-Hu/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1anLu7LkWZilCXGXj_FVSINT5XW_Pg-Hu/view?usp=sharing"
+    }
+  },
+  {
+    "id": "aai-northern-region-apprentice",
+    "title": "AAI Northern Region Apprentice Recruitment 2026 – Apply Online for 205 Posts | Last Date 16-09-2026",
+    "org": "AAI Northern Region Apprentice",
+    "shortOrg": "AAI Northern Region Apprentice",
+    "posts": "Trade / Technician / Graduate Apprentice",
+    "vacancies": 100,
+    "salary": "Monthly Stipend ₹8,000 – ₹18,000/- as per Apprenticeship Rules / NATS",
+    "qualificationText": "10th Pass / 12th Pass / ITI (NCVT) / Diploma / Degree (Fresher Eligible)",
+    "qualifications": [
+      "10th-pass",
+      "12th-pass",
+      "iti",
+      "diploma",
+      "graduate"
+    ],
+    "category": "no-exam",
+    "subCategory": "Fresher & Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "16-09-2026",
+      "examDate": "No Written Exam (Merit Based Selection)"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Nil)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://nats.education.gov.in/student_type.php",
+      "notificationUrl": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Final%20Advt.%20App.%202026-27-RHQ-NR.pdf",
+      "websiteUrl": "https://nats.education.gov.in/student_type.php"
+    }
   }
 ];
 
