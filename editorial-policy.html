@@ -12,6 +12,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
   <meta name="google-adsense-account" content="ca-pub-6828732559916178">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics 4 (GA4) / GTM Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ROZGARDWAAR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ROZGARDWAAR');
+  </script>
+
+
+  <!-- WebSite & Organization Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RozgarDwaar",
+    "url": "https://rozgardwaar.com/",
+    "description": "India's Leading Government Job Discovery and Information Portal for Central and State Recruitment Notifications.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://rozgardwaar.com/central-govt-jobs.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RozgarDwaar",
+      "url": "https://rozgardwaar.com/",
+      "logo": "https://rozgardwaar.com/logo.png"
+    }
+  }
+  </script>
+
 </head>
 <body>
 
@@ -88,5 +121,33 @@
     </div>
   </footer>
 
+
+  <!-- Interactive Cookie Consent Banner -->
+  <div id="rozgar-cookie-banner" class="cookie-consent-banner" style="display:none;">
+    <div class="cookie-consent-text">
+      🍪 <strong>Cookie Policy:</strong> RozgarDwaar uses cookies and analytical tracking to personalize advertisements via Google AdSense, measure traffic, and enhance your portal browsing experience. By continuing, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accept All Cookies</button>
+      <button class="cookie-btn-decline" onclick="dismissCookies()">Essential Only</button>
+    </div>
+  </div>
+
+  <script>
+    function checkCookieConsent() {
+      if (!localStorage.getItem('rozgar_cookie_consent')) {
+        document.getElementById('rozgar-cookie-banner').style.display = 'flex';
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'accepted');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    function dismissCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'essential');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', checkCookieConsent);
+  </script>
 </body>
 </html>

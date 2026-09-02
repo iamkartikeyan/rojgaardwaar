@@ -14,6 +14,40 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
   <link rel="canonical" href="https://rozgardwaar.com/exam-results.html">
 
+  
+  <!-- Google Analytics 4 (GA4) / GTM Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ROZGARDWAAR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ROZGARDWAAR');
+  </script>
+
+  
+  <!-- WebSite & Organization Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RozgarDwaar",
+    "url": "https://rozgardwaar.com/",
+    "description": "India's Leading Government Job Discovery and Information Portal for Central and State Recruitment Notifications.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://rozgardwaar.com/central-govt-jobs.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RozgarDwaar",
+      "url": "https://rozgardwaar.com/",
+      "logo": "https://rozgardwaar.com/logo.png"
+    }
+  }
+  </script>
+
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -86,7 +120,8 @@
         <!-- Left Content Area -->
         <div class="primary-content-column">
           <div class="content-block" style="padding: 18px 20px;">
-            <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
+            <!-- Single Optimized H1 Tag -->
+            <h1 class="portal-main-h1">
               Government Exam Results &amp; Cutoff Scores 2026
             </h1>
             <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
@@ -357,6 +392,34 @@
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Cookie Consent Banner -->
+  <div id="rozgar-cookie-banner" class="cookie-consent-banner" style="display:none;">
+    <div class="cookie-consent-text">
+      🍪 <strong>Cookie Policy:</strong> RozgarDwaar uses cookies and analytical tracking to personalize advertisements via Google AdSense, measure traffic, and enhance your portal browsing experience. By continuing, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accept All Cookies</button>
+      <button class="cookie-btn-decline" onclick="dismissCookies()">Essential Only</button>
+    </div>
+  </div>
+
+  <script>
+    function checkCookieConsent() {
+      if (!localStorage.getItem('rozgar_cookie_consent')) {
+        document.getElementById('rozgar-cookie-banner').style.display = 'flex';
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'accepted');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    function dismissCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'essential');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', checkCookieConsent);
+  </script>
 
 
 </body>

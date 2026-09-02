@@ -26,6 +26,41 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
+const GA4_TAG = `
+  <!-- Google Analytics 4 (GA4) / GTM Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ROZGARDWAAR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ROZGARDWAAR');
+  </script>
+`;
+
+const WEBSITE_SCHEMA = `
+  <!-- WebSite & Organization Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RozgarDwaar",
+    "url": "https://rozgardwaar.com/",
+    "description": "India's Leading Government Job Discovery and Information Portal for Central and State Recruitment Notifications.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://rozgardwaar.com/central-govt-jobs.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RozgarDwaar",
+      "url": "https://rozgardwaar.com/",
+      "logo": "https://rozgardwaar.com/logo.png"
+    }
+  }
+  </script>
+`;
+
 const COMMON_HEADER = (activeNav = 'HOME') => `
   <!-- Top Link Strip -->
   <div class="site-top-strip">
@@ -217,128 +252,88 @@ const COMMON_FOOTER = `
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Cookie Consent Banner -->
+  <div id="rozgar-cookie-banner" class="cookie-consent-banner" style="display:none;">
+    <div class="cookie-consent-text">
+      🍪 <strong>Cookie Policy:</strong> RozgarDwaar uses cookies and analytical tracking to personalize advertisements via Google AdSense, measure traffic, and enhance your portal browsing experience. By continuing, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accept All Cookies</button>
+      <button class="cookie-btn-decline" onclick="dismissCookies()">Essential Only</button>
+    </div>
+  </div>
+
+  <script>
+    function checkCookieConsent() {
+      if (!localStorage.getItem('rozgar_cookie_consent')) {
+        document.getElementById('rozgar-cookie-banner').style.display = 'flex';
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'accepted');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    function dismissCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'essential');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', checkCookieConsent);
+  </script>
 `;
 
-// Helper for Hub HTML
-function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, tableTitle, rows, keySections, faqs, canonicalUrl }) {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(pageTitle)} | RozgarDwaar</title>
-  
-  <meta name="title" content="${escapeHtml(pageTitle)}">
-  <meta name="description" content="${escapeHtml(metaDesc)}">
-  <meta name="keywords" content="Govt Jobs 2026, RozgarDwaar, Sarkari Naukri, Online Application">
-  <meta name="author" content="RozgarDwaar Editorial Team">
-  <meta name="robots" content="index, follow">
-  <meta name="google-adsense-account" content="ca-pub-6828732559916178">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
-  <link rel="canonical" href="https://rozgardwaar.com${canonicalUrl}">
-
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-  ${COMMON_HEADER(activeNav)}
-
-  <main class="site-main-section">
-    <div class="container">
-      <div class="main-two-col-layout">
-        
-        <!-- Left Content Area -->
-        <div class="primary-content-column">
-          <div class="content-block" style="padding: 18px 20px;">
-            <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-              ${escapeHtml(title)}
-            </h1>
-            <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-              Last Updated: September 02, 2026 | Author: RozgarDwaar Editorial Desk
-            </div>
-
-            <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-              ${escapeHtml(intro)}
-            </p>
-
-            <div class="green-check-title">
-              <span>✅</span> <span>${escapeHtml(tableTitle)}</span>
-            </div>
-            <table class="ind-govt-table">
-              <thead>
-                <tr>
-                  <th style="width:48%;">Post Names – Total Vacancies</th>
-                  <th style="width:22%;">Last Date</th>
-                  <th style="width:30%;">Job Details / Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${rows.map(r => `
-                  <tr>
-                    <td class="post-col">
-                      <a href="${r.url}">${escapeHtml(r.title)}</a>
-                      ${r.sub ? `<div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(r.sub)}</div>` : ''}
-                    </td>
-                    <td class="date-col">${r.date}</td>
-                    <td class="action-col"><a href="${r.url}">${escapeHtml(r.btnText || 'APPLY ONLINE')}</a></td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-
-            <div class="green-check-title">
-              <span>✅</span> <span>Govt Jobs by Qualification:</span>
-            </div>
-            <div class="qual-hub-links-box">
-              <a href="/10th-12th-pass-jobs.html" style="color:#008000;">10th Pass / 12th Pass Govt Jobs</a>
-              <a href="/graduate-jobs.html" style="color:#0000cc;">Graduate / Degree Govt Jobs</a>
-              <a href="/diploma-jobs.html" style="color:#cc0000;">Diploma Govt Jobs (Polytechnic)</a>
-              <a href="/iti-jobs.html" style="color:#990066;">ITI Pass Govt Jobs (All Trades)</a>
-              <a href="/engineering-jobs.html" style="color:#008000;">Engineering / B.Tech Govt Jobs</a>
-              <a href="/graduate-jobs.html" style="color:#0000cc;">Post Graduate / Master Degree Jobs</a>
-            </div>
-
-            ${(keySections || []).map(s => `
-              <div class="green-check-title">
-                <span>✅</span> <span>${escapeHtml(s.title)}</span>
-              </div>
-              <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-                ${s.items.map(item => `<li>${item}</li>`).join('')}
-              </ul>
-            `).join('')}
-
-            ${(faqs && faqs.length > 0) ? `
-              <div class="green-check-title">
-                <span>✅</span> <span>Frequently Asked Questions:</span>
-              </div>
-              <div style="line-height: 1.7; font-size: 13px; color: #333;">
-                ${faqs.map(f => `
-                  <p style="margin-bottom: 8px;">
-                    <strong>${escapeHtml(f.q)}</strong><br>
-                    ${escapeHtml(f.a)}
-                  </p>
-                `).join('')}
-              </div>
-            ` : ''}
-
-          </div>
-        </div>
-
-        <!-- Right Sidebar -->
-        ${COMMON_SIDEBAR}
-
-      </div>
-    </div>
-  </main>
-
-  ${COMMON_FOOTER}
-
-</body>
-</html>`;
+function generateJobPostingSchema(job, stateObj) {
+  return `
+  <!-- Google JobPosting Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": "${escapeHtml(job.title)}",
+    "description": "${escapeHtml(job.title)} announced by ${escapeHtml(job.org)} for ${job.vacancies} vacancies of ${escapeHtml(job.posts)}. Salary: ${escapeHtml(job.salary)}. Minimum Qualification: ${escapeHtml(job.qualificationText)}.",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "${escapeHtml(job.shortOrg)}",
+      "value": "${job.id}"
+    },
+    "datePosted": "${job.importantDates.startDate || '2026-08-15'}",
+    "validThrough": "${job.importantDates.lastDate || '2026-10-31'}T23:59:59+05:30",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "${escapeHtml(job.org)}",
+      "sameAs": "${job.officialLinks.websiteUrl}"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "${escapeHtml(stateObj.name)}",
+        "addressCountry": "IN"
+      }
+    },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 25000,
+        "maxValue": 85000,
+        "unitText": "MONTH"
+      }
+    },
+    "qualifications": "${escapeHtml(job.qualificationText)}",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "India"
+    }
+  }
+  </script>
+  `;
 }
 
 // 1. Generate All 303 Jobs
-console.log("Generating static HTML files for all 303 jobs...");
+console.log("Generating static HTML files with H1, GA4, Schema, and Cookie Consent for all 303 jobs...");
 let generatedCount = 0;
 data.RECRUITMENTS.forEach(job => {
   const filePath = path.join(JOBS_DIR, `${job.id}.html`);
@@ -373,6 +368,9 @@ data.RECRUITMENTS.forEach(job => {
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
   <link rel="canonical" href="https://rozgardwaar.com/jobs/${job.id}.html">
 
+  ${GA4_TAG}
+  ${generateJobPostingSchema(job, stateObj)}
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -392,7 +390,8 @@ data.RECRUITMENTS.forEach(job => {
               <a href="/">Home</a> &rsaquo; <a href="/central-govt-jobs.html">${escapeHtml(job.subCategory || 'Govt Jobs')}</a> &rsaquo; <span>${escapeHtml(job.shortOrg)}</span>
             </div>
 
-            <h1 class="job-detail-h1">${escapeHtml(job.title)}</h1>
+            <!-- Single Optimized H1 Tag -->
+            <h1 class="portal-main-h1">${escapeHtml(job.title)}</h1>
             <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
               Published by: <strong>RozgarDwaar Editorial Desk</strong> | Official Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY NOTIFICATION</span>
             </div>
@@ -598,7 +597,128 @@ data.RECRUITMENTS.forEach(job => {
 });
 console.log(`Generated ${generatedCount} job files in /jobs/`);
 
-// 2. Generate Sector Hubs
+// 2. Generate Hub HTML
+function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, tableTitle, rows, keySections, faqs, canonicalUrl }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(pageTitle)} | RozgarDwaar</title>
+  
+  <meta name="title" content="${escapeHtml(pageTitle)}">
+  <meta name="description" content="${escapeHtml(metaDesc)}">
+  <meta name="keywords" content="Govt Jobs 2026, RozgarDwaar, Sarkari Naukri, Online Application">
+  <meta name="author" content="RozgarDwaar Editorial Team">
+  <meta name="robots" content="index, follow">
+  <meta name="google-adsense-account" content="ca-pub-6828732559916178">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://rozgardwaar.com${canonicalUrl}">
+
+  ${GA4_TAG}
+  ${WEBSITE_SCHEMA}
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  ${COMMON_HEADER(activeNav)}
+
+  <main class="site-main-section">
+    <div class="container">
+      <div class="main-two-col-layout">
+        
+        <!-- Left Content Area -->
+        <div class="primary-content-column">
+          <div class="content-block" style="padding: 18px 20px;">
+            <!-- Single Optimized H1 Tag -->
+            <h1 class="portal-main-h1">
+              ${escapeHtml(title)}
+            </h1>
+            <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
+              Last Updated: September 02, 2026 | Author: RozgarDwaar Editorial Desk
+            </div>
+
+            <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
+              ${escapeHtml(intro)}
+            </p>
+
+            <div class="green-check-title">
+              <span>✅</span> <span>${escapeHtml(tableTitle)}</span>
+            </div>
+            <table class="ind-govt-table">
+              <thead>
+                <tr>
+                  <th style="width:48%;">Post Names – Total Vacancies</th>
+                  <th style="width:22%;">Last Date</th>
+                  <th style="width:30%;">Job Details / Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${rows.map(r => `
+                  <tr>
+                    <td class="post-col">
+                      <a href="${r.url}">${escapeHtml(r.title)}</a>
+                      ${r.sub ? `<div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(r.sub)}</div>` : ''}
+                    </td>
+                    <td class="date-col">${r.date}</td>
+                    <td class="action-col"><a href="${r.url}">${escapeHtml(r.btnText || 'APPLY ONLINE')}</a></td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+
+            <div class="green-check-title">
+              <span>✅</span> <span>Govt Jobs by Qualification:</span>
+            </div>
+            <div class="qual-hub-links-box">
+              <a href="/10th-12th-pass-jobs.html" style="color:#008000;">10th Pass / 12th Pass Govt Jobs</a>
+              <a href="/graduate-jobs.html" style="color:#0000cc;">Graduate / Degree Govt Jobs</a>
+              <a href="/diploma-jobs.html" style="color:#cc0000;">Diploma Govt Jobs (Polytechnic)</a>
+              <a href="/iti-jobs.html" style="color:#990066;">ITI Pass Govt Jobs (All Trades)</a>
+              <a href="/engineering-jobs.html" style="color:#008000;">Engineering / B.Tech Govt Jobs</a>
+              <a href="/graduate-jobs.html" style="color:#0000cc;">Post Graduate / Master Degree Jobs</a>
+            </div>
+
+            ${(keySections || []).map(s => `
+              <div class="green-check-title">
+                <span>✅</span> <span>${escapeHtml(s.title)}</span>
+              </div>
+              <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+                ${s.items.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            `).join('')}
+
+            ${(faqs && faqs.length > 0) ? `
+              <div class="green-check-title">
+                <span>✅</span> <span>Frequently Asked Questions:</span>
+              </div>
+              <div style="line-height: 1.7; font-size: 13px; color: #333;">
+                ${faqs.map(f => `
+                  <p style="margin-bottom: 8px;">
+                    <strong>${escapeHtml(f.q)}</strong><br>
+                    ${escapeHtml(f.a)}
+                  </p>
+                `).join('')}
+              </div>
+            ` : ''}
+
+          </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        ${COMMON_SIDEBAR}
+
+      </div>
+    </div>
+  </main>
+
+  ${COMMON_FOOTER}
+
+</body>
+</html>`;
+}
+
 const hubs = [
   {
     fileName: 'railway-jobs.html',
@@ -876,7 +996,7 @@ hubs.forEach(h => {
   console.log(`Generated Hub HTML: ${h.fileName}`);
 });
 
-// 3. Pre-render index.html with pure static HTML content
+// 3. Pre-render index.html with single optimized H1 tag, GA4, Schema, and Cookie Consent
 const topHighlights = data.RECRUITMENTS.slice(0, 6);
 const currentFeed = data.RECRUITMENTS.slice(0, 15);
 const topStates = [
@@ -902,16 +1022,19 @@ const indexStaticHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROZGARDWAAR - Central & State Government Jobs 2026 | Indian Govt Recruitment Portal</title>
+  <title>RozgarDwaar - Central & State Government Jobs 2026 | Indian Govt Recruitment Portal</title>
   
-  <meta name="title" content="ROZGARDWAAR - Central & State Government Jobs 2026 | Indian Govt Recruitment Portal">
+  <meta name="title" content="RozgarDwaar - Central & State Government Jobs 2026 | Indian Govt Recruitment Portal">
   <meta name="description" content="Discover verified Indian government recruitment notifications across Central Govt, Railway, Banking, PSU, SSC, UPSC, Defence, Police, State PSCs, 10th/12th Pass, Graduate, Diploma, ITI & Engineering jobs.">
-  <meta name="keywords" content="ROZGARDWAAR, Indian government jobs, central govt jobs 2026, railway recruitment 2026, ssc cgl, bank po, upsc, defence jobs, 10th pass govt jobs, 12th pass jobs, graduate govt jobs">
-  <meta name="author" content="ROZGARDWAAR Editorial Team">
+  <meta name="keywords" content="RozgarDwaar, Indian government jobs, central govt jobs 2026, railway recruitment 2026, ssc cgl, bank po, upsc, defence jobs, 10th pass govt jobs, 12th pass jobs, graduate govt jobs">
+  <meta name="author" content="RozgarDwaar Editorial Team">
   <meta name="robots" content="index, follow">
   <meta name="google-adsense-account" content="ca-pub-6828732559916178">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6828732559916178" crossorigin="anonymous"></script>
   <link rel="canonical" href="https://rozgardwaar.com/">
+
+  ${GA4_TAG}
+  ${WEBSITE_SCHEMA}
 
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -927,6 +1050,14 @@ const indexStaticHtml = `<!DOCTYPE html>
         <!-- Left Primary Column (Pure Static HTML) -->
         <div class="primary-content-column" id="main-content-area">
           
+          <!-- Single Optimized H1 Tag for Structural SEO -->
+          <div class="content-block" style="padding: 16px 20px 8px;">
+            <h1 class="portal-main-h1">RozgarDwaar - Latest Central &amp; State Government Jobs Recruitment 2026</h1>
+            <p style="font-size:13px; color:#444; margin-bottom:4px;">
+              Welcome to <strong>RozgarDwaar</strong>, India's trustworthy government employment notification portal. Explore verified Central Government, Railway, Banking, PSU, SSC, UPSC, Defence, and State PSC recruitment notices with official application links and eligibility details.
+            </p>
+          </div>
+
           <div class="content-block">
             <div class="section-bar-header">Latest Government Jobs</div>
             <div class="highlight-jobs-box">
@@ -1007,9 +1138,65 @@ const indexStaticHtml = `<!DOCTYPE html>
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'index.html'), indexStaticHtml, 'utf8');
-console.log("Pre-rendered index.html with 100% static HTML content.");
+console.log("Pre-rendered index.html with single optimized H1 tag, GA4, Schema, and Cookie Consent.");
 
-// 4. Generate Comprehensive Sitemap XML for Search Engines & AdSense
+// 4. Update Policy HTML Pages with GA4, Cookie Consent, and H1
+const policyFiles = [
+  'about.html', 'contact.html', 'privacy-policy.html', 'terms.html',
+  'disclaimer.html', 'editorial-policy.html', 'corrections-policy.html',
+  'source-verification.html'
+];
+
+policyFiles.forEach(file => {
+  const filePath = path.join(__dirname, file);
+  if (fs.existsSync(filePath)) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    // Inject GA4 if missing
+    if (!content.includes('G-ROZGARDWAAR')) {
+      content = content.replace('</head>', `${GA4_TAG}\n${WEBSITE_SCHEMA}\n</head>`);
+    }
+
+    // Inject Cookie Consent banner before </body> if missing
+    if (!content.includes('rozgar-cookie-banner')) {
+      const cookieSnippet = `
+  <!-- Interactive Cookie Consent Banner -->
+  <div id="rozgar-cookie-banner" class="cookie-consent-banner" style="display:none;">
+    <div class="cookie-consent-text">
+      🍪 <strong>Cookie Policy:</strong> RozgarDwaar uses cookies and analytical tracking to personalize advertisements via Google AdSense, measure traffic, and enhance your portal browsing experience. By continuing, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accept All Cookies</button>
+      <button class="cookie-btn-decline" onclick="dismissCookies()">Essential Only</button>
+    </div>
+  </div>
+
+  <script>
+    function checkCookieConsent() {
+      if (!localStorage.getItem('rozgar_cookie_consent')) {
+        document.getElementById('rozgar-cookie-banner').style.display = 'flex';
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'accepted');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    function dismissCookies() {
+      localStorage.setItem('rozgar_cookie_consent', 'essential');
+      document.getElementById('rozgar-cookie-banner').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', checkCookieConsent);
+  </script>
+</body>`;
+      content = content.replace('</body>', cookieSnippet);
+    }
+
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`Updated policy page: ${file}`);
+  }
+});
+
+// 5. Generate Comprehensive Sitemap XML
 const sitemapUrls = [
   'https://rozgardwaar.com/',
   'https://rozgardwaar.com/central-govt-jobs.html',
