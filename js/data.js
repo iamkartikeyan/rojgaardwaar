@@ -5268,6 +5268,396 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf",
       "websiteUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf"
     }
+  },
+  {
+    "id": "stockholding-ciso-recruitment",
+    "title": "StockHolding CISO Recruitment 2026 – Apply Online for 02 Posts | Last Date 02-09-2026",
+    "org": "StockHolding CISO",
+    "shortOrg": "StockHolding CISO",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "02-09-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1A2VXKgqeyJzIP3b2K_NnaG98lASko556/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1A2VXKgqeyJzIP3b2K_NnaG98lASko556/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1A2VXKgqeyJzIP3b2K_NnaG98lASko556/view?usp=sharing"
+    }
+  },
+  {
+    "id": "drrmlims-non-teaching-recruitment-2026",
+    "title": "DRRMLIMS Non Teaching Recruitment 2026 – Apply Online for 74 Posts",
+    "org": "DRRMLIMS Non Teaching",
+    "shortOrg": "DRRMLIMS Non Teaching",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.drrmlims.ac.in/Assets/pages/recruitment/Final_Advt_2026_GROUP_B_C_D_1.pdf",
+      "notificationUrl": "https://www.drrmlims.ac.in/Assets/pages/recruitment/Final_Advt_2026_GROUP_B_C_D_1.pdf",
+      "websiteUrl": "https://www.drrmlims.ac.in/Assets/pages/recruitment/Final_Advt_2026_GROUP_B_C_D_1.pdf"
+    }
+  },
+  {
+    "id": "nursing-govt-jobs-vacancy",
+    "title": "Latest Nursing Govt Jobs 2026 – Staff Nurse, ANM, Nursing Officer Vacancies",
+    "org": "Latest Nursing Govt Jobs 2026 – Staff Nurse, ANM, Nursing Officer Vacancies",
+    "shortOrg": "Latest Nursing Govt Jobs 2026 ",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2013/12/nursing-govt-jobs-vacancy.html",
+      "notificationUrl": "https://rozgardwaar.com/2013/12/nursing-govt-jobs-vacancy.html",
+      "websiteUrl": "https://rozgardwaar.com/2013/12/nursing-govt-jobs-vacancy.html"
+    }
+  },
+  {
+    "id": "iit-bombay-advertisement-no-02-2026",
+    "title": "IIT Bombay Advertisement No.02/2026 – Apply Online for 27 Technical, Officer, Nursing & Other Posts | Last Date 04-09-2026",
+    "org": "IIT Bombay Advertisement No.02/2026 – Apply Online for 27 Technical, Officer, Nursing & Other Posts | Last Date 04-09-2026",
+    "shortOrg": "IIT Bombay Advertisement No.02",
+    "posts": "Technical, Officer, Nursing & Other",
+    "vacancies": 27,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "04-09-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1VPS9A4hMs91zDFuI0YDTw8EjDbsW1oGX/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1VPS9A4hMs91zDFuI0YDTw8EjDbsW1oGX/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1VPS9A4hMs91zDFuI0YDTw8EjDbsW1oGX/view?usp=sharing"
+    }
+  },
+  {
+    "id": "aiims-nagpur-non-faculty-recruitment",
+    "title": "AIIMS Nagpur Non Faculty Recruitment 2026 – Apply Online for 09 Posts | Last Date 07-09-2026",
+    "org": "AIIMS Nagpur Non Faculty",
+    "shortOrg": "AIIMS Nagpur Non Faculty",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "07-09-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://aiimsnagpur.edu.in/upload/recruitment/AIIMS_Nagpur_Group_A_Posts_Advertisement.pdf",
+      "notificationUrl": "https://aiimsnagpur.edu.in/upload/recruitment/AIIMS_Nagpur_Group_A_Posts_Advertisement.pdf",
+      "websiteUrl": "https://aiimsnagpur.edu.in/upload/recruitment/AIIMS_Nagpur_Group_A_Posts_Advertisement.pdf"
+    }
+  },
+  {
+    "id": "sainik-school-balachadi-recruitment",
+    "title": "Sainik School Balachadi Recruitment 2026 – Apply 16 Teaching and Non-Teaching Posts | Last Date 10-08-2026",
+    "org": "Sainik School Balachadi",
+    "shortOrg": "Sainik School Balachadi",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "10-08-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.ssbalachadi.org/data/file-library/advat-for-various-regular-and-contr-posts-18-jul-2026.pdf",
+      "notificationUrl": "https://www.ssbalachadi.org/data/file-library/advat-for-various-regular-and-contr-posts-18-jul-2026.pdf",
+      "websiteUrl": "https://www.ssbalachadi.org/data/file-library/advat-for-various-regular-and-contr-posts-18-jul-2026.pdf"
+    }
+  },
+  {
+    "id": "aiims-norcet-11-recruitment",
+    "title": "AIIMS NORCET 11 Recruitment 2026 – Apply Online for 2218 Nursing Officer Posts | Last Date 13-08-2026",
+    "org": "AIIMS NORCET 11",
+    "shortOrg": "AIIMS NORCET 11",
+    "posts": "Nursing Officer",
+    "vacancies": 2218,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "13-08-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1txiG4L5Wu1QoqCsdiQM_qa99R6ekrhTE/view",
+      "notificationUrl": "https://drive.google.com/file/d/1txiG4L5Wu1QoqCsdiQM_qa99R6ekrhTE/view",
+      "websiteUrl": "https://drive.google.com/file/d/1txiG4L5Wu1QoqCsdiQM_qa99R6ekrhTE/view"
+    }
+  },
+  {
+    "id": "osssc-nursing-officer",
+    "title": "OSSSC Nursing Officer Recruitment 2026 – Notification, Online Form, 5989 Posts | Last Date 05-08-2026",
+    "org": "OSSSC Nursing Officer",
+    "shortOrg": "OSSSC Nursing Officer",
+    "posts": "Medical Officer / Staff Nurse / Pharmacist / Specialist Doctor",
+    "vacancies": 50,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "05-08-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1nI-EkLXRUnt1iYiq15H5StaajnZQwKN5/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1nI-EkLXRUnt1iYiq15H5StaajnZQwKN5/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1nI-EkLXRUnt1iYiq15H5StaajnZQwKN5/view?usp=sharing"
+    }
+  },
+  {
+    "id": "skau-kurukshetra-recruitment",
+    "title": "SKAU Kurukshetra Recruitment 2026 – Apply Online for 60 Nurse, Pharmacist & Clerk Posts | Last Date 21-08-2026",
+    "org": "SKAU Kurukshetra",
+    "shortOrg": "SKAU Kurukshetra",
+    "posts": "Nurse, Pharmacist & Clerk",
+    "vacancies": 60,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "21-08-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1tYyauMvJoTvk0DB72ZZsgcGcipmlK2uF/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1tYyauMvJoTvk0DB72ZZsgcGcipmlK2uF/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1tYyauMvJoTvk0DB72ZZsgcGcipmlK2uF/view?usp=sharing"
+    }
+  },
+  {
+    "id": "inmas-drdo-recruitment",
+    "title": "INMAS DRDO Recruitment 2026 Apply for 15 Research Posts | Last Date 30-06-2026",
+    "org": "INMAS DRDO",
+    "shortOrg": "INMAS DRDO",
+    "posts": "Research",
+    "vacancies": 15,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-06-2026",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtINMAS03062026.pdf",
+      "notificationUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtINMAS03062026.pdf",
+      "websiteUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtINMAS03062026.pdf"
+    }
+  },
+  {
+    "id": "icmr-nihr-recruitment",
+    "title": "ICMR NIHR Recruitment 2026 - Walk in Interview for 12 YP and Consultant Posts",
+    "org": "ICMR NIHR",
+    "shortOrg": "ICMR NIHR",
+    "posts": "YP and Consultant",
+    "vacancies": 12,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.icmr.gov.in/icmrobject/uploads/Recruitment/1778757304_advertisementforconsultant_yp-iii_dristienglish.pdf",
+      "notificationUrl": "https://www.icmr.gov.in/icmrobject/uploads/Recruitment/1778757304_advertisementforconsultant_yp-iii_dristienglish.pdf",
+      "websiteUrl": "https://www.icmr.gov.in/icmrobject/uploads/Recruitment/1778757304_advertisementforconsultant_yp-iii_dristienglish.pdf"
+    }
+  },
+  {
+    "id": "goa-psc-advertisement-no-05-2026",
+    "title": "Goa PSC Advertisement No 05 2026 - Apply Online for 25 Various Posts | Last Date 22 May",
+    "org": "Goa PSC Advertisement No 05 2026 - Apply Online for 25 Various Posts | Last Date 22 May",
+    "shortOrg": "Goa PSC Advertisement No 05 20",
+    "posts": "Various",
+    "vacancies": 25,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://gpsc.goa.gov.in/wp-content/uploads/2026/05/ADVT052026.pdf",
+      "notificationUrl": "https://gpsc.goa.gov.in/wp-content/uploads/2026/05/ADVT052026.pdf",
+      "websiteUrl": "https://gpsc.goa.gov.in/wp-content/uploads/2026/05/ADVT052026.pdf"
+    }
+  },
+  {
+    "id": "dshm-recruitment",
+    "title": "DSHM Recruitment 2026 - Online Form for 144 Various Contract Posts | Last Date 12th May",
+    "org": "DSHM",
+    "shortOrg": "DSHM",
+    "posts": "Various Contract",
+    "vacancies": 144,
+    "salary": "Pay Level-7 to Level-11 (₹44,900 – ₹2,09,200/-) + Non-Practicing Allowance (NPA)",
+    "qualificationText": "MBBS / BDS / B.Sc Nursing / GNM / B.Pharm / D.Pharm from Medical / Nursing Council recognized Institute",
+    "qualifications": [
+      "graduate",
+      "medical-nursing"
+    ],
+    "category": "central-govt",
+    "subCategory": "Healthcare & Medical Services Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "CBT Examination / Walk-in Interview / Practical Clinical Test"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD/Women: Nil or ₹250",
+    "ageLimit": "18 to 35 / 45 Years (Relaxation as per Medical Service rules)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://dshm.delhi.gov.in/PDF/Advertisement_4_2026.pdf",
+      "notificationUrl": "https://dshm.delhi.gov.in/PDF/Advertisement_4_2026.pdf",
+      "websiteUrl": "https://dshm.delhi.gov.in/PDF/Advertisement_4_2026.pdf"
+    }
   }
 ];
 
