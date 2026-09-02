@@ -3795,6 +3795,285 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://rozgardwaar.com/2019/12/Forest-Jobs.html",
       "websiteUrl": "https://rozgardwaar.com/2019/12/Forest-Jobs.html"
     }
+  },
+  {
+    "id": "iim-kozhikode-faculty-recruitment-2026",
+    "title": "IIM Kozhikode Faculty Recruitment 2026 – Apply Online for 28 Posts | Last Date 30-09-2026",
+    "org": "IIM Kozhikode Faculty",
+    "shortOrg": "IIM Kozhikode Faculty",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://iimk.ac.in/uploads/userfiles/Notification_A-02.2026.pdf",
+      "notificationUrl": "https://iimk.ac.in/uploads/userfiles/Notification_A-02.2026.pdf",
+      "websiteUrl": "https://iimk.ac.in/uploads/userfiles/Notification_A-02.2026.pdf"
+    }
+  },
+  {
+    "id": "nit-goa-faculty-recruitment-2026",
+    "title": "NIT Goa Faculty Recruitment 2026 – Apply Online for 28 Posts | Last Date 30-09-2026",
+    "org": "NIT Goa Faculty",
+    "shortOrg": "NIT Goa Faculty",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-09-2026",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.nitgoa.ac.in/uploads/faculty_recruitment2026/Advt_Faculty%20_%20Recruitment%2031august2026.pdf",
+      "notificationUrl": "https://www.nitgoa.ac.in/uploads/faculty_recruitment2026/Advt_Faculty%20_%20Recruitment%2031august2026.pdf",
+      "websiteUrl": "https://www.nitgoa.ac.in/uploads/faculty_recruitment2026/Advt_Faculty%20_%20Recruitment%2031august2026.pdf"
+    }
+  },
+  {
+    "id": "idrbt-faculty-recruitment",
+    "title": "IDRBT Faculty Recruitment 2026 – Apply Online for 15 Posts | Rolling Advertisement",
+    "org": "IDRBT Faculty",
+    "shortOrg": "IDRBT Faculty",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.idrbt.ac.in/wp-content/uploads/2026/08/Fac_Advt_July-2026.pdf",
+      "notificationUrl": "https://www.idrbt.ac.in/wp-content/uploads/2026/08/Fac_Advt_July-2026.pdf",
+      "websiteUrl": "https://www.idrbt.ac.in/wp-content/uploads/2026/08/Fac_Advt_July-2026.pdf"
+    }
+  },
+  {
+    "id": "sgpgims-faculty-recruitment",
+    "title": "SGPGIMS Faculty Recruitment 2026: Apply Offline for 70 Posts | Last Date 31-08-2026",
+    "org": "SGPGIMS Faculty",
+    "shortOrg": "SGPGIMS Faculty",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1Qu71XzT2tRYBTlQrooNjA-bf5fhJuYX7/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1Qu71XzT2tRYBTlQrooNjA-bf5fhJuYX7/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1Qu71XzT2tRYBTlQrooNjA-bf5fhJuYX7/view?usp=sharing"
+    }
+  },
+  {
+    "id": "defence-jobs-govt-vacancy",
+    "title": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
+    "org": "Latest Defence Jobs 2026 (2500+ Govt Vacancies Open Now)",
+    "shortOrg": "Latest Defence Jobs 2026 (2500",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2018/02/defence-jobs-govt-vacancy.html",
+      "notificationUrl": "https://rozgardwaar.com/2018/02/defence-jobs-govt-vacancy.html",
+      "websiteUrl": "https://rozgardwaar.com/2018/02/defence-jobs-govt-vacancy.html"
+    }
+  },
+  {
+    "id": "sainik-school-recruitment",
+    "title": "Sainik School Recruitment 2026 - Latest Vacancy Notifications",
+    "org": "Sainik School",
+    "shortOrg": "Sainik School",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2024/05/Sainik-School-Recruitment.html",
+      "notificationUrl": "https://rozgardwaar.com/2024/05/Sainik-School-Recruitment.html",
+      "websiteUrl": "https://rozgardwaar.com/2024/05/Sainik-School-Recruitment.html"
+    }
+  },
+  {
+    "id": "sainik-school-ambikapur-recruitment",
+    "title": "Sainik School Ambikapur Recruitment 2026 - Apply for Ward Boy, Band Master, PEM PTI & Lab Assistant Posts",
+    "org": "Sainik School Ambikapur",
+    "shortOrg": "Sainik School Ambikapur",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.sainikschoolambikapur.org.in/pdf/Recruit%20of%20Staff_2026.pdf",
+      "notificationUrl": "https://www.sainikschoolambikapur.org.in/pdf/Recruit%20of%20Staff_2026.pdf",
+      "websiteUrl": "https://www.sainikschoolambikapur.org.in/pdf/Recruit%20of%20Staff_2026.pdf"
+    }
+  },
+  {
+    "id": "jharkhand-para-teacher-recruitment",
+    "title": "Jharkhand Para Teacher Recruitment 2026: Apply Online for 7299 Posts | Last Date 30-08-2026",
+    "org": "Jharkhand Para Teacher",
+    "shortOrg": "Jharkhand Para Teacher",
+    "posts": "Assistant Professor / School Teacher / Faculty",
+    "vacancies": 25,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "30-08-2026",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1RYoc1LtoU1lLgxXMirm10FQUZVZatWa8/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1RYoc1LtoU1lLgxXMirm10FQUZVZatWa8/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1RYoc1LtoU1lLgxXMirm10FQUZVZatWa8/view?usp=sharing"
+    }
+  },
+  {
+    "id": "sainik-school-jhunjhunu-recruitment",
+    "title": "Sainik School Jhunjhunu Recruitment 2026 – Apply for 18 Various Regular & Contractual Posts | Last Date 12-09-2026",
+    "org": "Sainik School Jhunjhunu",
+    "shortOrg": "Sainik School Jhunjhunu",
+    "posts": "Various Regular & Contractual",
+    "vacancies": 18,
+    "salary": "Academic Level-10 / Level-11 (₹57,700 – ₹1,82,400/-) as per 7th CPC / UGC Scales",
+    "qualificationText": "Graduate + B.Ed / Post Graduate (Master's Degree) / Ph.D. / NET Qualified from recognized University",
+    "qualifications": [
+      "graduate",
+      "bed-teaching",
+      "post-graduate"
+    ],
+    "category": "teaching",
+    "subCategory": "Teaching & Faculty Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "12-09-2026",
+      "examDate": "Written Exam / Interview & Seminar Presentation"
+    },
+    "fee": "UR / OBC: ₹1,000 | SC/ST/PwBD/Women: Nil or ₹500",
+    "ageLimit": "21 to 40 / 45 Years (Relaxation as per UGC / State norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf",
+      "notificationUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf",
+      "websiteUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf"
+    }
   }
 ];
 
