@@ -1,7 +1,7 @@
 /**
  * ROJGAARDWAAR (RojgaarDwaar.in) - Master Application Engine
  * Renders IndGovtJobs-inspired authentic layout with high-density task modules,
- * 3-column recruitment tables, dynamic routing, instant search, and full breakdowns.
+ * dedicated Railway, Bank, PSU, Central, State & Qualification hubs with 3-column tables.
  */
 
 (function() {
@@ -52,6 +52,10 @@
       state.currentRoute = 'job-detail';
       state.routeParam = jobId;
       renderJobDetailView(jobId);
+    } else if (hash === '/category/railway') {
+      state.currentRoute = 'railway';
+      state.routeParam = 'railway';
+      renderRailwayJobsView();
     } else if (hash.startsWith('/qualification/')) {
       const qualId = hash.replace('/qualification/', '').trim();
       state.currentRoute = 'qualification';
@@ -108,7 +112,7 @@
   }
 
   // =========================================================================
-  // 1. Home View (IndGovtJobs Exact Layout from First Screenshot)
+  // 1. Home View (Exact IndGovtJobs Layout from First Screenshot)
   // =========================================================================
 
   function renderHomeView() {
@@ -216,7 +220,160 @@
   }
 
   // =========================================================================
-  // 2. Govt Jobs & Category Hub View (IndGovtJobs 3-Column Table Format from Second Screenshot)
+  // 2. Railway Jobs View (Exact Layout from Third Screenshot)
+  // =========================================================================
+
+  function renderRailwayJobsView() {
+    const railwayJobs = [
+      { title: "Junior Engineers (JE), DMS & CMA – 4200 Posts", vacancies: "4200", lastDate: "12/09/2026", board: "Railway Recruitment Boards (RRBs)", id: "rrb-alp-technician-2026" },
+      { title: "Act Apprentice – 4173 Posts", vacancies: "4173", lastDate: "21/09/2026", board: "Southern Railway", id: "rrc-northern-railway-apprentice-recruitment-2026" },
+      { title: "Act Apprentice – 2400 Posts", vacancies: "2400", lastDate: "18/09/2026", board: "East Coast Railway", id: "rrc-northern-railway-apprentice-recruitment-2026" },
+      { title: "Apprentice – 1010 Posts", vacancies: "1010", lastDate: "27/09/2026", board: "Integral Coach Factory (ICF)", id: "rrc-northern-railway-apprentice-recruitment-2026" },
+      { title: "Engineers, Technician, Assistant & Executive – 60 Posts", vacancies: "60", lastDate: "25/09/2026", board: "Maharashtra Metro Rail", id: "rrb-alp-technician-2026" },
+      { title: "Sports Quota – 64 Posts", vacancies: "64", lastDate: "30/09/2026", board: "Western Railway", id: "rrb-alp-technician-2026" },
+      { title: "Assistant Engineers (Civil + Mechanical + S&T) – 05 Posts", vacancies: "05", lastDate: "28/09/2026", board: "Konkan Railway", id: "rrb-alp-technician-2026" },
+      { title: "Stage Pilot – 04 Posts", vacancies: "04", lastDate: "18/09/2026", board: "Delhi Metro Rail", id: "rrb-alp-technician-2026" },
+      { title: "Cultural Quota – 02 Posts", vacancies: "02", lastDate: "19/09/2026", board: "North Central Railway", id: "rrb-alp-technician-2026" },
+      { title: "Various Manager Level Posts (RITES) – 75 Posts", vacancies: "75", lastDate: "18/09/2026", board: "RITES Limited", id: "rrb-alp-technician-2026" },
+      { title: "Tourism Monitor – 05 Posts", vacancies: "05", lastDate: "26/09/2026", board: "IRCTC North Zone", id: "rrb-alp-technician-2026" },
+      { title: "Scouts and Guides Quota – 16 Posts", vacancies: "16", lastDate: "30/09/2026", board: "Eastern Railway", id: "rrb-alp-technician-2026" },
+      { title: "Assistant Loco Pilot (ALP) – 18,799 Posts", vacancies: "18799", lastDate: "28/09/2026", board: "Railway Recruitment Boards (RRBs)", id: "rrb-alp-technician-2026" },
+      { title: "Technician Grade I & III – 9,144 Posts", vacancies: "9144", lastDate: "25/09/2026", board: "Railway Recruitment Boards (RRBs)", id: "rrb-alp-technician-2026" },
+      { title: "Northern Railway Trade Apprentice – 4,096 Posts", vacancies: "4096", lastDate: "24/09/2026", board: "RRC Northern Railway", id: "rrc-northern-railway-apprentice-recruitment-2026" }
+    ];
+
+    let html = `
+      <div class="content-block" style="padding: 16px 18px;">
+        
+        <!-- Title & Meta (Exact screenshot style) -->
+        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
+          Railway Jobs 2026 Apply Online (11330 New Vacancies)
+        </h1>
+        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
+          Last Updated: September 01, 2026 | Author: Admin
+        </div>
+
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 12px;">
+          <strong>Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates.</strong>
+        </p>
+
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
+          In this page, <strong>RojgaarDwaar</strong> updates latest Railway vacancy notifications in the table. Both <strong>Male and Female</strong> Indian Citizens are eligible to apply online for various Railway Technical, Non Technical, Assistant Loco Pilot, Police, Para Medical, Medical, Group D, Ministerial and Act Apprentice posts.
+        </p>
+
+        <!-- 1. Table: Latest Railway Jobs Notifications 2026 -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Latest Railway Jobs Notifications 2026:</span>
+        </div>
+        <table class="ind-govt-table">
+          <thead>
+            <tr>
+              <th style="width:48%;">Post Names – Total Vacancies</th>
+              <th style="width:22%;">Last Date</th>
+              <th style="width:30%;">Notifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${railwayJobs.map(j => `
+              <tr>
+                <td class="post-col">
+                  <a href="#/job/${j.id}">${escapeHtml(j.title)}</a>
+                </td>
+                <td class="date-col">${j.lastDate}</td>
+                <td class="action-col">
+                  <a href="#/job/${j.id}">${escapeHtml(j.board)}</a>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <!-- 2. Railway Exams 2026-27 List -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Railway Exams 2026-27 List:</span>
+        </div>
+        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+          <li><strong>RRB NTPC</strong> (Non-Technical Popular Categories): For various non-technical posts.</li>
+          <li><strong>RRB JE</strong> (Junior Engineer): For the recruitment of Junior engineers in the Indian Railways.</li>
+          <li><strong>RRB Group D:</strong> For various posts in the Group D category, including track maintainers and helpers.</li>
+          <li><strong>RRB SSE</strong> (Senior Section Engineer): For the recruitment of senior engineers.</li>
+          <li><strong>RRB ALP</strong> (Assistant Loco Pilot): For the recruitment of Assistant Loco Pilots.</li>
+          <li><strong>RRB Paramedical:</strong> For various paramedical posts in the rail services.</li>
+          <li><strong>RPF Constable:</strong> For recruitment in the Railway Protection Force.</li>
+          <li><strong>RPF Sub-Inspector:</strong> For higher-level positions in the Railway Protection Force (RPF) and Railway Protection Special Force (RPSF).</li>
+          <li><strong>RRB Ministerial and Isolated Categories:</strong> For various ministerial posts and isolated categories.</li>
+        </ul>
+
+        <!-- 3. Railway Job Vacancy 2026-27 List / Reservation & Quota Guide -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Railway Job Vacancy 2026-27 List:</span>
+        </div>
+        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+          <li><strong>General/Unreserved Quota:</strong> Open to all candidates based on merit, forming vertical reservation for general category.</li>
+          <li><strong>Scheduled Castes (SC) and Scheduled Tribes (ST) Quota:</strong> Reserved posts for SC/ST candidates, providing benefits like age relaxation and a lower cut-off mark.</li>
+          <li><strong>Other Backward Classes (OBC) Quota:</strong> Reserved positions for OBC candidates with similar benefits as SC/ST.</li>
+          <li><strong>Economically Weaker Section:</strong> Reservation for individuals who fall under the low income bracket, receiving age relaxations.</li>
+          <li><strong>Sports Quota:</strong> Jobs offered based on outstanding achievements in sports, requiring candidates to meet specific criteria.</li>
+          <li><strong>Meritorious Sports Persons:</strong> Special recruitment opportunities for athletes with exceptional records at national or international levels.</li>
+          <li><strong>Persons with Disabilities (PwD) Quota:</strong> Reservations for candidates with physical disabilities, along with additional time in exams.</li>
+          <li><strong>Disability Quota:</strong> Specific provisions for different types of disabilities during the recruitment process.</li>
+          <li><strong>Nursing Quota:</strong> Reserved for candidates with nursing qualifications, especially in paramedical posts.</li>
+          <li><strong>Cultural Quota:</strong> For individuals with remarkable contribution in cultural fields, allowing them to apply for specific positions.</li>
+          <li><strong>Group 'A' Posts:</strong> These posts are filled through examinations conducted by UPSC, including Civil Services Exam, Engineering Services Exam, and Combined Medical Services Examination.</li>
+          <li><strong>Group 'B' Posts:</strong> These posts are not open for direct recruitment. Group 'B' positions are filled through promotion of Group 'C' employees on a seniority-cum-merit basis.</li>
+          <li><strong>Group 'C' Posts:</strong> This category includes both technical and non-technical positions, such as Clerk, Station Master, Ticket Collector, Commercial Apprentice, Traffic Apprentice, and various engineering posts (Civil, Mechanical, Electrical, Signal & Telecom, etc.).</li>
+          <li><strong>Group 'D' Posts:</strong> The positions in this group cover role in disciplines, including Trackman, Helper, Assistant Points Man, Safaiwala/Safaiwali, Gunman, and Peon.</li>
+          <li><strong>Other Posts:</strong> This includes Course Completed Act Apprentices (CCAA with 20% reserved vacancy), Sports Quota, Cultural Quota, Scouts and Guides Quota, and more.</li>
+        </ul>
+
+        <!-- 4. Frequently Asked Questions (Exact Match) -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Frequently Asked Questions:</span>
+        </div>
+        <div style="line-height: 1.7; font-size: 13px; color: #333;">
+          <p style="margin-bottom: 8px;"><strong>What are the popular jobs in Railway Sector?</strong><br>
+          Indian Railway jobs include Gazetted (Group 'A' and 'B'), Non-Gazetted (Group 'C' and 'D'), NTPC, Junior Engineer, RPF/RPSF, Act Apprentices, Level 1, and Level 2 posts.</p>
+
+          <p style="margin-bottom: 8px;"><strong>How to apply for railway recruitment from RojgaarDwaar?</strong><br>
+          The search/browse window blog frequently updates the latest Indian Railway jobs. Eligible candidates need to check their qualification against military/railway listings, then click on a specific Railway Name for detailed notification and application links.</p>
+
+          <p style="margin-bottom: 8px;"><strong>What are the qualifications for railway jobs?</strong><br>
+          Minimum qualifications include passing the 10th class or ITI for Group D & Apprentice, and holding a Graduate or Post Graduate degree for Group A/B posts.</p>
+
+          <p style="margin-bottom: 8px;"><strong>How many railway zones and boards in India?</strong><br>
+          There are 21 Railway Boards in India: Ahmedabad, Ajmer, Allahabad, Bangalore, Bhopal, Bhubaneswar, Bilaspur, Chandigarh, Chennai, Gorakhpur, Guwahati, Jammu, Kolkata, Malda, Mumbai, Muzaffarpur, Patna, Ranchi, Secunderabad, Siliguri, and Trivandrum.</p>
+
+          <p style="margin-bottom: 8px;"><strong>How many types of railway jobs are there?</strong><br>
+          Group 'A' Posts are recruited through UPSC exams. Group 'B' Posts: Upgraded posts from Group 'C' employees. Group 'C' Posts: Technical and Non-Technical cadre posts. Group 'D' Posts: Various Level-1 posts including Trackman, Helper, etc. Other Posts: ITI Apprentices, Sports Quota, etc.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Which is the best job in the Railway?</strong><br>
+          The best job depends on individual qualifications and preferences. For 10th or 12th pass candidates, popular posts include Clerk, Station Master, and Ticket Collector, while engineers may prefer Group A/B engineering positions.</p>
+
+          <p style="margin-bottom: 8px;"><strong>How many jobs are vacant in the Indian Railways?</strong><br>
+          Each year, more than one lakh vacancies open up in the Railway sector.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Is a woman is eligible to apply for railway jobs?</strong><br>
+          Yes, both Male and Female candidates having passed required educational qualifications are eligible to apply for Group C and Group D railway posts.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Who is eligible to apply for railway jobs?</strong><br>
+          Indian citizens who have passed at least Matriculation/10th standard are eligible to apply. Strong technical skills are also preferred.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Why does every job seeker prefer a Railway Job in India?</strong><br>
+          The page provides weekly updates for job seekers looking for railway jobs and offers free alerts for railway job opportunities.</p>
+        </div>
+
+        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
+          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
+        </div>
+
+      </div>
+    `;
+
+    mainContentEl.innerHTML = html;
+  }
+
+  // =========================================================================
+  // 3. Category & Qualification Hubs
   // =========================================================================
 
   function renderCategoryOrGovtJobsView(type, identifier) {
@@ -247,14 +404,11 @@
       }
     }
 
-    // Split matching jobs into logical categorized sub-tables
     const table1Jobs = matchingJobs.slice(0, 10);
     const table2Jobs = matchingJobs.slice(10, 20);
-    const table3Jobs = matchingJobs.slice(20, 30);
 
     let html = `
       <div class="content-block" style="padding: 16px 18px;">
-        <!-- Page Title & Meta -->
         <h1 style="font-size: 18px; font-weight: 800; color: #0b3c5d; line-height: 1.35; margin-bottom: 8px;">
           ${escapeHtml(pageTitle)}
         </h1>
@@ -295,7 +449,7 @@
         <!-- Table 2 (if available) -->
         ${table2Jobs.length > 0 ? `
           <div class="green-check-title">
-            <span>✅</span> <span>Top Public Sector & Departmental Opportunities:</span>
+            <span>✅</span> <span>Top Departmental Opportunities:</span>
           </div>
           <table class="ind-govt-table">
             <thead>
@@ -320,35 +474,7 @@
           </table>
         ` : ''}
 
-        <!-- Table 3 (if available) -->
-        ${table3Jobs.length > 0 ? `
-          <div class="green-check-title">
-            <span>✅</span> <span>Upcoming Central & State Technical Vacancies:</span>
-          </div>
-          <table class="ind-govt-table">
-            <thead>
-              <tr>
-                <th style="width:48%;">Recruitment / Post Name</th>
-                <th style="width:24%;">Last Date</th>
-                <th style="width:28%;">Job Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${table3Jobs.map(job => `
-                <tr>
-                  <td class="post-col">
-                    <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
-                    <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
-                  </td>
-                  <td class="date-col">${job.importantDates.lastDate}</td>
-                  <td class="action-col"><a href="#/job/${job.id}">APPLY NOW</a></td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        ` : ''}
-
-        <!-- Qualification Links Box (From Screenshot) -->
+        <!-- Qualification Links Box -->
         <div class="green-check-title">
           <span>✅</span> <span>Govt Jobs by Qualification:</span>
         </div>
@@ -373,7 +499,7 @@
           <li><strong>Female Candidates:</strong> Application fee exemption in major Central recruitments (UPSC, SSC, Railways).</li>
         </ul>
 
-        <!-- Frequently Asked Questions (From Screenshot) -->
+        <!-- Frequently Asked Questions -->
         <div class="green-check-title">
           <span>✅</span> <span>Frequently Asked Questions:</span>
         </div>
@@ -395,7 +521,7 @@
   }
 
   // =========================================================================
-  // 3. Job Detail View
+  // 4. Job Detail View
   // =========================================================================
 
   function renderJobDetailView(jobId) {
@@ -523,7 +649,7 @@
   }
 
   // =========================================================================
-  // 4. Admit Cards View
+  // 5. Admit Cards View
   // =========================================================================
 
   function renderAdmitCardsView() {
@@ -558,7 +684,7 @@
   }
 
   // =========================================================================
-  // 5. Results View
+  // 6. Results View
   // =========================================================================
 
   function renderResultsView() {
@@ -593,7 +719,7 @@
   }
 
   // =========================================================================
-  // 6. Eligibility Tool View
+  // 7. Eligibility Tool View
   // =========================================================================
 
   function renderEligibilityToolView() {
@@ -627,7 +753,7 @@
   }
 
   // =========================================================================
-  // 7. Saved Jobs View
+  // 8. Saved Jobs View
   // =========================================================================
 
   function renderSavedJobsView() {
@@ -659,7 +785,7 @@
   }
 
   // =========================================================================
-  // 8. Search View
+  // 9. Search View
   // =========================================================================
 
   function renderSearchView(query) {
