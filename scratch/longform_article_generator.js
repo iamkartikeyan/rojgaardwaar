@@ -7,6 +7,13 @@ if (!global.window || !global.window.ROZGAR_DATA) {
 }
 const data = global.window.ROZGAR_DATA;
 
+let exactPosts = [];
+try {
+  exactPosts = JSON.parse(fs.readFileSync(path.join(__dirname, 'exact_10_posts.json'), 'utf8'));
+} catch (e) {
+  exactPosts = [];
+}
+
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -17,11 +24,35 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
+function formatExactContentForSiteUI(html) {
+  let c = html;
+  
+  // Replace tables with .detail-table-custom
+  c = c.replace(/<table[^>]*>/gi, '<table class="detail-table-custom">');
+  
+  // Replace headings with green-check-title style
+  c = c.replace(/<h[234][^>]*>(.*?)<\/h[234]>/gi, (match, titleText) => {
+    return `<div class="green-check-title" style="margin-top:22px;">
+      <svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>${titleText.replace(/^[✅\s]+/, '')}:</span>
+    </div>`;
+  });
+
+  // Ensure clean links and branding
+  c = c.replace(/https?:\/\/(?:www\.)?indgovtjobs\.in\/?/gi, 'https://rozgardwaar.com/');
+  c = c.replace(/www\.indgovtjobs\.in/gi, 'rozgardwaar.com');
+  c = c.replace(/indgovtjobs\.in/gi, 'rozgardwaar.com');
+  c = c.replace(/Ind\s*Govt\s*Jobs/gi, 'RozgarDwaar');
+  c = c.replace(/Indian\s*Govt\s*Jobs/gi, 'RozgarDwaar');
+  c = c.replace(/indgovtjobs/gi, 'RozgarDwaar');
+
+  return c;
+}
+
 function parseFactualPost(job) {
   let title = job.title || '';
   let org = job.org || '';
   let posts = job.posts || '';
-  let vacancies = job.vacancies || 0;
 
   // Refine Organization Name
   let cleanOrg = org.replace(/Notification No.*$/i, '')
@@ -97,13 +128,65 @@ function parseFactualPost(job) {
 }
 
 function generateFactualArticle(job, stateObj) {
+  // Check if this job has exact verbatim content from indgovtjobs
+  const exactMatch = exactPosts.find(ep => {
+    return job.title.toLowerCase().includes(ep.title.toLowerCase().substring(0, 20)) ||
+           ep.title.toLowerCase().includes(job.title.toLowerCase().substring(0, 20)) ||
+           (job.id && job.id.includes(ep.id.substring(0, 15)));
+  });
+
+  if (exactMatch) {
+    const formattedExact = formatExactContentForSiteUI(exactMatch.contentHtml);
+    return `
+        <!-- Left Content Area -->
+        <div class="primary-content-column">
+          <div class="content-block" style="padding: 20px;">
+            
+            <div style="font-size:12px; color:#666; margin-bottom:12px;">
+              <a href="/">Home</a> &rsaquo; <a href="/central-govt-jobs.html">${escapeHtml(job.subCategory || 'Govt Jobs')}</a> &rsaquo; <span>${escapeHtml(job.shortOrg)}</span>
+            </div>
+
+            <!-- Single Clean H1 Tag -->
+            <h1 class="portal-main-h1">${escapeHtml(job.title)}</h1>
+            <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
+              Published by: <strong>RozgarDwaar Editorial Desk</strong> | Updated: <strong>${exactMatch.publishedDate || '2026-09-02'}</strong>
+            </div>
+
+            <!-- Direct Official Action Buttons -->
+            <div class="action-cta-bar">
+              <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
+                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg> Apply Online (Official Website)
+              </a>
+              <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
+                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg> Download Notification PDF
+              </a>
+              <a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-web">
+                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Official Website
+              </a>
+            </div>
+
+            <!-- Exact Verbatim Content Body -->
+            <div class="exact-article-body" style="font-size:13.5px; line-height:1.8; color:#222;">
+              ${formattedExact}
+            </div>
+
+            <!-- Bottom Action Buttons -->
+            <div class="action-cta-bar" style="border-top:1px solid #eee; padding-top:14px; margin-top:24px;">
+              <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
+                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg> Apply Online Now
+              </a>
+              <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
+                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg> Download PDF
+              </a>
+              <a href="/" class="tool-btn">&larr; Back to Portal Home</a>
+            </div>
+
+          </div>
+        </div>`;
+  }
+
+  // Fallback factual article
   const { cleanOrg, cleanPost, selectionHtml } = parseFactualPost(job);
-
-  const qualNames = job.qualifications.map(qId => {
-    const q = data.QUALIFICATIONS.find(item => item.id === qId);
-    return q ? q.name : qId;
-  }).join(' / ');
-
   const vacFormatted = job.vacancies ? job.vacancies.toLocaleString('en-IN') : 'As per Notification';
 
   return `
