@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-// Mock window to load data
+// Initialize window first
 global.window = {};
 require('./js/data.js');
 const data = global.window.ROZGAR_DATA;
+
+const { generateLongFormArticle } = require('./scratch/longform_article_generator.js');
 
 if (!data) {
   console.error("ROZGAR_DATA not found!");
@@ -463,96 +465,7 @@ data.RECRUITMENTS.forEach(job => {
     <div class="container">
       <div class="main-two-col-layout">
         
-        <!-- Left Content Area -->
-        <div class="primary-content-column">
-          <div class="content-block" style="padding: 20px;">
-            
-            <div style="font-size:12px; color:#666; margin-bottom:12px;">
-              <a href="/">Home</a> &rsaquo; <a href="/central-govt-jobs.html">${escapeHtml(job.subCategory || 'Govt Jobs')}</a> &rsaquo; <span>${escapeHtml(job.shortOrg)}</span>
-            </div>
-
-            <!-- Single Optimized H1 Tag -->
-            <h1 class="portal-main-h1">${escapeHtml(job.title)}</h1>
-            <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
-              Published by: <strong>RozgarDwaar Editorial Desk</strong> | Source: <strong>Official Recruitment Notice (${escapeHtml(job.shortOrg)})</strong>
-            </div>
-
-            <div class="action-cta-bar">
-              <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
-                ${SVG_APPLY} Apply Online (Official Website)
-              </a>
-              <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
-                ${SVG_PDF} Download Notification PDF
-              </a>
-              <a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-web">
-                ${SVG_WEB} Official Website
-              </a>
-            </div>
-
-            <!-- 1. Official Recruitment Summary Table -->
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>1. Official Recruitment Overview &amp; Key Details:</span>
-            </div>
-            
-            <table class="detail-table-custom">
-              <tbody>
-                <tr><th style="width:32%;">Recruiting Organization</th><td><strong>${escapeHtml(job.org)} (${escapeHtml(job.shortOrg)})</strong></td></tr>
-                <tr><th>Advertised Post / Designation</th><td><strong>${escapeHtml(job.posts)}</strong></td></tr>
-                <tr><th>Total Sanctioned Vacancies</th><td><strong style="color:#008000; font-size:14.5px;">${job.vacancies.toLocaleString('en-IN')} Posts</strong></td></tr>
-                <tr><th>Pay Scale / Remuneration</th><td><strong>${escapeHtml(job.salary)}</strong></td></tr>
-                <tr><th>Educational Qualification</th><td>${escapeHtml(qualNames)} (${escapeHtml(job.qualificationText)})</td></tr>
-                <tr><th>Age Limit Criteria</th><td>${escapeHtml(job.ageLimit)}</td></tr>
-                ${job.ageRelaxation ? `<tr><th>Applicable Age Relaxation</th><td>${escapeHtml(job.ageRelaxation)}</td></tr>` : ''}
-                <tr><th>Application Registration Fee</th><td>${escapeHtml(job.fee)}</td></tr>
-                <tr><th>Application Start Date</th><td>${job.importantDates.startDate}</td></tr>
-                <tr><th>Application Closing Date</th><td><strong style="color:#cc0000; font-size:14.5px;">${job.importantDates.lastDate}</strong></td></tr>
-                ${job.importantDates.examDate ? `<tr><th>Exam / Selection Date</th><td>${job.importantDates.examDate}</td></tr>` : ''}
-                <tr><th>Primary Posting Location</th><td>${escapeHtml(stateObj.name)}</td></tr>
-              </tbody>
-            </table>
-
-            <!-- 2. Educational Eligibility -->
-            <div class="green-check-title" style="margin-top:18px;">
-              ${SVG_CHECK} <span>2. Educational Qualification &amp; Eligibility:</span>
-            </div>
-            <p style="font-size:13.5px; line-height:1.75; color:#333; margin-bottom:14px;">
-              Candidates applying for <strong>${escapeHtml(job.posts)}</strong> in <strong>${escapeHtml(job.org)}</strong> must possess <strong>${escapeHtml(job.qualificationText)}</strong> from a recognized board, council, or university. Candidates should verify all eligibility criteria and certificates prior to the closing date (<strong>${job.importantDates.lastDate}</strong>).
-            </p>
-
-            <!-- 3. Official Links & Application -->
-            <div class="green-check-title" style="margin-top:18px;">
-              ${SVG_CHECK} <span>3. Official Notification &amp; Application Links:</span>
-            </div>
-            <table class="detail-table-custom">
-              <tbody>
-                <tr>
-                  <th style="width:38%;">Online Application Portal</th>
-                  <td><a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" style="color:#008000; font-weight:700;">Click Here to Apply Online &raquo;</a></td>
-                </tr>
-                <tr>
-                  <th>Official Notification (PDF)</th>
-                  <td><a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" style="color:#0000cc; font-weight:700;">Download Official Notice PDF &raquo;</a></td>
-                </tr>
-                <tr>
-                  <th>Official Organization Website</th>
-                  <td><a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" style="color:#333; font-weight:700;">Visit Official Website &raquo;</a></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Bottom Navigation Bar -->
-            <div class="action-cta-bar" style="border-top:1px solid #eee; padding-top:14px; margin-top:20px;">
-              <a href="${job.officialLinks.applyUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-apply">
-                ${SVG_APPLY} Apply Online Now
-              </a>
-              <a href="${job.officialLinks.notificationUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-pdf">
-                ${SVG_PDF} Official PDF Notification
-              </a>
-              <a href="/" class="tool-btn">&larr; Back to Portal Home</a>
-            </div>
-
-          </div>
-        </div>
+        ${generateLongFormArticle(job, stateObj)}
 
         <!-- Right Sidebar -->
         ${COMMON_SIDEBAR}

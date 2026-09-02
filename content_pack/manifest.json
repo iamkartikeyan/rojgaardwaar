@@ -1,0 +1,411 @@
+{
+  "site": "https://www.indgovtjobs.in/",
+  "retrieved": "2026-09-02",
+  "status": "verified_subset_due_source_rate_limiting",
+  "requested": "300 latest posts",
+  "verified_records": 40,
+  "verbatim_copy": false,
+  "youtube_policy": "No post-specific YouTube URLs were verified in the fetched records; no generic channel URL was substituted.",
+  "records": [
+    {
+      "id": 1,
+      "title": "IOCL Executive Recruitment through CBT 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/iocl-executive-recruitment-through-cbt.html",
+      "source_date": "02 September 2026",
+      "vacancies": "470",
+      "published_deadline": "03 September 2026",
+      "content_file": "posts/01_iocl-executive-recruitment-through-cbt-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 2,
+      "title": "SBI Clerk Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/sbi-clerk-recruitment.html",
+      "source_date": "18 August 2026",
+      "vacancies": "9766",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/02_sbi-clerk-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 3,
+      "title": "AAI Northern Region Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/aai-northern-region-apprentice.html",
+      "source_date": "29 August 2026",
+      "vacancies": "205",
+      "published_deadline": "16 September 2026",
+      "content_file": "posts/03_aai-northern-region-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 4,
+      "title": "Maharashtra Metro Rail Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/maharashtra-metro-rail-recruitment-2026.html",
+      "source_date": "26 August 2026",
+      "vacancies": "56",
+      "published_deadline": "25 September 2026",
+      "content_file": "posts/04_maharashtra-metro-rail-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 5,
+      "title": "IIIT Vadodara Assistant Professor Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/iiit-vadodara-assistant-professor.html",
+      "source_date": "26 August 2026",
+      "vacancies": "25",
+      "published_deadline": "15 September 2026",
+      "content_file": "posts/05_iiit-vadodara-assistant-professor-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 6,
+      "title": "IIT BHU Non Teaching Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/iit-bhu-non-teaching-recruitment-2026.html",
+      "source_date": "30 August 2026",
+      "vacancies": "55",
+      "published_deadline": "24 September 2026",
+      "content_file": "posts/06_iit-bhu-non-teaching-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 7,
+      "title": "Central University of Rajasthan Non Teaching Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/central-university-of-rajasthan-non.html",
+      "source_date": "30 August 2026",
+      "vacancies": "4",
+      "published_deadline": "23 September 2026",
+      "content_file": "posts/07_central-university-of-rajasthan-non-teaching-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 8,
+      "title": "RFCL Experienced Professionals Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/rfcl-experienced-professionals.html",
+      "source_date": "30 August 2026",
+      "vacancies": "40",
+      "published_deadline": "24 September 2026",
+      "content_file": "posts/08_rfcl-experienced-professionals-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 9,
+      "title": "GIPCL Diploma Mechanical Engineer Vacancy 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/gipcl-diploma-mechanical-engineer.html",
+      "source_date": "30 August 2026",
+      "vacancies": "7",
+      "published_deadline": "04 September 2026",
+      "content_file": "posts/09_gipcl-diploma-mechanical-engineer-vacancy-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 10,
+      "title": "North Central Railway Cultural Quota Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/north-central-railway-cultural-quota.html",
+      "source_date": "30 August 2026",
+      "vacancies": "2",
+      "published_deadline": "19 September 2026",
+      "content_file": "posts/10_north-central-railway-cultural-quota-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 11,
+      "title": "StockHolding CISO Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/stockholding-ciso-recruitment.html",
+      "source_date": "30 August 2026",
+      "vacancies": "2",
+      "published_deadline": "02 September 2026",
+      "content_file": "posts/11_stockholding-ciso-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 12,
+      "title": "NGEL Engineer & Executive Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/NGEL-Advt-No-04-26.html",
+      "source_date": "18 August 2026",
+      "vacancies": "147",
+      "published_deadline": "07 September 2026",
+      "content_file": "posts/12_ngel-engineer-executive-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 13,
+      "title": "CSIR Technician Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/csir-technician-recruitment.html",
+      "source_date": "18 August 2026",
+      "vacancies": "43",
+      "published_deadline": "17 September 2026",
+      "content_file": "posts/13_csir-technician-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 14,
+      "title": "BHEL FTA Supervisor Vacancy 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/bhel-fta-supervisor-vacancy.html",
+      "source_date": "18 August 2026",
+      "vacancies": "10",
+      "published_deadline": "07 September 2026",
+      "content_file": "posts/14_bhel-fta-supervisor-vacancy-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 15,
+      "title": "AAI Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/aai-apprentice-recruitment.html",
+      "source_date": "06 August 2026",
+      "vacancies": "36",
+      "published_deadline": "30 September 2026",
+      "content_file": "posts/15_aai-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 16,
+      "title": "Army Ordnance Corps Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/army-ordnance-corps-recruitment.html",
+      "source_date": "07 August 2026",
+      "vacancies": "2615",
+      "published_deadline": "22 September 2026",
+      "content_file": "posts/16_army-ordnance-corps-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 17,
+      "title": "HVPNL Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/hvpnl-apprentice-recruitment.html",
+      "source_date": "13 August 2026",
+      "vacancies": "114",
+      "published_deadline": "14 August 2026",
+      "content_file": "posts/17_hvpnl-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 18,
+      "title": "Konkan Railway Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/Konkan-Railway-Recruitment.html",
+      "source_date": "03 August 2026",
+      "vacancies": "201",
+      "published_deadline": "August 2026",
+      "content_file": "posts/18_konkan-railway-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 19,
+      "title": "CNCI Specialist and Scientist Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/cnci-specialist-and-scientist.html",
+      "source_date": "10 August 2026",
+      "vacancies": "8",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/19_cnci-specialist-and-scientist-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 20,
+      "title": "iDEX DIO Consultant Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/idex-dio-recruitment.html",
+      "source_date": "09 August 2026",
+      "vacancies": "6",
+      "published_deadline": "10 August 2026",
+      "content_file": "posts/20_idex-dio-consultant-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 21,
+      "title": "ADA Consultant Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/ada-consultant-recruitment.html",
+      "source_date": "05 August 2026",
+      "vacancies": "3",
+      "published_deadline": "08 August 2026",
+      "content_file": "posts/21_ada-consultant-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 22,
+      "title": "HURL Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/HURL-Recruitment.html",
+      "source_date": "21 August 2026",
+      "vacancies": "75",
+      "published_deadline": "26 August 2026",
+      "content_file": "posts/22_hurl-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 23,
+      "title": "POWERGRID Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/powergrid-apprentice-recruitment.html",
+      "source_date": "24 August 2026",
+      "vacancies": "270",
+      "published_deadline": "10 September 2026",
+      "content_file": "posts/23_powergrid-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 24,
+      "title": "BEML Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/beml-apprentice-recruitment.html",
+      "source_date": "25 August 2026",
+      "vacancies": "1346",
+      "published_deadline": "08 September 2026",
+      "content_file": "posts/24_beml-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 25,
+      "title": "NSI Kanpur Young Professional Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/nsi-kanpur-young-professional.html",
+      "source_date": "18 August 2026",
+      "vacancies": "1",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/25_nsi-kanpur-young-professional-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 26,
+      "title": "UPSC Advertisement No.10/2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/upsc-advertisement-no-10-2026.html",
+      "source_date": "24 August 2026",
+      "vacancies": "34",
+      "published_deadline": "04 September 2026",
+      "content_file": "posts/26_upsc-advertisement-no-10-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 27,
+      "title": "Indian Statistical Institute Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/indian-statistical-institute.html",
+      "source_date": "29 July 2026",
+      "vacancies": "4",
+      "published_deadline": "31 July 2026",
+      "content_file": "posts/27_indian-statistical-institute-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 28,
+      "title": "IBPS Specialist Officer Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/IBPS-SO-Notification.html",
+      "source_date": "26 July 2026",
+      "vacancies": "1035+",
+      "published_deadline": "21 July 2026",
+      "content_file": "posts/28_ibps-specialist-officer-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 29,
+      "title": "IUAC Apprentice Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/IUAC-Apprentice-Recruitment.html",
+      "source_date": "26 July 2026",
+      "vacancies": "10",
+      "published_deadline": "27 July 2026",
+      "content_file": "posts/29_iuac-apprentice-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 30,
+      "title": "RITES Individual Consultant Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/rites-individual-consultant-recruitment.html",
+      "source_date": "10 July 2026",
+      "vacancies": "5",
+      "published_deadline": "26 July 2026",
+      "content_file": "posts/30_rites-individual-consultant-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 31,
+      "title": "AVNL Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/AVNL-Recruitment.html",
+      "source_date": "24 July 2026",
+      "vacancies": "1213",
+      "published_deadline": "25 July 2026",
+      "content_file": "posts/31_avnl-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 32,
+      "title": "DPCC Various Posts Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/07/dpcc-various-posts-recruitment.html",
+      "source_date": "17 August 2026",
+      "vacancies": "54",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/32_dpcc-various-posts-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 33,
+      "title": "ISRO LPSC Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/isro-lpsc-advertisement-no-lpsc-02-2026.html",
+      "source_date": "30 August 2026",
+      "vacancies": "19",
+      "published_deadline": "04 September 2026",
+      "content_file": "posts/33_isro-lpsc-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 34,
+      "title": "RCI Hyderabad JRF & RA Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/rci-hyderabad-jrf-ra-recruitment-2026.html",
+      "source_date": "30 August 2026",
+      "vacancies": "21",
+      "published_deadline": "13 September 2026",
+      "content_file": "posts/34_rci-hyderabad-jrf-ra-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 35,
+      "title": "IIT Bombay Technical, Officer, Nursing & Other Posts 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/iit-bombay-advertisement-no-02-2026.html",
+      "source_date": "30 August 2026",
+      "vacancies": "27",
+      "published_deadline": "04 September 2026",
+      "content_file": "posts/35_iit-bombay-technical-officer-nursing-other-posts-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 36,
+      "title": "AWEIL Executive Finance Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/aweil-executive-finance-recruitment.html",
+      "source_date": "30 August 2026",
+      "vacancies": "9",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/36_aweil-executive-finance-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 37,
+      "title": "Income Tax Pune Sports Quota Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/income-tax-pune-sports-quota.html",
+      "source_date": "30 August 2026",
+      "vacancies": "85",
+      "published_deadline": "15 September 2026",
+      "content_file": "posts/37_income-tax-pune-sports-quota-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 38,
+      "title": "CPCL Junior Engineering Assistant Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/cpcl-junior-engineering-assistant.html",
+      "source_date": "30 August 2026",
+      "vacancies": "60",
+      "published_deadline": "11 September 2026",
+      "content_file": "posts/38_cpcl-junior-engineering-assistant-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 39,
+      "title": "Indbank Relationship Manager & Dealer Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/indbank-relationship-manager-dealer.html",
+      "source_date": "30 August 2026",
+      "vacancies": "14",
+      "published_deadline": "31 August 2026",
+      "content_file": "posts/39_indbank-relationship-manager-dealer-recruitment-2026.md",
+      "youtube_links": []
+    },
+    {
+      "id": 40,
+      "title": "High Court of Karnataka Assistant Recruitment 2026",
+      "source_url": "https://www.indgovtjobs.in/2026/08/high-court-of-karnataka-assistant.html",
+      "source_date": "30 August 2026",
+      "vacancies": "18",
+      "published_deadline": "11 September 2026",
+      "content_file": "posts/40_high-court-of-karnataka-assistant-recruitment-2026.md",
+      "youtube_links": []
+    }
+  ]
+}
