@@ -1241,7 +1241,7 @@ const indexStaticHtml = `<!DOCTYPE html>
               ${topHighlights.map(job => `
                 <div class="highlight-job-item">
                   <a href="/jobs/${job.id}.html">
-                    ${escapeHtml(job.title)} | Last Date ${job.importantDates.lastDate}
+                    ${escapeHtml(job.title)}
                   </a>
                 </div>
               `).join('')}
@@ -1252,28 +1252,14 @@ const indexStaticHtml = `<!DOCTYPE html>
             <div class="section-bar-header">New / Updated Govt Job Notifications</div>
             <div class="news-feed-list">
               ${currentFeed.map(job => {
-                const stateObj = data.STATES.find(s => s.id === job.state) || data.STATES[0];
-                const qualShorts = job.qualifications.map(qId => {
-                  const q = data.QUALIFICATIONS.find(item => item.id === qId);
-                  return q ? q.shortName : qId;
-                }).join(', ');
-
                 return `
                   <div class="news-feed-card">
                     <h2 class="news-feed-title">
                       <a href="/jobs/${job.id}.html">${escapeHtml(job.title)}</a>
                     </h2>
                     <p class="news-feed-summary">
-                      <strong>${escapeHtml(job.org)}</strong> has invited online applications for the recruitment of <strong>${escapeHtml(job.posts)}</strong> (${job.vacancies.toLocaleString('en-IN')} Vacancies). Minimum Qualification: ${escapeHtml(qualShorts)}. Location: ${escapeHtml(stateObj.name)}.
+                      ${escapeHtml(job.org)} has released employment recruitment notification for the post of ${escapeHtml(job.posts)}. Eligible candidates can check qualification criteria and submit online applications.
                     </p>
-                    <div class="news-feed-meta-row">
-                      <div class="news-meta-tags">
-                        <span class="meta-badge vac">Vacancies: ${job.vacancies.toLocaleString('en-IN')}</span>
-                        <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                        <span class="meta-badge qual">${escapeHtml(qualShorts)}</span>
-                      </div>
-                      <a href="/jobs/${job.id}.html" class="read-more-link">Read more »</a>
-                    </div>
                   </div>
                 `;
               }).join('')}
