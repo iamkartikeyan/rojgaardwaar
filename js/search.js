@@ -130,8 +130,7 @@
     if (matches.length === 0) {
       box.innerHTML = `
         <div class="suggestion-item no-match">
-          <span>No direct openings found for "<strong>${escapeHtml(query)}</strong>"</span>
-          <a href="/search.html?q=${encodeURIComponent(query)}" class="view-all-results-link">Search all categories &raquo;</a>
+          <span>No openings found matching "<strong>${escapeHtml(query)}</strong>"</span>
         </div>
       `;
       box.style.display = 'block';
@@ -140,22 +139,18 @@
 
     box.innerHTML = `
       <div class="suggestions-header">
-        <span>Matching Recruitment Notices (${matches.length})</span>
+        <span>Matching Notifications</span>
       </div>
       ${matches.map(j => `
         <a href="/jobs/${j.id}.html" class="suggestion-item">
           <div class="sugg-left">
             <div class="sugg-title">${escapeHtml(j.title)}</div>
-            <div class="sugg-org">${escapeHtml(j.org)} &bull; ${escapeHtml(j.qualificationText || 'All Degrees')}</div>
-          </div>
-          <div class="sugg-right">
-            <span class="sugg-vac-badge">${j.vacancies.toLocaleString('en-IN')} Posts</span>
-            <span class="sugg-date">Last Date: ${j.importantDates ? j.importantDates.lastDate : '2026'}</span>
+            <div class="sugg-org">${escapeHtml(j.org)} &bull; ${escapeHtml(j.posts)}</div>
           </div>
         </a>
       `).join('')}
       <a href="/search.html?q=${encodeURIComponent(query)}" class="suggestions-footer">
-        View all search results for "<strong>${escapeHtml(query)}</strong>" &raquo;
+        View all results for "<strong>${escapeHtml(query)}</strong>" &raquo;
       </a>
     `;
     box.style.display = 'block';
@@ -163,58 +158,36 @@
 
   function renderSearchResultsPage(query, jobs) {
     const resultsContainer = document.getElementById('search-results-output');
-    const resultsCountEl = document.getElementById('search-results-count');
     const queryDisplayEl = document.getElementById('search-query-display');
 
     if (queryDisplayEl) queryDisplayEl.textContent = query;
 
     const matches = filterJobs(query, jobs);
-    if (resultsCountEl) resultsCountEl.textContent = `${matches.length} Openings Found`;
-
     if (!resultsContainer) return;
 
     if (matches.length === 0) {
       resultsContainer.innerHTML = `
-        <div class="no-search-results-box">
-          <p style="font-size:16px; font-weight:700; color:#0b2545; margin-bottom:8px;">No government job recruitments found matching "${escapeHtml(query)}".</p>
-          <p style="font-size:13.5px; color:#666; margin-bottom:14px;">Try searching for broad terms like <strong>Railway</strong>, <strong>Bank</strong>, <strong>SSC</strong>, <strong>10th Pass</strong>, <strong>Police</strong>, or <strong>Graduate</strong>.</p>
-          <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
-            <a href="/central-govt-jobs.html" class="trending-tag-pill">Central Govt Jobs</a>
-            <a href="/railway-jobs.html" class="trending-tag-pill">Railway Jobs</a>
-            <a href="/bank-jobs.html" class="trending-tag-pill">Bank Jobs</a>
-            <a href="/10th-12th-pass-jobs.html" class="trending-tag-pill">10th/12th Pass Jobs</a>
-          </div>
+        <div class="no-search-results-box" style="padding: 24px; text-align: center;">
+          <p style="font-size:15px; font-weight:700; color:#0b2545; margin-bottom:8px;">No government job recruitments found matching "${escapeHtml(query)}".</p>
+          <p style="font-size:13px; color:#666;">Try searching for Railway, Bank, SSC, 10th Pass, Police, or Graduate.</p>
         </div>
       `;
       return;
     }
 
     resultsContainer.innerHTML = `
-      <table class="ind-govt-table">
-        <thead>
-          <tr>
-            <th style="width:48%;">Post Names – Recruiting Organization</th>
-            <th style="width:20%;">Vacancies</th>
-            <th style="width:16%;">Last Date</th>
-            <th style="width:16%;">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${matches.map(j => `
-            <tr>
-              <td class="post-col">
-                <a href="/jobs/${j.id}.html">${escapeHtml(j.title)}</a>
-                <div style="font-size:11.5px; color:#666; margin-top:2px;">
-                  ${escapeHtml(j.org)} | Qualification: ${escapeHtml(j.qualificationText || 'Check details')}
-                </div>
-              </td>
-              <td><strong style="color:#008000;">${j.vacancies.toLocaleString('en-IN')} Posts</strong></td>
-              <td class="date-col">${j.importantDates ? j.importantDates.lastDate : 'Active'}</td>
-              <td class="action-col"><a href="/jobs/${j.id}.html">VIEW DETAILS</a></td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
+      <div class="news-feed-list" style="padding:0;">
+        ${matches.map(j => `
+          <div class="news-feed-card">
+            <h2 class="news-feed-title">
+              <a href="/jobs/${j.id}.html">${escapeHtml(j.title)}</a>
+            </h2>
+            <p class="news-feed-summary">
+              ${escapeHtml(j.org)} invites online applications for ${escapeHtml(j.posts)}. <a href="/jobs/${j.id}.html" class="read-more-link">Read more &raquo;</a>
+            </p>
+          </div>
+        `).join('')}
+      </div>
     `;
   }
 

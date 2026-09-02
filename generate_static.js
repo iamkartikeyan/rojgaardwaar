@@ -685,8 +685,8 @@ data.RECRUITMENTS.forEach(job => {
 });
 console.log(`Generated ${generatedCount} job files in /jobs/`);
 
-// 2. Generate Hub HTML
-function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, tableTitle, rows, keySections, faqs, canonicalUrl }) {
+// 2. Generate Hub HTML (Clean Minimal Cards Everywhere)
+function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, jobs, keySections, faqs, canonicalUrl }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -720,43 +720,28 @@ function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, tab
         <div class="primary-content-column">
           <div class="content-block" style="padding: 18px 20px;">
             <!-- Single Optimized H1 Tag -->
-            <h1 class="portal-main-h1">
+            <h1 class="portal-main-h1" style="font-size: 18px; font-weight: 800; color: #0b2545; margin-bottom: 8px;">
               ${escapeHtml(title)}
             </h1>
-            <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-              Last Updated: September 02, 2026 | Author: RozgarDwaar Editorial Desk
-            </div>
 
-            <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
+            <p style="font-size: 13.5px; line-height: 1.6; color: #4a5568; margin-bottom: 16px;">
               ${escapeHtml(intro)}
             </p>
 
-            <div class="green-check-title">
-              ${SVG_CHECK} <span>${escapeHtml(tableTitle)}</span>
+            <div class="news-feed-list" style="padding:0;">
+              ${jobs.map(j => `
+                <div class="news-feed-card">
+                  <h2 class="news-feed-title">
+                    <a href="${j.url}">${escapeHtml(j.title)}</a>
+                  </h2>
+                  <p class="news-feed-summary">
+                    ${escapeHtml(j.desc)} <a href="${j.url}" class="read-more-link">Read more &raquo;</a>
+                  </p>
+                </div>
+              `).join('')}
             </div>
-            <table class="ind-govt-table">
-              <thead>
-                <tr>
-                  <th style="width:48%;">Post Names – Total Vacancies</th>
-                  <th style="width:22%;">Last Date</th>
-                  <th style="width:30%;">Job Details / Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${rows.map(r => `
-                  <tr>
-                    <td class="post-col">
-                      <a href="${r.url}">${escapeHtml(r.title)}</a>
-                      ${r.sub ? `<div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(r.sub)}</div>` : ''}
-                    </td>
-                    <td class="date-col">${r.date}</td>
-                    <td class="action-col"><a href="${r.url}">${escapeHtml(r.btnText || 'APPLY ONLINE')}</a></td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
 
-            <div class="green-check-title">
+            <div class="green-check-title" style="margin-top:20px;">
               ${SVG_CHECK} <span>Govt Jobs by Qualification:</span>
             </div>
             <div class="qual-hub-links-box">
@@ -810,18 +795,16 @@ function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, tab
 const hubs = [
   {
     fileName: 'railway-jobs.html',
-    title: 'Railway Jobs 2026 Apply Online (11330 New Vacancies)',
-    pageTitle: 'Railway Jobs 2026 - Apply Online 11330 Vacancies',
-    metaDesc: 'Latest Indian Railway Jobs Apply Online 2026 for 10th, 12th, ITI, Diploma, and Graduates. RRB ALP, Technician, JE, NTPC & Group D recruitments.',
+    title: 'Railway Jobs 2026 Recruitment',
+    pageTitle: 'Railway Jobs 2026 - Indian Railways Recruitment',
+    metaDesc: 'Latest Indian Railway Recruitment notifications for RRB ALP, Technician, JE, NTPC & Group D posts.',
     activeNav: 'RAILWAY JOBS',
-    intro: 'Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates. In this page, RozgarDwaar updates latest Railway vacancy notifications in the table.',
-    tableTitle: 'Latest Railway Jobs Notifications 2026:',
+    intro: 'Latest Indian Railway employment recruitment notifications for 10th Pass, 12th Pass, Diploma, ITI and Graduates.',
     canonicalUrl: '/railway-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'railway').slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'railway').slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [
       {
@@ -839,18 +822,16 @@ const hubs = [
   },
   {
     fileName: 'bank-jobs.html',
-    title: 'Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies',
-    pageTitle: 'Bank Jobs 2026 - Latest Banking Recruitment 18820 Vacancies',
-    metaDesc: 'Bank Jobs 2026 for 10th, 12th, Graduates, and Post Graduates. Apply online for SBI PO/Clerk, IBPS PO, RRB, and RBI recruitments.',
+    title: 'Bank Jobs 2026 Recruitment',
+    pageTitle: 'Bank Jobs 2026 - Latest Banking Recruitment',
+    metaDesc: 'Bank Jobs 2026 for 10th, 12th, Graduates, and Post Graduates. SBI PO/Clerk, IBPS PO, RRB, and RBI recruitments.',
     activeNav: 'BANK JOBS',
-    intro: 'Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27.',
-    tableTitle: 'Latest Bank Jobs Notifications September 2026:',
+    intro: 'Latest Bank employment recruitment notifications for Degree Holders and Professionals.',
     canonicalUrl: '/bank-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'banking').slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'banking').slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [
       {
@@ -863,177 +844,149 @@ const hubs = [
       }
     ],
     faqs: [
-      { q: 'How to apply for Bank PO jobs in 2026?', a: 'Check the direct links in the table above to open the official IBPS or SBI application portal.' }
+      { q: 'How to apply for Bank PO jobs in 2026?', a: 'Check the direct links above to open the official IBPS or SBI application portal.' }
     ]
   },
   {
     fileName: 'central-govt-jobs.html',
-    title: 'Central Government Jobs 2026 (150000+ Govt Vacancies Opening)',
-    pageTitle: 'Central Government Jobs 2026 - 150000+ Vacancies',
+    title: 'Central Government Jobs 2026 Recruitment',
+    pageTitle: 'Central Government Jobs 2026',
     metaDesc: 'Discover Central Government Jobs 2026 across Ministries, SSC, UPSC, Defence, and Constitutional Commissions.',
     activeNav: 'GOVT JOBS',
-    intro: 'Find latest Indian Government Jobs 2026 across Central Ministries, Union Departments, Staff Selection Commission (SSC), UPSC, and Armed Forces.',
-    tableTitle: 'Latest Central Government Recruitment Openings 2026:',
+    intro: 'Find latest Indian Government Jobs 2026 across Central Ministries, Union Departments, SSC, UPSC, and Armed Forces.',
     canonicalUrl: '/central-govt-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'central-govt' || j.category === 'ssc' || j.category === 'upsc').slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'central-govt' || j.category === 'ssc' || j.category === 'upsc').slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
-    keySections: [
-      {
-        title: 'Major Central Commissions:',
-        items: [
-          '<strong>Staff Selection Commission (SSC):</strong> CGL, CHSL, MTS, GD Constable.',
-          '<strong>Union Public Service Commission (UPSC):</strong> Civil Services (IAS/IPS), NDA, CDS.'
-        ]
-      }
-    ],
-    faqs: [
-      { q: 'Are women exempted from Central exam fees?', a: 'Yes, female candidates are exempt from application fees in UPSC and SSC recruitments.' }
-    ]
+    keySections: [],
+    faqs: []
   },
   {
     fileName: 'psu-jobs.html',
-    title: 'Latest PSU Jobs 2026 | Public Sector Company Jobs (4433+ Vacancies)',
+    title: 'PSU Jobs 2026 Recruitment',
     pageTitle: 'PSU Jobs 2026 - Public Sector Undertakings Recruitment',
-    metaDesc: 'Latest PSU Jobs without GATE, PSU Jobs for Engineers, Commerce, and MBA graduates in Maharatna & Navratna companies.',
+    metaDesc: 'Latest PSU Jobs for Engineers, Commerce, and MBA graduates in Maharatna & Navratna companies.',
     activeNav: 'PSU JOBS',
-    intro: 'Latest PSU Jobs without GATE, PSU Jobs for Commerce graduates, PSU Jobs for MBA and PSU Jobs for Engineers in IOCL, NTPC, ONGC, SAIL, BEL, HAL.',
-    tableTitle: 'Latest PSU Jobs Notifications 2026:',
+    intro: 'Latest PSU recruitment notifications in IOCL, NTPC, ONGC, SAIL, BEL, and HAL.',
     canonicalUrl: '/psu-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'psu').slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'psu').slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'fresher-jobs.html',
-    title: 'Fresher Govt Jobs 2026: Apply Online (1,00,000+ Zero Experience Vacancies)',
-    pageTitle: 'Fresher Govt Jobs 2026 - Zero Experience Vacancies',
-    metaDesc: 'Discover 1,00,000+ entry-level government recruitments for freshers with 0 experience in Post Office, Railways, SSC, and Banks.',
+    title: 'Fresher Govt Jobs 2026 Recruitment',
+    pageTitle: 'Fresher Govt Jobs 2026',
+    metaDesc: 'Discover entry-level government recruitments for freshers in Post Office, Railways, SSC, and Banks.',
     activeNav: 'FRESHER JOBS',
-    intro: 'Discover government recruitments requiring zero work experience for recent 10th, 12th, ITI, Diploma, or Degree passouts.',
-    tableTitle: 'Latest Fresher Govt Job Notifications 2026:',
+    intro: 'Discover government recruitments for recent 10th, 12th, ITI, Diploma, or Degree passouts.',
     canonicalUrl: '/fresher-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'no-exam' || j.category === 'fresher' || j.qualifications.includes('10th-pass')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'no-exam' || j.category === 'fresher' || j.qualifications.includes('10th-pass')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'graduate-jobs.html',
-    title: 'Graduate Govt Jobs 2026: Apply Online (50,000+ Degree Holder Openings)',
-    pageTitle: 'Graduate Govt Jobs 2026 - 50,000+ Degree Holder Vacancies',
-    metaDesc: 'Apply online for latest Graduate Government Jobs 2026 for BA, B.Sc, B.Com, B.Tech, BBA, and BCA degree holders.',
+    title: 'Graduate Govt Jobs 2026 Recruitment',
+    pageTitle: 'Graduate Govt Jobs 2026',
+    metaDesc: 'Apply online for latest Graduate Government Jobs for BA, B.Sc, B.Com, B.Tech, BBA, and BCA degree holders.',
     activeNav: 'GRADUATE JOBS',
-    intro: 'Apply online for latest Graduate Government Jobs 2026 for BA, B.Sc, B.Com, B.Tech, BBA, BCA, and all degree holders across India.',
-    tableTitle: 'Latest Graduate Govt Job Notifications 2026:',
+    intro: 'Apply online for latest Graduate Government Jobs for all degree holders across India.',
     canonicalUrl: '/graduate-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.qualifications.includes('graduate')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.qualifications.includes('graduate')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'state-govt-jobs.html',
-    title: 'State Govt Jobs 2026: Apply Online Across 28 States & 8 UTs (1,20,000+ Vacancies)',
-    pageTitle: 'State Govt Jobs 2026 - 28 States Recruitment',
-    metaDesc: 'Browse verified State PSC, Police, High Court, and Subordinate Board jobs across Uttar Pradesh, Bihar, Maharashtra, Rajasthan, etc.',
+    title: 'State Govt Jobs 2026 Recruitment',
+    pageTitle: 'State Govt Jobs 2026',
+    metaDesc: 'Browse State PSC, Police, High Court, and Subordinate Board recruitments.',
     activeNav: 'STATE GOVT JOBS',
-    intro: 'Browse verified State Public Service Commission (PSC), Subordinate Services Selection Board, Police Recruitment Board, and High Court jobs.',
-    tableTitle: 'Major State Government Openings 2026:',
+    intro: 'Browse State Public Service Commission (PSC), Police Recruitment, and High Court notifications.',
     canonicalUrl: '/state-govt-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.category === 'state-govt' || j.state !== 'all-india').slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.category === 'state-govt' || j.state !== 'all-india').slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: '10th-12th-pass-jobs.html',
-    title: '10th 12th Pass Govt Jobs 2026 (80,000+ Vacancies)',
-    pageTitle: '10th 12th Pass Govt Jobs 2026 - Apply Online',
-    metaDesc: 'Discover 80,000+ Government Jobs for 10th and 12th passed candidates in Railways, SSC MTS, Post Office, Police, and Armed Forces.',
+    title: '10th 12th Pass Govt Jobs 2026 Recruitment',
+    pageTitle: '10th 12th Pass Govt Jobs 2026',
+    metaDesc: 'Discover Government Jobs for 10th and 12th passed candidates.',
     activeNav: 'GOVT JOBS',
-    intro: 'Find verified recruitment notifications for Matric (10th) and Intermediate (12th) pass candidates across India.',
-    tableTitle: 'Latest 10th & 12th Pass Notifications 2026:',
+    intro: 'Find recruitment notifications for Matric (10th) and Intermediate (12th) pass candidates.',
     canonicalUrl: '/10th-12th-pass-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.qualifications.includes('10th-pass') || j.qualifications.includes('12th-pass')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.qualifications.includes('10th-pass') || j.qualifications.includes('12th-pass')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'diploma-jobs.html',
-    title: 'Diploma Govt Jobs 2026: Polytechnic Recruitment',
-    pageTitle: 'Diploma Govt Jobs 2026 - Polytechnic Engineering Openings',
-    metaDesc: 'Latest Government Jobs for Polytechnic Diploma holders in Mechanical, Civil, Electrical, and Electronics engineering.',
+    title: 'Diploma Govt Jobs 2026 Recruitment',
+    pageTitle: 'Diploma Govt Jobs 2026 - Polytechnic Openings',
+    metaDesc: 'Latest Government Jobs for Polytechnic Diploma holders.',
     activeNav: 'GOVT JOBS',
-    intro: 'Find verified Diploma government jobs in Railways, PSUs, State Electricity Boards, and Municipal Corporations.',
-    tableTitle: 'Latest Diploma Job Openings 2026:',
+    intro: 'Find Diploma government jobs in Railways, PSUs, and State Engineering Departments.',
     canonicalUrl: '/diploma-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.qualifications.includes('diploma')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.qualifications.includes('diploma')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'iti-jobs.html',
-    title: 'ITI Govt Jobs 2026: Trade Apprentice & Technician Openings',
-    pageTitle: 'ITI Govt Jobs 2026 - Trade Apprentice & Technician Recruitment',
-    metaDesc: 'Latest ITI Government Jobs across Fitter, Electrician, Welder, Machinist, Turner, and Diesel Mechanic trades.',
+    title: 'ITI Govt Jobs 2026 Recruitment',
+    pageTitle: 'ITI Govt Jobs 2026',
+    metaDesc: 'Latest ITI Government Jobs across all technical trades.',
     activeNav: 'GOVT JOBS',
-    intro: 'Discover all active ITI Government recruitments in Indian Railways, Ordnance Factories, Defence, and PSU enterprises.',
-    tableTitle: 'Latest ITI Government Job Notifications 2026:',
+    intro: 'Discover all active ITI Government recruitments across technical trades.',
     canonicalUrl: '/iti-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.qualifications.includes('iti')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.qualifications.includes('iti')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
   },
   {
     fileName: 'engineering-jobs.html',
-    title: 'Engineering Govt Jobs 2026: B.Tech & BE Recruitment',
+    title: 'Engineering Govt Jobs 2026 Recruitment',
     pageTitle: 'Engineering Govt Jobs 2026 - B.Tech / BE Openings',
-    metaDesc: 'Apply online for Engineering Government Jobs in PSUs, Railways, Central Ministries, and State Engineering Departments.',
+    metaDesc: 'Apply online for Engineering Government Jobs in PSUs, Railways, and Central Ministries.',
     activeNav: 'GOVT JOBS',
-    intro: 'Explore high-paying engineering government jobs for Civil, Mechanical, Electrical, Computer Science, and Electronics engineers.',
-    tableTitle: 'Latest Engineering Recruitment Openings 2026:',
+    intro: 'Explore engineering government jobs for Civil, Mechanical, Electrical, Computer Science, and Electronics branches.',
     canonicalUrl: '/engineering-jobs.html',
-    rows: data.RECRUITMENTS.filter(j => j.qualifications.includes('btech-engineering')).slice(0, 15).map(j => ({
-      title: `${j.title} (${j.vacancies} Posts)`,
-      date: j.importantDates.lastDate,
+    jobs: data.RECRUITMENTS.filter(j => j.qualifications.includes('btech-engineering')).slice(0, 15).map(j => ({
+      title: j.title,
       url: `/jobs/${j.id}.html`,
-      btnText: 'APPLY ONLINE'
+      desc: `${j.org} invites online applications for ${j.posts}.`
     })),
     keySections: [],
     faqs: []
@@ -1042,17 +995,14 @@ const hubs = [
     fileName: 'admit-cards.html',
     title: 'Latest Admit Cards & Hall Tickets 2026',
     pageTitle: 'Admit Cards 2026 - Download Hall Tickets',
-    metaDesc: 'Direct download links for government exam admit cards, hall tickets, call letters, and examination center slips.',
+    metaDesc: 'Direct download links for government exam admit cards and hall tickets.',
     activeNav: 'HOME',
-    intro: 'Download verified government examination hall tickets and admit cards across UPSC, SSC, RRB, IBPS, and State PSC exams.',
-    tableTitle: 'Latest Admit Cards 2026:',
+    intro: 'Download government examination hall tickets and admit cards across UPSC, SSC, RRB, IBPS, and State PSC exams.',
     canonicalUrl: '/admit-cards.html',
-    rows: data.ADMIT_CARDS.map(a => ({
+    jobs: data.ADMIT_CARDS.map(a => ({
       title: `${a.title} (${a.shortOrg})`,
-      date: a.examDate,
       url: a.downloadUrl,
-      btnText: 'DOWNLOAD ADMIT CARD',
-      sub: `Status: ${a.status}`
+      desc: `${a.shortOrg} has released examination admit card / hall ticket for download.`
     })),
     keySections: [],
     faqs: []
@@ -1061,17 +1011,14 @@ const hubs = [
     fileName: 'exam-results.html',
     title: 'Government Exam Results & Cutoff Scores 2026',
     pageTitle: 'Exam Results 2026 - Check Scores & Cutoffs',
-    metaDesc: 'Latest declared government examination results, merit lists, cutoff marks, and scorecards.',
+    metaDesc: 'Latest declared government examination results, merit lists, and scorecards.',
     activeNav: 'HOME',
-    intro: 'Check declared government examination results, category cutoffs, and selection lists across Central and State departments.',
-    tableTitle: 'Declared Results 2026:',
+    intro: 'Check declared government examination results and selection lists across Central and State departments.',
     canonicalUrl: '/exam-results.html',
-    rows: data.RESULTS.map(r => ({
+    jobs: data.RESULTS.map(r => ({
       title: r.title,
-      date: r.declarationDate,
       url: r.downloadUrl,
-      btnText: 'VIEW RESULT',
-      sub: r.cutoffHighlights
+      desc: `${r.title} declared. Official scorecards and cutoff lists available.`
     })),
     keySections: [],
     faqs: []
@@ -1115,33 +1062,24 @@ const searchPageHtml = `<!DOCTYPE html>
         <!-- Left Content Area -->
         <div class="primary-content-column">
           <div class="content-block" style="padding: 18px 20px;">
-            <h1 class="portal-main-h1">Government Jobs Search Results</h1>
+            <h1 class="portal-main-h1" style="font-size:18px; font-weight:800; color:#0b2545; margin-bottom:8px;">Government Jobs Search Results</h1>
             <div style="font-size:12.5px; color:#555; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2f7;">
-              Query: <strong id="search-query-display" style="color:#0b2545;">All Current Openings</strong> | <span id="search-results-count" style="color:#008000; font-weight:700;">${data.RECRUITMENTS.length} Openings Found</span>
+              Query: <strong id="search-query-display" style="color:#0b2545;">All Current Openings</strong>
             </div>
 
             <div id="search-results-output">
-              <table class="ind-govt-table">
-                <thead>
-                  <tr>
-                    <th style="width:48%;">Post Names – Total Vacancies</th>
-                    <th style="width:22%;">Last Date</th>
-                    <th style="width:30%;">Job Details / Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${data.RECRUITMENTS.slice(0, 25).map(j => `
-                    <tr>
-                      <td class="post-col">
-                        <a href="/jobs/${j.id}.html">${escapeHtml(j.title)} (${j.vacancies} Posts)</a>
-                        <div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(j.org)} &bull; Qualification: ${escapeHtml(j.qualificationText || 'Check details')}</div>
-                      </td>
-                      <td class="date-col">${j.importantDates ? j.importantDates.lastDate : 'Active'}</td>
-                      <td class="action-col"><a href="/jobs/${j.id}.html">VIEW DETAILS</a></td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
+              <div class="news-feed-list" style="padding:0;">
+                ${data.RECRUITMENTS.slice(0, 25).map(j => `
+                  <div class="news-feed-card">
+                    <h2 class="news-feed-title">
+                      <a href="/jobs/${j.id}.html">${escapeHtml(j.title)}</a>
+                    </h2>
+                    <p class="news-feed-summary">
+                      ${escapeHtml(j.org)} invites online applications for ${escapeHtml(j.posts)}. <a href="/jobs/${j.id}.html" class="read-more-link">Read more &raquo;</a>
+                    </p>
+                  </div>
+                `).join('')}
+              </div>
             </div>
 
           </div>
