@@ -4896,6 +4896,378 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://rozgardwaar.com/2025/08/Upcoming-Government-Exams.html",
       "websiteUrl": "https://www.upsconline.nic.in/"
     }
+  },
+  {
+    "id": "iob-generalist-so-recruitment",
+    "title": "IOB Generalist SO Recruitment 2026 – Apply Online for 291 Posts | Last Date 15-09-2026",
+    "org": "IOB Generalist SO",
+    "shortOrg": "IOB Generalist SO",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "15-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1jUZOts6VGIH1XqPi1LMwvIcA2rFzSjWF/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1jUZOts6VGIH1XqPi1LMwvIcA2rFzSjWF/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1jUZOts6VGIH1XqPi1LMwvIcA2rFzSjWF/view?usp=sharing"
+    }
+  },
+  {
+    "id": "indbank-relationship-manager-dealer",
+    "title": "Indbank Relationship Manager & Dealer Recruitment 2026 – Apply for 14 Posts | Last Date 31-08-2026",
+    "org": "Indbank Relationship Manager & Dealer",
+    "shortOrg": "Indbank Relationship Manager &",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.indbankonline.com/v/?v=2026/08/Advertisement-for-the-post-of-Relationshipmanager-Dealer-dated-10.08.2026.pdf",
+      "notificationUrl": "https://www.indbankonline.com/v/?v=2026/08/Advertisement-for-the-post-of-Relationshipmanager-Dealer-dated-10.08.2026.pdf",
+      "websiteUrl": "https://www.indbankonline.com/v/?v=2026/08/Advertisement-for-the-post-of-Relationshipmanager-Dealer-dated-10.08.2026.pdf"
+    }
+  },
+  {
+    "id": "national-board-of-accreditation",
+    "title": "National Board of Accreditation Recruitment 2026: Apply for 07 Manager, Director Posts | Last Date 31-08-2026",
+    "org": "National Board of Accreditation",
+    "shortOrg": "National Board of Accreditatio",
+    "posts": "Manager, Director",
+    "vacancies": 7,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.nbaind.org/Uploads/Advt.,%20General%20terms%20&amp;%20Conditions_Format_20260724175301.pdf",
+      "notificationUrl": "https://www.nbaind.org/Uploads/Advt.,%20General%20terms%20&amp;%20Conditions_Format_20260724175301.pdf",
+      "websiteUrl": "https://www.nbaind.org/Uploads/Advt.,%20General%20terms%20&amp;%20Conditions_Format_20260724175301.pdf"
+    }
+  },
+  {
+    "id": "sbi-specialist-cadre-officer",
+    "title": "SBI Specialist Cadre Officer Recruitment 2026 – Apply Online for 38 Various Posts | Last Date 27-08-2026",
+    "org": "SBI Specialist Cadre Officer",
+    "shortOrg": "SBI Specialist Cadre Officer",
+    "posts": "Various",
+    "vacancies": 38,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "27-08-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://sbi.bank.in/documents/77530/57941334/ADV_CRPD_SCO_2026-27_11+%281%29.pdf/474dbe0d-e408-720b-f412-3788a553105a?t=1786024930974",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "rcfl-management-trainee-recruitment",
+    "title": "RCFL Management Trainee Recruitment 2026 – Apply Online for 94 Posts | Last Date 10-09-2026",
+    "org": "RCFL Management Trainee",
+    "shortOrg": "RCFL Management Trainee",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "10-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rcfltd.com/files/MT%202026.pdf",
+      "notificationUrl": "https://rcfltd.com/files/MT%202026.pdf",
+      "websiteUrl": "https://rcfltd.com/files/MT%202026.pdf"
+    }
+  },
+  {
+    "id": "nainital-bank-specialist-officer",
+    "title": "Nainital Bank Specialist Officer Recruitment 2026 – Apply Online for 41 Posts | Last Date 07-09-2026",
+    "org": "Nainital Bank Specialist Officer",
+    "shortOrg": "Nainital Bank Specialist Offic",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "07-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://www.nainitalbank.bank.in/pdf/Notification%202026.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "nitttr-bhopal-faculty-recruitment",
+    "title": "NITTTR Bhopal Faculty Recruitment 2026 – Apply for 22 Posts, Walk in Interview",
+    "org": "NITTTR Bhopal Faculty",
+    "shortOrg": "NITTTR Bhopal Faculty",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://nitttrbpl.ac.in/vacancy26_27/Walk_in_Interview_contFaculty_200826.pdf",
+      "notificationUrl": "https://nitttrbpl.ac.in/vacancy26_27/Walk_in_Interview_contFaculty_200826.pdf",
+      "websiteUrl": "https://nitttrbpl.ac.in/vacancy26_27/Walk_in_Interview_contFaculty_200826.pdf"
+    }
+  },
+  {
+    "id": "mecon-executive-recruitment",
+    "title": "MECON Executive Recruitment 2026 – Apply Online for 07 Manager Posts | Last Date 13-09-2026",
+    "org": "MECON Executive",
+    "shortOrg": "MECON Executive",
+    "posts": "Manager",
+    "vacancies": 7,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "13-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1oOgYcBvd5o7BOvgBlmFJ3YjZ5I5Ai59M/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1oOgYcBvd5o7BOvgBlmFJ3YjZ5I5Ai59M/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1oOgYcBvd5o7BOvgBlmFJ3YjZ5I5Ai59M/view?usp=sharing"
+    }
+  },
+  {
+    "id": "aai-advt-no-12-2026",
+    "title": "AAI Advt No 12/2026: Apply Online for 389 Manager and Junior Executive Posts | Last Date 07-09-2026",
+    "org": "AAI",
+    "shortOrg": "AAI",
+    "posts": "Manager and Junior Executive",
+    "vacancies": 389,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "07-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Detailed%20Advertisement%2012-2026-CHQ.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "rfcl-experienced-professionals",
+    "title": "RFCL Experienced Professionals Recruitment 2026 – Apply Online for 40 Engineer, Officer & Manager Posts | Last Date 24-09-2026",
+    "org": "RFCL Experienced Professionals",
+    "shortOrg": "RFCL Experienced Professionals",
+    "posts": "Engineer, Officer & Manager",
+    "vacancies": 40,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "24-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.rfcl.co.in/upload/Detailed%20Advt%2001_2026.pdf",
+      "notificationUrl": "https://www.rfcl.co.in/upload/Detailed%20Advt%2001_2026.pdf",
+      "websiteUrl": "https://www.rfcl.co.in/upload/Detailed%20Advt%2001_2026.pdf"
+    }
+  },
+  {
+    "id": "sbi-trade-finance-officer-recruitment",
+    "title": "SBI Trade Finance Officer Recruitment 2026: Apply Online for 35 Posts | Last Date 19-09-2026",
+    "org": "SBI Trade Finance Officer",
+    "shortOrg": "SBI Trade Finance Officer",
+    "posts": "Management Trainee / Assistant Manager (HR/Finance/Operations)",
+    "vacancies": 30,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "19-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1Ax0inIxvFcU7Eyp7amgU1WXbRVbrVmgz/view?usp=sharing",
+      "notificationUrl": "https://sbi.bank.in/documents/77530/57941334/29082026_BIODATA+2026_27_15.pdf/37417aaf-65ba-06f7-a774-402ed91c69d5?t=1787986943737",
+      "websiteUrl": "https://drive.google.com/file/d/1Ax0inIxvFcU7Eyp7amgU1WXbRVbrVmgz/view?usp=sharing"
+    }
+  },
+  {
+    "id": "maharashtra-metro-rail-recruitment-2026",
+    "title": "Maharashtra Metro Rail Recruitment 2026 – Apply for 56 Engineer, Technician, Assistant & Attendant Posts | Last Date 25-09-2026",
+    "org": "Maharashtra Metro Rail",
+    "shortOrg": "Maharashtra Metro Rail",
+    "posts": "Engineer, Technician, Assistant & Attendant",
+    "vacancies": 56,
+    "salary": "IDA Pay Scale E-1 / E-2 (₹40,000 – ₹1,40,000/-) / CTC ₹12 to ₹18 LPA",
+    "qualificationText": "2-Year Full Time MBA / PGDM (HR / Finance / Marketing / Operations / Supply Chain) or equivalent Master's Degree",
+    "qualifications": [
+      "graduate",
+      "mba-pgdm",
+      "post-graduate"
+    ],
+    "category": "psu",
+    "subCategory": "Management & HR Trainee Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "25-09-2026",
+      "examDate": "Computer Based Test (CBT) / Group Discussion (GD) & Personal Interview"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 28 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf",
+      "notificationUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf",
+      "websiteUrl": "https://mahametro.org/pdf/Advt.%20N_HR_05%20%20with%20form%203.pdf"
+    }
   }
 ];
 
