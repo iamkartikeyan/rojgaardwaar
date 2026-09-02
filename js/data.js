@@ -4446,6 +4446,276 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf",
       "websiteUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf"
     }
+  },
+  {
+    "id": "data-entry-computer-jobs",
+    "title": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
+    "org": "Data Entry & Computer Jobs in Govt Sector 2026 (5000+ Vacancies Open Now)",
+    "shortOrg": "Data Entry & Computer Jobs in ",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2015/03/data-entry-computer-jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2015/03/data-entry-computer-jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2015/03/data-entry-computer-jobs.html"
+    }
+  },
+  {
+    "id": "isro-lpsc-advertisement-no-lpsc-02-2026",
+    "title": "ISRO LPSC Advertisement No. LPSC/02/2026 – Apply Online for 19 Posts | Last Date 04-09-2026",
+    "org": "ISRO LPSC Advertisement No. LPSC/02/2026 – Apply Online for 19 Posts | Last Date 04-09-2026",
+    "shortOrg": "ISRO LPSC Advertisement No. LP",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "04-09-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.lpsc.gov.in/docs/02-2026%20Detailed%20With%20Annexures.pdf",
+      "notificationUrl": "https://www.lpsc.gov.in/docs/02-2026%20Detailed%20With%20Annexures.pdf",
+      "websiteUrl": "https://www.lpsc.gov.in/docs/02-2026%20Detailed%20With%20Annexures.pdf"
+    }
+  },
+  {
+    "id": "driver-govt-jobs",
+    "title": "Latest Driver Govt Jobs 2026 | All India Vacancies",
+    "org": "Latest Driver Govt Jobs 2026 | All India Vacancies",
+    "shortOrg": "Latest Driver Govt Jobs 2026 |",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2015/10/Driver-Govt-Jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2015/10/Driver-Govt-Jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2015/10/Driver-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "dgqa-technician-recruitment",
+    "title": "DGQA Technician Recruitment 2026 – Application Form, Notification, 15 Posts | Last Date 28-08-2026",
+    "org": "DGQA Technician",
+    "shortOrg": "DGQA Technician",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "28-08-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1AuNbQvPYaQWkIHA5-vrc5DM9WRFozUWp/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1AuNbQvPYaQWkIHA5-vrc5DM9WRFozUWp/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1AuNbQvPYaQWkIHA5-vrc5DM9WRFozUWp/view?usp=sharing"
+    }
+  },
+  {
+    "id": "hpcl-biofuels-limited-recruitment",
+    "title": "HPCL Biofuels Limited Recruitment 2026: Apply Offline for 58 Management & Non-Management Posts | Last Date 27-08-2026",
+    "org": "HPCL Biofuels Limited",
+    "shortOrg": "HPCL Biofuels Limited",
+    "posts": "Management & Non-Management",
+    "vacancies": 58,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "27-08-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://hpclbiofuels.co.in/downloads/HBL-Advertisement-2026.pdf",
+      "notificationUrl": "https://hpclbiofuels.co.in/downloads/HBL-Advertisement-2026.pdf",
+      "websiteUrl": "https://hpclbiofuels.co.in/downloads/HBL-Advertisement-2026.pdf"
+    }
+  },
+  {
+    "id": "sail-rsp-apprentice-recruitment",
+    "title": "SAIL RSP Apprentice Recruitment 2026: Notification for 1110 Posts | Apply Online up to 26-08-2026",
+    "org": "SAIL RSP Apprentice",
+    "shortOrg": "SAIL RSP Apprentice",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://aima-web-images.s3.ap-south-1.amazonaws.com/sailcareers.com/Downloads/RSP_News%20&amp;%20Jobs_17072026_140526.pdf",
+      "notificationUrl": "https://aima-web-images.s3.ap-south-1.amazonaws.com/sailcareers.com/Downloads/RSP_News%20&amp;%20Jobs_17072026_140526.pdf",
+      "websiteUrl": "https://aima-web-images.s3.ap-south-1.amazonaws.com/sailcareers.com/Downloads/RSP_News%20&amp;%20Jobs_17072026_140526.pdf"
+    }
+  },
+  {
+    "id": "beml-apprentice-recruitment",
+    "title": "BEML Apprentice Recruitment 2026 – Apply Online for 1346 Posts | Last Date 08-09-2026",
+    "org": "BEML Apprentice",
+    "shortOrg": "BEML Apprentice",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "08-09-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1GZG8W6SmsYXKpXXaUm9WeWZDXNnKN9uz/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1GZG8W6SmsYXKpXXaUm9WeWZDXNnKN9uz/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1GZG8W6SmsYXKpXXaUm9WeWZDXNnKN9uz/view?usp=sharing"
+    }
+  },
+  {
+    "id": "sspl-drdo-apprentice-recruitment",
+    "title": "SSPL DRDO Apprentice Recruitment 2026 – Apply for 41 ITI, Diploma & Graduate Posts | Last Date 21-08-2026",
+    "org": "SSPL DRDO Apprentice",
+    "shortOrg": "SSPL DRDO Apprentice",
+    "posts": "ITI, Diploma & Graduate",
+    "vacancies": 41,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "21-08-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtSSPL_APP30072026.pdf",
+      "notificationUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtSSPL_APP30072026.pdf",
+      "websiteUrl": "https://drdo.gov.in/drdo/sites/default/files/vacancy/advtSSPL_APP30072026.pdf"
+    }
+  },
+  {
+    "id": "ordnance-factory-dehu-road-dbw",
+    "title": "Ordnance Factory Dehu Road DBW Recruitment 2026 – Apply Offline for 14 Posts | Last Date 20-08-2026",
+    "org": "Ordnance Factory Dehu Road DBW",
+    "shortOrg": "Ordnance Factory Dehu Road DBW",
+    "posts": "Trade Apprentice / ITI Technician (Fitter/Electrician/Welder)",
+    "vacancies": 75,
+    "salary": "Pay Level-2 (₹19,900 – ₹63,200/-) / Monthly Stipend ₹7,700 – ₹12,000/-",
+    "qualificationText": "Class 10th (Matriculation) + ITI in relevant trade (NCVT / SCVT recognized)",
+    "qualifications": [
+      "10th-pass",
+      "iti"
+    ],
+    "category": "central-govt",
+    "subCategory": "ITI & Trade Apprentice Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "20-08-2026",
+      "examDate": "Merit Based (10th + ITI Marks) / Trade Test / CBT"
+    },
+    "fee": "General/OBC: ₹100 / Nil (SC/ST/PwBD/Female: Exempted)",
+    "ageLimit": "15 to 24 / 28 Years (Relaxation as per Apprenticeship norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://munitionsindia.in/wp-content/uploads/English-Full-Advertisement-AOCP_OFDR.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
   }
 ];
 
