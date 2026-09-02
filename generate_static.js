@@ -61,6 +61,8 @@ const WEBSITE_SCHEMA = `
   </script>
 `;
 
+const ASSET_VERSION = 'v20260902b';
+
 // Common SVG Icons
 const SVG_CHECK = `<svg class="icon-svg check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 const SVG_SEARCH = `<svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
@@ -367,7 +369,7 @@ const COMMON_FOOTER = `
     }
     document.addEventListener('DOMContentLoaded', checkCookieConsent);
   </script>
-  <script src="/js/search.js" defer></script>
+  <script src="/js/search.js?v=${ASSET_VERSION}" defer></script>
 `;
 
 function generateJobPostingSchema(job, stateObj) {
@@ -459,7 +461,7 @@ data.RECRUITMENTS.forEach(job => {
   ${GA4_TAG}
   ${generateJobPostingSchema(job, stateObj)}
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=${ASSET_VERSION}">
 </head>
 <body>
 
@@ -706,7 +708,7 @@ function generateHubPageHtml({ title, pageTitle, metaDesc, activeNav, intro, job
   ${GA4_TAG}
   ${WEBSITE_SCHEMA}
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=${ASSET_VERSION}">
 </head>
 <body>
 
@@ -1049,7 +1051,7 @@ const searchPageHtml = `<!DOCTYPE html>
   ${GA4_TAG}
   ${WEBSITE_SCHEMA}
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=${ASSET_VERSION}">
 </head>
 <body>
 
@@ -1140,7 +1142,7 @@ const indexStaticHtml = `<!DOCTYPE html>
   ${GA4_TAG}
   ${WEBSITE_SCHEMA}
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=${ASSET_VERSION}">
 </head>
 <body>
 
@@ -1242,6 +1244,8 @@ policyFiles.forEach(file => {
     if (!content.includes('G-ROZGARDWAAR')) {
       content = content.replace('</head>', `${GA4_TAG}\n${WEBSITE_SCHEMA}\n</head>`);
     }
+
+    content = content.replace(/\/css\/style\.css(\?v=[a-zA-Z0-9]+)?/g, '/css/style.css?v=' + ASSET_VERSION);
 
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`Cleaned and updated policy page: ${file}`);
