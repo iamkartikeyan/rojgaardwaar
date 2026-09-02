@@ -4074,6 +4074,378 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf",
       "websiteUrl": "https://ssjhunjhunu.com/uploads/308167detailed%20advt%2022%20aug%202026.pdf"
     }
+  },
+  {
+    "id": "istc-executive-recruitment",
+    "title": "ISTC Executive Recruitment 2026 – Apply Online for 09 Engineer, IT, Finance, HR Posts | Last Date 18-09-2026",
+    "org": "ISTC Executive",
+    "shortOrg": "ISTC Executive",
+    "posts": "Engineer, IT, Finance, HR",
+    "vacancies": 9,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "18-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://istcindia.org",
+      "notificationUrl": "https://cochinshipyard.in/uploads/career/cd5346e2da18d06f6905eb292e8ce195.pdf",
+      "websiteUrl": "https://istcindia.org"
+    }
+  },
+  {
+    "id": "iocl-executive-recruitment-through-cbt",
+    "title": "IOCL Executive Recruitment through CBT 2026 – Apply Online for 470 Engineer, Officer & Law Posts | Last Date 03-09-2026",
+    "org": "IOCL Executive",
+    "shortOrg": "IOCL Executive",
+    "posts": "Engineer, Officer & Law",
+    "vacancies": 470,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "03-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://iocl.com/admin/img/UploadedFiles/LatestJobOpening/Files/DetailedAd14082026.pdf",
+      "notificationUrl": "https://iocl.com/admin/img/UploadedFiles/LatestJobOpening/Files/DetailedAd14082026.pdf",
+      "websiteUrl": "https://iocl.com/admin/img/UploadedFiles/LatestJobOpening/Files/DetailedAd14082026.pdf"
+    }
+  },
+  {
+    "id": "bank-of-india-officer-recruitment",
+    "title": "Bank of India Officer Recruitment 2026 – Apply Online for 205 Posts | Last Date 25-09-2026",
+    "org": "Bank of India Officer",
+    "shortOrg": "Bank of India Officer",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "25-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://bankofindia.bank.in/documents/20121/27827843/FINAL-NOTICE-SPECIALIST-OFFICER-2026-27-02-NOTICE-DATE-01.08.2026.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "dmrc-supervisor-recruitment-2026",
+    "title": "DMRC Supervisor Recruitment 2026 – Apply for 04 Posts | Last Date 15-09-2026",
+    "org": "DMRC Supervisor",
+    "shortOrg": "DMRC Supervisor",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "15-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1sVL7tFLyQS70U751G8-yxl2uZ1qHJJaM/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1sVL7tFLyQS70U751G8-yxl2uZ1qHJJaM/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1sVL7tFLyQS70U751G8-yxl2uZ1qHJJaM/view?usp=sharing"
+    }
+  },
+  {
+    "id": "bel-kochi-deputy-engineer-recruitment",
+    "title": "BEL Kochi Deputy Engineer Recruitment 2026 – Apply for 14 Posts | Last Date 23-09-2026",
+    "org": "BEL Kochi Deputy Engineer",
+    "shortOrg": "BEL Kochi Deputy Engineer",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "23-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1JrDhlewR_hTBCf9ZqMjXwnKLMn4UlVWS/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1JrDhlewR_hTBCf9ZqMjXwnKLMn4UlVWS/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1JrDhlewR_hTBCf9ZqMjXwnKLMn4UlVWS/view?usp=sharing"
+    }
+  },
+  {
+    "id": "gmdc-it-professional-recruitment",
+    "title": "GMDC IT Professional Recruitment 2026: Notification, Online Form | Last Date 02-09-2026",
+    "org": "GMDC IT Professional",
+    "shortOrg": "GMDC IT Professional",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "02-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.gmdcltd.com/wp-content/uploads/2026/08/filenamehnbaOELZIdxYAdvertisement_IT-Dept.pdf",
+      "notificationUrl": "https://www.gmdcltd.com/wp-content/uploads/2026/08/filenamehnbaOELZIdxYAdvertisement_IT-Dept.pdf",
+      "websiteUrl": "https://www.gmdcltd.com/wp-content/uploads/2026/08/filenamehnbaOELZIdxYAdvertisement_IT-Dept.pdf"
+    }
+  },
+  {
+    "id": "niscpr-project-staff-recruitment-2026",
+    "title": "NISCPR Project Staff Recruitment 2026 – Walk in Interview for 14 Posts",
+    "org": "NISCPR Project Staff",
+    "shortOrg": "NISCPR Project Staff",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://niscpr.res.in/includes/images/jobs/Advertisment-ULIP-VII-2026-2026-07-31-03-05-19pm.pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "indian-overseas-bank-security-guard",
+    "title": "Indian Overseas Bank Security Guard Recruitment 2026 – Apply Online for 25 Posts | Last Date 14-09-2026",
+    "org": "Indian Overseas Bank Security Guard",
+    "shortOrg": "Indian Overseas Bank Security ",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "14-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1ikbI308kCQJlTE6WCF0AsN7FmUMnXDx2/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1ikbI308kCQJlTE6WCF0AsN7FmUMnXDx2/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1ikbI308kCQJlTE6WCF0AsN7FmUMnXDx2/view?usp=sharing"
+    }
+  },
+  {
+    "id": "mpesb-si-subedar-recruitment",
+    "title": "MPESB SI & Subedar Recruitment 2026 – Apply Online for 504 Posts | Last Date 23-09-2026",
+    "org": "MPESB SI & Subedar",
+    "shortOrg": "MPESB SI & Subedar",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "23-09-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1H_TOnZ5UxR5647hpbkcBg15FtcC42lko/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1H_TOnZ5UxR5647hpbkcBg15FtcC42lko/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1H_TOnZ5UxR5647hpbkcBg15FtcC42lko/view?usp=sharing"
+    }
+  },
+  {
+    "id": "jkssb-notification-no-09-of-2026",
+    "title": "JKSSB Notification No. 09 of 2026 – Apply Online for 2863 MTS & Sanitation Worker Posts | Last Date 03-11-2026",
+    "org": "JKSSB",
+    "shortOrg": "JKSSB",
+    "posts": "MTS & Sanitation Worker",
+    "vacancies": 2863,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "03-11-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://jkssb.nic.in/Pdf/ADVT_09OF2026_01092026.pdf",
+      "notificationUrl": "https://jkssb.nic.in/Pdf/ADVT_09OF2026_01092026.pdf",
+      "websiteUrl": "https://jkssb.nic.in/Pdf/ADVT_09OF2026_01092026.pdf"
+    }
+  },
+  {
+    "id": "icar-igfri-young-professional",
+    "title": "ICAR IGFRI Young Professional Recruitment 2026 – Walk in Interview for 05 Posts",
+    "org": "ICAR IGFRI Young Professional",
+    "shortOrg": "ICAR IGFRI Young Professional",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://igfri.org.in/uploads/20260828055528802yp-II%205%20Post.pdf",
+      "notificationUrl": "https://igfri.org.in/uploads/20260828055528802yp-II%205%20Post.pdf",
+      "websiteUrl": "https://igfri.org.in/uploads/20260828055528802yp-II%205%20Post.pdf"
+    }
+  },
+  {
+    "id": "nalanda-university-non-teaching",
+    "title": "Nalanda University Non Teaching Recruitment 2026 – Apply Online for Assistant, Librarian & Engineer Posts | Last Date 31-08-2026",
+    "org": "Nalanda University Non Teaching",
+    "shortOrg": "Nalanda University Non Teachin",
+    "posts": "Project Engineer / Executive Trainee (Engineering)",
+    "vacancies": 40,
+    "salary": "Level-10 / IDA Pay Scale E-2 (₹50,000 – ₹1,60,000/-)",
+    "qualificationText": "B.Tech / B.E. (Civil / Mechanical / Electrical / ECE / CS / IT) with min 60% Marks / GATE",
+    "qualifications": [
+      "graduate",
+      "btech-engineering",
+      "diploma"
+    ],
+    "category": "psu",
+    "subCategory": "Engineering Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "31-08-2026",
+      "examDate": "Computer Based Test (CBT) / Interview / GATE Score"
+    },
+    "fee": "General/OBC/EWS: ₹500 - ₹1000 | SC/ST/PwBD: Nil",
+    "ageLimit": "21 to 30 / 32 Years (Relaxation as per Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf",
+      "notificationUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf",
+      "websiteUrl": "https://nalandauniv.edu.in/wp-content/uploads/2026/08/2.-Recruitment-Notice-03.08.2026-1.pdf"
+    }
   }
 ];
 
