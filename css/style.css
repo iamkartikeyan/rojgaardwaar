@@ -199,7 +199,7 @@ a:hover {
 
 /* ==========================================================================
    Hero Live Search & Quick Filter Pills
-   ========================================================================== */
+   ========================================================================= */
 
 .search-strip {
   background: #ffffff;
@@ -347,6 +347,77 @@ a:hover {
   text-align: center;
   letter-spacing: 0.2px;
   text-shadow: 0 1px 0 #ffffff;
+}
+
+/* Section Title with Green Tick */
+.green-check-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #000000;
+  margin: 16px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 3-Column IndGovtJobs Data Table */
+.ind-govt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.ind-govt-table th,
+.ind-govt-table td {
+  border: 1px solid #dcdcdc;
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.ind-govt-table th {
+  background: #f4f6f9;
+  font-weight: 700;
+  text-align: center;
+  color: #222222;
+}
+
+.ind-govt-table td.post-col {
+  text-align: left;
+  font-weight: 700;
+  width: 45%;
+}
+
+.ind-govt-table td.post-col a {
+  color: #000000 !important;
+}
+
+.ind-govt-table td.post-col a:hover {
+  color: var(--accent-red) !important;
+}
+
+.ind-govt-table td.date-col {
+  text-align: center;
+  font-weight: 700;
+  width: 25%;
+  color: #222222;
+}
+
+.ind-govt-table td.action-col {
+  text-align: center;
+  width: 30%;
+}
+
+.ind-govt-table td.action-col a {
+  color: #008000 !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.ind-govt-table td.action-col a:hover {
+  color: #004d00 !important;
+  text-decoration: underline;
 }
 
 /* Top "Latest Government Jobs" Bold Bullet Highlights */
@@ -517,6 +588,22 @@ a:hover {
 .state-check-link:hover {
   color: var(--accent-red) !important;
   text-decoration: underline;
+}
+
+/* Qualification Links Container inside Hubs */
+.qual-hub-links-box {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  padding: 12px 16px;
+  margin: 14px 0;
+  text-align: center;
+}
+
+.qual-hub-links-box a {
+  display: block;
+  padding: 4px 0;
+  font-size: 13.5px;
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -756,45 +843,4 @@ a:hover {
 .site-dark-footer a:hover {
   color: #ffffff !important;
   text-decoration: underline;
-}
-
-/* Modals */
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-card-box {
-  background: #ffffff;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  border: 1px solid #ccc;
-  overflow: hidden;
-}
-
-.modal-card-header {
-  background: #1c2833;
-  color: #ffffff;
-  padding: 10px 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  font-size: 14px;
 }

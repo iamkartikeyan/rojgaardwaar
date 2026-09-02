@@ -1,7 +1,7 @@
 /**
  * ROJGAARDWAAR (RojgaarDwaar.in) - Master Application Engine
  * Renders IndGovtJobs-inspired authentic layout with high-density task modules,
- * dynamic routing, instant search, and full job breakdowns.
+ * 3-column recruitment tables, dynamic routing, instant search, and full breakdowns.
  */
 
 (function() {
@@ -56,17 +56,17 @@
       const qualId = hash.replace('/qualification/', '').trim();
       state.currentRoute = 'qualification';
       state.routeParam = qualId;
-      renderQualificationView(qualId);
+      renderCategoryOrGovtJobsView('qualification', qualId);
     } else if (hash.startsWith('/state/')) {
       const stateId = hash.replace('/state/', '').trim();
       state.currentRoute = 'state';
       state.routeParam = stateId;
-      renderStateView(stateId);
+      renderCategoryOrGovtJobsView('state', stateId);
     } else if (hash.startsWith('/category/')) {
       const catId = hash.replace('/category/', '').trim();
       state.currentRoute = 'category';
       state.routeParam = catId;
-      renderCategoryView(catId);
+      renderCategoryOrGovtJobsView('category', catId);
     } else if (hash === '/admit-cards') {
       state.currentRoute = 'admit-cards';
       state.routeParam = null;
@@ -108,19 +108,15 @@
   }
 
   // =========================================================================
-  // 1. Home View (Exact IndGovtJobs Layout from Screenshot)
+  // 1. Home View (IndGovtJobs Exact Layout from First Screenshot)
   // =========================================================================
 
   function renderHomeView() {
-    // 1. Top Highlights: 5-6 top anchor recruitments
     const topHighlights = data.RECRUITMENTS.slice(0, 6);
-
-    // 2. Paginated New / Updated Govt Job Notifications
     const startIdx = (state.currentPage - 1) * state.pageSize;
     const currentFeed = data.RECRUITMENTS.slice(startIdx, startIdx + state.pageSize);
     const totalPages = Math.ceil(data.RECRUITMENTS.length / state.pageSize);
 
-    // 3. State wise list
     const topStates = [
       { id: "maharashtra", name: "Maharashtra Govt Jobs" },
       { id: "uttar-pradesh", name: "Uttar Pradesh Govt Jobs" },
@@ -190,7 +186,7 @@
           }).join('')}
         </div>
 
-        <!-- Pagination Bar (Exact IndGovtJobs style) -->
+        <!-- Pagination Bar -->
         <div class="portal-pagination-bar">
           <div>Page <strong>${state.currentPage}</strong> of <strong>${totalPages}</strong> (${data.RECRUITMENTS.length} Total Openings)</div>
           <div class="page-numbers-wrap">
@@ -220,7 +216,186 @@
   }
 
   // =========================================================================
-  // 2. Job Detail View
+  // 2. Govt Jobs & Category Hub View (IndGovtJobs 3-Column Table Format from Second Screenshot)
+  // =========================================================================
+
+  function renderCategoryOrGovtJobsView(type, identifier) {
+    let pageTitle = "Central Government Jobs 2026 (150000+ Govt Vacancies Opening)";
+    let matchingJobs = data.RECRUITMENTS;
+    let introText = "Find latest Indian Government Jobs 2026 across Central Ministries, Public Sector Undertakings (PSUs), Railways (RRB), Public Sector Banks, Staff Selection Commission (SSC), UPSC, Armed Forces, and State Government Boards.";
+
+    if (type === 'category') {
+      const cat = data.CATEGORIES.find(c => c.id === identifier);
+      if (cat) {
+        pageTitle = `${cat.name} 2026 (${cat.count * 150}+ Govt Vacancies Opening)`;
+        matchingJobs = data.RECRUITMENTS.filter(j => j.category === cat.id);
+        introText = `Explore all verified ${cat.name} notifications. Apply online for active vacancies, check eligibility criteria, salary scales, and upcoming examination dates.`;
+      }
+    } else if (type === 'qualification') {
+      const qual = data.QUALIFICATIONS.find(q => q.id === identifier);
+      if (qual) {
+        pageTitle = `${qual.name} Jobs 2026 (50000+ Govt Vacancies Opening)`;
+        matchingJobs = data.RECRUITMENTS.filter(j => j.qualifications.includes(qual.id));
+        introText = `Discover verified Central and State Government Jobs for ${qual.shortName} qualified candidates across Railways, Police, Banking, SSC, PSUs, and Ministries.`;
+      }
+    } else if (type === 'state') {
+      const stateObj = data.STATES.find(s => s.id === identifier);
+      if (stateObj) {
+        pageTitle = `${stateObj.name} Government Jobs 2026 (${stateObj.totalActive * 80}+ Govt Vacancies Opening)`;
+        matchingJobs = data.RECRUITMENTS.filter(j => j.state === stateObj.id || (stateObj.id !== 'all-india' && j.state === 'all-india'));
+        introText = `All verified Government jobs and recruitment notifications in ${stateObj.name} including State PSC, Police, High Court, Electricity Boards, and Central Units located in the state.`;
+      }
+    }
+
+    // Split matching jobs into logical categorized sub-tables
+    const table1Jobs = matchingJobs.slice(0, 10);
+    const table2Jobs = matchingJobs.slice(10, 20);
+    const table3Jobs = matchingJobs.slice(20, 30);
+
+    let html = `
+      <div class="content-block" style="padding: 16px 18px;">
+        <!-- Page Title & Meta -->
+        <h1 style="font-size: 18px; font-weight: 800; color: #0b3c5d; line-height: 1.35; margin-bottom: 8px;">
+          ${escapeHtml(pageTitle)}
+        </h1>
+        <p style="font-size: 12px; color: #666; margin-bottom: 12px;">
+          LIVE RECRUITMENT STATUS: <strong>ACTIVE & VERIFIED NOTIFICATIONS</strong>
+        </p>
+        
+        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 14px;">
+          ${escapeHtml(introText)} All eligible candidates holding 10th, 12th, ITI, Diploma, Graduation, B.Tech, MBA, MCA, and Post Graduation degrees can verify their qualification profile and submit applications before the respective deadline.
+        </p>
+
+        <!-- Table 1 -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Latest Government Jobs & Recruitment Openings:</span>
+        </div>
+        <table class="ind-govt-table">
+          <thead>
+            <tr>
+              <th style="width:48%;">Recruitment / Post Name</th>
+              <th style="width:24%;">Last Date</th>
+              <th style="width:28%;">Job Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${table1Jobs.map(job => `
+              <tr>
+                <td class="post-col">
+                  <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
+                  <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
+                </td>
+                <td class="date-col">${job.importantDates.lastDate}</td>
+                <td class="action-col"><a href="#/job/${job.id}">APPLY ONLINE</a></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <!-- Table 2 (if available) -->
+        ${table2Jobs.length > 0 ? `
+          <div class="green-check-title">
+            <span>✅</span> <span>Top Public Sector & Departmental Opportunities:</span>
+          </div>
+          <table class="ind-govt-table">
+            <thead>
+              <tr>
+                <th style="width:48%;">Recruitment / Post Name</th>
+                <th style="width:24%;">Last Date</th>
+                <th style="width:28%;">Job Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${table2Jobs.map(job => `
+                <tr>
+                  <td class="post-col">
+                    <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
+                    <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
+                  </td>
+                  <td class="date-col">${job.importantDates.lastDate}</td>
+                  <td class="action-col"><a href="#/job/${job.id}">GET DETAILS</a></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        ` : ''}
+
+        <!-- Table 3 (if available) -->
+        ${table3Jobs.length > 0 ? `
+          <div class="green-check-title">
+            <span>✅</span> <span>Upcoming Central & State Technical Vacancies:</span>
+          </div>
+          <table class="ind-govt-table">
+            <thead>
+              <tr>
+                <th style="width:48%;">Recruitment / Post Name</th>
+                <th style="width:24%;">Last Date</th>
+                <th style="width:28%;">Job Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${table3Jobs.map(job => `
+                <tr>
+                  <td class="post-col">
+                    <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
+                    <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
+                  </td>
+                  <td class="date-col">${job.importantDates.lastDate}</td>
+                  <td class="action-col"><a href="#/job/${job.id}">APPLY NOW</a></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        ` : ''}
+
+        <!-- Qualification Links Box (From Screenshot) -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Govt Jobs by Qualification:</span>
+        </div>
+        <div class="qual-hub-links-box">
+          <a href="#/qualification/10th-pass" style="color:#008000;">10th Pass / 12th Pass Govt Jobs</a>
+          <a href="#/qualification/graduate" style="color:#0000cc;">Graduate / Degree Govt Jobs</a>
+          <a href="#/qualification/diploma" style="color:#cc0000;">Diploma Govt Jobs (Polytechnic)</a>
+          <a href="#/qualification/iti" style="color:#990066;">ITI Pass Govt Jobs (All Trades)</a>
+          <a href="#/qualification/btech-engineering" style="color:#008000;">Engineering / B.Tech Govt Jobs</a>
+          <a href="#/qualification/post-graduate" style="color:#0000cc;">Post Graduate / Master Degree Jobs</a>
+        </div>
+
+        <!-- Information & Rules Section -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Age Relaxation & Reservation Rules:</span>
+        </div>
+        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+          <li><strong>SC / ST Candidates:</strong> 05 Years upper age relaxation as per Central Govt norms.</li>
+          <li><strong>OBC (Non-Creamy Layer):</strong> 03 Years upper age relaxation.</li>
+          <li><strong>Persons with Benchmark Disabilities (PwBD):</strong> 10 to 15 Years relaxation across Group A, B, and C posts.</li>
+          <li><strong>Ex-Servicemen:</strong> Military service rendered plus 3 years relaxation.</li>
+          <li><strong>Female Candidates:</strong> Application fee exemption in major Central recruitments (UPSC, SSC, Railways).</li>
+        </ul>
+
+        <!-- Frequently Asked Questions (From Screenshot) -->
+        <div class="green-check-title">
+          <span>✅</span> <span>Frequently Asked Questions:</span>
+        </div>
+        <div style="line-height: 1.7; font-size: 13px; color: #333;">
+          <p style="margin-bottom: 8px;"><strong>Q: What is the minimum educational qualification required for Government Jobs?</strong><br>
+          A: Minimum qualification ranges from 10th / Matriculation for Multi-Tasking Staff (MTS), Group D, and Postal GDS to Graduation and Engineering for Officer, Inspector, and Trainee positions.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Q: How can I apply for these Government Jobs?</strong><br>
+          A: Click on the corresponding "APPLY ONLINE" or "GET DETAILS" link in the table above to access the official application link, read the official notification PDF, and submit your application online.</p>
+
+          <p style="margin-bottom: 8px;"><strong>Q: Is there any application fee for Female and SC/ST candidates?</strong><br>
+          A: In most Union Government exams conducted by UPSC and SSC, female, SC, ST, and PwBD candidates are exempted from payment of the application examination fee.</p>
+        </div>
+
+      </div>
+    `;
+
+    mainContentEl.innerHTML = html;
+  }
+
+  // =========================================================================
+  // 3. Job Detail View
   // =========================================================================
 
   function renderJobDetailView(jobId) {
@@ -348,121 +523,34 @@
   }
 
   // =========================================================================
-  // 3. Qualification Hub View
-  // =========================================================================
-
-  function renderQualificationView(qualId) {
-    const qual = data.QUALIFICATIONS.find(q => q.id === qualId) || data.QUALIFICATIONS[0];
-    const matchingJobs = data.RECRUITMENTS.filter(j => j.qualifications.includes(qual.id));
-
-    let html = `
-      <div class="content-block">
-        <div class="section-bar-header">${escapeHtml(qual.name)} (${matchingJobs.length} Active Openings)</div>
-        <div style="padding:12px 14px; font-size:13px; color:#555; border-bottom:1px solid #eee;">
-          ${escapeHtml(qual.desc)}. Verified Central & State government job notifications for ${escapeHtml(qual.shortName)} candidates.
-        </div>
-        <div class="news-feed-list">
-          ${matchingJobs.map(job => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="#/job/${job.id}">${escapeHtml(job.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(job.org)} invites applications for ${escapeHtml(job.posts)}. Vacancies: ${job.vacancies}, Last Date: ${job.importantDates.lastDate}.</p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge vac">${job.vacancies} Posts</span>
-                <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                <a href="#/job/${job.id}" class="read-more-link">Read more »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
-  }
-
-  // =========================================================================
-  // 4. State Hub View
-  // =========================================================================
-
-  function renderStateView(stateId) {
-    const stateObj = data.STATES.find(s => s.id === stateId) || data.STATES[0];
-    const matchingJobs = data.RECRUITMENTS.filter(j => j.state === stateObj.id || (stateObj.id !== 'all-india' && j.state === 'all-india'));
-
-    let html = `
-      <div class="content-block">
-        <div class="section-bar-header">${escapeHtml(stateObj.name)} Government Jobs 2026 (${matchingJobs.length} Posts)</div>
-        <div style="padding:12px 14px; font-size:13px; color:#555; border-bottom:1px solid #eee;">
-          Explore all active government recruitment notifications for <strong>${escapeHtml(stateObj.name)}</strong>.
-        </div>
-        <div class="news-feed-list">
-          ${matchingJobs.map(job => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="#/job/${job.id}">${escapeHtml(job.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(job.org)} recruitment for ${escapeHtml(job.posts)}. Vacancies: ${job.vacancies}, Last Date: ${job.importantDates.lastDate}.</p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge vac">${job.vacancies} Posts</span>
-                <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                <a href="#/job/${job.id}" class="read-more-link">Read more »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
-  }
-
-  // =========================================================================
-  // 5. Category Hub View
-  // =========================================================================
-
-  function renderCategoryView(catId) {
-    const catObj = data.CATEGORIES.find(c => c.id === catId) || data.CATEGORIES[0];
-    const matchingJobs = data.RECRUITMENTS.filter(j => j.category === catObj.id);
-
-    let html = `
-      <div class="content-block">
-        <div class="section-bar-header">${escapeHtml(catObj.name)} (${matchingJobs.length} Openings)</div>
-        <div class="news-feed-list">
-          ${matchingJobs.map(job => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="#/job/${job.id}">${escapeHtml(job.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(job.org)} recruitment for ${escapeHtml(job.posts)}. Vacancies: ${job.vacancies}, Last Date: ${job.importantDates.lastDate}.</p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge vac">${job.vacancies} Posts</span>
-                <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                <a href="#/job/${job.id}" class="read-more-link">Read more »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
-  }
-
-  // =========================================================================
-  // 6. Admit Cards View
+  // 4. Admit Cards View
   // =========================================================================
 
   function renderAdmitCardsView() {
     let html = `
-      <div class="content-block">
+      <div class="content-block" style="padding:16px;">
         <div class="section-bar-header">Latest Admit Cards & Hall Tickets 2026</div>
-        <div class="news-feed-list">
-          ${data.ADMIT_CARDS.map(card => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="${card.downloadUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(card.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(card.shortOrg)} Exam Date: <strong>${escapeHtml(card.examDate)}</strong>. Status: <span style="color:#008000; font-weight:700;">${escapeHtml(card.status)}</span>. ${escapeHtml(card.importantNotes)}</p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge date">Exam: ${escapeHtml(card.examDate)}</span>
-                <a href="${card.downloadUrl}" target="_blank" rel="noopener noreferrer" class="read-more-link">Download Admit Card »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
+        <table class="ind-govt-table" style="margin-top:14px;">
+          <thead>
+            <tr>
+              <th style="width:48%;">Admit Card / Exam Title</th>
+              <th style="width:24%;">Exam Date</th>
+              <th style="width:28%;">Download Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${data.ADMIT_CARDS.map(card => `
+              <tr>
+                <td class="post-col">
+                  <strong>${escapeHtml(card.title)}</strong>
+                  <div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(card.shortOrg)} • Status: ${escapeHtml(card.status)}</div>
+                </td>
+                <td class="date-col">${escapeHtml(card.examDate)}</td>
+                <td class="action-col"><a href="${card.downloadUrl}" target="_blank" rel="noopener noreferrer">DOWNLOAD HALL TICKET</a></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
     `;
 
@@ -470,25 +558,34 @@
   }
 
   // =========================================================================
-  // 7. Results View
+  // 5. Results View
   // =========================================================================
 
   function renderResultsView() {
     let html = `
-      <div class="content-block">
+      <div class="content-block" style="padding:16px;">
         <div class="section-bar-header">Government Exam Results & Cutoff Scores 2026</div>
-        <div class="news-feed-list">
-          ${data.RESULTS.map(res => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="${res.downloadUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(res.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(res.description)} Cutoff Highlights: <strong>${escapeHtml(res.cutoffHighlights)}</strong></p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge vac">Declared: ${escapeHtml(res.declarationDate)}</span>
-                <a href="${res.downloadUrl}" target="_blank" rel="noopener noreferrer" class="read-more-link">Check Result »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
+        <table class="ind-govt-table" style="margin-top:14px;">
+          <thead>
+            <tr>
+              <th style="width:48%;">Result / Exam Name</th>
+              <th style="width:24%;">Declared Date</th>
+              <th style="width:28%;">Check Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${data.RESULTS.map(res => `
+              <tr>
+                <td class="post-col">
+                  <strong>${escapeHtml(res.title)}</strong>
+                  <div style="font-size:11px; font-weight:normal; color:#666;">${escapeHtml(res.cutoffHighlights)}</div>
+                </td>
+                <td class="date-col">${escapeHtml(res.declarationDate)}</td>
+                <td class="action-col"><a href="${res.downloadUrl}" target="_blank" rel="noopener noreferrer">VIEW RESULT / SCORE</a></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
     `;
 
@@ -496,15 +593,15 @@
   }
 
   // =========================================================================
-  // 8. Eligibility Tool View
+  // 6. Eligibility Tool View
   // =========================================================================
 
   function renderEligibilityToolView() {
     let html = `
-      <div class="content-block">
+      <div class="content-block" style="padding:16px;">
         <div class="section-bar-header">Smart Government Job Eligibility Finder</div>
-        <div style="padding:16px;">
-          <p style="font-size:13px; color:#555; margin-bottom:14px;">Select your qualification, age, and location to find eligible government jobs instantly.</p>
+        <div style="padding:16px 0;">
+          <p style="font-size:13px; color:#555; margin-bottom:14px;">Select your qualification and age to find eligible government jobs instantly.</p>
           <form onsubmit="window.ROJGAAR_APP.handleEligibilitySubmit(event)">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
               <div>
@@ -530,14 +627,14 @@
   }
 
   // =========================================================================
-  // 9. Saved Jobs View
+  // 7. Saved Jobs View
   // =========================================================================
 
   function renderSavedJobsView() {
     const savedList = data.RECRUITMENTS.filter(j => state.savedJobs.includes(j.id));
 
     let html = `
-      <div class="content-block">
+      <div class="content-block" style="padding:16px;">
         <div class="section-bar-header">My Saved Jobs (${savedList.length})</div>
         <div class="news-feed-list">
           ${savedList.length === 0 ? `
@@ -562,7 +659,7 @@
   }
 
   // =========================================================================
-  // 10. Search View
+  // 8. Search View
   // =========================================================================
 
   function renderSearchView(query) {
@@ -575,23 +672,31 @@
     );
 
     let html = `
-      <div class="content-block">
+      <div class="content-block" style="padding:16px;">
         <div class="section-bar-header">Search Results for "${escapeHtml(query)}" (${results.length} Openings)</div>
-        <div class="news-feed-list">
-          ${results.length === 0 ? `
-            <div style="padding:30px; text-align:center; color:#666;">No matching government recruitments found.</div>
-          ` : results.map(job => `
-            <div class="news-feed-card">
-              <h2 class="news-feed-title"><a href="#/job/${job.id}">${escapeHtml(job.title)}</a></h2>
-              <p class="news-feed-summary">${escapeHtml(job.org)} recruitment for ${escapeHtml(job.posts)}. Vacancies: ${job.vacancies}, Last Date: ${job.importantDates.lastDate}.</p>
-              <div class="news-feed-meta-row">
-                <span class="meta-badge vac">${job.vacancies} Posts</span>
-                <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                <a href="#/job/${job.id}" class="read-more-link">Read more »</a>
-              </div>
-            </div>
-          `).join('')}
-        </div>
+        <table class="ind-govt-table" style="margin-top:14px;">
+          <thead>
+            <tr>
+              <th style="width:48%;">Recruitment / Post Name</th>
+              <th style="width:24%;">Last Date</th>
+              <th style="width:28%;">Job Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${results.length === 0 ? `
+              <tr><td colspan="3" style="text-align:center; padding:20px; color:#666;">No matching government recruitments found.</td></tr>
+            ` : results.map(job => `
+              <tr>
+                <td class="post-col">
+                  <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
+                  <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
+                </td>
+                <td class="date-col">${job.importantDates.lastDate}</td>
+                <td class="action-col"><a href="#/job/${job.id}">APPLY ONLINE</a></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
     `;
 
@@ -706,19 +811,27 @@
       const container = document.getElementById('eligibility-results-container');
       if (container) {
         container.innerHTML = `
-          <div class="news-feed-list" style="border-top:1px solid #eee; margin-top:14px;">
-            <div style="font-weight:700; padding:8px 0; color:#008000;">Found ${results.length} Matching Jobs:</div>
-            ${results.map(job => `
-              <div class="news-feed-card">
-                <h2 class="news-feed-title"><a href="#/job/${job.id}">${escapeHtml(job.title)}</a></h2>
-                <div class="news-feed-meta-row">
-                  <span class="meta-badge vac">${job.vacancies} Posts</span>
-                  <span class="meta-badge date">Last Date: ${job.importantDates.lastDate}</span>
-                  <a href="#/job/${job.id}" class="read-more-link">View Details »</a>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+          <table class="ind-govt-table" style="margin-top:14px;">
+            <thead>
+              <tr>
+                <th style="width:48%;">Recruitment / Post Name</th>
+                <th style="width:24%;">Last Date</th>
+                <th style="width:28%;">Job Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${results.map(job => `
+                <tr>
+                  <td class="post-col">
+                    <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
+                    <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
+                  </td>
+                  <td class="date-col">${job.importantDates.lastDate}</td>
+                  <td class="action-col"><a href="#/job/${job.id}">APPLY ONLINE</a></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
         `;
       }
     }
