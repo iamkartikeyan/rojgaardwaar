@@ -9,7 +9,10 @@
  * - Fresher Jobs
  * - Graduate Jobs
  * - State Govt Jobs
- * - All other Qualification & State hubs with 3-column tables, exam lists, & FAQs.
+ * - 10th Pass, 12th Pass, Diploma, ITI, B.Tech, MBA, MCA, Law, PG Hubs
+ * - All State/UT Hubs
+ * - Detailed Single Job View
+ * - Admit Cards, Results, Eligibility Finder & Saved Bookmarks
  */
 
 (function() {
@@ -92,17 +95,17 @@
       const qualId = hash.replace('/qualification/', '').trim();
       state.currentRoute = 'qualification';
       state.routeParam = qualId;
-      renderCategoryOrGovtJobsView('qualification', qualId);
+      renderQualificationHubView(qualId);
     } else if (hash.startsWith('/state/')) {
       const stateId = hash.replace('/state/', '').trim();
       state.currentRoute = 'state';
       state.routeParam = stateId;
-      renderCategoryOrGovtJobsView('state', stateId);
+      renderStateHubView(stateId);
     } else if (hash.startsWith('/category/')) {
       const catId = hash.replace('/category/', '').trim();
       state.currentRoute = 'category';
       state.routeParam = catId;
-      renderCategoryOrGovtJobsView('category', catId);
+      renderGenericCategoryView(catId);
     } else if (hash === '/admit-cards') {
       state.currentRoute = 'admit-cards';
       state.routeParam = null;
@@ -144,7 +147,7 @@
   }
 
   // =========================================================================
-  // 1. Home View
+  // 1. Home View (High-Density Layout with Section Bars)
   // =========================================================================
 
   function renderHomeView() {
@@ -176,6 +179,7 @@
     ];
 
     let html = `
+      <!-- 1. Latest Government Jobs Header Block -->
       <div class="content-block">
         <div class="section-bar-header">Latest Government Jobs</div>
         <div class="highlight-jobs-box">
@@ -189,6 +193,7 @@
         </div>
       </div>
 
+      <!-- 2. New / Updated Govt Job Notifications Feed -->
       <div class="content-block">
         <div class="section-bar-header">New / Updated Govt Job Notifications</div>
         <div class="news-feed-list">
@@ -205,7 +210,7 @@
                   <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
                 </h2>
                 <p class="news-feed-summary">
-                  ${escapeHtml(job.org)} has invited online applications for the recruitment of ${escapeHtml(job.posts)} (${job.vacancies.toLocaleString('en-IN')} Vacancies). Minimum Qualification: ${escapeHtml(qualShorts)}. Location: ${escapeHtml(stateObj.name)}.
+                  <strong>${escapeHtml(job.org)}</strong> has invited online applications for the recruitment of <strong>${escapeHtml(job.posts)}</strong> (${job.vacancies.toLocaleString('en-IN')} Vacancies). Minimum Qualification: ${escapeHtml(qualShorts)}. Location: ${escapeHtml(stateObj.name)}.
                 </p>
                 <div class="news-feed-meta-row">
                   <div class="news-meta-tags">
@@ -220,6 +225,7 @@
           }).join('')}
         </div>
 
+        <!-- Pagination Bar -->
         <div class="portal-pagination-bar">
           <div>Page <strong>${state.currentPage}</strong> of <strong>${totalPages}</strong> (${data.RECRUITMENTS.length} Total Openings)</div>
           <div class="page-numbers-wrap">
@@ -232,6 +238,7 @@
         </div>
       </div>
 
+      <!-- 3. State wise Govt Jobs Block -->
       <div class="content-block">
         <div class="section-bar-header">State wise Govt Jobs</div>
         <div class="state-check-grid">
@@ -252,7 +259,38 @@
   // =========================================================================
 
   function renderCentralGovtJobsView() {
-    renderCategoryOrGovtJobsView('category', 'central-govt');
+    const centralJobs = data.RECRUITMENTS.filter(j => j.category === 'central-govt' || j.category === 'ssc' || j.category === 'upsc');
+    renderHubTemplate({
+      title: "Central Government Jobs 2026 (150000+ Govt Vacancies Opening)",
+      metaText: "Last Updated: September 01, 2026 | Author: RojgaarDwaar Editorial Desk",
+      intro: "Find latest Indian Government Jobs 2026 across Central Ministries, Union Departments, Staff Selection Commission (SSC), UPSC, Armed Forces, and Constitutional Commissions with verified online application links.",
+      tableTitle: "Latest Central Government Recruitment Openings 2026:",
+      jobsList: centralJobs.slice(0, 15),
+      keySections: [
+        {
+          title: "Major Central Government Recruitment Commissions:",
+          items: [
+            "<strong>Staff Selection Commission (SSC):</strong> CGL, CHSL, MTS, GD Constable, JE, CPO SI, and Stenographer recruitments.",
+            "<strong>Union Public Service Commission (UPSC):</strong> Civil Services (IAS/IPS/IFS), Engineering Services (ESE), Combined Medical (CMS), NDA, and CDS.",
+            "<strong>Central Ministries & Autonomous Bodies:</strong> Ministry of Home Affairs, Defence, External Affairs, Railways, and Finance."
+          ]
+        },
+        {
+          title: "7th Central Pay Commission (CPC) Pay Matrix Breakdown:",
+          items: [
+            "<strong>Level 1 (₹18,000 - ₹56,900):</strong> Multi-Tasking Staff (MTS), Helpers, Peons, and Group D.",
+            "<strong>Level 2 & 4 (₹19,900 - ₹81,100):</strong> Lower Division Clerks (LDC), Postal Assistants, Constables, and Typists.",
+            "<strong>Level 6 & 7 (₹35,400 - ₹1,42,400):</strong> Sub-Inspectors, Assistant Section Officers (ASO), Inspectors, and Junior Engineers.",
+            "<strong>Level 10 (₹56,100 - ₹1,77,500):</strong> Group 'A' Gazetted Officers (IAS, IPS, IRS, Scientists, and Assistant Executive Engineers)."
+          ]
+        }
+      ],
+      faqs: [
+        { q: "How to apply for Central Government jobs on RojgaarDwaar?", a: "Browse through the active recruitment tables above, click on the corresponding 'APPLY ONLINE' link to access the verified official application portal, and read the notification PDF before applying." },
+        { q: "What is the upper age relaxation for SC/ST and OBC candidates in Central Govt jobs?", a: "SC/ST candidates receive a 5-year upper age relaxation, OBC (Non-Creamy Layer) candidates receive 3 years, and Persons with Benchmark Disabilities (PwBD) receive 10 to 15 years." },
+        { q: "Are women candidates exempted from examination application fees?", a: "Yes, in almost all Central recruitments conducted by UPSC and SSC, female candidates are completely exempted from payment of the application fee." }
+      ]
+    });
   }
 
   // =========================================================================
@@ -278,98 +316,46 @@
       { title: "Northern Railway Trade Apprentice – 4,096 Posts", vacancies: "4096", lastDate: "24/09/2026", board: "RRC Northern Railway", id: "rrc-northern-railway-apprentice-recruitment-2026" }
     ];
 
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          Railway Jobs 2026 Apply Online (11330 New Vacancies)
-        </h1>
-        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Admin
-        </div>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 12px;">
-          <strong>Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates.</strong>
-        </p>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          In this page, <strong>RojgaarDwaar</strong> updates latest Railway vacancy notifications in the table. Both <strong>Male and Female</strong> Indian Citizens are eligible to apply online for various Railway Technical, Non Technical, Assistant Loco Pilot, Police, Para Medical, Medical, Group D, Ministerial and Act Apprentice posts.
-        </p>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest Railway Jobs Notifications 2026:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Post Names – Total Vacancies</th>
-              <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">Notifications</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${railwayJobs.map(j => `
-              <tr>
-                <td class="post-col">
-                  <a href="#/job/${j.id}">${escapeHtml(j.title)}</a>
-                </td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col">
-                  <a href="#/job/${j.id}">${escapeHtml(j.board)}</a>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Railway Exams 2026-27 List:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>RRB NTPC</strong> (Non-Technical Popular Categories): For various non-technical posts.</li>
-          <li><strong>RRB JE</strong> (Junior Engineer): For the recruitment of Junior engineers in the Indian Railways.</li>
-          <li><strong>RRB Group D:</strong> For various posts in the Group D category, including track maintainers and helpers.</li>
-          <li><strong>RRB SSE</strong> (Senior Section Engineer): For the recruitment of senior engineers.</li>
-          <li><strong>RRB ALP</strong> (Assistant Loco Pilot): For the recruitment of Assistant Loco Pilots.</li>
-          <li><strong>RRB Paramedical:</strong> For various paramedical posts in the rail services.</li>
-          <li><strong>RPF Constable:</strong> For recruitment in the Railway Protection Force.</li>
-          <li><strong>RPF Sub-Inspector:</strong> For higher-level positions in the Railway Protection Force.</li>
-          <li><strong>RRB Ministerial and Isolated Categories:</strong> For various ministerial posts.</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Railway Job Vacancy 2026-27 List:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>General/Unreserved Quota:</strong> Open to all candidates based on merit.</li>
-          <li><strong>SC / ST Quota:</strong> 5 years age relaxation with concession in qualifying marks.</li>
-          <li><strong>OBC Quota:</strong> 3 years age relaxation for Non-Creamy Layer.</li>
-          <li><strong>EWS Quota:</strong> 10% reservation for economically weaker sections.</li>
-          <li><strong>Sports Quota:</strong> Direct recruitment for national/international medalists.</li>
-          <li><strong>Persons with Benchmark Disabilities (PwD):</strong> 10-15 years relaxation in non-safety category posts.</li>
-          <li><strong>Course Completed Act Apprentices (CCAA):</strong> 20% horizontal reservation in Level-1 (Group D) posts with NCVT weightage.</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions:</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>What are the popular jobs in Railway Sector?</strong><br>
-          Indian Railway jobs include Gazetted (Group 'A' and 'B'), Non-Gazetted (Group 'C' and 'D'), NTPC, Junior Engineer, RPF, Act Apprentices, Level 1, and Level 2 posts.</p>
-
-          <p style="margin-bottom: 8px;"><strong>How to apply for railway recruitment from RojgaarDwaar?</strong><br>
-          Candidates check their eligibility in the tables above, then click on the corresponding notification link to download the PDF notice and apply directly on the official RRB portal.</p>
-
-          <p style="margin-bottom: 8px;"><strong>How many railway boards in India?</strong><br>
-          There are 21 Railway Recruitment Boards (RRBs) across India including Ahmedabad, Ajmer, Allahabad, Bangalore, Bhopal, Bhubaneswar, Bilaspur, Chandigarh, Chennai, Gorakhpur, Guwahati, Jammu, Kolkata, Malda, Mumbai, Muzaffarpur, Patna, Ranchi, Secunderabad, Siliguri, and Trivandrum.</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
+    renderHubTemplate({
+      title: "Railway Jobs 2026 Apply Online (11330 New Vacancies)",
+      metaText: "Last Updated: September 01, 2026 | Author: Admin",
+      intro: "Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates. In this page, RojgaarDwaar updates latest Railway vacancy notifications in the table. Both Male and Female Indian Citizens are eligible to apply online for various Railway Technical, Non Technical, Assistant Loco Pilot, Police, Para Medical, Medical, Group D, Ministerial and Act Apprentice posts.",
+      tableTitle: "Latest Railway Jobs Notifications 2026:",
+      rawJobs: railwayJobs,
+      keySections: [
+        {
+          title: "Railway Exams 2026-27 List:",
+          items: [
+            "<strong>RRB NTPC</strong> (Non-Technical Popular Categories): For various non-technical posts.",
+            "<strong>RRB JE</strong> (Junior Engineer): For the recruitment of Junior engineers in the Indian Railways.",
+            "<strong>RRB Group D:</strong> For various posts in the Group D category, including track maintainers and helpers.",
+            "<strong>RRB SSE</strong> (Senior Section Engineer): For the recruitment of senior engineers.",
+            "<strong>RRB ALP</strong> (Assistant Loco Pilot): For the recruitment of Assistant Loco Pilots.",
+            "<strong>RRB Paramedical:</strong> For various paramedical posts in the rail services.",
+            "<strong>RPF Constable:</strong> For recruitment in the Railway Protection Force.",
+            "<strong>RPF Sub-Inspector:</strong> For higher-level positions in the Railway Protection Force.",
+            "<strong>RRB Ministerial and Isolated Categories:</strong> For various ministerial posts and isolated categories."
+          ]
+        },
+        {
+          title: "Railway Job Vacancy 2026-27 List / Reservation & Quota Guide:",
+          items: [
+            "<strong>General/Unreserved Quota:</strong> Open to all candidates based on merit.",
+            "<strong>Scheduled Castes (SC) and Scheduled Tribes (ST) Quota:</strong> Reserved posts with 5 years age relaxation.",
+            "<strong>Other Backward Classes (OBC) Quota:</strong> 3 years age relaxation for Non-Creamy Layer.",
+            "<strong>Economically Weaker Section:</strong> 10% vertical reservation.",
+            "<strong>Sports Quota:</strong> Direct recruitment for national and international athletes.",
+            "<strong>Persons with Disabilities (PwD) Quota:</strong> Reservations along with extra time during CBT.",
+            "<strong>Course Completed Act Apprentices (CCAA):</strong> 20% horizontal reservation in Level-1 (Group D) posts + NCVT score weightage."
+          ]
+        }
+      ],
+      faqs: [
+        { q: "What are the popular jobs in Railway Sector?", a: "Indian Railway jobs include Gazetted (Group 'A' and 'B'), Non-Gazetted (Group 'C' and 'D'), NTPC, Junior Engineer, RPF, Act Apprentices, Level 1, and Level 2 posts." },
+        { q: "How to apply for railway recruitment from RojgaarDwaar?", a: "Check your qualification against railway listings in the table above, then click on the specific Railway/RRB link for the direct application portal and notification PDF." },
+        { q: "How many railway boards in India?", a: "There are 21 Railway Recruitment Boards (RRBs) across India covering all zones." }
+      ]
+    });
   }
 
   // =========================================================================
@@ -393,98 +379,43 @@
       { title: "Assistant Manager (Grade 'A' RDBS / Rajbhasha) – 102 Posts", vacancies: "102", lastDate: "26/09/2026", bank: "NABARD", id: "ibps-po-recruitment-2026" }
     ];
 
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies
-        </h1>
-        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Prabhu
-        </div>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27. <strong>RojgaarDwaar</strong> updates latest Public Sector Banking Vacancies and Current Private Sector Bank career openings for both fresher and experienced Indian Citizens. More than 50,000 upcoming Govt Bank vacancies are opening in 2026.
-        </p>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest Bank Jobs Notifications September 2026:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Post Names – Total Vacancies</th>
-              <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">Job Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${bankJobs.map(j => `
-              <tr>
-                <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.bank)}</a></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Types of Banking Jobs Available in India:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li>Clerical Cadre (Clerk, Junior Associates, Cashier)</li>
-          <li>Office Assistant / Attendant / Peon</li>
-          <li>Probationary Officer (PO)</li>
-          <li>Management Trainee (MT)</li>
-          <li>Specialist Officer (SO) – IT, Law, HR, Marketing, etc.</li>
-          <li>Financial Analyst / Credit Analyst</li>
-          <li>Customer Relationship Manager</li>
-          <li>Loan Officer / Auditor / Chartered Accountant</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Major Govt Banks In India:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li>State Bank of India (SBI)</li>
-          <li>Bank of Baroda</li>
-          <li>Punjab National Bank</li>
-          <li>Canara Bank</li>
-          <li>Union Bank of India</li>
-          <li>Indian Bank</li>
-          <li>Bank of India</li>
-          <li>Central Bank of India</li>
-          <li>Indian Overseas Bank</li>
-          <li>UCO Bank</li>
-          <li>Bank of Maharashtra</li>
-          <li>Punjab and Sind Bank</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions (FAQ):</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>1. How to apply for bank jobs in India?</strong><br>
-          Eligible candidates can apply online through official notifications listed on RojgaarDwaar with direct links to IBPS, SBI, and RBI application portals.</p>
-
-          <p style="margin-bottom: 8px;"><strong>2. What bank jobs are available after 12th pass or graduation?</strong><br>
-          After 12th: Clerk, Office Assistant, Cashier, Peon. After Graduation: Probationary Officer (PO), Specialist Officer (SO), Management Trainee, IT Officer.</p>
-
-          <p style="margin-bottom: 8px;"><strong>3. What are the major upcoming bank exams in India?</strong><br>
-          Top exams include IBPS Clerk, IBPS PO, IBPS RRB, SBI Clerk, SBI PO, RBI Assistant, and RBI Grade B.</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
+    renderHubTemplate({
+      title: "Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies",
+      metaText: "Last Updated: September 01, 2026 | Author: Prabhu",
+      intro: "Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27. RojgaarDwaar updates latest Public Sector Banking Vacancies and Current Private Sector Bank career openings for both fresher and experienced Indian Citizens. More than 50,000 upcoming Govt Bank vacancies are opening in 2026.",
+      tableTitle: "Latest Bank Jobs Notifications September 2026:",
+      rawJobs: bankJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.bank, id: j.id })),
+      keySections: [
+        {
+          title: "Types of Banking Jobs Available in India:",
+          items: [
+            "Clerical Cadre (Clerk, Junior Associates, Cashier)",
+            "Office Assistant / Attendant / Peon",
+            "Probationary Officer (PO)",
+            "Management Trainee (MT)",
+            "Specialist Officer (SO) – IT, Law, HR, Marketing, etc.",
+            "Financial Analyst / Credit Analyst",
+            "Customer Relationship Manager",
+            "Loan Officer / Auditor / Chartered Accountant"
+          ]
+        },
+        {
+          title: "Major Govt Banks In India:",
+          items: [
+            "State Bank of India (SBI)", "Bank of Baroda", "Punjab National Bank", "Canara Bank", "Union Bank of India", "Indian Bank", "Bank of India", "Central Bank of India", "Indian Overseas Bank", "UCO Bank", "Bank of Maharashtra", "Punjab and Sind Bank"
+          ]
+        }
+      ],
+      faqs: [
+        { q: "1. How to apply for bank jobs in India?", a: "Eligible candidates can apply online through official notifications listed on RojgaarDwaar with direct links to IBPS, SBI, and RBI application portals." },
+        { q: "2. What bank jobs are available after 12th pass or graduation?", a: "After 12th: Clerk, Office Assistant, Cashier, Peon. After Graduation: Probationary Officer (PO), Specialist Officer (SO), Management Trainee, IT Officer." },
+        { q: "3. What are the major upcoming bank exams in India?", a: "Top exams include IBPS Clerk, IBPS PO, IBPS RRB, SBI Clerk, SBI PO, RBI Assistant, and RBI Grade B." }
+      ]
+    });
   }
 
   // =========================================================================
-  // 5. PSU Jobs View (Public Sector Undertakings)
+  // 5. PSU Jobs View
   // =========================================================================
 
   function renderPsuJobsView() {
@@ -501,81 +432,37 @@
       { title: "Scientific Officer & Technical Officer – 95 Posts", vacancies: "95", lastDate: "15/09/2026", psu: "Nuclear Power Corp (NPCIL)", id: "iocl-executive-cbt-recruitment-2026" }
     ];
 
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          Latest PSU Jobs 2026 | Public Sector Company Jobs (4433+ Vacancies)
-        </h1>
-        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Admin
-        </div>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          <strong>Latest PSU Jobs without GATE, PSU Jobs for Commerce graduates, PSU Jobs for MBA and PSU Jobs for Engineers.</strong> <strong>RojgaarDwaar</strong> tracks and updates all active Maharatna, Navratna, and Miniratna Public Sector Undertaking recruitments with verified direct application links.
-        </p>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest PSU Jobs Notifications 2026:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Post Names – Total Vacancies</th>
-              <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">PSU Undertaking</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${psuJobs.map(j => `
-              <tr>
-                <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.psu)}</a></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Top Maharatna & Navratna PSU Companies Recruiting in 2026:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>IOCL (Indian Oil):</strong> Executive CBT, Trade Apprentice, Marketing Officers.</li>
-          <li><strong>NTPC Limited:</strong> Executive Trainees in Electrical, Mechanical, Civil & HR.</li>
-          <li><strong>ONGC:</strong> Graduate Trainees through GATE & Non-Executive CBT Openings.</li>
-          <li><strong>SAIL:</strong> Management Trainees (Technical & Administration) across steel plants.</li>
-          <li><strong>BEL & HAL:</strong> Design Trainees, Project Engineers, and Management Trainees.</li>
-          <li><strong>Coal India (CIL):</strong> Open CBT recruitment for Mining, Finance, Sales, and Personnel.</li>
-          <li><strong>BHEL & PowerGrid:</strong> Executive Engineers and Field Supervisors.</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>PSU Recruitment Categories (With & Without GATE):</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>PSU Jobs without GATE:</strong> Many PSUs (BEL, HAL, ISRO, BARC, CIL, BIS, CONCOR) conduct their own independent online CBT exams without requiring GATE scores.</li>
-          <li><strong>PSU Jobs for Non-Engineers:</strong> Regular openings for MBA (Finance/HR/Marketing), CA/ICWA, LLB (Law Officers), MCA (IT Officers), and Graduates (Junior Executives).</li>
-          <li><strong>Pay Scale:</strong> E-2 / E-3 grade pays ranging from ₹50,000 to ₹1,80,000 with Dearness Allowance, HRA, and Performance Related Pay (PRP).</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions (PSU Jobs FAQ):</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>Q: Can I get a PSU Job without a GATE score?</strong><br>
-          A: Yes! Leading PSUs such as Coal India (CIL), BEL, HAL, RITES, NMDC, and Vizag Steel conduct independent Computer Based Tests (CBT) for recruitment.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: What is the starting salary in Maharatna PSU companies?</strong><br>
-          A: Management Trainees in Maharatna PSUs start on an E-2 scale (Basic Pay ₹50,000–₹1,60,000) with a total CTC ranging from 12 to 18 Lakhs per annum.</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
+    renderHubTemplate({
+      title: "Latest PSU Jobs 2026 | Public Sector Company Jobs (4433+ Vacancies)",
+      metaText: "Last Updated: September 01, 2026 | Author: Admin",
+      intro: "Latest PSU Jobs without GATE, PSU Jobs for Commerce graduates, PSU Jobs for MBA and PSU Jobs for Engineers. RojgaarDwaar tracks and updates all active Maharatna, Navratna, and Miniratna Public Sector Undertaking recruitments with verified direct application links.",
+      tableTitle: "Latest PSU Jobs Notifications 2026:",
+      rawJobs: psuJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.psu, id: j.id })),
+      keySections: [
+        {
+          title: "Top Maharatna & Navratna PSU Companies Recruiting in 2026:",
+          items: [
+            "<strong>IOCL (Indian Oil):</strong> Executive CBT, Trade Apprentice, Marketing Officers.",
+            "<strong>NTPC Limited:</strong> Executive Trainees in Electrical, Mechanical, Civil & HR.",
+            "<strong>ONGC:</strong> Graduate Trainees through GATE & Non-Executive CBT Openings.",
+            "<strong>SAIL:</strong> Management Trainees across Bhilai, Rourkela, Bokaro, and Durgapur steel plants.",
+            "<strong>BEL & HAL:</strong> Design Trainees, Project Engineers, and Management Trainees.",
+            "<strong>Coal India (CIL):</strong> Open CBT recruitment for Mining, Finance, Sales, and Personnel."
+          ]
+        },
+        {
+          title: "PSU Recruitment Categories (With & Without GATE):",
+          items: [
+            "<strong>PSU Jobs without GATE:</strong> Many PSUs (BEL, HAL, ISRO, BARC, CIL, BIS, CONCOR) conduct independent online CBT exams without requiring GATE scores.",
+            "<strong>Pay Scale:</strong> E-2 / E-3 grade pays ranging from ₹50,000 to ₹1,80,000 with DA, HRA, and Performance Related Pay (PRP)."
+          ]
+        }
+      ],
+      faqs: [
+        { q: "Can I get a PSU Job without a GATE score?", a: "Yes! Leading PSUs such as Coal India (CIL), BEL, HAL, RITES, NMDC, and Vizag Steel conduct independent Computer Based Tests (CBT) for recruitment." },
+        { q: "What is the starting salary in Maharatna PSU companies?", a: "Management Trainees in Maharatna PSUs start on an E-2 scale (Basic Pay ₹50,000–₹1,60,000) with a total CTC ranging from 12 to 18 Lakhs per annum." }
+      ]
+    });
   }
 
   // =========================================================================
@@ -594,68 +481,27 @@
       { title: "UP Police Constable (Male & Female) – 42,000 Posts (12th Pass)", vacancies: "42000", lastDate: "29/09/2026", dept: "UP Police PRPB", id: "up-police-constable-recruitment-2026" }
     ];
 
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          Fresher Govt Jobs 2026: Apply Online (1,00,000+ Zero Experience Vacancies)
-        </h1>
-        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Admin
-        </div>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          Discover government recruitments requiring <strong>zero work experience</strong>. Candidates who have recently completed 10th, 12th, ITI, Diploma, or Graduation can apply online for high-paying entry-level Central & State government positions.
-        </p>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest Fresher Govt Job Notifications 2026:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Post Names – Total Vacancies</th>
-              <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">Department / Agency</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${fresherJobs.map(j => `
-              <tr>
-                <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.dept)}</a></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Top Entry-Level Fresher Job Streams:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>Direct Merit (No Written Exam):</strong> India Post GDS (44k posts) and Railway Act Apprentices (12k posts).</li>
-          <li><strong>10th / 12th Pass Entry:</strong> SSC MTS, SSC CHSL, Railway Group D, State Police Constables.</li>
-          <li><strong>Graduate Entry:</strong> SBI Clerk, IBPS PO/Clerk, SSC CGL, UPSC Civil Services, State PSC CCE.</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions (Fresher Jobs FAQ):</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>Q: Can a college fresher with no experience apply for SSC CGL or IBPS PO?</strong><br>
-          A: Absolutely. SSC CGL, IBPS PO, and SBI Clerk require only a recognized Bachelor's Degree with zero prior work experience.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: What is the age limit for fresher government jobs?</strong><br>
-          A: General category candidates can apply between ages 18 to 27 or 30 years (with 3-5 years relaxation for reserved categories).</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
+    renderHubTemplate({
+      title: "Fresher Govt Jobs 2026: Apply Online (1,00,000+ Zero Experience Vacancies)",
+      metaText: "Last Updated: September 01, 2026 | Author: Admin",
+      intro: "Discover government recruitments requiring zero work experience. Candidates who have recently completed 10th, 12th, ITI, Diploma, or Graduation can apply online for high-paying entry-level Central & State government positions.",
+      tableTitle: "Latest Fresher Govt Job Notifications 2026:",
+      rawJobs: fresherJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.dept, id: j.id })),
+      keySections: [
+        {
+          title: "Top Entry-Level Fresher Job Streams:",
+          items: [
+            "<strong>Direct Merit (No Written Exam):</strong> India Post GDS (44k posts) and Railway Act Apprentices (12k posts).",
+            "<strong>10th / 12th Pass Entry:</strong> SSC MTS, SSC CHSL, Railway Group D, State Police Constables.",
+            "<strong>Graduate Entry:</strong> SBI Clerk, IBPS PO/Clerk, SSC CGL, UPSC Civil Services, State PSC CCE."
+          ]
+        }
+      ],
+      faqs: [
+        { q: "Can a college fresher with no experience apply for SSC CGL or IBPS PO?", a: "Absolutely. SSC CGL, IBPS PO, and SBI Clerk require only a recognized Bachelor's Degree with zero prior work experience." },
+        { q: "What is the age limit for fresher government jobs?", a: "General category candidates can apply between ages 18 to 27 or 30 years (with 3-5 years relaxation for reserved categories)." }
+      ]
+    });
   }
 
   // =========================================================================
@@ -675,68 +521,27 @@
       { title: "DSSSB Graduate Trained Graduate Teacher (TGT) – 8,420 Posts", vacancies: "8420", lastDate: "28/09/2026", board: "Delhi Subordinate Board", id: "dsssb-teacher-recruitment-2026" }
     ];
 
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          Graduate Govt Jobs 2026: Apply Online (50,000+ Degree Holder Openings)
-        </h1>
-        <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Admin
-        </div>
-
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          Apply online for latest <strong>Graduate Government Jobs 2026</strong> for BA, B.Sc, B.Com, B.Tech, BBA, BCA, and all degree holders. Discover officer cadre, civil services, banking, insurance, and executive positions across India.
-        </p>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest Graduate Govt Job Notifications 2026:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Post Names – Total Vacancies</th>
-              <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">Recruitment Authority</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${gradJobs.map(j => `
-              <tr>
-                <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.board)}</a></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Top Career Paths for Degree Holders:</span>
-        </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>Civil Services & Administration:</strong> UPSC IAS/IPS, State PSC SDM/DSP, Tehsildar, Revenue Officers.</li>
-          <li><strong>Ministries & Inspection:</strong> SSC CGL Assistant Section Officer (CSS/MEA), Income Tax Inspector, GST Inspector, ED Assistant.</li>
-          <li><strong>Banking & Insurance:</strong> Bank Probationary Officers (PO), RBI Grade B, LIC Assistant Administrative Officer (AAO).</li>
-        </ul>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions (Graduate Jobs FAQ):</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>Q: Is there any minimum percentage required in Graduation for SSC CGL or IBPS PO?</strong><br>
-          A: For SSC CGL and IBPS PO, a simple pass degree from any recognized UGC university is sufficient with no minimum percentage barrier.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: What is the salary of an SSC CGL Inspector or Bank PO?</strong><br>
-          A: SSC CGL Inspector (Level 7) salary is approx ₹75,000 to ₹85,000/month in Metro cities. Bank PO in public sector banks starts around ₹65,000 to ₹72,000/month.</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
+    renderHubTemplate({
+      title: "Graduate Govt Jobs 2026: Apply Online (50,000+ Degree Holder Openings)",
+      metaText: "Last Updated: September 01, 2026 | Author: Admin",
+      intro: "Apply online for latest Graduate Government Jobs 2026 for BA, B.Sc, B.Com, B.Tech, BBA, BCA, and all degree holders. Discover officer cadre, civil services, banking, insurance, and executive positions across India.",
+      tableTitle: "Latest Graduate Govt Job Notifications 2026:",
+      rawJobs: gradJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.board, id: j.id })),
+      keySections: [
+        {
+          title: "Top Career Paths for Degree Holders:",
+          items: [
+            "<strong>Civil Services & Administration:</strong> UPSC IAS/IPS, State PSC SDM/DSP, Tehsildar, Revenue Officers.",
+            "<strong>Ministries & Inspection:</strong> SSC CGL Assistant Section Officer (CSS/MEA), Income Tax Inspector, GST Inspector, ED Assistant.",
+            "<strong>Banking & Insurance:</strong> Bank Probationary Officers (PO), RBI Grade B, LIC Assistant Administrative Officer (AAO)."
+          ]
+        }
+      ],
+      faqs: [
+        { q: "Is there any minimum percentage required in Graduation for SSC CGL or IBPS PO?", a: "For SSC CGL and IBPS PO, a simple pass degree from any recognized UGC university is sufficient with no minimum percentage barrier." },
+        { q: "What is the salary of an SSC CGL Inspector or Bank PO?", a: "SSC CGL Inspector (Level 7) salary is approx ₹75,000 to ₹85,000/month in Metro cities. Bank PO in public sector banks starts around ₹65,000 to ₹72,000/month." }
+      ]
+    });
   }
 
   // =========================================================================
@@ -755,175 +560,195 @@
       { title: "WBPSC West Bengal Civil Service (Exe) – 450 Posts", vacancies: "450", lastDate: "22/09/2026", state: "West Bengal", id: "bpsc-70th-cce-recruitment-2026" }
     ];
 
+    renderHubTemplate({
+      title: "State Govt Jobs 2026: Apply Online Across 28 States & 8 UTs (1,20,000+ Vacancies)",
+      metaText: "Last Updated: September 01, 2026 | Author: Admin",
+      intro: "Browse verified State Public Service Commission (PSC), Subordinate Services Selection Board (SSSB), Police Recruitment Board, High Court, and Education Department jobs across all Indian States.",
+      tableTitle: "Major State Government Openings 2026:",
+      rawJobs: stateJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.state, id: j.id })),
+      keySections: [
+        {
+          title: "State-Wise Quick Navigator:",
+          customHtml: `
+            <div class="state-check-grid" style="padding:0; margin-bottom:16px;">
+              ${data.STATES.slice(0, 18).map(s => `
+                <a href="#/state/${s.id}" class="state-check-link">
+                  <span>✅</span> <span>${s.name} Govt Jobs</span>
+                </a>
+              `).join('')}
+            </div>
+          `
+        }
+      ],
+      faqs: [
+        { q: "Can candidates from other states apply for state government jobs?", a: "Yes, Indian citizens from any state can apply for general category vacancies in other states, subject to meeting regional language criteria where mandatory." },
+        { q: "Do state government employees receive 7th Pay Commission benefits?", a: "Most state governments have implemented revised 7th Pay Matrix scales matching Central norms." }
+      ]
+    });
+  }
+
+  // =========================================================================
+  // 9. Dedicated Qualification & State Hub Views
+  // =========================================================================
+
+  function renderQualificationHubView(qualId) {
+    const qual = data.QUALIFICATIONS.find(q => q.id === qualId) || data.QUALIFICATIONS[0];
+    const matchingJobs = data.RECRUITMENTS.filter(j => j.qualifications.includes(qual.id));
+
+    renderHubTemplate({
+      title: `${qual.name} 2026 (${matchingJobs.length * 120}+ Active Govt Vacancies)`,
+      metaText: `Verified Qualification Hub | Author: RojgaarDwaar Editorial Team`,
+      intro: `${qual.desc}. Discover all active Central & State government recruitment notifications verified for ${qual.shortName} candidates with direct application links.`,
+      tableTitle: `Latest ${qual.shortName} Government Job Notifications 2026:`,
+      jobsList: matchingJobs.slice(0, 15),
+      keySections: [
+        {
+          title: `Career Tracks & Growth for ${qual.shortName} Qualified Candidates:`,
+          items: [
+            `<strong>Central Government Openings:</strong> Posts in Railways, SSC, Defence, Postal Department, and Central Ministries.`,
+            `<strong>State Department Openings:</strong> State Police, Secretariat, Subordinate Boards, and Municipal Corporations.`,
+            `<strong>Selection Standards:</strong> Clear breakdown of written examination syllabus, physical fitness criteria, and skill test parameters.`
+          ]
+        }
+      ],
+      faqs: [
+        { q: `What is the average starting salary for ${qual.shortName} government posts?`, a: `Starting salary ranges from ₹25,000 to ₹75,000+ depending on the department, Level, and Pay Band.` },
+        { q: `How do I apply for these ${qual.shortName} vacancies?`, a: `Click on the corresponding 'APPLY ONLINE' link in the table above to access the official application form.` }
+      ]
+    });
+  }
+
+  function renderStateHubView(stateId) {
+    const stateObj = data.STATES.find(s => s.id === stateId) || data.STATES[0];
+    const matchingJobs = data.RECRUITMENTS.filter(j => j.state === stateObj.id || (stateObj.id !== 'all-india' && j.state === 'all-india'));
+
+    renderHubTemplate({
+      title: `${stateObj.name} Government Jobs 2026 (${matchingJobs.length * 90}+ Vacancies Opening)`,
+      metaText: `State Recruitment Hub | Author: RojgaarDwaar State Desk`,
+      intro: `Explore verified government recruitment notifications for ${stateObj.name}. Apply online for active vacancies across State PSC, Police Recruitment Board, High Court, Health Department, and Education Board.`,
+      tableTitle: `Latest Government Recruitment Notifications in ${stateObj.name}:`,
+      jobsList: matchingJobs.slice(0, 15),
+      keySections: [
+        {
+          title: `Recruitment Authorities Monitored in ${stateObj.name}:`,
+          items: [
+            `<strong>State Public Service Commission (PSC):</strong> State Civil Services, Administrative Officers, and Engineering Cadre.`,
+            `<strong>Subordinate Selection Board:</strong> Clerical, Assistant, Forest Guard, and Technical posts.`,
+            `<strong>State Police Department:</strong> Sub-Inspector (SI), Constable, and Jail Warder recruitments.`
+          ]
+        }
+      ],
+      faqs: [
+        { q: `Are candidates outside ${stateObj.name} eligible to apply?`, a: `Yes, for general category vacancies, eligible Indian citizens from all states can apply, subject to regional language criteria.` }
+      ]
+    });
+  }
+
+  function renderGenericCategoryView(catId) {
+    const cat = data.CATEGORIES.find(c => c.id === catId) || data.CATEGORIES[0];
+    const matchingJobs = data.RECRUITMENTS.filter(j => j.category === cat.id);
+
+    renderHubTemplate({
+      title: `${cat.name} 2026 (${matchingJobs.length * 140}+ Active Vacancies)`,
+      metaText: `Category Recruitment Hub | Author: RojgaarDwaar Editorial Desk`,
+      intro: `Explore verified recruitment notifications for ${cat.name}. Check eligibility parameters, pay scale, official PDF notification, and online application portal.`,
+      tableTitle: `Active ${cat.name} Notifications 2026:`,
+      jobsList: matchingJobs.slice(0, 15),
+      faqs: [
+        { q: `How to stay updated with latest ${cat.name} alerts?`, a: `Bookmark this page or subscribe to our free Telegram and WhatsApp channels for daily verified notifications.` }
+      ]
+    });
+  }
+
+  // =========================================================================
+  // Master Hub Template Builder (Reusable High-Density Layout)
+  // =========================================================================
+
+  function renderHubTemplate(config) {
+    let rowsHtml = '';
+
+    if (config.rawJobs) {
+      rowsHtml = config.rawJobs.map(j => `
+        <tr>
+          <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
+          <td class="date-col">${j.lastDate}</td>
+          <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.actionText || 'APPLY ONLINE')}</a></td>
+        </tr>
+      `).join('');
+    } else if (config.jobsList) {
+      rowsHtml = config.jobsList.map(j => `
+        <tr>
+          <td class="post-col">
+            <a href="#/job/${j.id}">${escapeHtml(j.title)}</a>
+            <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${j.vacancies} Posts | ${escapeHtml(j.shortOrg)}</div>
+          </td>
+          <td class="date-col">${j.importantDates.lastDate}</td>
+          <td class="action-col"><a href="#/job/${j.id}">APPLY ONLINE</a></td>
+        </tr>
+      `).join('');
+    }
+
+    let keySectionsHtml = '';
+    if (config.keySections) {
+      keySectionsHtml = config.keySections.map(s => `
+        <div class="green-check-title">
+          <span>✅</span> <span>${escapeHtml(s.title)}</span>
+        </div>
+        ${s.customHtml ? s.customHtml : `
+          <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
+            ${s.items.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        `}
+      `).join('');
+    }
+
+    let faqsHtml = '';
+    if (config.faqs && config.faqs.length > 0) {
+      faqsHtml = `
+        <div class="green-check-title">
+          <span>✅</span> <span>Frequently Asked Questions:</span>
+        </div>
+        <div style="line-height: 1.7; font-size: 13px; color: #333;">
+          ${config.faqs.map(f => `
+            <p style="margin-bottom: 8px;">
+              <strong>${escapeHtml(f.q)}</strong><br>
+              ${escapeHtml(f.a)}
+            </p>
+          `).join('')}
+        </div>
+      `;
+    }
+
     let html = `
       <div class="content-block" style="padding: 16px 18px;">
         <h1 style="font-size: 19px; font-weight: 800; color: #000000; line-height: 1.35; margin-bottom: 4px;">
-          State Govt Jobs 2026: Apply Online Across 28 States & 8 UTs (1,20,000+ Vacancies)
+          ${escapeHtml(config.title)}
         </h1>
         <div style="font-size: 11.5px; color: #666; margin-bottom: 14px;">
-          Last Updated: September 01, 2026 | Author: Admin
+          ${escapeHtml(config.metaText)}
         </div>
 
         <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 16px;">
-          Browse verified State Public Service Commission (PSC), Subordinate Services Selection Board (SSSB), Police Recruitment Board, High Court, and Education Department jobs across all Indian States.
+          ${escapeHtml(config.intro)}
         </p>
 
         <div class="green-check-title">
-          <span>✅</span> <span>Major State Government Openings 2026:</span>
+          <span>✅</span> <span>${escapeHtml(config.tableTitle)}</span>
         </div>
         <table class="ind-govt-table">
           <thead>
             <tr>
               <th style="width:48%;">Post Names – Total Vacancies</th>
               <th style="width:22%;">Last Date</th>
-              <th style="width:30%;">State Board</th>
+              <th style="width:30%;">Job Details / Link</th>
             </tr>
           </thead>
           <tbody>
-            ${stateJobs.map(j => `
-              <tr>
-                <td class="post-col"><a href="#/job/${j.id}">${escapeHtml(j.title)}</a></td>
-                <td class="date-col">${j.lastDate}</td>
-                <td class="action-col"><a href="#/job/${j.id}">${escapeHtml(j.state)}</a></td>
-              </tr>
-            `).join('')}
+            ${rowsHtml}
           </tbody>
         </table>
 
-        <div class="green-check-title">
-          <span>✅</span> <span>State-Wise Quick Navigator:</span>
-        </div>
-        <div class="state-check-grid" style="padding:0; margin-bottom:16px;">
-          ${data.STATES.slice(0, 18).map(s => `
-            <a href="#/state/${s.id}" class="state-check-link">
-              <span>✅</span> <span>${s.name} Govt Jobs</span>
-            </a>
-          `).join('')}
-        </div>
-
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions (State Jobs FAQ):</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>Q: Can candidates from other states apply for state government jobs?</strong><br>
-          A: Yes, Indian citizens from any state can apply for general category vacancies in other states, subject to meeting regional language criteria where mandatory.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: Do state government employees receive 7th Pay Commission benefits?</strong><br>
-          A: Most state governments (UP, Bihar, Maharashtra, Rajasthan, MP, Haryana, etc.) have implemented revised 7th Pay Matrix scales matching Central norms.</p>
-        </div>
-
-        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
-          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
-        </div>
-      </div>
-    `;
-
-    mainContentEl.innerHTML = html;
-  }
-
-  // =========================================================================
-  // 9. Generic Category / State / Qualification Hub View
-  // =========================================================================
-
-  function renderCategoryOrGovtJobsView(type, identifier) {
-    let pageTitle = "Central Government Jobs 2026 (150000+ Govt Vacancies Opening)";
-    let matchingJobs = data.RECRUITMENTS;
-    let introText = "Find latest Indian Government Jobs 2026 across Central Ministries, Public Sector Undertakings (PSUs), Railways (RRB), Public Sector Banks, Staff Selection Commission (SSC), UPSC, Armed Forces, and State Government Boards.";
-
-    if (type === 'category') {
-      const cat = data.CATEGORIES.find(c => c.id === identifier);
-      if (cat) {
-        pageTitle = `${cat.name} 2026 (${cat.count * 150}+ Govt Vacancies Opening)`;
-        matchingJobs = data.RECRUITMENTS.filter(j => j.category === cat.id);
-        introText = `Explore all verified ${cat.name} notifications. Apply online for active vacancies, check eligibility criteria, salary scales, and upcoming examination dates.`;
-      }
-    } else if (type === 'qualification') {
-      const qual = data.QUALIFICATIONS.find(q => q.id === identifier);
-      if (qual) {
-        pageTitle = `${qual.name} Jobs 2026 (50000+ Govt Vacancies Opening)`;
-        matchingJobs = data.RECRUITMENTS.filter(j => j.qualifications.includes(qual.id));
-        introText = `Discover verified Central and State Government Jobs for ${qual.shortName} qualified candidates across Railways, Police, Banking, SSC, PSUs, and Ministries.`;
-      }
-    } else if (type === 'state') {
-      const stateObj = data.STATES.find(s => s.id === identifier);
-      if (stateObj) {
-        pageTitle = `${stateObj.name} Government Jobs 2026 (${stateObj.totalActive * 80}+ Govt Vacancies Opening)`;
-        matchingJobs = data.RECRUITMENTS.filter(j => j.state === stateObj.id || (stateObj.id !== 'all-india' && j.state === 'all-india'));
-        introText = `All verified Government jobs and recruitment notifications in ${stateObj.name} including State PSC, Police, High Court, Electricity Boards, and Central Units located in the state.`;
-      }
-    }
-
-    const table1Jobs = matchingJobs.slice(0, 10);
-    const table2Jobs = matchingJobs.slice(10, 20);
-
-    let html = `
-      <div class="content-block" style="padding: 16px 18px;">
-        <h1 style="font-size: 18px; font-weight: 800; color: #0b3c5d; line-height: 1.35; margin-bottom: 8px;">
-          ${escapeHtml(pageTitle)}
-        </h1>
-        <p style="font-size: 12px; color: #666; margin-bottom: 12px;">
-          LIVE RECRUITMENT STATUS: <strong>ACTIVE & VERIFIED NOTIFICATIONS</strong>
-        </p>
-        
-        <p style="font-size: 13px; line-height: 1.6; color: #333; margin-bottom: 14px;">
-          ${escapeHtml(introText)} All eligible candidates holding 10th, 12th, ITI, Diploma, Graduation, B.Tech, MBA, MCA, and Post Graduation degrees can verify their qualification profile and submit applications before the respective deadline.
-        </p>
-
-        <!-- Table 1 -->
-        <div class="green-check-title">
-          <span>✅</span> <span>Latest Government Jobs & Recruitment Openings:</span>
-        </div>
-        <table class="ind-govt-table">
-          <thead>
-            <tr>
-              <th style="width:48%;">Recruitment / Post Name</th>
-              <th style="width:24%;">Last Date</th>
-              <th style="width:28%;">Job Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${table1Jobs.map(job => `
-              <tr>
-                <td class="post-col">
-                  <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
-                  <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
-                </td>
-                <td class="date-col">${job.importantDates.lastDate}</td>
-                <td class="action-col"><a href="#/job/${job.id}">APPLY ONLINE</a></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <!-- Table 2 (if available) -->
-        ${table2Jobs.length > 0 ? `
-          <div class="green-check-title">
-            <span>✅</span> <span>Top Departmental Opportunities:</span>
-          </div>
-          <table class="ind-govt-table">
-            <thead>
-              <tr>
-                <th style="width:48%;">Recruitment / Post Name</th>
-                <th style="width:24%;">Last Date</th>
-                <th style="width:28%;">Job Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${table2Jobs.map(job => `
-                <tr>
-                  <td class="post-col">
-                    <a href="#/job/${job.id}">${escapeHtml(job.title)}</a>
-                    <div style="font-size:11px; font-weight:normal; color:#666;">Vacancies: ${job.vacancies} Posts | ${escapeHtml(job.shortOrg)}</div>
-                  </td>
-                  <td class="date-col">${job.importantDates.lastDate}</td>
-                  <td class="action-col"><a href="#/job/${job.id}">GET DETAILS</a></td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        ` : ''}
-
-        <!-- Qualification Links Box -->
+        <!-- Qualification Quick Navigator Box -->
         <div class="green-check-title">
           <span>✅</span> <span>Govt Jobs by Qualification:</span>
         </div>
@@ -936,33 +761,13 @@
           <a href="#/qualification/post-graduate" style="color:#0000cc;">Post Graduate / Master Degree Jobs</a>
         </div>
 
-        <!-- Information & Rules Section -->
-        <div class="green-check-title">
-          <span>✅</span> <span>Age Relaxation & Reservation Rules:</span>
+        ${keySectionsHtml}
+
+        ${faqsHtml}
+
+        <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #008000; font-weight: 700;">
+          Categories: <a href="#/" style="color:#008000;">Top Pages</a>
         </div>
-        <ul style="padding-left: 20px; line-height: 1.7; font-size: 13px; color: #333; margin-bottom: 16px;">
-          <li><strong>SC / ST Candidates:</strong> 05 Years upper age relaxation as per Central Govt norms.</li>
-          <li><strong>OBC (Non-Creamy Layer):</strong> 03 Years upper age relaxation.</li>
-          <li><strong>Persons with Benchmark Disabilities (PwBD):</strong> 10 to 15 Years relaxation across Group A, B, and C posts.</li>
-          <li><strong>Ex-Servicemen:</strong> Military service rendered plus 3 years relaxation.</li>
-          <li><strong>Female Candidates:</strong> Application fee exemption in major Central recruitments (UPSC, SSC, Railways).</li>
-        </ul>
-
-        <!-- Frequently Asked Questions -->
-        <div class="green-check-title">
-          <span>✅</span> <span>Frequently Asked Questions:</span>
-        </div>
-        <div style="line-height: 1.7; font-size: 13px; color: #333;">
-          <p style="margin-bottom: 8px;"><strong>Q: What is the minimum educational qualification required for Government Jobs?</strong><br>
-          A: Minimum qualification ranges from 10th / Matriculation for Multi-Tasking Staff (MTS), Group D, and Postal GDS to Graduation and Engineering for Officer, Inspector, and Trainee positions.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: How can I apply for these Government Jobs?</strong><br>
-          A: Click on the corresponding "APPLY ONLINE" or "GET DETAILS" link in the table above to access the official application link, read the official notification PDF, and submit your application online.</p>
-
-          <p style="margin-bottom: 8px;"><strong>Q: Is there any application fee for Female and SC/ST candidates?</strong><br>
-          A: In most Union Government exams conducted by UPSC and SSC, female, SC, ST, and PwBD candidates are exempted from payment of the application examination fee.</p>
-        </div>
-
       </div>
     `;
 
