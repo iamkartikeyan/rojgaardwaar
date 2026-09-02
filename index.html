@@ -117,8 +117,8 @@
           <!-- 1. Get Daily Job Alerts by Email -->
           <div class="daily-alert-card">
             <div class="daily-alert-title">Get Daily Job Alerts by Email</div>
-            <input type="email" class="alert-input-email" placeholder="Enter your email">
-            <button class="alert-btn-subscribe" onclick="alert('Thank you for subscribing to RojgaarDwaar job alerts!');">🔔 Subscribe</button>
+            <input type="email" id="sidebar-alert-email" class="alert-input-email" placeholder="Enter your email">
+            <button type="button" class="alert-btn-subscribe" onclick="window.ROJGAAR_APP.subscribeAlerts()">🔔 Subscribe</button>
           </div>
 
           <!-- 2. Govt Jobs by Education (Color Coded) -->
