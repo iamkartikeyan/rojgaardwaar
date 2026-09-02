@@ -40,8 +40,8 @@ function cleanExactContent(html) {
 }
 
 async function run() {
-  console.log('Fetching top 25 exact articles from indgovtjobs.in feed...');
-  const json = await fetchJson('https://www.indgovtjobs.in/feeds/posts/default?alt=json&max-results=25');
+  console.log('Fetching top 45 exact articles from indgovtjobs.in feed...');
+  const json = await fetchJson('https://www.indgovtjobs.in/feeds/posts/default?alt=json&max-results=45');
   const entries = json.feed.entry;
 
   console.log(`Retrieved ${entries.length} exact posts from feed.`);
