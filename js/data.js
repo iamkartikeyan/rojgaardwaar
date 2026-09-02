@@ -4716,6 +4716,186 @@ window.ROZGAR_DATA = (function() {
       "notificationUrl": "https://munitionsindia.in/wp-content/uploads/English-Full-Advertisement-AOCP_OFDR.pdf",
       "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
     }
+  },
+  {
+    "id": "law-llb-govt-jobs",
+    "title": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
+    "org": "Latest Law Govt Jobs 2026 | BL, LLB and Advocate Job Updates",
+    "shortOrg": "Latest Law Govt Jobs 2026 | BL",
+    "posts": "Law Officer / Legal Advisor / Judicial Assistant",
+    "vacancies": 15,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://rozgardwaar.com/2015/07/Law-LLB-Govt-Jobs.html",
+      "notificationUrl": "https://rozgardwaar.com/2015/07/Law-LLB-Govt-Jobs.html",
+      "websiteUrl": "https://rozgardwaar.com/2015/07/Law-LLB-Govt-Jobs.html"
+    }
+  },
+  {
+    "id": "cci-advertisement-no-co-03-2026",
+    "title": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15-09-2026",
+    "org": "CCI Advertisement No CO/03/2026: Apply for Engineer, Officer & Analyst Posts | Last Date 15-09-2026",
+    "shortOrg": "CCI Advertisement No CO/03/202",
+    "posts": "Law Officer / Legal Advisor / Judicial Assistant",
+    "vacancies": 15,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "15-09-2026",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o",
+      "notificationUrl": "https://cciltd.in/UserFiles/files/Approved%20-%20draft%20advertisement%20-%20CO-03-2026(2).pdf",
+      "websiteUrl": "https://whatsapp.com/channel/0029Va4QP8d5kg7D4uJ29Q0o"
+    }
+  },
+  {
+    "id": "seci-experienced-professionals",
+    "title": "SECI Experienced Professionals Recruitment 2026 – Apply Online for 28 Posts | Last Date 23-09-2026",
+    "org": "SECI Experienced Professionals",
+    "shortOrg": "SECI Experienced Professionals",
+    "posts": "Law Officer / Legal Advisor / Judicial Assistant",
+    "vacancies": 15,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "23-09-2026",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1wYTK7K_QoZqOp4hhrjKeABmJMxSM979b/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1wYTK7K_QoZqOp4hhrjKeABmJMxSM979b/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1wYTK7K_QoZqOp4hhrjKeABmJMxSM979b/view?usp=sharing"
+    }
+  },
+  {
+    "id": "upsc-advertisement-no-10-2026",
+    "title": "UPSC Advertisement No.10/2026 – Apply Online for 34 Posts | Last Date 04-09-2026",
+    "org": "UPSC Advertisement No.10/2026 – Apply Online for 34 Posts | Last Date 04-09-2026",
+    "shortOrg": "UPSC Advertisement No.10/2026 ",
+    "posts": "Law Officer / Legal Advisor / Judicial Assistant",
+    "vacancies": 15,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "04-09-2026",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-10-2026-Engl-070826.pdf",
+      "notificationUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-10-2026-Engl-070826.pdf",
+      "websiteUrl": "https://www.upsc.gov.in/sites/default/files/AdvtNo-10-2026-Engl-070826.pdf"
+    }
+  },
+  {
+    "id": "dpcc-various-posts-recruitment",
+    "title": "DPCC Various Posts Recruitment 2026 – Apply for 54 Engineer, Scientist & Assistant Posts",
+    "org": "DPCC Various Posts",
+    "shortOrg": "DPCC Various Posts",
+    "posts": "Engineer, Scientist & Assistant",
+    "vacancies": 54,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://drive.google.com/file/d/1pKrxexmVVj7QeSTjgkpCzjkefO9ck7vB/view?usp=sharing",
+      "notificationUrl": "https://drive.google.com/file/d/1pKrxexmVVj7QeSTjgkpCzjkefO9ck7vB/view?usp=sharing",
+      "websiteUrl": "https://drive.google.com/file/d/1pKrxexmVVj7QeSTjgkpCzjkefO9ck7vB/view?usp=sharing"
+    }
+  },
+  {
+    "id": "upcoming-government-exams",
+    "title": "Upcoming Government Exams 2026 – Govt Job Notifications",
+    "org": "Upcoming Government Exams 2026 – Govt Job",
+    "shortOrg": "Upcoming Government Exams 2026",
+    "posts": "Law Officer / Legal Advisor / Judicial Assistant",
+    "vacancies": 15,
+    "salary": "Pay Matrix Level-8 / Level-10 (₹47,600 – ₹1,77,500/-) + Legal Allowances",
+    "qualificationText": "Bachelor's Degree in Law (LLB / 5-Year Integrated LLB) / LLM with Bar Council Registration",
+    "qualifications": [
+      "graduate",
+      "law-llb"
+    ],
+    "category": "central-govt",
+    "subCategory": "Legal & Judiciary Recruitment",
+    "state": "all-india",
+    "importantDates": {
+      "startDate": "2026-09-02",
+      "lastDate": "2026-09-30",
+      "examDate": "Preliminary & Main Examination / Interview"
+    },
+    "fee": "General/OBC: ₹500 - ₹1000 | SC/ST/PwBD: Nil or ₹250",
+    "ageLimit": "21 to 35 / 40 Years (Relaxation as per Bar/Govt norms)",
+    "ageRelaxation": "SC/ST: 5 Years, OBC: 3 Years, PwBD: 10 Years",
+    "officialLinks": {
+      "applyUrl": "https://www.upsconline.nic.in/",
+      "notificationUrl": "https://rozgardwaar.com/2025/08/Upcoming-Government-Exams.html",
+      "websiteUrl": "https://www.upsconline.nic.in/"
+    }
   }
 ];
 
