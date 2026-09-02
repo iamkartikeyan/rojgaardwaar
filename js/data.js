@@ -1,5 +1,5 @@
 /**
- * ROJGAARDWAAR (RojgaarDwaar.in) - Master Government Recruitment Data Engine
+ * ROZGARDWAAR (ROZGARDWAAR.in) - Master Government Recruitment Data Engine
  * Contains 300+ meticulously structured government job recruitments, admit cards,
  * exam results, qualification classifications, and state-wise listings across India.
  * 
@@ -7,7 +7,7 @@
  * important dates, vacancy details, FAQs, and practical "Should You Apply?" insights.
  */
 
-window.ROJGAAR_DATA = (function() {
+window.ROZGAR_DATA = (function() {
   
   // All 28 States & 8 Union Territories of India
   const STATES = [

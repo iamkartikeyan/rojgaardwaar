@@ -1,5 +1,5 @@
 /**
- * ROJGAARDWAAR (RojgaarDwaar.in) - Master Application Engine
+ * ROZGARDWAAR (ROZGARDWAAR.in) - Master Application Engine
  * Renders IndGovtJobs-inspired authentic layout with dedicated high-density hubs for:
  * - Home
  * - Govt Jobs (Central)
@@ -18,9 +18,9 @@
 (function() {
   'use strict';
 
-  const data = window.ROJGAAR_DATA;
+  const data = window.ROZGAR_DATA;
   if (!data) {
-    console.error('ROJGAAR_DATA not loaded.');
+    console.error('ROZGAR_DATA not loaded.');
     return;
   }
 
@@ -29,7 +29,7 @@
     routeParam: null,
     currentPage: 1,
     pageSize: 10,
-    savedJobs: JSON.parse(localStorage.getItem('rojgaar_saved_jobs') || '[]')
+    savedJobs: JSON.parse(localStorage.getItem('rozgar_saved_jobs') || '[]')
   };
 
   let mainContentEl = null;
@@ -226,11 +226,11 @@
         <div class="portal-pagination-bar">
           <div>Page <strong>${state.currentPage}</strong> of <strong>${totalPages}</strong> (${data.RECRUITMENTS.length} Total Openings)</div>
           <div class="page-numbers-wrap">
-            ${state.currentPage > 1 ? `<button class="page-btn" onclick="window.ROJGAAR_APP.goToPage(${state.currentPage - 1})">Prev</button>` : ''}
+            ${state.currentPage > 1 ? `<button class="page-btn" onclick="window.ROZGAR_APP.goToPage(${state.currentPage - 1})">Prev</button>` : ''}
             ${[1, 2, 3, 4, 5].filter(p => p <= totalPages).map(p => `
-              <button class="page-btn ${p === state.currentPage ? 'active' : ''}" onclick="window.ROJGAAR_APP.goToPage(${p})">${p}</button>
+              <button class="page-btn ${p === state.currentPage ? 'active' : ''}" onclick="window.ROZGAR_APP.goToPage(${p})">${p}</button>
             `).join('')}
-            ${state.currentPage < totalPages ? `<button class="page-btn" onclick="window.ROJGAAR_APP.goToPage(${state.currentPage + 1})">Next »</button>` : ''}
+            ${state.currentPage < totalPages ? `<button class="page-btn" onclick="window.ROZGAR_APP.goToPage(${state.currentPage + 1})">Next »</button>` : ''}
           </div>
         </div>
       </div>
@@ -258,7 +258,7 @@
     const centralJobs = data.RECRUITMENTS.filter(j => j.category === 'central-govt' || j.category === 'ssc' || j.category === 'upsc');
     renderHubTemplate({
       title: "Central Government Jobs 2026 (150000+ Govt Vacancies Opening)",
-      metaText: "Last Updated: September 01, 2026 | Author: RojgaarDwaar Editorial Desk",
+      metaText: "Last Updated: September 01, 2026 | Author: ROZGARDWAAR Editorial Desk",
       intro: "Find latest Indian Government Jobs 2026 across Central Ministries, Union Departments, Staff Selection Commission (SSC), UPSC, Armed Forces, and Constitutional Commissions with verified online application links.",
       tableTitle: "Latest Central Government Recruitment Openings 2026:",
       jobsList: centralJobs.slice(0, 15),
@@ -282,7 +282,7 @@
         }
       ],
       faqs: [
-        { q: "How to apply for Central Government jobs on RojgaarDwaar?", a: "Browse through the active recruitment tables above, click on the corresponding 'APPLY ONLINE' link to access the verified official application portal, and read the notification PDF before applying." },
+        { q: "How to apply for Central Government jobs on ROZGARDWAAR?", a: "Browse through the active recruitment tables above, click on the corresponding 'APPLY ONLINE' link to access the verified official application portal, and read the notification PDF before applying." },
         { q: "What is the upper age relaxation for SC/ST and OBC candidates in Central Govt jobs?", a: "SC/ST candidates receive a 5-year upper age relaxation, OBC (Non-Creamy Layer) candidates receive 3 years, and Persons with Benchmark Disabilities (PwBD) receive 10 to 15 years." },
         { q: "Are women candidates exempted from examination application fees?", a: "Yes, in almost all Central recruitments conducted by UPSC and SSC, female candidates are completely exempted from payment of the application fee." }
       ]
@@ -315,7 +315,7 @@
     renderHubTemplate({
       title: "Railway Jobs 2026 Apply Online (11330 New Vacancies)",
       metaText: "Last Updated: September 01, 2026 | Author: Admin",
-      intro: "Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates. In this page, RojgaarDwaar updates latest Railway vacancy notifications in the table. Both Male and Female Indian Citizens are eligible to apply online for various Railway Technical, Non Technical, Assistant Loco Pilot, Police, Para Medical, Medical, Group D, Ministerial and Act Apprentice posts.",
+      intro: "Latest Indian Railway Jobs Apply Online 2026 After 10th Pass, 12th Pass, Diploma, ITI and Graduates. In this page, ROZGARDWAAR updates latest Railway vacancy notifications in the table. Both Male and Female Indian Citizens are eligible to apply online for various Railway Technical, Non Technical, Assistant Loco Pilot, Police, Para Medical, Medical, Group D, Ministerial and Act Apprentice posts.",
       tableTitle: "Latest Railway Jobs Notifications 2026:",
       rawJobs: railwayJobs,
       keySections: [
@@ -348,7 +348,7 @@
       ],
       faqs: [
         { q: "What are the popular jobs in Railway Sector?", a: "Indian Railway jobs include Gazetted (Group 'A' and 'B'), Non-Gazetted (Group 'C' and 'D'), NTPC, Junior Engineer, RPF, Act Apprentices, Level 1, and Level 2 posts." },
-        { q: "How to apply for railway recruitment from RojgaarDwaar?", a: "Check your qualification against railway listings in the table above, then click on the specific Railway/RRB link for the direct application portal and notification PDF." },
+        { q: "How to apply for railway recruitment from ROZGARDWAAR?", a: "Check your qualification against railway listings in the table above, then click on the specific Railway/RRB link for the direct application portal and notification PDF." },
         { q: "How many railway boards in India?", a: "There are 21 Railway Recruitment Boards (RRBs) across India covering all zones." }
       ]
     });
@@ -378,7 +378,7 @@
     renderHubTemplate({
       title: "Bank Jobs 2026: Latest Banking Recruitment 18820 Vacancies",
       metaText: "Last Updated: September 01, 2026 | Author: Prabhu",
-      intro: "Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27. RojgaarDwaar updates latest Public Sector Banking Vacancies and Current Private Sector Bank career openings for both fresher and experienced Indian Citizens. More than 50,000 upcoming Govt Bank vacancies are opening in 2026.",
+      intro: "Bank Jobs 2026 for 10th 12th passed, Degree Holders and Professionals – Apply Online for 18000+ Bank Vacancies Opening in 2026-27. ROZGARDWAAR updates latest Public Sector Banking Vacancies and Current Private Sector Bank career openings for both fresher and experienced Indian Citizens. More than 50,000 upcoming Govt Bank vacancies are opening in 2026.",
       tableTitle: "Latest Bank Jobs Notifications September 2026:",
       rawJobs: bankJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.bank, id: j.id })),
       keySections: [
@@ -403,7 +403,7 @@
         }
       ],
       faqs: [
-        { q: "1. How to apply for bank jobs in India?", a: "Eligible candidates can apply online through official notifications listed on RojgaarDwaar with direct links to IBPS, SBI, and RBI application portals." },
+        { q: "1. How to apply for bank jobs in India?", a: "Eligible candidates can apply online through official notifications listed on ROZGARDWAAR with direct links to IBPS, SBI, and RBI application portals." },
         { q: "2. What bank jobs are available after 12th pass or graduation?", a: "After 12th: Clerk, Office Assistant, Cashier, Peon. After Graduation: Probationary Officer (PO), Specialist Officer (SO), Management Trainee, IT Officer." },
         { q: "3. What are the major upcoming bank exams in India?", a: "Top exams include IBPS Clerk, IBPS PO, IBPS RRB, SBI Clerk, SBI PO, RBI Assistant, and RBI Grade B." }
       ]
@@ -431,7 +431,7 @@
     renderHubTemplate({
       title: "Latest PSU Jobs 2026 | Public Sector Company Jobs (4433+ Vacancies)",
       metaText: "Last Updated: September 01, 2026 | Author: Admin",
-      intro: "Latest PSU Jobs without GATE, PSU Jobs for Commerce graduates, PSU Jobs for MBA and PSU Jobs for Engineers. RojgaarDwaar tracks and updates all active Maharatna, Navratna, and Miniratna Public Sector Undertaking recruitments with verified direct application links.",
+      intro: "Latest PSU Jobs without GATE, PSU Jobs for Commerce graduates, PSU Jobs for MBA and PSU Jobs for Engineers. ROZGARDWAAR tracks and updates all active Maharatna, Navratna, and Miniratna Public Sector Undertaking recruitments with verified direct application links.",
       tableTitle: "Latest PSU Jobs Notifications 2026:",
       rawJobs: psuJobs.map(j => ({ title: j.title, lastDate: j.lastDate, actionText: j.psu, id: j.id })),
       keySections: [
@@ -593,7 +593,7 @@
 
     renderHubTemplate({
       title: `${qual.name} 2026 (${matchingJobs.length * 120}+ Active Govt Vacancies)`,
-      metaText: `Verified Qualification Hub | Author: RojgaarDwaar Editorial Team`,
+      metaText: `Verified Qualification Hub | Author: ROZGARDWAAR Editorial Team`,
       intro: `${qual.desc}. Discover all active Central & State government recruitment notifications verified for ${qual.shortName} candidates with direct application links.`,
       tableTitle: `Latest ${qual.shortName} Government Job Notifications 2026:`,
       jobsList: matchingJobs.slice(0, 15),
@@ -620,7 +620,7 @@
 
     renderHubTemplate({
       title: `${stateObj.name} Government Jobs 2026 (${matchingJobs.length * 90}+ Vacancies Opening)`,
-      metaText: `State Recruitment Hub | Author: RojgaarDwaar State Desk`,
+      metaText: `State Recruitment Hub | Author: ROZGARDWAAR State Desk`,
       intro: `Explore verified government recruitment notifications for ${stateObj.name}. Apply online for active vacancies across State PSC, Police Recruitment Board, High Court, Health Department, and Education Board.`,
       tableTitle: `Latest Government Recruitment Notifications in ${stateObj.name}:`,
       jobsList: matchingJobs.slice(0, 15),
@@ -646,7 +646,7 @@
 
     renderHubTemplate({
       title: `${cat.name} 2026 (${matchingJobs.length * 140}+ Active Vacancies)`,
-      metaText: `Category Recruitment Hub | Author: RojgaarDwaar Editorial Desk`,
+      metaText: `Category Recruitment Hub | Author: ROZGARDWAAR Editorial Desk`,
       intro: `Explore verified recruitment notifications for ${cat.name}. Check eligibility parameters, pay scale, official PDF notification, and online application portal.`,
       tableTitle: `Active ${cat.name} Notifications 2026:`,
       jobsList: matchingJobs.slice(0, 15),
@@ -803,7 +803,7 @@
         <!-- Master Title -->
         <h1 class="job-detail-h1">${escapeHtml(job.title)}</h1>
         <div style="font-size:12px; color:#555; margin-bottom:14px; border-bottom:1px solid #eee; padding-bottom:8px;">
-          Published by: <strong>RojgaarDwaar Editorial Desk</strong> | Official Verification Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY SOURCE</span>
+          Published by: <strong>ROZGARDWAAR Editorial Desk</strong> | Official Verification Status: <span style="color:#008000; font-weight:700;">AUTHENTICATED PRIMARY SOURCE</span>
         </div>
 
         <!-- Action CTA Buttons -->
@@ -817,7 +817,7 @@
           <a href="${job.officialLinks.websiteUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta-web">
             🌐 Official Website
           </a>
-          <button onclick="window.ROJGAAR_APP.toggleSaveJob('${job.id}')" class="tool-btn" style="cursor:pointer;">
+          <button onclick="window.ROZGAR_APP.toggleSaveJob('${job.id}')" class="tool-btn" style="cursor:pointer;">
             ${isSaved ? '★ Saved' : '☆ Save Job'}
           </button>
         </div>
@@ -1167,7 +1167,7 @@
         <div class="section-bar-header">Smart Government Job Eligibility Finder</div>
         <div style="padding:16px 0;">
           <p style="font-size:13px; color:#555; margin-bottom:14px;">Select your qualification and age to find eligible government jobs instantly.</p>
-          <form onsubmit="window.ROJGAAR_APP.handleEligibilitySubmit(event)">
+          <form onsubmit="window.ROZGAR_APP.handleEligibilitySubmit(event)">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
               <div>
                 <label style="font-weight:700; font-size:12px; display:block; margin-bottom:4px;">Qualification</label>
@@ -1312,7 +1312,7 @@
       suggestionsBoxEl.innerHTML = `<div class="suggestion-item" style="color:#666;">No matches found.</div>`;
     } else {
       suggestionsBoxEl.innerHTML = matches.map(m => `
-        <div class="suggestion-item" onclick="window.ROJGAAR_APP.selectSuggestion('${m.id}')">
+        <div class="suggestion-item" onclick="window.ROZGAR_APP.selectSuggestion('${m.id}')">
           <strong>${escapeHtml(m.title)}</strong>
           <div style="font-size:11.5px; color:#666;">${escapeHtml(m.shortOrg)} • Last Date: ${m.importantDates.lastDate}</div>
         </div>
@@ -1341,7 +1341,7 @@
   }
 
   // Public Interface
-  window.ROJGAAR_APP = {
+  window.ROZGAR_APP = {
     init,
     goToPage: function(p) {
       state.currentPage = p;
@@ -1362,7 +1362,7 @@
         state.savedJobs.splice(idx, 1);
         alert('Job removed from bookmarks.');
       }
-      localStorage.setItem('rojgaar_saved_jobs', JSON.stringify(state.savedJobs));
+      localStorage.setItem('rozgar_saved_jobs', JSON.stringify(state.savedJobs));
       if (state.currentRoute === 'job-detail') renderJobDetailView(jobId);
       else if (state.currentRoute === 'saved') renderSavedJobsView();
     },
@@ -1373,7 +1373,7 @@
         alert('Please enter a valid email address to subscribe for daily government job alerts.');
         return;
       }
-      alert(`Success! ${email} has been subscribed to daily RojgaarDwaar free recruitment alerts.`);
+      alert(`Success! ${email} has been subscribed to daily ROZGARDWAAR free recruitment alerts.`);
       if (input) input.value = '';
     },
     handleEligibilitySubmit: function(e) {
